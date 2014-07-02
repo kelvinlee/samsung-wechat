@@ -1,0 +1,1 @@
+var Lot,LotSchema;LotSchema=new Schema({info:{type:ObjectId},content:{type:String},usedby:{type:ObjectId,rel:"user"},create_at:{type:Date,"default":new Date}}),Lot=mongoose.model("Lot",LotSchema),exports.Lot=Lot;

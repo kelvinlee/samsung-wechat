@@ -1,0 +1,1 @@
+var Lot,Lots,models;models=require("./base"),Lots=models.Lots,Lot=models.Lot,exports.getLots=function(e){return Lots.find({}).sort({order:-1}).exec(e)},exports.newlot=function(e,o,t){var n;return n=new Lot,n.info=e,n.content=o,n.save(t)},exports.newlots=function(e,o,t,n,r,s){var i;return i=new Lots,i.name=e,i.description=o,i.img=t,i.order=n,i.inte=r,i.save(s)};

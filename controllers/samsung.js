@@ -1,0 +1,1 @@
+var EventProxy,config,crypto,fs,path;fs=require("fs"),path=require("path"),crypto=require("crypto"),EventProxy=require("eventproxy"),config=require("../config").config,exports.event=function(r,e,o){};
