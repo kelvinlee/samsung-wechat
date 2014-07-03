@@ -72,9 +72,9 @@ post_data =
 			# key:"myself"
 			sub_button: [
 				{
-					type:"click"
+					type:"view"
 					name:"新·活动"
-					key:"newsactive"
+					url: config.host+"/page1"
 				}
 				{
 					type:"click"
@@ -109,14 +109,14 @@ post_data =
 					key:"magazine"
 				}
 				{
-					type:"click"
+					type:"view"
 					name:"找·优惠"
-					key:"deals"
+					url: config.host+"/page2"
 				}
 				{
-					type:"click"
+					type:"view"
 					name:"玩·游戏"
-					key:"playgame"
+					key:config.host+"/page3"
 				}
 			]
 		}
@@ -126,19 +126,19 @@ post_data =
 			# key:"myself"
 			sub_button: [
 				{
-					type:"click"
+					type:"view"
 					name:"解·问题"
-					key:"faq"
+					key:config.host+"/page4"
 				}
 				{
-					type:"click"
+					type:"view"
 					name:"寻·合作"
-					key:"contactus"
+					key:config.host+"/page5"
 				}
 				{
-					type:"click"
+					type:"view"
 					name:"聊·话题"
-					key:"chat"
+					key:config.host+"/page6"
 				}
 				{
 					type:"view"

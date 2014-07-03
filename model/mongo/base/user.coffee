@@ -1,5 +1,5 @@
 UserSchema = new Schema({
-  openid: {type: String, index: true}
+  openid: {type: String, index: {unique:true}, }
   nickname: {type: String}
   sex : {type: Number, default: 0}
   province: {type: String}

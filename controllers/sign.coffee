@@ -151,4 +151,24 @@ exports.exchange_type = (req,res,next)->
 	res.render "exchange-type"
 exports.lucky = (req,res,next)->
 
+
+exports.page1 = (req,res,next)->
+	res.render "page1"
+
+exports.page2 = (req,res,next)->
+	res.render "page2"
 	
+exports.page3 = (req,res,next)->
+	res.render "page3"
+
+exports.page4 = (req,res,next)->
+	res.render "page4"
+
+exports.page5 = (req,res,next)->
+	res.render "page5"
+
+exports.page6 = (req,res,next)->
+	res.render "page6"
+
+exports.page7 = (req,res,next)->
+	res.render "page7"

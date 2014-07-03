@@ -13,6 +13,16 @@ module.exports = (app)->
 
   app.get '/menu', wechat.sendmenu
 
+
+  app.get "/page1", sign.page1
+  app.get "/page2", sign.page2
+  app.get "/page3", sign.page3
+  app.get "/page4", sign.page4
+  app.get "/page5", sign.page5
+  app.get "/page6", sign.page6
+  app.get "/page7", sign.page7
+
+
   # app.get "/sign/*", sign.before
   app.get "/sign/in", sign.in
   app.get "/sign/my", sign.my
