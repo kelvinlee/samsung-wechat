@@ -40,6 +40,7 @@ empty = {
 	backContent: ""
 }
 plugs_menu = (message,callback)->
+	console.log message
 	if message.key is "oversite"
 		callback oversite
 	else if message.key is "jianxingpin"
