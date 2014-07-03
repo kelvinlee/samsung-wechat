@@ -143,7 +143,7 @@ post_data =
 				{
 					type:"view"
 					name:"来·签到"
-					url:options_user.regs
+					url:config.host+"/page7" #options_user.regs
 				}
 			]
 		}
