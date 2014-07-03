@@ -116,7 +116,7 @@ post_data =
 				{
 					type:"view"
 					name:"玩·游戏"
-					key:config.host+"/page3"
+					url:config.host+"/page3"
 				}
 			]
 		}
@@ -128,17 +128,17 @@ post_data =
 				{
 					type:"view"
 					name:"解·问题"
-					key:config.host+"/page4"
+					url:config.host+"/page4"
 				}
 				{
 					type:"view"
 					name:"寻·合作"
-					key:config.host+"/page5"
+					url:config.host+"/page5"
 				}
 				{
 					type:"view"
 					name:"聊·话题"
-					key:config.host+"/page6"
+					url:config.host+"/page6"
 				}
 				{
 					type:"view"
