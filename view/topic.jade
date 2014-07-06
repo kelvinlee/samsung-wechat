@@ -1,0 +1,125 @@
+extends layout
+block content_here
+	//- include nav
+	nav.bar.bar-tab
+		div.sendmsg
+			form.form(action="/sign/comment",name="register",onsubmit="post(); return false;")
+				div.form-group.clearfix
+					input.input-ctrl(type="text",name="comment",placeholder="评论话题")
+					button.btn(type="button",onclick="post()") 发送
+	.content
+		.content-padded
+			-if (topic != null)
+				div.topic
+					div.box
+						div.topic-title
+							h1.h2 ##{topic.name}#
+							p 本期奖品: #{topic.lot}
+							span#runtime.h4(data-time="#{topic.end_at.getTime()}") 
+						div.comment
+							-if (comments != null && comments.length>0)
+								ul#comments
+									-for(var i=0;i<comments.length;i++)
+										li(data-time="#{comments[i].create_at.getTime()}")
+											p.username #{comments[i].name} :
+											p.com-cont 
+												span ##{topic.name}#
+												| #{comments[i].content}
+							-else
+								div 还没有评论,快来抢先评论.
+
+block js_here
+	script.
+		function getTime(date) {
+		now = new Date();
+		y2k = date;
+		days = (y2k - now) / 1000 / 60 / 60 / 24;
+		daysRound = Math.floor(days);
+		hours = (y2k - now) / 1000 / 60 / 60 - (24 * daysRound);
+		hoursRound = Math.floor(hours);
+		minutes = (y2k - now) / 1000 /60 - (24 * 60 * daysRound) - (60 * hoursRound);
+		minutesRound = Math.floor(minutes);
+		seconds = (y2k - now) / 1000 - (24 * 60 * 60 * daysRound) - (60 * 60 * hoursRound) - (60 * minutesRound);
+		secondsRound = Math.round(seconds);
+		//- sec = (secondsRound == 1) ? " 秒." : " 秒.";
+		min = (minutesRound == 1) ? "分钟" : "分钟";
+		hr = (hoursRound == 1) ? "小时" : "小时";
+		dy = (daysRound == 1)  ? "天" : "天"
+		//- + secondsRound + sec
+		return "剩余时间: " + (daysRound*24+hoursRound) + hr + minutesRound + min ;
+		newtime = window.setTimeout("getTime();", 1000);
+		}
+		$(document).ready(function(){
+			runtime();
+		});
+		function runtime() {
+			var e = $("#runtime");
+			var endtime = new Date(e.data("time"));
+			var now = new Date();
+			if (endtime < now) {
+				alert("话题讨论时间结束了");
+				window.location.reload();
+			}else{
+				e.html(getTime(endtime));
+				setTimeout(function(){
+					runtime();
+					getnext();
+				},5000);
+			}
+		}
+		_submit = false;
+		function post() {
+			if ($("[name=comment]").val() == "") {
+				return alert("请填写评论");
+			}
+			_submit = true;
+			$.ajax({
+				async: false,
+				url: $('[name=register]').attr("action"),
+				type: 'POST',
+				data: $('[name=register]').serializeArray(),
+				dataType: 'json',
+				context: $('body'),
+				success: function(msg) {
+					if (msg.recode === 200) {
+						//- window.location.href = "/sign/my";
+						//- _hmt.push(['_trackEvent', '注册', '提交', '']);
+						$("[name=comment]").val("");
+						getnext();
+					} else {
+						_submit = false
+						return alert(msg.reason);
+					}
+				}
+			});
+		}
+		function getnext() {
+			time = $("#comments li").eq(0).data("time")
+			$.ajax({
+				async: false,
+				url: "/sign/comments?startime="+time,
+				type: 'GET',
+				dataType: 'json',
+				success: function(msg) {
+					if (msg.recode === 200) {
+						//- window.location.href = "/sign/my";
+						//- _hmt.push(['_trackEvent', '注册', '提交', '']);
+						if (msg.comments.length>0) {
+							createHTML(msg.comments);	
+						}
+					} else {
+						_submit = false
+						return alert(msg.reason);
+					}
+				}
+			});
+		}
+		function createHTML(json) {
+			var ep = $("#comments");
+			ep.html("");
+			for (var i=json.length-1;i>=0;i--) {
+				var time = new Date(json[i].create_at);
+				html = "<li data-time='"+time.getTime()+"'><p class='username'>"+json[i].name+"</p><p class='com-cont'><span>##{topic.name}#</span>"+json[i].content+"</p></li>";
+				ep.prepend(html);
+			}
+		}

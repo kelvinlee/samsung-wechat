@@ -87,17 +87,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
-	"\/controllers\/sign.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/controllers\/sign.js",
-		"outputAbbreviatedPath": "\/controllers\/min\/sign-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/controllers\/wechat-menu.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -196,6 +185,19 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/model\/mongo\/base\/comment.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/model\/mongo\/base\/comment.coffee",
+		"minifyOutput": 1,
+		"outputAbbreviatedPath": "\/model\/mongo\/base\/comment.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
 	"\/model\/mongo\/base\/index.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -257,6 +259,19 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/model\/mongo\/base\/topic.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/model\/mongo\/base\/topic.coffee",
+		"minifyOutput": 1,
+		"outputAbbreviatedPath": "\/model\/mongo\/base\/topic.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
 	"\/model\/mongo\/base\/user.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -289,6 +304,30 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/base\/warehouse.js",
 		"outputAbbreviatedPath": "\/model\/mongo\/base\/min\/warehouse-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/model\/mongo\/comment.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/model\/mongo\/comment.coffee",
+		"minifyOutput": 1,
+		"outputAbbreviatedPath": "\/model\/mongo\/comment.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
+	"\/model\/mongo\/comment.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/model\/mongo\/comment.js",
+		"outputAbbreviatedPath": "\/model\/mongo\/min\/comment-ck.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -366,6 +405,30 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/model\/mongo\/topic.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/model\/mongo\/topic.coffee",
+		"minifyOutput": 1,
+		"outputAbbreviatedPath": "\/model\/mongo\/topic.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
+	"\/model\/mongo\/topic.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/model\/mongo\/topic.js",
+		"outputAbbreviatedPath": "\/model\/mongo\/min\/topic-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/model\/mongo\/user.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -385,6 +448,30 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/user.js",
 		"outputAbbreviatedPath": "\/model\/mongo\/min\/user-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/model\/mongo\/warehouse.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/model\/mongo\/warehouse.coffee",
+		"minifyOutput": 1,
+		"outputAbbreviatedPath": "\/model\/mongo\/warehouse.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
+	"\/model\/mongo\/warehouse.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/model\/mongo\/warehouse.js",
+		"outputAbbreviatedPath": "\/model\/mongo\/min\/warehouse-ck.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -439,6 +526,83 @@
 		"initialSize": 2212,
 		"inputAbbreviatedPath": "\/public\/img\/backcode.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/backcode.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/page1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.26918e+06,
+		"inputAbbreviatedPath": "\/public\/img\/page1.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/page1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/page2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.36022e+06,
+		"inputAbbreviatedPath": "\/public\/img\/page2.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/page2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/page3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 118162,
+		"inputAbbreviatedPath": "\/public\/img\/page3.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/page3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/page4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 141124,
+		"inputAbbreviatedPath": "\/public\/img\/page4.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/page4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/page5.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 76614,
+		"inputAbbreviatedPath": "\/public\/img\/page5.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/page5.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/page6.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 211106,
+		"inputAbbreviatedPath": "\/public\/img\/page6.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/page6.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/page7.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.30978e+06,
+		"inputAbbreviatedPath": "\/public\/img\/page7.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/page7.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

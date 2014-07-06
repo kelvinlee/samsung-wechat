@@ -1,0 +1,31 @@
+extends layout
+block content_here
+	include nav
+	.content
+		.content-padded
+			.type-list
+				-for(var i=0;i<list.length;i++)
+					a.item(href="/sign/exchangelot/#{list[i]._id}",onclick="post(this); return false;")
+						img(src="#{list[i].img}")
+
+	block js_here
+		script.
+			_submit = false;
+			function post(o) {
+				_submit = true;
+				$.ajax({
+					async: false,
+					url: $(o).attr("href"),
+					type: 'GET',
+					dataType: 'json',
+					success: function(msg) {
+						if (msg.recode === 200) {
+							window.location.href = "/sign/mylot/"+msg.reason;
+							//- _hmt.push(['_trackEvent', '注册', '提交', '']);
+						} else {
+							_submit = false
+							return alert(msg.reason);
+						}
+					}
+				});
+			}

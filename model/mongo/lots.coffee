@@ -1,16 +1,13 @@
 models = require './base'
 Lots = models.Lots
-Lot = models.Lot
 
+
+exports.getById = (id,callback)->
+	Lots.findOne {_id:id},callback
 
 exports.getLots = (callback)->
 	Lots.find({}).sort({order:-1}).exec callback
 
-exports.newlot = (info,content,callback)->
-	l = new Lot()
-	l.info = info
-	l.content = content
-	l.save callback
 exports.newlots = (name,description,img,order,inte,callback)->
 	l = new Lots()
 	l.name = name

@@ -1,0 +1,11 @@
+extends layout
+block content_here
+	include nav
+	.content
+		.content-padded
+			-if (lot != null)
+				h1 奖品详情
+				h3 #{lot.content}
+			-else
+				h1 奖品详情
+				h3 你不是此奖品的主人.

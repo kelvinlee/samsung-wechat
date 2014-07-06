@@ -14,11 +14,17 @@ helper = require "../lib/helper"
 
 User = require('../model/mongo').User
 Inte = require('../model/mongo').Inte
-
+Lots = require('../model/mongo').Lots
+Warehouse = require('../model/mongo').Warehouse
+Topic = require('../model/mongo').Topic
+Comment = require('../model/mongo').Comment
 # 需要授权
 Authorize_Url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{config.APPID}&redirect_uri={url}&response_type=code&scope=snsapi_userinfo&state={state}#wechat_redirect"
 
 
+# 授权逻辑. 菜单授权,判断是否授权过,判断是否注册过.
+
+# 获取授权,如果没有就进行注册
 regs = (req,res,next)->
 	console.log "regs"
 	ep = new EventProxy.create "token","info",(token,info)->
@@ -50,68 +56,84 @@ regs = (req,res,next)->
 		next()
 
 exports.regs = regs
+# 判断是否能够获取到用户授权.
 exports.before = (req,res,next)->
-	# console.log "before"
+	console.log "check user"
 	res.locals.menu_my = ""
 	res.locals.menu_lucky = ""
 	res.locals.menu_exchange = ""
 	# console.log "cookie:",req.cookies
-	if req.cookies.openid? and req.cookies.openid isnt "undefined"
-		res.locals.openid = req.cookies.openid
-		return next()
-	if req.cookies.regs? and req.cookies.regs is "now"
-		return regs req,res,next
-
-	ep = new EventProxy.create "token","user",(token,user)->
-		console.log token,token.openid
-		if token.openid?
-			res.cookie "openid",token.openid
-			res.locals.openid = token.openid
-		else
-			return res.send {error:"授权失败"}
-		if user?
-			# res.send "ok code:#{req.query.code}"
-			next()
-		else
-			url = req.originalUrl
-			state = req.query.state
-			url = url.split("?")[0]
-
-			newurl = Authorize_Url
-			href = encodeURIComponent config.host+url
-			state = newurl.replace "{state}",state
-
-			res.cookie "regs","now"
-			res.render "authorize",{url:newurl,href:href,state:state}
-		
-	if req.query.code?
-		plugs.getUToken req.query.code,(reb)->
-			reb.on 'data', (chunk)->
-				obj = JSON.parse chunk
-				ep.emit "token",obj
-				if obj.openid?
-					User.getUserOpenId obj.openid,(err,resutls)->
-						ep.emit "user",resutls
-				else
-					ep.emit "user",null
+	# 测试奖品,默认值
+	setsomeDefautleLots()
+	# console.log req.cookies.userid
+	if req.cookies.userid? and req.cookies.userid isnt "undefined" and req.cookies.userid isnt ""
+		res.locals.userid = req.cookies.userid
+		next()
 	else
-		res.send {error:"授权失败."}
-		# next()
+		res.redirect "/login"
+
+
 
 exports.up = (req,res,next)->
+	res.render "reg"
+exports.up_post = (req,res,next)->
+	re = new helper.recode()
+	mobile = req.body.mobile
+	password = req.body.password
+	passwordc= req.body.passwordc
+
+	check = /^[1][3-8]\d{9}$/
+	if not check.test mobile
+		re.recode = 201
+		re.reason = "请验证手机号码格式"
+		return res.send re
+	if password isnt passwordc
+		re.recode = 201
+		re.reason = "两次密码不同,请重新输入."
+		return res.send re
+
+	User.findByMobile mobile,(err,user)->
+		if user?
+			re.recode = 201
+			re.reason = "此手机号已经注册过了."
+			return res.send re
+		else
+			User.newAndSave mobile,password,(err,user)->
+				res.send re
 	
 exports.in = (req,res,next)->
-	console.log req.cookies.openid
-	plugs.sendMenus()
+	res.render "login"
+exports.in_post = (req,res,next)->
+	re = new helper.recode()
+	mobile = req.body.mobile
+	password = req.body.password
+	check = /^[1][3-8]\d{9}$/
+	if not check.test mobile
+		re.recode = 201
+		re.reason = "请验证手机号码格式"
+		return res.send re
 
-	tointe req,res,next
-	# res.send "ok"
+	User.login mobile,password,(err,user)->
+		if user?
+			user.update_at = new Date()
+			user.save()
+			res.cookie "userid",user._id
+			res.send re
+		else
+			re.recode = 201
+			re.reason = "手机号码或密码错误."
+			res.send re
 
 tointe = (req,res,next)->
 	re = new helper.recode()
-	Inte.today res.locals.openid,(err,today)->
+	if not res.locals.userid?
+		re.recode = 201
+		re.reason = "请先登录."
+		res.send re
+		return ""
+	Inte.today res.locals.userid,(err,today)->
 		if today? and today.length<=0
-			Inte.newInte res.locals.openid,20,"签到",(err,resutls)->
+			Inte.newInte res.locals.userid,20,"签到",(err,resutls)->
 				console.log "签到成功:",resutls
 				res.send re
 		else
@@ -123,23 +145,17 @@ exports.tointe = tointe
 exports.my = (req,res,next)->
 	res.locals.menu_my = "active"
 	# res.render "my"
-	console.log "openid:",res.locals.openid
+	console.log "userid:",res.locals.userid
 	ep = new EventProxy.create "user","inte","today",(user,inte,today)->
-		# console.log user,inte
-		# console.log today
-		# 
-		# res.send {user:user,inte:inte,today:today}
-		count = 0
-		for a in inte
-			# console.log res.locals.openid,a._id.openid+"" is res.locals.openid+""
-			count = a.total if a._id.openid+"" is res.locals.openid+""
+		count = inte
+		
 		res.render "my",{user:user,inte:count,today:today}
 
-	Inte.today req.cookies.openid,(err,resutls)->
+	Inte.today res.locals.userid,(err,resutls)->
 		ep.emit "today",resutls
-	User.getUserOpenId req.cookies.openid,(err,resutls)->
+	User.getUserById res.locals.userid,(err,resutls)->
 		ep.emit "user",resutls
-	Inte.getInteAll req.cookies.openid,(err,resutls)->
+	Inte.getInteAll res.locals.userid,(err,resutls)->
 		ep.emit "inte",resutls
 
 exports.exchange = (req,res,next)->
@@ -147,8 +163,124 @@ exports.exchange = (req,res,next)->
 	res.render "exchange"
 exports.exchange_type = (req,res,next)->
 	res.locals.menu_exchange = "active"
-	console.log req.query.type_id
-	res.render "exchange-type"
+	console.log req.params.type_id
+
+	Lots.getLots (err,list)->
+		res.render "exchange-type",{list:list}
+exports.exchangelot = (req,res,next)->
+	res.locals.menu_exchange = "active"
+	id = req.params.lots_id
+	re = new helper.recode()
+
+	console.log req.query
+	console.log req.params
+
+	ep = new EventProxy.create "inte","lots",(inte,lots)->
+		console.log lots,inte
+		
+		Warehouse.getByUserId res.locals.userid,(err,ihas)->
+			if ihas?
+				re.reason = ihas._id
+				res.send re
+			else
+				if lots? and inte >= lots.inte
+					Warehouse.getOne lots._id,(err,lot)->
+						if lot?
+							lot.usedby = res.locals.userid
+							lot.used = true
+							used_at = new Date()
+							lot.save()
+							# res.send re
+							re.reason = lot._id
+							Inte.newInte res.locals.userid,-lots.inte,"兑换奖品:"+lot._id,(err,int)->
+
+								res.send re
+						else
+							re.recode = 201
+							re.reason = "此奖品已经被兑换光了,请等待补充."
+							res.send re
+
+				else
+					re.recode = 201
+					re.reason = "积分不足,无法兑换."
+					res.send re
+		# Warehouse.getOne id,(err,lot)->
+
+
+	Lots.getById id,(err,lots)->
+		ep.emit "lots",lots
+
+	Inte.getInteAll res.locals.userid,(err,resutls)->
+		ep.emit "inte",resutls
+# 我的奖品
+exports.mylot = (req,res,next)->
+	res.locals.menu_exchange = "active"
+	id = req.params.lot_id
+	Warehouse.getById id,(err,lot)->
+		if lot? and lot.usedby+"" is res.locals.userid
+			res.render "elot",{lot:lot}
+		else
+			res.render "elot",{lot:null}
+
+
+
+# 论坛
+exports.topic = (req,res,next)->
+	setDefaultTopic()
+	# tid = req.params.topic_id
+	Topic.getOne (err,topic)->
+		if topic?
+			Comment.getByTopic topic._id,(err,comments)->
+				# console.log topic,comments
+				res.render "topic",{topic:topic,comments:comments}
+				topic.view += 1
+				topic.save()
+		else
+			res.render "topic",{topic:null}
+# 接受
+exports.comment = (req,res,next)->
+	content = req.body.comment
+	re = new helper.recode()
+	if not content? or content is ""
+		re.recode = 201
+		re.reason = "评论内容不能为空"
+		return res.send re
+	Topic.getOne (err,topic)->
+		if topic?
+			User.getUserById res.locals.userid,(err,user)->
+				if user?
+					reg = /(\d{3})\d{4}(\d{4})/
+					name = user.mobile.replace reg,"$1****$2"
+					Comment.newComment user._id,topic._id,name,content,(err,comment)->
+						if comment?
+							res.send re
+						else
+							re.recode = 201
+							re.reason = "评论失败,请重试"
+							res.send re
+				else
+					re.recode = 201
+					re.reason = "还没登陆,无法评论"
+					return res.send re
+			
+exports.comments = (req,res,next)->
+	re = new helper.recode()
+	re.comments = []
+	startime = req.query.startime
+	if startime?
+		startime = new Date parseInt startime
+	else
+		startime = new Date()
+
+	Topic.getOne (err,topic)->
+		if topic?
+			Comment.getByTopic topic._id,(err,comments)->
+				re.comments = comments
+				res.send re
+		else
+			res.send re
+
+
 exports.lucky = (req,res,next)->
 
 
@@ -172,3 +304,38 @@ exports.page6 = (req,res,next)->
 
 exports.page7 = (req,res,next)->
 	res.render "page7"
+
+
+
+# 初始化一个话题
+setDefaultTopic = ->
+	list = ["工地重金属男孩","宁财神发表道歉信","测试话题1","测试话题947","话题是23"]
+
+	name = list[Math.ceil(Math.random()*4)]
+	description = "简介"
+	lot = "UME电影票2张"
+	startime = new Date()
+	endtime  = new Date new Date().getTime()+1000*60*60*2
+	Topic.getOne (err,t)->
+		if not t?
+			Topic.newTopic name,description,lot,startime,endtime,(err,topic)->
+				console.log "初始化了一个话题"	
+
+# 设置初始化奖项.
+setsomeDefautleLots = ()->
+	Lots.getLots (err,list)->
+		if list? and list.length > 0
+			# console.log "奖品列表,存在"
+		else
+			console.log "初始化了一些奖品"
+			name = "爱奇艺VIP一个月"
+			description = "爱奇艺VIP一个月"
+			img = "/img/pro-1.jpg"
+			order = 1
+			inte = 15
+			Lots.newlots name,description,img,order,inte,(err,lots)->
+				if lots?
+					Warehouse.newlot lots._id,"lkjsdf0923f",(err,lot)->
+					Warehouse.newlot lots._id,"873498sidf1",(err,lot)->
+					Warehouse.newlot lots._id,"as8979dfsdf",(err,lot)->
+					Warehouse.newlot lots._id,"xcvkdo82732",(err,lot)->

@@ -12,4 +12,6 @@ mongoose.connect config.mdb, (err)->
 # @codekit-append "inte.coffee";
 # @codekit-append "lots.coffee";
 # @codekit-append "warehouse.coffee";
+# @codekit-append "topic.coffee";
+# @codekit-append "comment.coffee";
 

@@ -43,11 +43,18 @@ options_user_info =
 	host : "https://api.weixin.qq.com/cgi-bin/user/info?lang=zh_CN&access_token="
 	method : "GET"
 # 无信息授权
+# options_user =
+# 	regs: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{config.APPID}&redirect_uri=#{config.host}/sign/in&response_type=code&scope=snsapi_base&state=in#wechat_redirect"
+# 	my: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{config.APPID}&redirect_uri=#{config.host}/sign/my&response_type=code&scope=snsapi_base&state=in#wechat_redirect"
+# 	exchange: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{config.APPID}&redirect_uri=#{config.host}/sign/exchange&response_type=code&scope=snsapi_base&state=in#wechat_redirect"
+# 	lucky: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{config.APPID}&redirect_uri=#{config.host}/sign/lucky&response_type=code&scope=snsapi_base&state=in#wechat_redirect"
+# 	method: "GET"
 options_user =
 	regs: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{config.APPID}&redirect_uri=#{config.host}/sign/in&response_type=code&scope=snsapi_base&state=in#wechat_redirect"
-	my: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{config.APPID}&redirect_uri=#{config.host}/sign/my&response_type=code&scope=snsapi_base&state=in#wechat_redirect"
-	exchange: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{config.APPID}&redirect_uri=#{config.host}/sign/exchange&response_type=code&scope=snsapi_base&state=in#wechat_redirect"
-	lucky: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{config.APPID}&redirect_uri=#{config.host}/sign/lucky&response_type=code&scope=snsapi_base&state=in#wechat_redirect"
+	my: "#{config.host}/sign/my"
+	exchange: "#{config.host}/sign/exchange"
+	lucky: "#{config.host}/sign/lucky"
+	topic: "#{config.host}/sign/topic"
 	method: "GET"
 
 # token 拉取
@@ -72,9 +79,9 @@ post_data =
 			# key:"myself"
 			sub_button: [
 				{
-					type:"view"
+					type:"click"
 					name:"新·活动"
-					url: config.host+"/page1"
+					key: "newactive"
 				}
 				{
 					type:"click"
@@ -138,7 +145,7 @@ post_data =
 				{
 					type:"view"
 					name:"聊·话题"
-					url:config.host+"/page6"
+					url:options_user.topic
 				}
 				{
 					type:"view"

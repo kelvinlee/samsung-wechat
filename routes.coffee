@@ -23,13 +23,35 @@ module.exports = (app)->
   app.get "/page7", sign.page7
 
 
-  # app.get "/sign/*", sign.before
-  app.get "/sign/in", sign.in
+  # 登录
+  app.get "/login", sign.in
+  # 登录提交
+  app.post "/login/in", sign.in_post
+  # 注册
+  app.get "/reg", sign.up
+  # 注册提交
+  app.post "/reg/up",sign.up_post
+
+  # 验证用户.
+  app.get "/sign/*", sign.before
+  app.post "/sign/*", sign.before
+  # 个人信息
   app.get "/sign/my", sign.my
+  # 我的奖品/兑换后界面
+  app.get "/sign/mylot/:lot_id", sign.mylot
+  # 奖品兑换
   app.get "/sign/exchange", sign.exchange
   app.get "/sign/exchange/:type_id", sign.exchange_type
+  app.get "/sign/exchangelot/:lots_id", sign.exchangelot
+  # 抽奖
   app.get "/sign/lucky", sign.lucky
+  # 每日签到
   app.get "/sign/tointe", sign.tointe
+
+  # 论坛
+  app.get "/sign/topic", sign.topic
+  app.post "/sign/comment", sign.comment
+  app.get "/sign/comments", sign.comments
 
   # app.get '*', note.notfind
 

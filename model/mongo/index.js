@@ -1,1 +1,1 @@
-exports.User=require("./user"),exports.Lots=require("./lots"),exports.Inte=require("./inte");
+exports.User=require("./user"),exports.Lots=require("./lots"),exports.Warehouse=require("./warehouse"),exports.Inte=require("./inte"),exports.Topic=require("./topic"),exports.Comment=require("./comment");

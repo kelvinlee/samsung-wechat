@@ -1,7 +1,10 @@
 models = require './base'
 User = models.User
 
-
+exports.findByMobile = (mobile,callback)->
+  User.findOne {mobile:mobile},callback
+exports.login = (mobile,password,callback)->
+  User.findOne {mobile:mobile,password:password},callback
 exports.getUserById = (id, callback)->
 	User.findOne {_id:id}, callback 
 exports.getUserOpenId = (openid, callback)->
@@ -9,7 +12,7 @@ exports.getUserOpenId = (openid, callback)->
 exports.getUsersByQuery = (query, opt, callback)->
 	User.find query, null, opt, callback
 
-exports.newAndSave = (openid, nickname, sex, province, city, headimgurl, callback)->
+exports.newAndSave = (mobile,password, callback)->
   user = new User()
   # openid: {type: String, index: true}
   # nickname: {type: String}
@@ -20,11 +23,7 @@ exports.newAndSave = (openid, nickname, sex, province, city, headimgurl, callbac
   # active: {type:Boolean, default:false}
   # update_at: {type:Date, default:new Date()}
   # create_at: {type:Date, default:new Date()}
-  user.openid = openid
-  user.nickname = nickname
-  user.sex = sex
-  user.province = province
-  user.country = city
-  user.headimgurl = headimgurl
+  user.mobile = mobile
+  user.password = password
   user.active = true
   user.save callback

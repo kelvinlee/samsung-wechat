@@ -75,7 +75,7 @@ checkMessage = (message,callback)->
 			# unsubscribe 取消关注
 			# CLICK 菜单点击
 			# LOCATION 地利位置
-			# console.log message.Event
+			console.log message.Event
 			return plugs_subscribe message,callback if message.Event is 'subscribe'
 			return plugs_menu message,callback if message.Event is 'click' or message.Event is 'view'
 			return callback re
