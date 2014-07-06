@@ -223,7 +223,9 @@ exports.mylot = (req,res,next)->
 		else
 			res.render "elot",{lot:null}
 
-
+exports.getlucky = (req,res,next)->
+	re = new helper.recode()
+	res.send re
 
 # 论坛
 exports.topic = (req,res,next)->

@@ -43,8 +43,22 @@ block content_here
 				div.pline
 					img(src="/img/lucky-line.png")
 			div.lucky-btn
-				a(href="")
+				a(href="/sign/getlucky",onclick=" post(); return false;")
 					img(src="/img/lucky-try.png")
 			div.lucky-content
 				img(src="/img/lucky-content.png")
 block js_here 
+	script.
+		_submit = false;
+		function post(o) {
+			_submit = true;
+			$.ajax({
+				async: false,
+				url: $(o).attr("href"),
+				type: 'GET',
+				dataType: 'json',
+				success: function(msg) {
+					alert('积分不足');
+				}
+			});
+		}

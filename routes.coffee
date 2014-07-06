@@ -47,6 +47,7 @@ module.exports = (app)->
   app.get "/sign/exchangelot/:lots_id", sign.exchangelot
   # 抽奖
   app.get "/sign/lucky", sign.lucky
+  app.get "/sign/getlucky", sign.getlucky
   # 每日签到
   app.get "/sign/tointe", sign.tointe
 
