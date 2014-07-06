@@ -189,11 +189,11 @@ ul {
   box-shadow: 0px 0px 3px #666;
   border-radius: 3px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 .topic .topic-title {
   padding: 10px 10px;
-  border-bottom: solid 5px #ebebeb;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   color: #6e6e6e;
 }
 .topic .topic-title h1 {
@@ -207,6 +207,9 @@ ul {
 .topic .topic-title span {
   color: #787878;
 }
+.topic .topic-title ~ .comment {
+  border-top: solid 5px #ebebeb;
+}
 .topic ul li {
   padding: 5px 10px;
   background: #fee5c2;
@@ -219,6 +222,16 @@ ul {
 }
 .topic ul li span {
   color: #005bc1;
+}
+.topic .text {
+  padding: 10px 10px;
+}
+.topic .text p {
+  margin: 0 auto;
+  padding: 0px;
+}
+.topic .text .c {
+  padding-left: 0.8rem;
 }
 .sendmsg {
   margin-top: 5px;
@@ -236,6 +249,45 @@ ul {
 }
 .sendmsg .form-group .btn {
   margin-top: -7px;
+}
+.slot {
+  position: relative;
+}
+.slot .bg {
+  position: relative;
+}
+.slot .pline {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.slot .random {
+  position: absolute;
+  top: 6%;
+  left: 0px;
+  width: 100%;
+  height: 83%;
+  overflow: hidden;
+}
+.slot .items {
+  float: left;
+  width: 33%;
+  height: auto;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -ms-transform: translate3d(0px, 0px, 0px);
+  -o-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+  text-align: center;
+}
+.slot .items .item {
+  margin: 0px 25.5%;
+}
+.lucky-btn {
+  margin: 0 auto;
+  padding: 0px;
+  width: 30%;
+  height: auto;
 }
 .h1 {
   font-size: 1.4rem;

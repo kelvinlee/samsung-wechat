@@ -1,11 +1,88 @@
 extends layout
+block css_here
+	style.
+		.body{
+		position: relative;
+		}
+		.body .head{
+		position: relative;
+		}
+		.head .downloadbtn{
+		position: absolute;
+		left: 8%;
+		width: 38%;
+		top: 61%;
+		height: 17%;
+		}
+		.head  .form{
+		position: absolute;
+		/* left: 8%; */
+		width: 100%;
+		top: 81%;
+		height: 17%;
+
+		}
+		.head  .form input{
+		margin-left: 9%;
+		/*box-shadow: 0px 0px 6px #999999 inset;*/
+		background-color: #fff;
+		-webkit-appearance: none;
+		box-sizing: border-box;
+		padding: .2rem;
+		width: 50%;
+		/* height: 19px; */
+		border: 1px solid #888;
+		/*border-radius: 0;*/
+		text-indent: 10px;
+		/*border-radius: 3px;*/
+		height:28px;
+		}
+		.head  .form .copy{
+		position: absolute;
+		top: 0;
+		right: 23%;
+		width: 13%;
+		}
+		.body .content-c{
+		position: relative;
+		margin: 6% 0 2%;
+		}
+		.body .text, .body .text2{
+		position: relative;
+		border-top: 1px solid #ccc;
+		padding: 3% 5%;
+
+		}
+		.body .text .right{
+		position: absolute;
+		right: 5%;
+		}
 block content_here
 	include nav
-	.content
-		.content-padded
-			-if (lot != null)
-				h1 奖品详情
-				h3 #{lot.content}
-			-else
-				h1 奖品详情
-				h3 你不是此奖品的主人.
+	.content(style="background-color:#fff;")
+		.body
+			.head
+				img(src='/img/headbg.jpg', width='100%')
+				.downloadbtn
+					//- a(href='http://www.baidu.com', target='_blank')
+				.form
+					input(type='text', value='#{lot.content}')
+					.copy
+						img(src='/img/copy.png', width='100%')
+			.content-c
+				img(src='/img/contentbg.jpg', width='100%')
+			.info
+				.text
+					p
+						| 版本：3.5.2.0
+						span.right 6.032MB
+					p 2014年6云1日
+					p 适合所有年龄段人士
+				.text2
+					p 说明
+	script.
+		window.onload = function () {
+		$('.form .copy').on('click', function () {
+			alert('复制完成');
+		})
+		}

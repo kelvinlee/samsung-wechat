@@ -65,6 +65,7 @@ exports.before = (req,res,next)->
 	# console.log "cookie:",req.cookies
 	# 测试奖品,默认值
 	setsomeDefautleLots()
+	setDefaultTopic()
 	# console.log req.cookies.userid
 	if req.cookies.userid? and req.cookies.userid isnt "undefined" and req.cookies.userid isnt ""
 		res.locals.userid = req.cookies.userid
@@ -226,7 +227,7 @@ exports.mylot = (req,res,next)->
 
 # 论坛
 exports.topic = (req,res,next)->
-	setDefaultTopic()
+	
 	# tid = req.params.topic_id
 	Topic.getOne (err,topic)->
 		if topic?
@@ -283,6 +284,13 @@ exports.comments = (req,res,next)->
 
 exports.lucky = (req,res,next)->
 
+	res.locals.menu_lucky = "active"
+
+	res.render "lucky"
+
+exports.art = (req,res,next)->
+	art = "active-"+req.params.art_id
+	res.render "art",{art:art}
 
 exports.page1 = (req,res,next)->
 	res.render "page1"
@@ -330,7 +338,7 @@ setsomeDefautleLots = ()->
 			console.log "初始化了一些奖品"
 			name = "爱奇艺VIP一个月"
 			description = "爱奇艺VIP一个月"
-			img = "/img/pro-1.jpg"
+			img = "/img/pro-1.png"
 			order = 1
 			inte = 15
 			Lots.newlots name,description,img,order,inte,(err,lots)->

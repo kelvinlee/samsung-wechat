@@ -15,7 +15,8 @@ plugs = require('./wechat-plugs')
 # 扩展方法
 # @codekit-append "wechat-subscribe.coffee";
 # @codekit-append "wechat-menu.coffee";
-
+# @codekit-append "wechat-qa.coffee";
+# 
 # 检查签名
 checkSignature = (query, token)->
 	signature = if query.signature? then query.signature else ''
@@ -50,7 +51,7 @@ checkMessage = (message,callback)->
 	switch message.MsgType
 		when 'text'
 			console.log '文字信息'
-			return callback re
+			return getQA message.Content,message.FromUserName,callback
 		when 'image'
 			console.log '图片信息'
 			return callback re

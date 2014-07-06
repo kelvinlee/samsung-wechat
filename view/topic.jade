@@ -26,7 +26,8 @@ block content_here
 												span ##{topic.name}#
 												| #{comments[i].content}
 							-else
-								div 还没有评论,快来抢先评论.
+								ul#comments
+									li(style="line-height:20px;text-align:center;") 还没有评论,快来抢先评论.
 
 block js_here
 	script.
