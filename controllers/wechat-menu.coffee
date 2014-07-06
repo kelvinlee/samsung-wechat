@@ -51,13 +51,13 @@ empty = {
 }
 plugs_menu = (message,callback)->
 	console.log message
-	if message.key is "oversite"
+	if message.EventKey is "oversite"
 		callback oversite
-	else if message.key is "jianxingpin"
+	else if message.EventKey is "jianxingpin"
 		callback jianxingpin
-	else if message.key is "magazine"
+	else if message.EventKey is "magazine"
 		callback magazine
-	else if message.key is "newactive"
+	else if message.EventKey is "newactive"
 		callback newactive
 	else
 		callback empty
