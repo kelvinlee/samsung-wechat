@@ -99,7 +99,8 @@ exports.up_post = (req,res,next)->
 			re.reason = "此手机号已经注册过了."
 			return res.send re
 		else
-			User.newAndSave mobile,password,(err,user)->
+			User.newAndSave mobile,password,(err,newuser)->
+				console.log err,newuser
 				res.send re
 	
 exports.in = (req,res,next)->
