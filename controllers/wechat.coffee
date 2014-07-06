@@ -77,7 +77,7 @@ checkMessage = (message,callback)->
 			# LOCATION 地利位置
 			console.log message.Event
 			return plugs_subscribe message,callback if message.Event is 'subscribe'
-			return plugs_menu message,callback if message.Event is 'click' or message.Event is 'view'
+			return plugs_menu message,callback if message.Event is 'CLICK' or message.Event is 'VIEW'
 			return callback re
 	callback re
 	
