@@ -93,7 +93,7 @@ exports.index = (req,res,next)->
 
 	ep = new EventProxy.create "message","backMsg",(message,backMsg)->
 		
-		
+		console.log "run backMsg"
 		if backMsg?
 			switch backMsg.type
 				when 'text'
@@ -104,7 +104,7 @@ exports.index = (req,res,next)->
 						date: new Date().getTime()
 						content: backMsg.content
 				when 'news'
-					res.render 'wechat-news',
+					res.render 'wechat/wechat-news',
 						toUser:message.FromUserName
 						fromUser:message.ToUserName
 						date: new Date().getTime()
