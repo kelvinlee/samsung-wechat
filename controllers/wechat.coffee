@@ -108,10 +108,11 @@ exports.index = (req,res,next)->
 						toUser:message.FromUserName
 						fromUser:message.ToUserName
 						date: new Date().getTime()
-						title:backMsg.title
-						description:backMsg.description
-						picurl:backMsg.picurl
-						url:backMsg.url
+						items: backMsg.items
+						# title:backMsg.title
+						# description:backMsg.description
+						# picurl:backMsg.picurl
+						# url:backMsg.url
 				else
 					res.render 'wechat/wechat-text',
 						toUser:message.FromUserName

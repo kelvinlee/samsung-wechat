@@ -3,10 +3,11 @@ xml
 	FromUserName <![CDATA[#{fromUser}]]>
 	CreateTime #{date}
 	MsgType <![CDATA[news]]>
-	ArticleCount 1
+	ArticleCount #{items.length}
 	Articles
-		item
-			Title <![CDATA[#{title}]]>
-			Description <![CDATA[#{description}]]>
-			PicUrl <![CDATA[#{picurl}]]>
-			Url <![CDATA[#{url}]]>
+		-for(var i=0;i<items.length;i++)
+			item
+				Title <![CDATA[#{items[i].title}]]>
+				Description <![CDATA[#{items[i].description}]]>
+				PicUrl <![CDATA[#{items[i].picurl}]]>
+				Url <![CDATA[#{items[i].url}]]>
