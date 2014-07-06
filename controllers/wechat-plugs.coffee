@@ -90,8 +90,8 @@ post_data =
 				}
 				{
 					type:"view"
-					name:"查·积分"
-					url:options_user.my
+					name:"聊·话题"
+					url:options_user.topic
 				}
 				{
 					type:"view"
@@ -144,8 +144,8 @@ post_data =
 				}
 				{
 					type:"view"
-					name:"聊·话题"
-					url:options_user.topic
+					name:"查·积分"
+					url:options_user.my
 				}
 				{
 					type:"view"
