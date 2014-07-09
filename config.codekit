@@ -730,6 +730,61 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/icon-l-1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3044,
+		"inputAbbreviatedPath": "\/public\/img\/icon-l-1.png",
+		"outputAbbreviatedPath": "\/public\/img\/icon-l-1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/icon-l-2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13350,
+		"inputAbbreviatedPath": "\/public\/img\/icon-l-2.png",
+		"outputAbbreviatedPath": "\/public\/img\/icon-l-2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/icon-l-3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 18356,
+		"inputAbbreviatedPath": "\/public\/img\/icon-l-3.png",
+		"outputAbbreviatedPath": "\/public\/img\/icon-l-3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/icon-l-4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12084,
+		"inputAbbreviatedPath": "\/public\/img\/icon-l-4.png",
+		"outputAbbreviatedPath": "\/public\/img\/icon-l-4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/icon-l-5.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7634,
+		"inputAbbreviatedPath": "\/public\/img\/icon-l-5.png",
+		"outputAbbreviatedPath": "\/public\/img\/icon-l-5.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/l2.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -748,6 +803,61 @@
 		"initialSize": 23302,
 		"inputAbbreviatedPath": "\/public\/img\/l3.png",
 		"outputAbbreviatedPath": "\/public\/img\/l3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lot-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4977,
+		"inputAbbreviatedPath": "\/public\/img\/lot-1.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/lot-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lucky-bg.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 28168,
+		"inputAbbreviatedPath": "\/public\/img\/lucky-bg.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/lucky-bg.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lucky-content.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 107443,
+		"inputAbbreviatedPath": "\/public\/img\/lucky-content.png",
+		"outputAbbreviatedPath": "\/public\/img\/lucky-content.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lucky-line.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9741,
+		"inputAbbreviatedPath": "\/public\/img\/lucky-line.png",
+		"outputAbbreviatedPath": "\/public\/img\/lucky-line.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lucky-try.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12515,
+		"inputAbbreviatedPath": "\/public\/img\/lucky-try.png",
+		"outputAbbreviatedPath": "\/public\/img\/lucky-try.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
