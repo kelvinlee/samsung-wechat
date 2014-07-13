@@ -346,7 +346,8 @@ exports.postnickname = function(req, res, next) {
 };
 
 exports.topic = function(req, res, next) {
-  return User.getUserOpenId(res.locals.openid, function(err, user) {
+  return User.getUserById(res.locals.userid, function(err, user) {
+    console.log(user);
     if ((user != null) && (user.nickname != null)) {
       return Topic.getOne(function(err, topic) {
         if (topic != null) {

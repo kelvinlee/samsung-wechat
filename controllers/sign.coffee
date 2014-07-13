@@ -270,7 +270,8 @@ exports.postnickname = (req,res,next)->
 exports.topic = (req,res,next)->
 	
 	# tid = req.params.topic_id
-	User.getUserOpenId res.locals.openid,(err,user)->
+	User.getUserById res.locals.userid,(err,user)->
+		console.log user
 		if user? and user.nickname?
 			Topic.getOne (err,topic)->
 				if topic?
