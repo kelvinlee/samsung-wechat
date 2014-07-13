@@ -9,23 +9,20 @@ block content_here
 					button.btn(type="button",onclick="post()") 发送
 	.content
 		.content-padded
-			div.topic
-				div.box
-					div.topic-title
-						h1.h2 #上期中奖名单查询#
-					div.comment
-						ul.lot
-							li.clearfix 小兔子爱吃萝卜(迪士尼玩偶)
-								img(src="/img/lot-1.jpg")
-							li.clearfix 信箱邮递(迪士尼玩偶)
-								img(src="/img/lot-1.jpg")
 			-if (topic != null)
 				div.topic
 					div.box
 						div.topic-title
-							h1.h2 ##{topic.name}#
-							p 本期奖品: #{topic.lot}
-							span#runtime.h4(data-time="#{topic.end_at.getTime()}") 
+							//- h1.h2 ##{topic.name}#
+							//- p 本期奖品: #{topic.lot}
+							//- span#runtime.h4(data-time="#{topic.end_at.getTime()}") 
+							div.topic-description
+								img(src="/img/logo-topic.png")
+								h2.h3 <span>##{topic.name}#</span>人非圣贤，孰能无悔！激烈的比赛虽然落幕，但足球月里的各种遗憾事儿却让小伙伴们惋惜不已，刻骨铭心！快来分享足球月里，让你最遗憾的那些事儿！
+							p 本期话题奖品:#{topic.lot} 
+							p 上期中奖名单查询:
+							p 136****3651（迪士尼玩偶） 136****3651（迪士尼玩偶）
+
 						div.comment
 							-if (comments != null && comments.length>0)
 								ul#comments

@@ -8,8 +8,8 @@ newactive = {
 		{
 			title:"关注三星乐园微信公众账号,惊喜大礼等你拿!"
 			description: '关注三星乐园微信公众账号,惊喜大礼等你拿!'
-			picurl:"http://115.28.106.34/img/banner-1.jpg"
-			url: "http://115.28.106.34/art/1"
+			picurl:"#{config.host}/img/banner-1.jpg"
+			url: "#{config.host}/art/1"
 		}
 		{
 			title:"GALAXY K zoom让每个瞬间都精彩!"
@@ -18,23 +18,24 @@ newactive = {
 			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200501036&idx=1&sn=7c19d06ff08719359639336eb357bbfe#rd"
 		}
 		{
-			title:"“装女郎梦想秀”全国网络15强海选活动开始啦!"
-			description: '“装女郎梦想秀”全国网络15强海选活动开始啦!'
-			picurl:"http://115.28.106.34/img/banner-2.jpg"
-			url: "http://115.28.106.34/art/2"
+			title:"参与话题#最让你遗憾的事#人非圣贤，孰能无悔！足球月里，让你最遗憾的那些事儿！"
+			description: '参与话题#最让你遗憾的事#人非圣贤，孰能无悔！足球月里，让你最遗憾的那些事儿！'
+			picurl:"#{config.host}/img/banner-10.jpg"
+			url: "#{config.host}/sign/topic"
 		}
 	]
 }
+
 oversite = {
 	name:"临·现场"
 	key:"1"
 	type:"news"
 	items:[
 		{
-			title:"10 倍光变拉近精彩三星发布全新智能手机 GALAXY K zoom"
-			description: '三星乐园微信平台临现场，体验活动现场的火热气氛，身临其境！'
-			picurl:"http://115.28.106.34/img/banner-7.jpg"
-			url: "http://115.28.106.34/art/6"
+			title:"重新定义“视”界 三星 GALAXY Tab S 开启色彩大门"
+			description: '揭开万众期待的神秘面纱，三星 GALAXY Tab S为你开启全新的色彩大门'
+			picurl:"#{config.host}/img/banner-7.jpg"
+			url: "#{config.host}/art/6"
 		}
 	]
 	
@@ -45,10 +46,28 @@ jianxingpin = {
 	type:"news"
 	items:[
 		{
-			title:"Samsung GALAXY K zoom你的手机会变焦吗?"
-			description: '带上K zoom捕获精彩瞬间,随时随地轻松分享.'
-			picurl:"http://115.28.106.34/img/banner-6.jpg"
-			url: "http://115.28.106.34/art/6"
+			title:"Samsung GALAXY Tab S Super AMOLED 炫丽屏重新定义视界"
+			description: 'Samsung GALAXY Tab S Super AMOLED 炫丽屏重新定义视界'
+			picurl:"#{config.host}/img/banner-11.jpg"
+			url: "#{config.host}/art/11"
+		}
+		{
+			title:"Samsung GALAXY Tab S 最好的多媒体平板"
+			description: 'Samsung GALAXY Tab S 最好的多媒体平板'
+			picurl:"#{config.host}/img/banner-12.jpg"
+			url: "#{config.host}/art/12"
+		}
+		{
+			title:"Samsung GALAXY K zoom 让每个瞬间都精彩"
+			description: 'Samsung GALAXY K zoom 让每个瞬间都精彩'
+			picurl:"#{config.host}/img/banner-13.jpg"
+			url: "#{config.host}/art/13"
+		}
+		{
+			title:"三星GALAXY S5 专享4G应用"
+			description: '三星GALAXY S5 专享4G应用'
+			picurl:"#{config.host}/img/banner-14.jpg"
+			url: "#{config.host}/art/14"
 		}
 	]
 	
@@ -59,22 +78,28 @@ magazine = {
 	type:"news"
 	items: [
 		{
-			title:"新炫刊 安卓平台最棒的杂志应用"
-			description: '新炫刊 安卓平台最棒的杂志应用'
-			picurl:"http://115.28.106.34/img/banner-3.jpg"
-			url: "http://115.28.106.34/art/3"
+			title:"新炫刊，汇聚海量精品杂志，畅爽的交互体验，带来全新视觉盛宴。"
+			description: '新炫刊，汇聚海量精品杂志，畅爽的交互体验，带来全新视觉盛宴。'
+			picurl:"#{config.host}/img/banner-15.jpg"
+			url: "#{config.host}/art/15"
 		}
 		{
-			title:"GQ智族 --- 顶级男性杂志"
-			description: 'GQ智族 --- 顶级男性杂志'
-			picurl:"http://115.28.106.34/img/banner-4.jpg"
-			url: "http://115.28.106.34/art/4"
+			title:"华夏地理——多角度深度探索世界，为您带来世界变迁的精彩内容"
+			description: '华夏地理——多角度深度探索世界，为您带来世界变迁的精彩内容'
+			picurl:"#{config.host}/img/banner-16.jpg"
+			url: "#{config.host}/art/16"
 		}
 		{
-			title:"瑞丽---开创时尚杂志的实用化先河"
-			description: '瑞丽---开创时尚杂志的实用化先河'
-			picurl:"http://115.28.106.34/img/banner-5.jpg"
-			url: "http://115.28.106.34/art/5"
+			title:"新潮电子——领导数码时尚新生活"
+			description: '新潮电子——领导数码时尚新生活'
+			picurl:"#{config.host}/img/banner-17.jpg"
+			url: "#{config.host}/art/17"
+		}
+		{
+			title:"时尚旅游——独特视角带你探索世界"
+			description: '时尚旅游——独特视角带你探索世界'
+			picurl:"#{config.host}/img/banner-18.jpg"
+			url: "#{config.host}/art/18"
 		}
 	]
 }

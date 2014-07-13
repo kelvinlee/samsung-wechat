@@ -23,6 +23,7 @@ module.exports = (app)->
   app.get "/page7", sign.page7
   
   app.get "/art/:art_id", sign.art
+  app.get "/active/:ac_id", sign.active
 
 
   # 登录

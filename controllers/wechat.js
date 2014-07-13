@@ -1,1 +1,383 @@
-var BufferHelper,EventProxy,checkMessage,checkSignature,clearQA,config,crypto,empty,formatMessage,fs,getMessage,getQA,jianxingpin,magazine,myProcess,newactive,overQA,oversite,path,plugs,plugs_menu,plugs_subscribe,searchQA,welcometext,xml2js,_nr,_qa;fs=require("fs"),path=require("path"),crypto=require("crypto"),xml2js=require("xml2js"),BufferHelper=require("bufferhelper"),EventProxy=require("eventproxy"),config=require("../config").config,plugs=require("./wechat-plugs"),checkSignature=function(e,t){var n,r,o,s,c;return s=null!=e.signature?e.signature:"",c=null!=e.timestamp?e.timestamp:"",r=null!=e.nonce?e.nonce:"",o=crypto.createHash("sha1"),n=[t,c,r].sort(),o.update(n.join("")),o.digest("hex")===s},getMessage=function(e,t){var n;return n=new BufferHelper,n.load(e,function(e,n){var r;return e?t(e):(r=n.toString("utf-8"),xml2js.parseString(r,{trim:!0},t))})},formatMessage=function(e){var t,n,r;if(n={},!e)return!1;for(t in e.xml)r=e.xml[t][0],n[t]=(null==r?"":r).trim();return n},checkMessage=function(e,t){var n;switch(n=null,e.MsgType){case"text":return console.log("文字信息"),getQA(e.Content,e.FromUserName,t);case"image":return console.log("图片信息"),t(n);case"voice":return console.log("声音信息"),t(n);case"video":return console.log("视频信息"),t(n);case"location":return console.log("地理信息"),t(n);case"link":return console.log("链接消息"),t(n);case"event":return console.log("事件消息"),console.log(e.Event),"subscribe"===e.Event?plugs_subscribe(e,t):"CLICK"===e.Event||"VIEW"===e.Event?plugs_menu(e,t):t(n)}return t(n)},exports.sendmenu=function(e,t,n){return plugs.sendMenus(),t.send("ok")},exports.index=function(e,t,n){var r,o,s;return o=e.query,s=checkSignature(o,config.wechat_token),r=new EventProxy.create("message","backMsg",function(e,n){if(console.log("run backMsg"),null==n)return t.render("wechat/wechat-text",{toUser:e.FromUserName,fromUser:e.ToUserName,date:(new Date).getTime(),content:""});switch(n.type){case"text":return null!=n.random&&(n.content=n.random[Math.round(Math.random()*(n.random.length-1))]),t.render("wechat/wechat-text",{toUser:e.FromUserName,fromUser:e.ToUserName,date:(new Date).getTime(),content:n.content});case"news":return t.render("wechat/wechat-news",{toUser:e.FromUserName,fromUser:e.ToUserName,date:(new Date).getTime(),items:n.items});default:return t.render("wechat/wechat-text",{toUser:e.FromUserName,fromUser:e.ToUserName,date:(new Date).getTime(),content:""})}}),getMessage(e,function(e,n){var c;return e&&console.log(e),n?(c=formatMessage(n),r.emit("message",c),checkMessage(c,function(e){return console.log("back To: ",e),r.emit("backMsg",e)})):t.send(s?o.echostr:"what?")})},welcometext={name:"welcome",key:"你好",type:"text",content:"欢迎关注【三星乐园】官⽅微信。参与活动赢取Samsung GALAXY K zoom，还等什么？回复【1】了解活动详情。"},plugs_subscribe=function(e,t){return t(welcometext)},newactive={name:"新活动",key:"1",type:"news",items:[{title:"关注三星乐园微信公众账号,惊喜大礼等你拿!",description:"关注三星乐园微信公众账号,惊喜大礼等你拿!",picurl:"http://115.28.106.34/img/banner-1.jpg",url:"http://115.28.106.34/art/1"},{title:"GALAXY K zoom让每个瞬间都精彩!",description:"GALAXY K zoom让每个瞬间都精彩!",picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPrkjqVuXnZk7kv2dM1ed7uuJ11IicjPwfuicc6tmAVhrLyolJTe2oThaatNbInYZBdmBAlJMWfrZqw/0",url:"http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200501036&idx=1&sn=7c19d06ff08719359639336eb357bbfe#rd"},{title:"“装女郎梦想秀”全国网络15强海选活动开始啦!",description:"“装女郎梦想秀”全国网络15强海选活动开始啦!",picurl:"http://115.28.106.34/img/banner-2.jpg",url:"http://115.28.106.34/art/2"}]},oversite={name:"临·现场",key:"1",type:"news",items:[{title:"10 倍光变拉近精彩三星发布全新智能手机 GALAXY K zoom",description:"三星乐园微信平台临现场，体验活动现场的火热气氛，身临其境！",picurl:"http://115.28.106.34/img/banner-7.jpg",url:"http://115.28.106.34/art/6"}]},jianxingpin={name:"鉴星品",key:"1",type:"news",items:[{title:"Samsung GALAXY K zoom你的手机会变焦吗?",description:"带上K zoom捕获精彩瞬间,随时随地轻松分享.",picurl:"http://115.28.106.34/img/banner-6.jpg",url:"http://115.28.106.34/art/6"}]},magazine={name:"看杂志",key:"1",type:"news",items:[{title:"新炫刊 安卓平台最棒的杂志应用",description:"新炫刊 安卓平台最棒的杂志应用",picurl:"http://115.28.106.34/img/banner-3.jpg",url:"http://115.28.106.34/art/3"},{title:"GQ智族 --- 顶级男性杂志",description:"GQ智族 --- 顶级男性杂志",picurl:"http://115.28.106.34/img/banner-4.jpg",url:"http://115.28.106.34/art/4"},{title:"瑞丽---开创时尚杂志的实用化先河",description:"瑞丽---开创时尚杂志的实用化先河",picurl:"http://115.28.106.34/img/banner-5.jpg",url:"http://115.28.106.34/art/5"}]},empty={name:"返回收到图片信息.",key:"1",type:"text",backContent:""},plugs_menu=function(e,t){return console.log(e),t("oversite"===e.EventKey?oversite:"jianxingpin"===e.EventKey?jianxingpin:"magazine"===e.EventKey?magazine:"newactive"===e.EventKey?newactive:empty)},myProcess=[],getQA=function(e,t,n){var r,o,s;return r=e,console.log("user "+t+" :",myProcess[t]),null!=myProcess[t]?(o=myProcess[t],null!=o.next&&(o=myProcess[t].next,o=searchQA(r,o),null!=o?null!=o.next&&(myProcess[t]=o):n({}))):(myProcess[t]=searchQA(r,_qa),o=s=myProcess[t]),n(o)},searchQA=function(e,t){var n,r,o;for(r=0,o=t.length;o>r;r++)if(n=t[r],n.key===e)return n;return null},clearQA=function(e){return console.log("clear: "+e),delete myProcess[e]},overQA=function(e,t){return null==t&&(t="test"),console.log("记录抽奖ID: ",e),clearQA(e),Inser_db_qauser(e,t)},_nr="\n",_qa=[{name:"查看活动详情",key:"1",type:"news",items:[{backContent:"活动详情",title:"Samsung GALAXY K zoom 让每个瞬间都精彩",description:"参与活动赢取Samsung GALAXY K zoom，开启你的幸福之旅~",picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNWR5PaQgtD89x9Drdb3oBEH7YOOcibiajvicowpicTgUjrlNzswycHMGPKjytQvc4icOqb3I627BnkWOQ/0",url:"http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200501036&idx=1&sn=7c19d06ff08719359639336eb357bbfe&scene=1&key=540a4984c4f01b4dfee5b42dd37ecdce5d742de5ce37445e8706c97c1def9f100a8bcf3813e0ea9f10b6acf5efa0d42b&ascene=0&uin=MjY4NjM5MDU%3D"}]}];
+// Generated by CoffeeScript 1.7.1
+
+/*
+--------------------------------------------
+     Begin wechat.coffee
+--------------------------------------------
+ */
+var BufferHelper, EventProxy, checkMessage, checkSignature, clearQA, config, crypto, empty, formatMessage, fs, getMessage, getQA, jianxingpin, magazine, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, searchQA, welcometext, xml2js, _nr, _qa;
+
+fs = require('fs');
+
+path = require('path');
+
+crypto = require('crypto');
+
+xml2js = require('xml2js');
+
+BufferHelper = require('bufferhelper');
+
+EventProxy = require('eventproxy');
+
+config = require('../config').config;
+
+plugs = require('./wechat-plugs');
+
+checkSignature = function(query, token) {
+  var arr, nonce, shasum, signature, timestamp;
+  signature = query.signature != null ? query.signature : '';
+  timestamp = query.timestamp != null ? query.timestamp : '';
+  nonce = query.nonce != null ? query.nonce : '';
+  shasum = crypto.createHash('sha1');
+  arr = [token, timestamp, nonce].sort();
+  shasum.update(arr.join(''));
+  return shasum.digest('hex') === signature;
+};
+
+getMessage = function(stream, callback) {
+  var buf;
+  buf = new BufferHelper();
+  return buf.load(stream, function(err, buf) {
+    var xml;
+    if (err) {
+      return callback(err);
+    }
+    xml = buf.toString('utf-8');
+    return xml2js.parseString(xml, {
+      trim: true
+    }, callback);
+  });
+};
+
+formatMessage = function(result) {
+  var key, message, val;
+  message = {};
+  if (!result) {
+    return false;
+  }
+  for (key in result.xml) {
+    val = result.xml[key][0];
+    message[key] = (val == null ? '' : val).trim();
+  }
+  return message;
+};
+
+checkMessage = function(message, callback) {
+  var re;
+  re = null;
+  switch (message.MsgType) {
+    case 'text':
+      console.log('文字信息');
+      return getQA(message.Content, message.FromUserName, callback);
+    case 'image':
+      console.log('图片信息');
+      return callback(re);
+    case 'voice':
+      console.log('声音信息');
+      return callback(re);
+    case 'video':
+      console.log('视频信息');
+      return callback(re);
+    case 'location':
+      console.log('地理信息');
+      return callback(re);
+    case 'link':
+      console.log('链接消息');
+      return callback(re);
+    case 'event':
+      console.log('事件消息');
+      console.log(message.Event);
+      if (message.Event === 'subscribe') {
+        return plugs_subscribe(message, callback);
+      }
+      if (message.Event === 'CLICK' || message.Event === 'VIEW') {
+        return plugs_menu(message, callback);
+      }
+      return callback(re);
+  }
+  return callback(re);
+};
+
+exports.sendmenu = function(req, res, next) {
+  plugs.sendMenus();
+  return res.send("ok");
+};
+
+exports.index = function(req, res, next) {
+  var ep, parse, to;
+  parse = req.query;
+  to = checkSignature(parse, config.wechat_token);
+  ep = new EventProxy.create("message", "backMsg", function(message, backMsg) {
+    console.log("run backMsg");
+    if (backMsg != null) {
+      switch (backMsg.type) {
+        case 'text':
+          if (backMsg.random != null) {
+            backMsg.content = backMsg.random[Math.round(Math.random() * (backMsg.random.length - 1))];
+          }
+          return res.render('wechat/wechat-text', {
+            toUser: message.FromUserName,
+            fromUser: message.ToUserName,
+            date: new Date().getTime(),
+            content: backMsg.content
+          });
+        case 'news':
+          return res.render('wechat/wechat-news', {
+            toUser: message.FromUserName,
+            fromUser: message.ToUserName,
+            date: new Date().getTime(),
+            items: backMsg.items
+          });
+        default:
+          return res.render('wechat/wechat-text', {
+            toUser: message.FromUserName,
+            fromUser: message.ToUserName,
+            date: new Date().getTime(),
+            content: ""
+          });
+      }
+    } else {
+      return res.render('wechat/wechat-text', {
+        toUser: message.FromUserName,
+        fromUser: message.ToUserName,
+        date: new Date().getTime(),
+        content: ""
+      });
+    }
+  });
+  return getMessage(req, function(err, result) {
+    var message;
+    if (err) {
+      console.log(err);
+    }
+    if (!result) {
+      return res.send(to ? parse.echostr : "what?");
+    }
+    message = formatMessage(result);
+    ep.emit('message', message);
+    return checkMessage(message, function(back) {
+      console.log("back To: ", back);
+      return ep.emit('backMsg', back);
+    });
+  });
+};
+
+
+/*
+--------------------------------------------
+     Begin wechat-subscribe.coffee
+--------------------------------------------
+ */
+
+welcometext = {
+  name: "welcome",
+  key: "你好",
+  type: "text",
+  content: "欢迎关注【三星乐园】官⽅微信。参与活动赢取Samsung GALAXY K zoom，还等什么？回复【1】了解活动详情。"
+};
+
+plugs_subscribe = function(message, callback) {
+  return callback(welcometext);
+};
+
+
+/*
+--------------------------------------------
+     Begin wechat-menu.coffee
+--------------------------------------------
+ */
+
+newactive = {
+  name: "新活动",
+  key: "1",
+  type: "news",
+  items: [
+    {
+      title: "关注三星乐园微信公众账号,惊喜大礼等你拿!",
+      description: '关注三星乐园微信公众账号,惊喜大礼等你拿!',
+      picurl: "" + config.host + "/img/banner-1.jpg",
+      url: "" + config.host + "/art/1"
+    }, {
+      title: "GALAXY K zoom让每个瞬间都精彩!",
+      description: 'GALAXY K zoom让每个瞬间都精彩!',
+      picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPrkjqVuXnZk7kv2dM1ed7uuJ11IicjPwfuicc6tmAVhrLyolJTe2oThaatNbInYZBdmBAlJMWfrZqw/0",
+      url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200501036&idx=1&sn=7c19d06ff08719359639336eb357bbfe#rd"
+    }, {
+      title: "参与话题#最让你遗憾的事#人非圣贤，孰能无悔！足球月里，让你最遗憾的那些事儿！",
+      description: '参与话题#最让你遗憾的事#人非圣贤，孰能无悔！足球月里，让你最遗憾的那些事儿！',
+      picurl: "" + config.host + "/img/banner-10.jpg",
+      url: "" + config.host + "/sign/topic"
+    }
+  ]
+};
+
+oversite = {
+  name: "临·现场",
+  key: "1",
+  type: "news",
+  items: [
+    {
+      title: "重新定义“视”界 三星 GALAXY Tab S 开启色彩大门",
+      description: '揭开万众期待的神秘面纱，三星 GALAXY Tab S为你开启全新的色彩大门',
+      picurl: "" + config.host + "/img/banner-7.jpg",
+      url: "" + config.host + "/art/6"
+    }
+  ]
+};
+
+jianxingpin = {
+  name: "鉴星品",
+  key: "1",
+  type: "news",
+  items: [
+    {
+      title: "Samsung GALAXY Tab S Super AMOLED 炫丽屏重新定义视界",
+      description: 'Samsung GALAXY Tab S Super AMOLED 炫丽屏重新定义视界',
+      picurl: "" + config.host + "/img/banner-11.jpg",
+      url: "" + config.host + "/art/11"
+    }, {
+      title: "Samsung GALAXY Tab S 最好的多媒体平板",
+      description: 'Samsung GALAXY Tab S 最好的多媒体平板',
+      picurl: "" + config.host + "/img/banner-12.jpg",
+      url: "" + config.host + "/art/12"
+    }, {
+      title: "Samsung GALAXY K zoom 让每个瞬间都精彩",
+      description: 'Samsung GALAXY K zoom 让每个瞬间都精彩',
+      picurl: "" + config.host + "/img/banner-13.jpg",
+      url: "" + config.host + "/art/13"
+    }, {
+      title: "三星GALAXY S5 专享4G应用",
+      description: '三星GALAXY S5 专享4G应用',
+      picurl: "" + config.host + "/img/banner-14.jpg",
+      url: "" + config.host + "/art/14"
+    }
+  ]
+};
+
+magazine = {
+  name: "看杂志",
+  key: "1",
+  type: "news",
+  items: [
+    {
+      title: "新炫刊，汇聚海量精品杂志，畅爽的交互体验，带来全新视觉盛宴。",
+      description: '新炫刊，汇聚海量精品杂志，畅爽的交互体验，带来全新视觉盛宴。',
+      picurl: "" + config.host + "/img/banner-15.jpg",
+      url: "" + config.host + "/art/15"
+    }, {
+      title: "华夏地理——多角度深度探索世界，为您带来世界变迁的精彩内容",
+      description: '华夏地理——多角度深度探索世界，为您带来世界变迁的精彩内容',
+      picurl: "" + config.host + "/img/banner-16.jpg",
+      url: "" + config.host + "/art/16"
+    }, {
+      title: "新潮电子——领导数码时尚新生活",
+      description: '新潮电子——领导数码时尚新生活',
+      picurl: "" + config.host + "/img/banner-17.jpg",
+      url: "" + config.host + "/art/17"
+    }, {
+      title: "时尚旅游——独特视角带你探索世界",
+      description: '时尚旅游——独特视角带你探索世界',
+      picurl: "" + config.host + "/img/banner-18.jpg",
+      url: "" + config.host + "/art/18"
+    }
+  ]
+};
+
+empty = {
+  name: "返回收到图片信息.",
+  key: "1",
+  type: "text",
+  backContent: ""
+};
+
+plugs_menu = function(message, callback) {
+  console.log(message);
+  if (message.EventKey === "oversite") {
+    return callback(oversite);
+  } else if (message.EventKey === "jianxingpin") {
+    return callback(jianxingpin);
+  } else if (message.EventKey === "magazine") {
+    return callback(magazine);
+  } else if (message.EventKey === "newactive") {
+    return callback(newactive);
+  } else {
+    return callback(empty);
+  }
+};
+
+
+/*
+--------------------------------------------
+     Begin wechat-qa.coffee
+--------------------------------------------
+ */
+
+myProcess = [];
+
+getQA = function(message, openid, callback) {
+  var key, qa, _n;
+  key = message;
+  console.log("user " + openid + " :", myProcess[openid]);
+  if (myProcess[openid] != null) {
+    qa = myProcess[openid];
+    if (qa.next != null) {
+      qa = myProcess[openid].next;
+      qa = searchQA(key, qa);
+      if (qa != null) {
+        if (qa.next != null) {
+          myProcess[openid] = qa;
+        }
+      } else {
+        callback({});
+      }
+    }
+  } else {
+    myProcess[openid] = searchQA(key, _qa);
+    qa = _n = myProcess[openid];
+  }
+  return callback(qa);
+};
+
+searchQA = function(key, list) {
+  var a, _i, _len;
+  for (_i = 0, _len = list.length; _i < _len; _i++) {
+    a = list[_i];
+    if (a.key === key) {
+      return a;
+    }
+  }
+  return null;
+};
+
+clearQA = function(openid) {
+  console.log("clear: " + openid);
+  return delete myProcess[openid];
+};
+
+overQA = function(openid, backup) {
+  if (backup == null) {
+    backup = "test";
+  }
+  console.log("记录抽奖ID: ", openid);
+  clearQA(openid);
+  return Inser_db_qauser(openid, backup);
+};
+
+_nr = "\n";
+
+_qa = [
+  {
+    name: "查看活动详情",
+    key: "1",
+    type: "news",
+    items: [
+      {
+        backContent: "活动详情",
+        title: "Samsung GALAXY K zoom 让每个瞬间都精彩",
+        description: '参与活动赢取Samsung GALAXY K zoom，开启你的幸福之旅~',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNWR5PaQgtD89x9Drdb3oBEH7YOOcibiajvicowpicTgUjrlNzswycHMGPKjytQvc4icOqb3I627BnkWOQ/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200501036&idx=1&sn=7c19d06ff08719359639336eb357bbfe&scene=1&key=540a4984c4f01b4dfee5b42dd37ecdce5d742de5ce37445e8706c97c1def9f100a8bcf3813e0ea9f10b6acf5efa0d42b&ascene=0&uin=MjY4NjM5MDU%3D"
+      }
+    ]
+  }
+];

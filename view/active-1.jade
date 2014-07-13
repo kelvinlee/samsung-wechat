@@ -1,0 +1,41 @@
+extends layout
+block css_here
+	style.
+		.showpop {
+			position:absolute;
+			top:188%;
+			left:10%;
+			width:80%;
+			height:80px;
+			display:block;
+		}
+		.pop{
+			display:none;
+			position:fixed;
+			top:0%;
+			left:0%;
+			width:100%;
+			height:100%;
+			background-color:rgba(0,0,0,0.5);
+		}
+		.pop img {
+			position:absolute;
+			top:40%;
+			left:0px;
+		}
+
+block content_here
+	.content
+		img(src="/img/active-1.jpg") 
+		a.showpop(href="#",onclick="showpop()")
+		div.pop
+			img(src="/img/pop-1.png")
+
+block js_here
+	script.
+		function showpop() {
+			$(".pop").show();
+			$(".pop").click(function(){
+				$(this).hide();
+			});
+		}

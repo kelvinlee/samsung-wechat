@@ -123,7 +123,7 @@ post_data =
 				{
 					type:"view"
 					name:"玩·游戏"
-					url:config.host+"/page3"
+					url:config.host+"/sign/exchange/1"
 				}
 			]
 		}

@@ -294,6 +294,10 @@ exports.lucky = (req,res,next)->
 exports.art = (req,res,next)->
 	art = "active-"+req.params.art_id
 	res.render "art",{art:art}
+exports.active = (req,res,next)->
+	# art = "active-"+req.params.art_id
+	res.render "active-"+req.params.ac_id
+
 
 exports.page1 = (req,res,next)->
 	res.render "page1"
@@ -320,7 +324,7 @@ exports.page7 = (req,res,next)->
 
 # 初始化一个话题
 setDefaultTopic = ->
-	list = ["工地重金属男孩","宁财神发表道歉信","测试话题1","测试话题947","话题是23"]
+	list = ["最让你遗憾的事","最让你遗憾的事","最让你遗憾的事","最让你遗憾的事","最让你遗憾的事"]
 
 	name = list[Math.ceil(Math.random()*4)]
 	description = "简介"
@@ -339,14 +343,51 @@ setsomeDefautleLots = ()->
 			# console.log "奖品列表,存在"
 		else
 			console.log "初始化了一些奖品"
-			name = "爱奇艺VIP一个月"
-			description = "爱奇艺VIP一个月"
-			img = "/img/pro-1.png"
+			name = "神偷奶爸：小黄人快跑"
+			description = "既搞笑又有趣的跑酷游戏"
+			img = "/img/game-1.png"
 			order = 1
 			inte = 15
 			Lots.newlots name,description,img,order,inte,(err,lots)->
 				if lots?
-					Warehouse.newlot lots._id,"lkjsdf0923f",(err,lot)->
-					Warehouse.newlot lots._id,"873498sidf1",(err,lot)->
-					Warehouse.newlot lots._id,"as8979dfsdf",(err,lot)->
-					Warehouse.newlot lots._id,"xcvkdo82732",(err,lot)->
+					Warehouse.newlot lots._id,"game-1-1",(err,lot)->
+					Warehouse.newlot lots._id,"game-1-2",(err,lot)->
+					Warehouse.newlot lots._id,"game-1-3",(err,lot)->
+					Warehouse.newlot lots._id,"game-1-4",(err,lot)->
+			name = "武侠Q传"
+			description = "体验\"拳拳到肉\"的真实打斗快感"
+			img = "/img/game-2.png"
+			order = 2
+			inte = 15
+			Lots.newlots name,description,img,order,inte,(err,lots)->
+				if lots?
+					Warehouse.newlot lots._id,"game-2-1",(err,lot)->
+					Warehouse.newlot lots._id,"game-2-2",(err,lot)->
+					Warehouse.newlot lots._id,"game-2-3",(err,lot)->
+					Warehouse.newlot lots._id,"game-2-4",(err,lot)->
+			name = "封神英雄榜"
+			description = "可体验如梦似幻的游戏乐趣"
+			img = "/img/game-3.png"
+			order = 3
+			inte = 15
+			Lots.newlots name,description,img,order,inte,(err,lots)->
+				if lots?
+					Warehouse.newlot lots._id,"game-3-1",(err,lot)->
+					Warehouse.newlot lots._id,"game-3-2",(err,lot)->
+					Warehouse.newlot lots._id,"game-3-3",(err,lot)->
+					Warehouse.newlot lots._id,"game-3-4",(err,lot)->
+			name = "超级英雄"
+			description = "国内首款冒险卡牌手游"
+			img = "/img/game-4.png"
+			order = 4
+			inte = 15
+			Lots.newlots name,description,img,order,inte,(err,lots)->
+				if lots?
+					Warehouse.newlot lots._id,"game-4-1",(err,lot)->
+					Warehouse.newlot lots._id,"game-4-2",(err,lot)->
+					Warehouse.newlot lots._id,"game-4-3",(err,lot)->
+					Warehouse.newlot lots._id,"game-4-4",(err,lot)->
+
+
+
+

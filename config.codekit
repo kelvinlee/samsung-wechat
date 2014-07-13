@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "16903",
+"creatorBuild": "17018",
 "files": {
 	"\/app.coffee": {
 		"createSourceMap": 0,
@@ -8,7 +8,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/app.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/app.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -32,7 +32,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/config.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/config.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -56,7 +56,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/controllers\/samsung.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/controllers\/samsung.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -80,7 +80,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/controllers\/sign.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/controllers\/sign.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -104,7 +104,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/controllers\/wechat-menu.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/controllers\/wechat-menu.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -117,23 +117,12 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/controllers\/wechat-plugs.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/controllers\/wechat-plugs.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
-		},
-	"\/controllers\/wechat-plugs.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/controllers\/wechat-plugs.js",
-		"outputAbbreviatedPath": "\/controllers\/min\/wechat-plugs-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
 		},
 	"\/controllers\/wechat-qa.coffee": {
 		"createSourceMap": 0,
@@ -141,7 +130,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/controllers\/wechat-qa.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/controllers\/wechat-qa.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -154,7 +143,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/controllers\/wechat-subscribe.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/controllers\/wechat-subscribe.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -167,7 +156,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/controllers\/wechat.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/controllers\/wechat.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -191,7 +180,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/lib\/helper.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/lib\/helper.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -215,7 +204,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/base\/comment.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/base\/comment.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -228,7 +217,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/base\/index.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/base\/index.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -252,7 +241,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/base\/inte.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/base\/inte.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -265,7 +254,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/base\/lots.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/base\/lots.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -289,7 +278,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/base\/topic.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/base\/topic.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -302,7 +291,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/base\/user.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/base\/user.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -315,7 +304,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/base\/warehouse.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/base\/warehouse.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -339,7 +328,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/comment.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/comment.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -363,7 +352,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/index.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/index.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -387,7 +376,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/inte.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/inte.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -411,7 +400,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/lots.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/lots.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -435,7 +424,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/topic.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/topic.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -459,7 +448,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/user.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/user.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -483,7 +472,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mongo\/warehouse.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mongo\/warehouse.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -507,7 +496,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/model\/mysql\/mysql-class.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/model\/mysql\/mysql-class.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -543,13 +532,112 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/public\/img\/acive-17.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 631354,
+		"inputAbbreviatedPath": "\/public\/img\/acive-17.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/acive-17.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/active-1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 1.46896e+06,
+		"initialSize": 164895,
 		"inputAbbreviatedPath": "\/public\/img\/active-1.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/active-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/active-11.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 330235,
+		"inputAbbreviatedPath": "\/public\/img\/active-11.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/active-11.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/active-12.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 147615,
+		"inputAbbreviatedPath": "\/public\/img\/active-12.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/active-12.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/active-13.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 230821,
+		"inputAbbreviatedPath": "\/public\/img\/active-13.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/active-13.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/active-14.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 289294,
+		"inputAbbreviatedPath": "\/public\/img\/active-14.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/active-14.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/active-15.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 828556,
+		"inputAbbreviatedPath": "\/public\/img\/active-15.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/active-15.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/active-16.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29887,
+		"inputAbbreviatedPath": "\/public\/img\/active-16.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/active-16.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/active-17.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 631354,
+		"inputAbbreviatedPath": "\/public\/img\/active-17.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/active-17.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/active-18.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 531649,
+		"inputAbbreviatedPath": "\/public\/img\/active-18.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/active-18.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -609,6 +697,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/art-11.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 330235,
+		"inputAbbreviatedPath": "\/public\/img\/art-11.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/art-11.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/backcode.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -627,6 +726,105 @@
 		"initialSize": 33779,
 		"inputAbbreviatedPath": "\/public\/img\/banner-1.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/banner-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/banner-10.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10061,
+		"inputAbbreviatedPath": "\/public\/img\/banner-10.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/banner-10.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/banner-11.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 26380,
+		"inputAbbreviatedPath": "\/public\/img\/banner-11.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/banner-11.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/banner-12.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20913,
+		"inputAbbreviatedPath": "\/public\/img\/banner-12.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/banner-12.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/banner-13.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 17494,
+		"inputAbbreviatedPath": "\/public\/img\/banner-13.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/banner-13.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/banner-14.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20214,
+		"inputAbbreviatedPath": "\/public\/img\/banner-14.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/banner-14.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/banner-15.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 26478,
+		"inputAbbreviatedPath": "\/public\/img\/banner-15.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/banner-15.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/banner-16.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29887,
+		"inputAbbreviatedPath": "\/public\/img\/banner-16.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/banner-16.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/banner-17.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23643,
+		"inputAbbreviatedPath": "\/public\/img\/banner-17.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/banner-17.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/banner-18.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 36243,
+		"inputAbbreviatedPath": "\/public\/img\/banner-18.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/banner-18.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -719,6 +917,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/game-1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 302108,
+		"inputAbbreviatedPath": "\/public\/img\/game-1.png",
+		"outputAbbreviatedPath": "\/public\/img\/game-1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/game-2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 930662,
+		"inputAbbreviatedPath": "\/public\/img\/game-2.png",
+		"outputAbbreviatedPath": "\/public\/img\/game-2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/game-3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 337847,
+		"inputAbbreviatedPath": "\/public\/img\/game-3.png",
+		"outputAbbreviatedPath": "\/public\/img\/game-3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/game-4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 337847,
+		"inputAbbreviatedPath": "\/public\/img\/game-4.png",
+		"outputAbbreviatedPath": "\/public\/img\/game-4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/headbg.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -807,6 +1049,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/logo-topic.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2737,
+		"inputAbbreviatedPath": "\/public\/img\/logo-topic.png",
+		"outputAbbreviatedPath": "\/public\/img\/logo-topic.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/lot-1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -858,6 +1111,39 @@
 		"initialSize": 12515,
 		"inputAbbreviatedPath": "\/public\/img\/lucky-try.png",
 		"outputAbbreviatedPath": "\/public\/img\/lucky-try.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/note-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 201279,
+		"inputAbbreviatedPath": "\/public\/img\/note-1.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/note-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/page-4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 591491,
+		"inputAbbreviatedPath": "\/public\/img\/page-4.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/page-4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/page-5-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 86523,
+		"inputAbbreviatedPath": "\/public\/img\/page-5-1.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/page-5-1.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -939,6 +1225,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/pop-1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13186,
+		"inputAbbreviatedPath": "\/public\/img\/pop-1.png",
+		"outputAbbreviatedPath": "\/public\/img\/pop-1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/pop-tointe.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 32470,
+		"inputAbbreviatedPath": "\/public\/img\/pop-tointe.png",
+		"outputAbbreviatedPath": "\/public\/img\/pop-tointe.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/pro-1.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -946,6 +1254,17 @@
 		"initialSize": 46716,
 		"inputAbbreviatedPath": "\/public\/img\/pro-1.png",
 		"outputAbbreviatedPath": "\/public\/img\/pro-1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/t-1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 125537,
+		"inputAbbreviatedPath": "\/public\/img\/t-1.png",
+		"outputAbbreviatedPath": "\/public\/img\/t-1.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -978,7 +1297,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/public\/js\/authorize.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/public\/js\/authorize.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -1002,7 +1321,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/public\/js\/main.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/public\/js\/main.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -1057,7 +1376,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/routes.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/routes.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -1144,12 +1463,16 @@
 			"active": 0,
 			"flagValue": 3
 			},
-		"no-unnecessary_fat_arrows": {
+		"no_backticks": {
 			"active": 1,
 			"flagValue": -1
 			},
-		"no_backticks": {
+		"no_debugger": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"no_empty_functions": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"no_empty_param_list": {
@@ -1161,6 +1484,10 @@
 			"flagValue": -1
 			},
 		"no_implicit_parens": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_interpolation_in_single_quotes": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -1188,6 +1515,14 @@
 			"active": 1,
 			"flagValue": -1
 			},
+		"no_unnecessary_double_quotes": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_unnecessary_fat_arrows": {
+			"active": 1,
+			"flagValue": -1
+			},
 		"non_empty_constructor_needs_parens": {
 			"active": 0,
 			"flagValue": -1
@@ -1197,7 +1532,7 @@
 			"flagValue": -1
 			}
 		},
-	"coffeeMinifyOutput": 1,
+	"coffeeMinifyOutput": 0,
 	"coffeeOutputStyle": 1,
 	"coffeeSyntaxCheckerStyle": 0,
 	"externalServerAddress": "http:\/\/localhost:8086",
@@ -1303,10 +1638,6 @@
 			"flagValue": -1
 			},
 		"funcscope": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"gcl": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -1422,10 +1753,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"onevar": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"phantom": {
 			"active": 0,
 			"flagValue": -1
@@ -1462,10 +1789,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"smarttabs": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"strict": {
 			"active": 0,
 			"flagValue": -1
@@ -1478,10 +1801,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"trailing": {
-			"active": 1,
-			"flagValue": -1
-			},
 		"typed": {
 			"active": 0,
 			"flagValue": -1
@@ -1492,10 +1811,6 @@
 			},
 		"unused": {
 			"active": 1,
-			"flagValue": -1
-			},
-		"white": {
-			"active": 0,
 			"flagValue": -1
 			},
 		"withstmt": {

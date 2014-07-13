@@ -1,1 +1,279 @@
-var CheckUsers,URL,access_token,checkMenus,checkToken,config,getAuUserInfo,getToken,getUToken,getUserInfo,getUsers,httpget,https,options_create_menu,options_custom,options_get_access_token,options_get_menu,options_send,options_token,options_user,options_user_info,options_userinfo,options_users,post_data,querystring,sendMenus;https=require("https"),URL=require("url"),querystring=require("querystring"),config=require("../config").config,access_token={},options_create_menu={host:"https://api.weixin.qq.com/cgi-bin/menu/create?access_token=",method:"POST"},options_get_menu={host:"https://api.weixin.qq.com/cgi-bin/menu/get?access_token=",method:"GET"},options_get_menu={host:"https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=",method:"GET"},options_get_access_token={host:"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="+config.APPID+"&secret="+config.SECRET,method:"GET"},options_custom={host:"https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=",method:"POST"},options_send={host:"https://api.weixin.qq.com/cgi-bin/message/send?access_token=",method:"POST"},options_users={host:"https://api.weixin.qq.com/cgi-bin/user/get?access_token=",method:"GET"},options_user_info={host:"https://api.weixin.qq.com/cgi-bin/user/info?lang=zh_CN&access_token=",method:"GET"},options_user={regs:"https://open.weixin.qq.com/connect/oauth2/authorize?appid="+config.APPID+"&redirect_uri="+config.host+"/sign/in&response_type=code&scope=snsapi_base&state=in#wechat_redirect",my:""+config.host+"/sign/my",exchange:""+config.host+"/sign/exchange",lucky:""+config.host+"/sign/lucky",topic:""+config.host+"/sign/topic",method:"GET"},options_token={host:"https://api.weixin.qq.com/sns/oauth2/access_token?appid="+config.APPID+"&secret="+config.SECRET+"&code={code}&grant_type=authorization_code",method:"GET"},options_userinfo={host:"https://api.weixin.qq.com/sns/userinfo?access_token={token}&openid={OPENID}&lang=zh_CN",method:"GET"},post_data={button:[{name:"游乐场",sub_button:[{type:"click",name:"新·活动",key:"newactive"},{type:"click",name:"临·现场",key:"oversite"},{type:"view",name:"聊·话题",url:options_user.topic},{type:"view",name:"试·手气",url:options_user.lucky}]},{name:"星专享",sub_button:[{type:"click",name:"鉴·星品",key:"jianxingpin"},{type:"click",name:"看·杂志",key:"magazine"},{type:"view",name:"找·优惠",url:config.host+"/page2"},{type:"view",name:"玩·游戏",url:config.host+"/page3"}]},{name:"园助手",sub_button:[{type:"view",name:"解·问题",url:config.host+"/page4"},{type:"view",name:"寻·合作",url:config.host+"/page5"},{type:"view",name:"查·积分",url:options_user.my},{type:"view",name:"来·签到",url:config.host+"/page7"}]}]},checkToken=function(e){return access_token.date&&access_token.date>(new Date).getTime()?(e(!1),!0):(getToken(e),!1)},httpget=function(e,t){var o;return o=https.get(e,t),o.write("\n"),o.end()},getToken=function(e){return httpget(options_get_access_token.host,function(t){return console.log("STATUS: "+t.statusCode),console.log("HEADERS: "+JSON.stringify(t.headers)),t.setEncoding("utf8"),t.on("data",function(t){var o;return console.log("BODY: "+t),o=JSON.parse(t),o.access_token?(access_token=o,access_token.date=(new Date).getTime()+1e3*o.expires_in,e(!1)):e("There is no token")})})},sendMenus=function(){var e,t,o,n;return n=URL.parse(options_create_menu.host),t=n.port?n.port:80,e={hostname:n.host,port:443,path:n.path+access_token.access_token,method:"POST"},console.log(e,t),o=https.request(e,function(e){return console.log("statusCode: ",e.statusCode),console.log("headers: ",e.headers),e.on("data",function(e){var t;return t=JSON.parse(e),console.log(t)})}),console.log(JSON.stringify(post_data)),o.write(JSON.stringify(post_data)+"\n"),o.end()},exports.sendMenus=function(){return checkToken(function(e){return sendMenus()})},checkMenus=function(){return httpget(options_get_menu.host+access_token.access_token,function(e){return console.log("statusCode: ",e.statusCode),console.log("headers: ",e.headers),e.on("data",function(e){var t;return t=JSON.parse(e),console.log(t)})})},exports.checkMenus=checkMenus,getUsers=function(e){return"start"===e||e?httpget(options_users.host+access_token.access_token,function(e){return e.on("data",function(e){var t;return t=JSON.parse(e),console.log(t),CheckUsers(t)})}):void 0},exports.getUsers=getUsers,CheckUsers=function(e){return e.next_openid?getUsers(e.next_openid):void 0},exports.CheckUsers=CheckUsers,getUserInfo=function(e){var t;return t=https.get(options_user_info.host+access_token.access_token+"&openid="+e,function(e){return console.log("statusCode: ",e.statusCode),console.log("headers: ",e.headers),e.on("data",function(e){var t;return t=JSON.parse(e),console.log(t)})}),t.write("\n"),t.end()},exports.getUserInfo=getUserInfo,getUToken=function(e,t){var o;return o=options_token.host.replace("{code}",e),httpget(o,t)},exports.getUToken=getUToken,getAuUserInfo=function(e,t,o){var n;return n=options_userinfo.host.replace("{token}",e),n=n.replace("{openid}",t),httpget(n,o)},exports.getAuUserInfo=getAuUserInfo;
+// Generated by CoffeeScript 1.7.1
+var CheckUsers, URL, access_token, checkMenus, checkToken, config, getAuUserInfo, getToken, getUToken, getUserInfo, getUsers, httpget, https, options_create_menu, options_custom, options_get_access_token, options_get_menu, options_send, options_token, options_user, options_user_info, options_userinfo, options_users, post_data, querystring, sendMenus;
+
+https = require('https');
+
+URL = require('url');
+
+querystring = require('querystring');
+
+config = require('../config').config;
+
+access_token = {};
+
+options_create_menu = {
+  host: "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=",
+  method: 'POST'
+};
+
+options_get_menu = {
+  host: "https://api.weixin.qq.com/cgi-bin/menu/get?access_token=",
+  method: 'GET'
+};
+
+options_get_menu = {
+  host: "https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=",
+  method: 'GET'
+};
+
+options_get_access_token = {
+  host: "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + config.APPID + "&secret=" + config.SECRET,
+  method: 'GET'
+};
+
+options_custom = {
+  host: "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=",
+  method: "POST"
+};
+
+options_send = {
+  host: "https://api.weixin.qq.com/cgi-bin/message/send?access_token=",
+  method: "POST"
+};
+
+options_users = {
+  host: "https://api.weixin.qq.com/cgi-bin/user/get?access_token=",
+  method: "GET"
+};
+
+options_user_info = {
+  host: "https://api.weixin.qq.com/cgi-bin/user/info?lang=zh_CN&access_token=",
+  method: "GET"
+};
+
+options_user = {
+  regs: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + config.APPID + "&redirect_uri=" + config.host + "/sign/in&response_type=code&scope=snsapi_base&state=in#wechat_redirect",
+  my: "" + config.host + "/sign/my",
+  exchange: "" + config.host + "/sign/exchange",
+  lucky: "" + config.host + "/sign/lucky",
+  topic: "" + config.host + "/sign/topic",
+  method: "GET"
+};
+
+options_token = {
+  host: "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + config.APPID + "&secret=" + config.SECRET + "&code={code}&grant_type=authorization_code",
+  method: "GET"
+};
+
+options_userinfo = {
+  host: "https://api.weixin.qq.com/sns/userinfo?access_token={token}&openid={OPENID}&lang=zh_CN",
+  method: "GET"
+};
+
+post_data = {
+  button: [
+    {
+      name: "游乐场",
+      sub_button: [
+        {
+          type: "click",
+          name: "新·活动",
+          key: "newactive"
+        }, {
+          type: "click",
+          name: "临·现场",
+          key: "oversite"
+        }, {
+          type: "view",
+          name: "聊·话题",
+          url: options_user.topic
+        }, {
+          type: "view",
+          name: "试·手气",
+          url: options_user.lucky
+        }
+      ]
+    }, {
+      name: "星专享",
+      sub_button: [
+        {
+          type: "click",
+          name: "鉴·星品",
+          key: "jianxingpin"
+        }, {
+          type: "click",
+          name: "看·杂志",
+          key: "magazine"
+        }, {
+          type: "view",
+          name: "找·优惠",
+          url: config.host + "/page2"
+        }, {
+          type: "view",
+          name: "玩·游戏",
+          url: config.host + "/sign/exchange/1"
+        }
+      ]
+    }, {
+      name: "园助手",
+      sub_button: [
+        {
+          type: "view",
+          name: "解·问题",
+          url: config.host + "/page4"
+        }, {
+          type: "view",
+          name: "寻·合作",
+          url: config.host + "/page5"
+        }, {
+          type: "view",
+          name: "查·积分",
+          url: options_user.my
+        }, {
+          type: "view",
+          name: "来·签到",
+          url: config.host + "/page7"
+        }
+      ]
+    }
+  ]
+};
+
+checkToken = function(callback) {
+  if (access_token.date && access_token.date > new Date().getTime()) {
+    callback(false);
+    return true;
+  } else {
+    getToken(callback);
+    return false;
+  }
+};
+
+httpget = function(url, callback) {
+  var request;
+  request = https.get(url, callback);
+  request.write('\n');
+  return request.end();
+};
+
+getToken = function(callback) {
+  return httpget(options_get_access_token.host, function(result) {
+    console.log('STATUS: ' + result.statusCode);
+    console.log('HEADERS: ' + JSON.stringify(result.headers));
+    result.setEncoding('utf8');
+    return result.on('data', function(chunk) {
+      var obj;
+      console.log('BODY: ' + chunk);
+      obj = JSON.parse(chunk);
+      if (obj.access_token) {
+        access_token = obj;
+        access_token.date = new Date().getTime() + obj.expires_in * 1000;
+        return callback(false);
+      } else {
+        return callback('There is no token');
+      }
+    });
+  });
+};
+
+sendMenus = function() {
+  var op, p, request, u;
+  u = URL.parse(options_create_menu.host);
+  p = u['port'] ? u['port'] : 80;
+  op = {
+    hostname: u['host'],
+    port: 443,
+    path: u['path'] + access_token.access_token,
+    method: 'POST'
+  };
+  console.log(op, p);
+  request = https.request(op, function(res) {
+    console.log("statusCode: ", res.statusCode);
+    console.log("headers: ", res.headers);
+    return res.on('data', function(chunk) {
+      var obj;
+      obj = JSON.parse(chunk);
+      return console.log(obj);
+    });
+  });
+  console.log(JSON.stringify(post_data));
+  request.write(JSON.stringify(post_data) + '\n');
+  return request.end();
+};
+
+exports.sendMenus = function() {
+  return checkToken(function(err) {
+    return sendMenus();
+  });
+};
+
+checkMenus = function() {
+  return httpget(options_get_menu.host + access_token.access_token, function(res) {
+    console.log("statusCode: ", res.statusCode);
+    console.log("headers: ", res.headers);
+    return res.on('data', function(chunk) {
+      var obj;
+      obj = JSON.parse(chunk);
+      return console.log(obj);
+    });
+  });
+};
+
+exports.checkMenus = checkMenus;
+
+getUsers = function(Next_OpenID) {
+  if (Next_OpenID === "start" || Next_OpenID) {
+    return httpget(options_users.host + access_token.access_token, function(res) {
+      return res.on('data', function(chunk) {
+        var obj;
+        obj = JSON.parse(chunk);
+        console.log(obj);
+        return CheckUsers(obj);
+      });
+    });
+  }
+};
+
+exports.getUsers = getUsers;
+
+CheckUsers = function(obj) {
+  if (obj.next_openid) {
+    return getUsers(obj.next_openid);
+  }
+};
+
+exports.CheckUsers = CheckUsers;
+
+getUserInfo = function(openid) {
+  var request;
+  request = https.get(options_user_info.host + access_token.access_token + "&openid=" + openid, function(res) {
+    console.log("statusCode: ", res.statusCode);
+    console.log("headers: ", res.headers);
+    return res.on('data', function(chunk) {
+      var obj;
+      obj = JSON.parse(chunk);
+      return console.log(obj);
+    });
+  });
+  request.write('\n');
+  return request.end();
+};
+
+exports.getUserInfo = getUserInfo;
+
+getUToken = function(code, callback) {
+  var url;
+  url = options_token.host.replace("{code}", code);
+  return httpget(url, callback);
+};
+
+exports.getUToken = getUToken;
+
+getAuUserInfo = function(token, openid, callback) {
+  var url;
+  url = options_userinfo.host.replace("{token}", token);
+  url = url.replace("{openid}", openid);
+  return httpget(url, callback);
+};
+
+exports.getAuUserInfo = getAuUserInfo;

@@ -191,10 +191,19 @@ ul {
   overflow: hidden;
   margin-bottom: 10px;
 }
+.topic .topic-description img {
+  float: left;
+}
+.topic .topic-description h2 {
+  margin-left: 80px;
+}
+.topic .topic-description h2 span {
+  color: #005bc1;
+}
 .topic .topic-title {
   padding: 10px 10px;
   margin-bottom: 0px;
-  color: #6e6e6e;
+  color: #001f7f;
 }
 .topic .topic-title h1 {
   margin-bottom: 3px;
@@ -302,6 +311,44 @@ ul {
   padding: 0px;
   width: 30%;
   height: auto;
+}
+.note1 {
+  padding-top: 10px;
+}
+.registration {
+  position: relative;
+}
+.registration .l1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  width: 100%;
+  height: 40%;
+}
+.registration .l2 {
+  position: absolute;
+  top: 40%;
+  left: 0px;
+  display: block;
+  width: 100%;
+  height: 18%;
+}
+.registration .l3 {
+  position: absolute;
+  top: 60%;
+  left: 0px;
+  display: block;
+  width: 100%;
+  height: 18%;
+}
+.registration .l4 {
+  position: absolute;
+  top: 80%;
+  left: 0px;
+  display: block;
+  width: 100%;
+  height: 16%;
 }
 .h1 {
   font-size: 1.4rem;
