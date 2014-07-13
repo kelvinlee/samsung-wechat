@@ -5,7 +5,7 @@
      Begin wechat.coffee
 --------------------------------------------
  */
-var BufferHelper, Comment, EventProxy, Inte, Lots, Topic, User, Warehouse, checkMessage, checkSignature, clearQA, config, crypto, empty, formatMessage, fs, getMessage, getQA, jianxingpin, magazine, my, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, searchQA, welcometext, xml2js, _nr, _qa;
+var BufferHelper, Comment, EventProxy, Inte, Lots, Topic, User, Warehouse, checkMessage, checkSignature, clearQA, config, crypto, empty, formatMessage, fs, gamemenu, getMessage, getQA, jianxingpin, luckymenu, magazine, my, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, regsinto, searchQA, topicmenu, welcometext, xml2js, _nr, _qa;
 
 fs = require('fs');
 
@@ -302,9 +302,65 @@ my = {
   items: [
     {
       title: "积分信息查询",
-      description: '您的积分是:{jl}积分,点击《阅读全文》查看详细信息.',
+      description: '您的积分是:{jf}积分,点击《阅读全文》查看详细信息. [请勿转发此条信息,包含您的个人信息]',
       picurl: "" + config.host + "/img/banner-1.jpg",
       url: "" + config.host + "/middle/{openid}?url=/sign/my"
+    }
+  ]
+};
+
+regsinto = {
+  name: "来签到",
+  key: "1",
+  type: "news",
+  items: [
+    {
+      title: "签到获取更多积分",
+      description: '您的积分是:{jf}积分,点击《阅读全文》查看详细信息. [请勿转发此条信息,包含您的个人信息]',
+      picurl: "" + config.host + "/img/banner-1.jpg",
+      url: "" + config.host + "/middle/{openid}?url=/page7"
+    }
+  ]
+};
+
+topicmenu = {
+  name: "聊话题",
+  key: "1",
+  type: "news",
+  items: [
+    {
+      title: "本期话题:最让你遗憾的事",
+      description: '聊话题赢大奖. [请勿转发此条信息,包含您的个人信息]',
+      picurl: "" + config.host + "/img/banner-7.jpg",
+      url: "" + config.host + "/middle/{openid}?url=/sign/topic"
+    }
+  ]
+};
+
+luckymenu = {
+  name: "试手气",
+  key: "1",
+  type: "news",
+  items: [
+    {
+      title: "来试试看你的手气,赢大奖",
+      description: '摇转轮盘赢大奖. [请勿转发此条信息,包含您的个人信息]',
+      picurl: "" + config.host + "/img/banner-1.jpg",
+      url: "" + config.host + "/middle/{openid}?url=/sign/lucky"
+    }
+  ]
+};
+
+gamemenu = {
+  name: "玩游戏",
+  key: "1",
+  type: "news",
+  items: [
+    {
+      title: "积分兑换游戏礼包",
+      description: '下载三星专属游戏积分兑换大礼包. [请勿转发此条信息,包含您的个人信息]',
+      picurl: "" + config.host + "/img/banner-1.jpg",
+      url: "" + config.host + "/middle/{openid}?url=/sign/exchange/1"
     }
   ]
 };
@@ -339,6 +395,47 @@ plugs_menu = function(message, callback) {
         });
       } else {
         newmy.items[0].description = newmy.items[0].description.replace("{jf}", "0");
+        return callback(newmy);
+      }
+    });
+  } else if (message.EventKey === "regsinto") {
+    newmy = regsinto;
+    newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
+    return User.getUserOpenId(message.FromUserName, function(err, user) {
+      console.log(newmy.items[0].url);
+      if (user != null) {
+        return Inte.getInteAll(user._id, function(err, count) {
+          newmy.items[0].description = newmy.items[0].description.replace("{jf}", count);
+          return callback(newmy);
+        });
+      } else {
+        newmy.items[0].description = newmy.items[0].description.replace("{jf}", "0");
+        return callback(newmy);
+      }
+    });
+  } else if (message.EventKey === "topic") {
+    newmy = topicmenu;
+    newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
+    return User.getUserOpenId(message.FromUserName, function(err, user) {
+      console.log(newmy.items[0].url);
+      if (user != null) {
+        return Inte.getInteAll(user._id, function(err, count) {
+          return callback(newmy);
+        });
+      } else {
+        return callback(newmy);
+      }
+    });
+  } else if (message.EventKey === "lucky") {
+    newmy = luckymenu;
+    newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
+    return User.getUserOpenId(message.FromUserName, function(err, user) {
+      console.log(newmy.items[0].url);
+      if (user != null) {
+        return Inte.getInteAll(user._id, function(err, count) {
+          return callback(newmy);
+        });
+      } else {
         return callback(newmy);
       }
     });

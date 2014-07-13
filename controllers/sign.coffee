@@ -243,19 +243,39 @@ exports.getlucky = (req,res,next)->
 	re = new helper.recode()
 	res.send re
 
+exports.nickname = (req,res,next)->
+	res.render "nickname"
+exports.postnickname = (req,res,next)->
+	nickname = req.body.nickname
+	re = new helper.recode()
+	if nickname?
+		User.getUserOpenId res.locals.openid,(err,user)->
+			user.nickname = nickname
+			user.save()
+			res.send re
+	else
+		re.recode = 201
+		re.reason = "昵称不能为空"
+		res.send re
+
+
 # 论坛
 exports.topic = (req,res,next)->
 	
 	# tid = req.params.topic_id
-	Topic.getOne (err,topic)->
-		if topic?
-			Comment.getByTopic topic._id,(err,comments)->
-				# console.log topic,comments
-				res.render "topic",{topic:topic,comments:comments}
-				topic.view += 1
-				topic.save()
+	User.getUserOpenId res.locals.openid,(err,user)->
+		if user? and user.nickname?
+			Topic.getOne (err,topic)->
+				if topic?
+					Comment.getByTopic topic._id,(err,comments)->
+						# console.log topic,comments
+						res.render "topic",{topic:topic,comments:comments}
+						topic.view += 1
+						topic.save()
+				else
+					res.render "topic",{topic:null}
 		else
-			res.render "topic",{topic:null}
+			res.redirect "/sign/"
 # 接受
 exports.comment = (req,res,next)->
 	content = req.body.comment
@@ -269,7 +289,8 @@ exports.comment = (req,res,next)->
 			User.getUserById res.locals.userid,(err,user)->
 				if user?
 					reg = /(\d{3})\d{4}(\d{4})/
-					name = user.mobile.replace reg,"$1****$2"
+					# name = user.mobile.replace reg,"$1****$2"
+					name = user.nickname
 					Comment.newComment user._id,topic._id,name,content,(err,comment)->
 						if comment?
 							res.send re

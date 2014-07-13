@@ -125,9 +125,11 @@ post_data =
 					url: config.host+"/page2"
 				}
 				{
-					type:"view"
+					# type:"view"
+					type:"click"
 					name:"玩·游戏"
-					url:config.host+"/sign/exchange/1"
+					key:"game"
+					# url:config.host+"/sign/exchange/1"
 				}
 			]
 		}
@@ -154,9 +156,11 @@ post_data =
 					# url:options_user.my
 				}
 				{
-					type:"view"
+					# type:"view"
+					type:"click"
 					name:"来·签到"
-					url:config.host+"/page7" #options_user.regs
+					key:"regsinto"
+					# url:config.host+"/page7" #options_user.regs
 				}
 			]
 		}

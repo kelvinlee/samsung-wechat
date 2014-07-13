@@ -1,0 +1,42 @@
+extends layout
+block content_here
+	include nav
+	.content
+		.content-padded
+			.myinte
+				h1(style="text-align:center;") 登录
+				form.form(name="register",action="/nickname")
+					div.form-group
+						label 设置昵称
+						input(type="text",name="nickname",maxlength="16")
+					div.btn-list(style="text-align:center;")
+						button.btn.btn-primary(type="button",onclick="post()") 提交
+		div.line
+		div.note1
+			img(src="/img/note-1.jpg")
+			 
+
+
+	block js_here
+		script.
+			_submit = false;
+			function post() {
+				_submit = true;
+				$.ajax({
+					async: false,
+					url: $('[name=register]').attr("action"),
+					type: 'POST',
+					data: $('[name=register]').serializeArray(),
+					dataType: 'json',
+					context: $('body'),
+					success: function(msg) {
+						if (msg.recode === 200) {
+							window.location.href = "/sign/topic";
+							//- _hmt.push(['_trackEvent', '注册', '提交', '']);
+						} else {
+							_submit = false
+							return alert(msg.reason);
+						}
+					}
+				});
+			}

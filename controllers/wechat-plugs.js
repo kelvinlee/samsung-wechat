@@ -109,9 +109,9 @@ post_data = {
           name: "找·优惠",
           url: config.host + "/page2"
         }, {
-          type: "view",
+          type: "click",
           name: "玩·游戏",
-          url: config.host + "/sign/exchange/1"
+          key: "game"
         }
       ]
     }, {
@@ -130,9 +130,9 @@ post_data = {
           name: "查·积分",
           key: "my"
         }, {
-          type: "view",
+          type: "click",
           name: "来·签到",
-          url: config.host + "/page7"
+          key: "regsinto"
         }
       ]
     }

@@ -316,21 +316,48 @@ exports.getlucky = function(req, res, next) {
   return res.send(re);
 };
 
+exports.nickname = function(req, res, next) {
+  return res.render("nickname");
+};
+
+exports.postnickname = function(req, res, next) {
+  var nickname, re;
+  nickname = req.body.nickname;
+  re = new helper.recode();
+  if (nickname != null) {
+    return User.getUserOpenId(res.locals.openid, function(err, user) {
+      user.nickname = nickname;
+      user.save();
+      return res.send(re);
+    });
+  } else {
+    re.recode = 201;
+    re.reason = "昵称不能为空";
+    return res.send(re);
+  }
+};
+
 exports.topic = function(req, res, next) {
-  return Topic.getOne(function(err, topic) {
-    if (topic != null) {
-      return Comment.getByTopic(topic._id, function(err, comments) {
-        res.render("topic", {
-          topic: topic,
-          comments: comments
-        });
-        topic.view += 1;
-        return topic.save();
+  return User.getUserOpenId(res.locals.openid, function(err, user) {
+    if ((user != null) && (user.nickname != null)) {
+      return Topic.getOne(function(err, topic) {
+        if (topic != null) {
+          return Comment.getByTopic(topic._id, function(err, comments) {
+            res.render("topic", {
+              topic: topic,
+              comments: comments
+            });
+            topic.view += 1;
+            return topic.save();
+          });
+        } else {
+          return res.render("topic", {
+            topic: null
+          });
+        }
       });
     } else {
-      return res.render("topic", {
-        topic: null
-      });
+      return res.redirect("/sign/");
     }
   });
 };
@@ -350,7 +377,7 @@ exports.comment = function(req, res, next) {
         var name, reg;
         if (user != null) {
           reg = /(\d{3})\d{4}(\d{4})/;
-          name = user.mobile.replace(reg, "$1****$2");
+          name = user.nickname;
           return Comment.newComment(user._id, topic._id, name, content, function(err, comment) {
             if (comment != null) {
               return res.send(re);
