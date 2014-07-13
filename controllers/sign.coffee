@@ -76,6 +76,8 @@ exports.before = (req,res,next)->
 exports.middle = (req,res,next)->
 	openid = req.query.openid
 	url = req.query.url
+	console.log openid,url
+
 	User.getUserOpenId openid,(err,user)->
 		if user?
 			res.cookie "userid",user._id
