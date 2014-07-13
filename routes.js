@@ -18,7 +18,7 @@ module.exports = function(app) {
   app.get("/page7", sign.page7);
   app.get("/art/:art_id", sign.art);
   app.get("/active/:ac_id", sign.active);
-  app.get("/middle", sign.middle);
+  app.get("/middle/:openid", sign.middle);
   app.get("/login", sign["in"]);
   app.post("/login/in", sign.in_post);
   app.get("/reg", sign.up);

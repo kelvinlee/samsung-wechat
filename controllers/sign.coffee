@@ -74,7 +74,7 @@ exports.before = (req,res,next)->
 		res.redirect "/login"
 
 exports.middle = (req,res,next)->
-	openid = req.query.openid
+	openid = req.params.openid
 	url = req.query.url
 	console.log openid,url
 

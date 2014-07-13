@@ -99,7 +99,7 @@ exports.before = function(req, res, next) {
 
 exports.middle = function(req, res, next) {
   var openid;
-  openid = req.query.openid;
+  openid = req.params.openid;
   url = req.query.url;
   console.log(openid, url);
   return User.getUserOpenId(openid, function(err, user) {
