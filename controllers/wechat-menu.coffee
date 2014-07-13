@@ -136,14 +136,16 @@ plugs_menu = (message,callback)->
 		callback newactive
 	else if message.EventKey is "my"
 		newmy = my
-		newmy.url = newmy.url.replace "{openid}",message.FromUserName
+		newmy.items[0].url = newmy.items[0].url.replace "{openid}",message.FromUserName
+		console.log newmy,message.FromUserName
 		User.getUserOpenId message.FromUserName,(err,user)->
+			console.log user
 			if user?
 				Inte.getInteAll user._id,(err,count)->
-					newmy.description = newmy.description.replace "{jf}",count
+					newmy.description = newmy.items[0].description.replace "{jf}",count
 					callback newmy
 			else
-				newmy.description = newmy.description.replace "{jf}","0"
+				newmy.description = newmy.items[0].description.replace "{jf}","0"
 				callback newmy
 	else
 		callback empty
