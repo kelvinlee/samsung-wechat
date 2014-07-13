@@ -251,9 +251,15 @@ exports.postnickname = (req,res,next)->
 	console.log "nickname:",nickname
 	if nickname?
 		User.getUserOpenId res.locals.openid,(err,user)->
-			user.nickname = nickname
-			user.save()
-			res.send re
+			console.log user
+			if user?
+				user.nickname = nickname
+				user.save()
+				res.send re
+			else
+				re.recode = 201
+				re.reason = "还没有登录"
+				res.send re
 	else
 		re.recode = 201
 		re.reason = "昵称不能为空"

@@ -327,9 +327,16 @@ exports.postnickname = function(req, res, next) {
   console.log("nickname:", nickname);
   if (nickname != null) {
     return User.getUserOpenId(res.locals.openid, function(err, user) {
-      user.nickname = nickname;
-      user.save();
-      return res.send(re);
+      console.log(user);
+      if (user != null) {
+        user.nickname = nickname;
+        user.save();
+        return res.send(re);
+      } else {
+        re.recode = 201;
+        re.reason = "还没有登录";
+        return res.send(re);
+      }
     });
   } else {
     re.recode = 201;

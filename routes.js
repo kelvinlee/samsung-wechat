@@ -20,7 +20,7 @@ module.exports = function(app) {
   app.get("/active/:ac_id", sign.active);
   app.get("/middle/:openid", sign.middle);
   app.get("/nickname", sign.nickname);
-  app.post("/nickname", sign.postnickname);
+  app.post("/sign/nickname", sign.postnickname);
   app.get("/login", sign["in"]);
   app.post("/login/in", sign.in_post);
   app.get("/reg", sign.up);

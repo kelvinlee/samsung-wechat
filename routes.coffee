@@ -28,7 +28,7 @@ module.exports = (app)->
   app.get "/middle/:openid", sign.middle
   # 设置昵称
   app.get "/nickname", sign.nickname
-  app.post "/nickname", sign.postnickname
+  app.post "/sign/nickname", sign.postnickname
 
   # 登录
   app.get "/login", sign.in
