@@ -103,6 +103,21 @@ magazine = {
 		}
 	]
 }
+my = {
+	name:"查积分"
+	key:"1"
+	type:"news"
+	items: [
+		{
+			title:"积分信息查询"
+			description: '您的积分是:{jl}积分,点击<阅读全文>查看详细信息.'
+			picurl:"#{config.host}/img/banner-15.jpg"
+			url: "#{config.host}/middle?openid={openid}&url=/sign/my"
+		}
+	]
+}
+
+
 empty = {
 	name:"返回收到图片信息."
 	key:"1"
@@ -119,6 +134,17 @@ plugs_menu = (message,callback)->
 		callback magazine
 	else if message.EventKey is "newactive"
 		callback newactive
+	else if message.EventKey is "my"
+		newmy = my
+		newmy.url = newmy.url.replace "{openid}",message.FromUserName
+		User.getUserOpenId message.FromUserName,(err,user)->
+			if user?
+				Inte.getInteAll user._id,(err,count)->
+					newmy.description = newmy.description.replace "{jf}",count
+					callback newmy
+			else
+				newmy.description = newmy.description.replace "{jf}","0"
+				callback newmy
 	else
 		callback empty
 

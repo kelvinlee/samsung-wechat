@@ -5,7 +5,7 @@
      Begin wechat.coffee
 --------------------------------------------
  */
-var BufferHelper, EventProxy, checkMessage, checkSignature, clearQA, config, crypto, empty, formatMessage, fs, getMessage, getQA, jianxingpin, magazine, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, searchQA, welcometext, xml2js, _nr, _qa;
+var BufferHelper, EventProxy, checkMessage, checkSignature, clearQA, config, crypto, empty, formatMessage, fs, getMessage, getQA, jianxingpin, magazine, my, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, searchQA, welcometext, xml2js, _nr, _qa;
 
 fs = require('fs');
 
@@ -283,6 +283,20 @@ magazine = {
   ]
 };
 
+my = {
+  name: "查积分",
+  key: "1",
+  type: "news",
+  items: [
+    {
+      title: "积分信息查询",
+      description: '您的积分是:{jl}积分,点击<阅读全文>查看详细信息.',
+      picurl: "" + config.host + "/img/banner-15.jpg",
+      url: "" + config.host + "/middle?openid={openid}&url=/sign/my"
+    }
+  ]
+};
+
 empty = {
   name: "返回收到图片信息.",
   key: "1",
@@ -291,6 +305,7 @@ empty = {
 };
 
 plugs_menu = function(message, callback) {
+  var newmy;
   console.log(message);
   if (message.EventKey === "oversite") {
     return callback(oversite);
@@ -300,6 +315,20 @@ plugs_menu = function(message, callback) {
     return callback(magazine);
   } else if (message.EventKey === "newactive") {
     return callback(newactive);
+  } else if (message.EventKey === "my") {
+    newmy = my;
+    newmy.url = newmy.url.replace("{openid}", message.FromUserName);
+    return User.getUserOpenId(message.FromUserName, function(err, user) {
+      if (user != null) {
+        return Inte.getInteAll(user._id, function(err, count) {
+          newmy.description = newmy.description.replace("{jf}", count);
+          return callback(newmy);
+        });
+      } else {
+        newmy.description = newmy.description.replace("{jf}", "0");
+        return callback(newmy);
+      }
+    });
   } else {
     return callback(empty);
   }

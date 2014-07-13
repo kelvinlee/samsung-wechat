@@ -89,14 +89,18 @@ post_data =
 					key:"oversite"
 				}
 				{
-					type:"view"
+					# type:"view"
+					type:"click"
 					name:"聊·话题"
-					url:options_user.topic
+					key:"topic"
+					# url:options_user.topic
 				}
 				{
-					type:"view"
+					# type:"view"
+					type:"click"
 					name:"试·手气"
-					url:options_user.lucky
+					key:"lucky"
+					# url:options_user.lucky
 				}
 			]
 		}
@@ -143,9 +147,11 @@ post_data =
 					url:config.host+"/page5"
 				}
 				{
-					type:"view"
+					# type:"view"
+					type:"click"
 					name:"查·积分"
-					url:options_user.my
+					key:"my"
+					# url:options_user.my
 				}
 				{
 					type:"view"

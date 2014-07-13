@@ -84,13 +84,13 @@ post_data = {
           name: "临·现场",
           key: "oversite"
         }, {
-          type: "view",
+          type: "click",
           name: "聊·话题",
-          url: options_user.topic
+          key: "topic"
         }, {
-          type: "view",
+          type: "click",
           name: "试·手气",
-          url: options_user.lucky
+          key: "lucky"
         }
       ]
     }, {
@@ -126,9 +126,9 @@ post_data = {
           name: "寻·合作",
           url: config.host + "/page5"
         }, {
-          type: "view",
+          type: "click",
           name: "查·积分",
-          url: options_user.my
+          key: "my"
         }, {
           type: "view",
           name: "来·签到",

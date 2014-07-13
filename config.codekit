@@ -124,6 +124,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
+	"\/controllers\/wechat-plugs.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/controllers\/wechat-plugs.js",
+		"outputAbbreviatedPath": "\/controllers\/min\/wechat-plugs-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/controllers\/wechat-qa.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -162,17 +173,6 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
-		},
-	"\/controllers\/wechat.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/controllers\/wechat.js",
-		"outputAbbreviatedPath": "\/controllers\/min\/wechat-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/helper.coffee": {
 		"createSourceMap": 0,
@@ -1254,6 +1254,28 @@
 		"initialSize": 46716,
 		"inputAbbreviatedPath": "\/public\/img\/pro-1.png",
 		"outputAbbreviatedPath": "\/public\/img\/pro-1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/qdbtn.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 18480,
+		"inputAbbreviatedPath": "\/public\/img\/qdbtn.png",
+		"outputAbbreviatedPath": "\/public\/img\/qdbtn.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/qiandao-list.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 51853,
+		"inputAbbreviatedPath": "\/public\/img\/qiandao-list.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/qiandao-list.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
