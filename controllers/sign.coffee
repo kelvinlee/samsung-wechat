@@ -275,7 +275,7 @@ exports.topic = (req,res,next)->
 				else
 					res.render "topic",{topic:null}
 		else
-			res.redirect "/sign/"
+			res.redirect "/nickname"
 # 接受
 exports.comment = (req,res,next)->
 	content = req.body.comment

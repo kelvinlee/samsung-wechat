@@ -357,7 +357,7 @@ exports.topic = function(req, res, next) {
         }
       });
     } else {
-      return res.redirect("/sign/");
+      return res.redirect("/nickname");
     }
   });
 };
