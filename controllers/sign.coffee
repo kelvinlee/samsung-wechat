@@ -78,13 +78,13 @@ exports.middle = (req,res,next)->
 	url = req.query.url
 	User.getUserOpenId openid,(err,user)->
 		if user?
-			req.cookie "userid",user._id
+			res.cookie "userid",user._id
 			console.log url
 			res.redirect url
 		else
 			User.regbyOpenId openid,(err,user)->
 				console.log url
-				req.cookie "userid",user._id
+				res.cookie "userid",user._id
 				res.redirect url
 
 

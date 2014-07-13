@@ -103,13 +103,13 @@ exports.middle = function(req, res, next) {
   url = req.query.url;
   return User.getUserOpenId(openid, function(err, user) {
     if (user != null) {
-      req.cookie("userid", user._id);
+      res.cookie("userid", user._id);
       console.log(url);
       return res.redirect(url);
     } else {
       return User.regbyOpenId(openid, function(err, user) {
         console.log(url);
-        req.cookie("userid", user._id);
+        res.cookie("userid", user._id);
         return res.redirect(url);
       });
     }
