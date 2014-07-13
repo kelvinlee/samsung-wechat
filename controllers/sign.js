@@ -324,7 +324,7 @@ exports.postnickname = function(req, res, next) {
   var nickname, re;
   nickname = req.body.nickname;
   re = new helper.recode();
-  console.log("nickname:", nickname);
+  console.log("nickname:", nickname, res.locals.openid);
   if (nickname != null) {
     return User.getUserOpenId(res.locals.openid, function(err, user) {
       console.log(user);

@@ -248,7 +248,7 @@ exports.nickname = (req,res,next)->
 exports.postnickname = (req,res,next)->
 	nickname = req.body.nickname
 	re = new helper.recode()
-	console.log "nickname:",nickname
+	console.log "nickname:",nickname,res.locals.openid
 	if nickname?
 		User.getUserOpenId res.locals.openid,(err,user)->
 			console.log user

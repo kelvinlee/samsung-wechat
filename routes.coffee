@@ -26,9 +26,8 @@ module.exports = (app)->
   app.get "/active/:ac_id", sign.active
 
   app.get "/middle/:openid", sign.middle
-  # 设置昵称
-  app.get "/nickname", sign.nickname
-  app.post "/sign/nickname", sign.postnickname
+
+  
 
   # 登录
   app.get "/login", sign.in
@@ -60,6 +59,10 @@ module.exports = (app)->
   app.get "/sign/topic", sign.topic
   app.post "/sign/comment", sign.comment
   app.get "/sign/comments", sign.comments
+
+  # 设置昵称
+  app.get "/nickname", sign.nickname
+  app.post "/sign/nickname", sign.postnickname
 
   # app.get '*', note.notfind
 

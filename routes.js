@@ -19,8 +19,6 @@ module.exports = function(app) {
   app.get("/art/:art_id", sign.art);
   app.get("/active/:ac_id", sign.active);
   app.get("/middle/:openid", sign.middle);
-  app.get("/nickname", sign.nickname);
-  app.post("/sign/nickname", sign.postnickname);
   app.get("/login", sign["in"]);
   app.post("/login/in", sign.in_post);
   app.get("/reg", sign.up);
@@ -37,7 +35,9 @@ module.exports = function(app) {
   app.get("/sign/tointe", sign.tointe);
   app.get("/sign/topic", sign.topic);
   app.post("/sign/comment", sign.comment);
-  return app.get("/sign/comments", sign.comments);
+  app.get("/sign/comments", sign.comments);
+  app.get("/nickname", sign.nickname);
+  return app.post("/sign/nickname", sign.postnickname);
 };
 
 console.log("routes loaded.");
