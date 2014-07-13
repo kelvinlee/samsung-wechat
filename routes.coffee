@@ -25,7 +25,7 @@ module.exports = (app)->
   app.get "/art/:art_id", sign.art
   app.get "/active/:ac_id", sign.active
 
-
+  app.get "/middle", sign.middle
   # 登录
   app.get "/login", sign.in
   # 登录提交
