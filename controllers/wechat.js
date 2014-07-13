@@ -5,7 +5,7 @@
      Begin wechat.coffee
 --------------------------------------------
  */
-var BufferHelper, EventProxy, checkMessage, checkSignature, clearQA, config, crypto, empty, formatMessage, fs, getMessage, getQA, jianxingpin, magazine, my, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, searchQA, welcometext, xml2js, _nr, _qa;
+var BufferHelper, Comment, EventProxy, Inte, Lots, Topic, User, Warehouse, checkMessage, checkSignature, clearQA, config, crypto, empty, formatMessage, fs, getMessage, getQA, jianxingpin, magazine, my, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, searchQA, welcometext, xml2js, _nr, _qa;
 
 fs = require('fs');
 
@@ -22,6 +22,18 @@ EventProxy = require('eventproxy');
 config = require('../config').config;
 
 plugs = require('./wechat-plugs');
+
+User = require('../model/mongo').User;
+
+Inte = require('../model/mongo').Inte;
+
+Lots = require('../model/mongo').Lots;
+
+Warehouse = require('../model/mongo').Warehouse;
+
+Topic = require('../model/mongo').Topic;
+
+Comment = require('../model/mongo').Comment;
 
 checkSignature = function(query, token) {
   var arr, nonce, shasum, signature, timestamp;

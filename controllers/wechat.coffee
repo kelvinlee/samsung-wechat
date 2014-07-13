@@ -12,6 +12,14 @@ config = require('../config').config
 
 plugs = require('./wechat-plugs')
 
+User = require('../model/mongo').User
+Inte = require('../model/mongo').Inte
+Lots = require('../model/mongo').Lots
+Warehouse = require('../model/mongo').Warehouse
+Topic = require('../model/mongo').Topic
+Comment = require('../model/mongo').Comment
+
+
 # 扩展方法
 # @codekit-append "wechat-subscribe.coffee";
 # @codekit-append "wechat-menu.coffee";
