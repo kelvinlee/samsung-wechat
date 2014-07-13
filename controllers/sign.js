@@ -97,6 +97,25 @@ exports.before = function(req, res, next) {
   }
 };
 
+exports.middle = function(req, res, next) {
+  var openid;
+  openid = req.query.openid;
+  url = req.query.url;
+  return User.getUserOpenId(openid, function(err, user) {
+    if (user != null) {
+      req.cookie("userid", user._id);
+      console.log(url);
+      return res.redirect(url);
+    } else {
+      return User.regbyOpenId(openid, function(err, user) {
+        console.log(url);
+        req.cookie("userid", user._id);
+        return res.redirect(url);
+      });
+    }
+  });
+};
+
 exports.up = function(req, res, next) {
   return res.render("reg");
 };

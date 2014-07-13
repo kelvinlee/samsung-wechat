@@ -12,6 +12,11 @@ exports.getUserOpenId = (openid, callback)->
 exports.getUsersByQuery = (query, opt, callback)->
 	User.find query, null, opt, callback
 
+exports.regbyOpenId = (openid,callback)->
+  user = new User()
+  user.openid = openid
+  user.active = true
+  user.save callback
 exports.newAndSave = (mobile,password, callback)->
   user = new User()
   # openid: {type: String, index: true}

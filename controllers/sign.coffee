@@ -73,6 +73,19 @@ exports.before = (req,res,next)->
 	else
 		res.redirect "/login"
 
+exports.middle = (req,res,next)->
+	openid = req.query.openid
+	url = req.query.url
+	User.getUserOpenId openid,(err,user)->
+		if user?
+			req.cookie "userid",user._id
+			console.log url
+			res.redirect url
+		else
+			User.regbyOpenId openid,(err,user)->
+				console.log url
+				req.cookie "userid",user._id
+				res.redirect url
 
 
 exports.up = (req,res,next)->
