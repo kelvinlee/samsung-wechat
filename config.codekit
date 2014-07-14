@@ -87,17 +87,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
-	"\/controllers\/sign.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/controllers\/sign.js",
-		"outputAbbreviatedPath": "\/controllers\/min\/sign-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/controllers\/wechat-menu.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -332,6 +321,19 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
+		},
+	"\/model\/mongo\/base\/winner.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/model\/mongo\/base\/winner.coffee",
+		"minifyOutput": 0,
+		"outputAbbreviatedPath": "\/model\/mongo\/base\/winner.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
 		},
 	"\/model\/mongo\/comment.coffee": {
 		"createSourceMap": 0,
@@ -972,6 +974,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/downloadbtn.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7617,
+		"inputAbbreviatedPath": "\/public\/img\/downloadbtn.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/downloadbtn.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/game-1-description.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1126,6 +1139,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/gamedownbg.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 83450,
+		"inputAbbreviatedPath": "\/public\/img\/gamedownbg.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/gamedownbg.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/headbg.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1232,6 +1256,94 @@
 		"initialSize": 4977,
 		"inputAbbreviatedPath": "\/public\/img\/lot-1.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/lot-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lots-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 69187,
+		"inputAbbreviatedPath": "\/public\/img\/lots-1.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/lots-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lots-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 56159,
+		"inputAbbreviatedPath": "\/public\/img\/lots-2.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/lots-2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lots-3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 56983,
+		"inputAbbreviatedPath": "\/public\/img\/lots-3.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/lots-3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lots-4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 67056,
+		"inputAbbreviatedPath": "\/public\/img\/lots-4.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/lots-4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lots-dp.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 107135,
+		"inputAbbreviatedPath": "\/public\/img\/lots-dp.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/lots-dp.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lots-hg.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 107135,
+		"inputAbbreviatedPath": "\/public\/img\/lots-hg.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/lots-hg.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lots-share.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22483,
+		"inputAbbreviatedPath": "\/public\/img\/lots-share.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/lots-share.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/lots-title.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7863,
+		"inputAbbreviatedPath": "\/public\/img\/lots-title.png",
+		"outputAbbreviatedPath": "\/public\/img\/lots-title.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

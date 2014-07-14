@@ -14,4 +14,5 @@ mongoose.connect config.mdb, (err)->
 # @codekit-append "warehouse.coffee";
 # @codekit-append "topic.coffee";
 # @codekit-append "comment.coffee";
+# @codekit-append "winner.coffee";
 

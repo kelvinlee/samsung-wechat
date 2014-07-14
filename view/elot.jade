@@ -72,6 +72,10 @@ block css_here
 			margin-bottom:10px;
 			padding-bottom:10px;
 		}
+		.downloadpage {
+			float:right;
+			width:48%;
+		}
 block content_here
 	//- include nav
 	.content(style="background-color:#fff;")
@@ -84,6 +88,8 @@ block content_here
 				img(src='#{lotinfo.descriptionimg}', width='100%')
 			.dh
 				input(type="text",value="#{lot.content}",style="width:50%")
+				a.downloadpage(href="/sign/game") 
+					img(src="/img/downloadbtn.jpg")
 			.info-s !{lotinfo.info_b}
 			.info 
 				h2 说明

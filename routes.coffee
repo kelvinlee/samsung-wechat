@@ -49,6 +49,7 @@ module.exports = (app)->
   app.get "/sign/exchange", sign.exchange
   app.get "/sign/exchange/:type_id", sign.exchange_type
   app.get "/sign/exchangelot/:lots_id", sign.exchangelot
+  app.get "/sign/game", sign.game
   # 抽奖
   app.get "/sign/lucky", sign.lucky
   app.get "/sign/getlucky", sign.getlucky
@@ -64,6 +65,12 @@ module.exports = (app)->
   # 设置昵称
   app.get "/nickname", sign.nickname
   app.post "/sign/nickname", sign.postnickname
+
+  # 中奖页面
+  app.get "/sign/lots", sign.lots
+  app.get "/sign/winner/:winner_id", sign.winner
+  app.post "/sign/winner/:winner_id", sign.winner_post
+
 
   # app.get '*', note.notfind
 

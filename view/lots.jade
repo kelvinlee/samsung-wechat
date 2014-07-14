@@ -1,0 +1,97 @@
+extends layout
+block css_here
+	style.
+		form {
+		}
+		.form table{
+			border-collapse: collapse;
+		}
+		.form table td {
+			border: 1px solid #000;
+		}
+		.form table td input {
+			margin:0px;
+			border:none;
+		}
+		.form table .t {
+			text-align:center;
+			width:25%;
+		}
+		.btns {
+			width:100%;
+			text-align:center;
+			padding-top:10px;
+		}
+		.btns .btn-s {
+			width:25%;
+			display:inline-block;
+		}
+		.hf label{
+			float:left;
+			width:20%;
+			line-height:35px;
+			text-align:center;
+			background-color:#ea8601;
+			border-radius: 5px;
+			margin-right:4%;
+			color:#fff;
+		}
+		.hf input{
+			width:75%;
+		}
+block content_here
+	//- include nav
+	.content(style="background-color:#fff;")
+		//- img(src="/img/lots-4.jpg")
+		img(src="/img/#{win.img}")
+		.content-padded
+			-if (win.info == "50hf")
+				div.hf
+					label 卡密
+					input(type="text",value="#{win.content}")
+				div.share
+					img(src="/img/lots-share.jpg")
+			-else
+				form(name="register",action="/sign/winner/#{win._id}").form
+					.form-title
+						img(src="/img/lots-title.png")
+					.form-list
+						table
+							tr
+								td.t 姓名
+								td
+									input(type="text",name="username")
+							tr
+								td.t 电话
+								td 
+									input(type="text",name="mobile")
+							tr
+								td.t 邮寄地址
+								td
+									input(type="text",name="adr")
+					.btns
+						div.btn-s(name="submit")
+							img(src="/img/submit-lucky.png")
+
+
+
+block js_here
+	script.
+		$(document).ready(function(){
+			$("[name=submit]").click(function(){
+				$.ajax({
+					url:$('[name=register]').attr("action"),
+					type: 'POST',
+					data: $('[name=register]').serializeArray(),
+					dataType: 'json',
+					success: function(msg){
+						if (msg.recode == 200){
+							alert("提交成功,已经将您的信息存入,请不要重复提交.");
+							//- window.location.reload();
+						}else{
+							alert(msg.reason);
+						}
+					}
+				});
+			});
+		});

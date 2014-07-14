@@ -247,16 +247,127 @@ exports.luckyframe = (req,res,next)->
 
 exports.getlucky = (req,res,next)->
 	re = new helper.recode()
+	re.url = ""
 	Inte.getInteAll res.locals.userid,(err,resutls)->
 		# ep.emit "inte",resutls
 		# getlucky
 		if resutls >= 5
 			Inte.newInte res.locals.userid,-5,"抽奖",(err,int)->
-				res.send re
+				list = [[14,14,14],[14,14,12],[14,12,12],[15,15,15],[13,13,13],[12,12,11],[11,11,11]]
+				lot = Math.ceil(Math.random()*10000)
+				console.log lot
+				# 游戏页面，抽奖概率，奖品单页
+				# 存入中奖信息, 然后更新数据库.
+
+				# if lot?
+				if lot is 8
+					console.log "平板"
+					# samsung tab s
+					return Warehouse.getWinnerByInfo "Tabs",(err,lots)->
+						if lots?
+							lots.usedby = res.locals.userid
+							lots.used = true
+							lots.save()
+							re.url = "/sign/winner/"+lots._id
+							re.reason = list[0]
+							re.reason = re.reason.join(",")
+							res.send re
+						else
+							none = [[13,12,13],[11,13,15],[13,15,11]]
+							re.reason = none[Math.ceil(Math.random()*(none.length-1))]
+							re.reason = re.reason.join(",")
+							res.send re
+				if lot >= 1 and lot <=10
+					# 耳机
+					console.log "耳机"
+					return Warehouse.getWinnerByInfo "Headset",(err,lots)->
+						if lost?
+							lots.usedby = res.locals.userid
+							lots.used = true
+							lots.save()
+							re.url = "/sign/winner/"+lots._id
+							re.reason = list[1]
+							re.reason = re.reason.join(",")
+							res.send re
+						else
+							none = [[13,12,13],[11,13,15],[13,15,11]]
+							re.reason = none[Math.ceil(Math.random()*(none.length-1))]
+							re.reason = re.reason.join(",")
+							res.send re
+				if lot >= 11 and lot <=20
+					# 移动电源
+					console.log "移动电源"
+					return Warehouse.getWinnerByInfo "Power",(err,lots)->
+						if lots?
+							lots.usedby = res.locals.userid
+							lots.used = true
+							lots.save()
+							re.url = "/sign/winner/"+lots._id
+							re.reason = list[2]
+							re.reason = re.reason.join(",")
+							res.send re
+						else
+							none = [[13,12,13],[11,13,15],[13,15,11]]
+							re.reason = none[Math.ceil(Math.random()*(none.length-1))]
+							re.reason = re.reason.join(",")
+							res.send re
+				if lot >=100 and lot<=500
+					# 300积分
+					console.log "300积分"
+					if res.locals.userid?
+						Inte.newInte res.locals.userid,300,"抽奖获得,300积分",(err,inte)->
+					re.reason = list[3]
+					re.reason = re.reason.join(",")
+					res.send re
+				if lot >=500 and lot <= 700
+					# 50元 话费
+					console.log "50话费"
+					return Warehouse.getWinnerByInfo "50hf",(err,lots)->
+						if lots?
+							lots.usedby = res.locals.userid
+							lots.used = true
+							lots.save()
+							re.url = "/sign/winner/"+lots._id
+							re.reason = list[4]
+							re.reason = re.reason.join(",")
+							res.send re
+						else
+							none = [[13,12,13],[11,13,15],[13,15,11]]
+							re.reason = none[Math.ceil(Math.random()*(none.length-1))]
+							re.reason = re.reason.join(",")
+							res.send re
+
+					
+				if lot >=1000 and lot <= 3000
+					# 东坡
+					re.url = "/sign/winner/dp"
+					re.reason = list[5]
+					re.reason = re.reason.join(",")
+					res.send re
+				if lot >=3000 and lot <= 6000
+					# 火锅
+					re.url = "/sign/winner/hg"
+					re.reason = list[6]
+					re.reason = re.reason.join(",")
+					res.send re
+
+				if re.reason is "success"
+					console.log "没有抽中"
+					# 15 300积分
+					# 14 三星 不能用
+					# 13 50元
+					# 12 东坡
+					# 11 火锅 不能和12同时出现
+					none = [[13,12,13],[11,13,15],[13,15,11]]
+					re.reason = none[Math.ceil(Math.random()*(none.length-1))]
+					re.reason = re.reason.join(",")
+					res.send re
 		else
 			re.recode = 201
 			re.reason = "积分不足"
 			res.send re
+
+
 
 exports.nickname = (req,res,next)->
 	res.render "nickname"
@@ -379,6 +490,62 @@ exports.page6 = (req,res,next)->
 exports.page7 = (req,res,next)->
 	res.render "page7"
 
+# 
+exports.game = (req,res,next)->
+	res.render "gamedown"
+# 中奖填写
+exports.lots = (req,res,next)->
+	res.render "lots"
+
+exports.winner = (req,res,next)->
+	id = req.params.winner_id
+	if id is "dp"
+		return res.render "lots-dp"
+	if id is "hg"
+		return res.render "lots-hg"
+
+	Warehouse.getWinnerById id,(err,win)->
+		if win?
+			res.render "lots",{win:win}
+		# else
+
+exports.winner_post = (req,res,next)->
+	re = new helper.recode()
+
+	username = req.body.username
+	mobile = req.body.mobile
+	adr = req.body.adr
+
+	if not username? or username is ""
+		re.recode = 201
+		re.reason = "用户名不能为空"
+		return res.send re
+
+	check = /^[1][3-8]\d{9}$/
+	if not check.test mobile
+		re.recode = 201
+		re.reason = "请验证手机号码格式"
+		return res.send re
+	if not adr? or adr is ""
+		re.recode = 201
+		re.reason = "邮寄地址不能为空"
+		return res.send re
+	Warehouse.getWinnerByUandW res.locals.userid,req.params.winner_id,(err,win)->
+		if win? and win.username?
+			re.recode = 201
+			re.reason = "您已经提交过此中奖信息,无法更改."
+			return res.send re
+		if win?
+			win.username = username
+			win.mobile = mobile
+			win.adr = adr
+			win.create_at = new Date()
+			win.save()
+			res.send re
+		else
+			re.recode = 201
+			re.reason = "请不要使用其他用户的兑奖码"
+			res.send re
 
 
 # 初始化一个话题
@@ -395,13 +562,45 @@ setDefaultTopic = ->
 			Topic.newTopic name,description,lot,startime,endtime,(err,topic)->
 				console.log "初始化了一个话题"	
 
-# 设置初始化奖项.
+# 初始化奖品
+setDefaultWinner = ()->
+	Warehouse.newwinner "Tabs","一等奖","lots-1.jpg",(err,win)->
+	Warehouse.newwinner "Tabs","一等奖","lots-1.jpg",(err,win)->
+	Warehouse.newwinner "Tabs","一等奖","lots-1.jpg",(err,win)->
+	Warehouse.newwinner "Headset","二等奖","lots-2.jpg",(err,win)->
+	Warehouse.newwinner "Headset","二等奖","lots-2.jpg",(err,win)->
+	Warehouse.newwinner "Headset","二等奖","lots-2.jpg",(err,win)->
+	Warehouse.newwinner "Headset","二等奖","lots-2.jpg",(err,win)->
+	Warehouse.newwinner "Headset","二等奖","lots-2.jpg",(err,win)->
+	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
+	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
+	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
+	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
+	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
+	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
+	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
+	Warehouse.newwinner "50hf","1234567890","lots-4.jpg",(err,win)->
+	Warehouse.newwinner "50hf","1234567891","lots-4.jpg",(err,win)->
+	Warehouse.newwinner "50hf","1234567892","lots-4.jpg",(err,win)->
+	Warehouse.newwinner "50hf","1234567893","lots-4.jpg",(err,win)->
+	Warehouse.newwinner "50hf","1234567894","lots-4.jpg",(err,win)->
+	Warehouse.newwinner "50hf","1234567895","lots-4.jpg",(err,win)->
+	Warehouse.newwinner "50hf","1234567896","lots-4.jpg",(err,win)->
+	Warehouse.newwinner "50hf","1234567897","lots-4.jpg",(err,win)->
+	Warehouse.newwinner "50hf","1234567898","lots-4.jpg",(err,win)->
+	Warehouse.newwinner "50hf","1234567899","lots-4.jpg",(err,win)->
+
+
+
+# 设置初始化游戏.
 setsomeDefautleLots = ()->
 	Lots.getLots (err,list)->
 		if list? and list.length > 0
 			# console.log "奖品列表,存在"
 		else
 			console.log "初始化了一些奖品"
+			setDefaultWinner()
+			
 			name = "神偷奶爸：小黄人快跑"
 			description = "既搞笑又有趣的跑酷游戏"
 			img = "/img/game-1.png"
@@ -409,7 +608,7 @@ setsomeDefautleLots = ()->
 			info_b = "兑换说明：进入游戏主页，点击设置按钮（右上角），输入兑换码<br/>注：此礼包仅可使用于三星专版游戏中"
 			info_c = "游戏介绍：<p>在《神偷奶爸》官方游戏中，格鲁忠诚的小黄人已经准备好迎接艰难的挑战啦。扮演小黄人，在搞笑的快节奏挑战中与他人竞争，打败你的老板——超级大反派格鲁！跳跃、飞翔、躲避障碍、收集香蕉、恶作剧，打败其他反派，赢取“年度小黄人”的称号！</p><p>游戏亮点：</p><p>1.重新发现《神偷奶爸》的幸福和幽默。</p><p>2.跑过又去的标志性场所：格鲁的实验室和格鲁的住宅区。</p><p>3.在上百个任务中完成卑鄙动作。</p><p>4.用独一无二的服装、武器和道具自定义你的小黄人。</p><p>5.在多动态摄影视角下游戏。</p><h2>新业务推荐</h2><p>1.加入新地图-市中心</p><p>2.增加套装升级功能</p><p>3.新增3个套装：女仆，高尔夫球手和变装达人</p><p>4.新增任务页面提示</p><p>5.修改菜单名称</p><p>6.更换新icon</p>"
 			headerimg = "/img/game-1-title.jpg"
-			descriptionimg = "/img/game-1-decription.jpg"
+			descriptionimg = "/img/game-1-description.jpg"
 			order = 1
 			inte = 0
 			Lots.newlots name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,(err,lots)->

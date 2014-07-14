@@ -30,6 +30,7 @@ module.exports = function(app) {
   app.get("/sign/exchange", sign.exchange);
   app.get("/sign/exchange/:type_id", sign.exchange_type);
   app.get("/sign/exchangelot/:lots_id", sign.exchangelot);
+  app.get("/sign/game", sign.game);
   app.get("/sign/lucky", sign.lucky);
   app.get("/sign/getlucky", sign.getlucky);
   app.get("/sign/luckyframe", sign.luckyframe);
@@ -38,7 +39,10 @@ module.exports = function(app) {
   app.post("/sign/comment", sign.comment);
   app.get("/sign/comments", sign.comments);
   app.get("/nickname", sign.nickname);
-  return app.post("/sign/nickname", sign.postnickname);
+  app.post("/sign/nickname", sign.postnickname);
+  app.get("/sign/lots", sign.lots);
+  app.get("/sign/winner/:winner_id", sign.winner);
+  return app.post("/sign/winner/:winner_id", sign.winner_post);
 };
 
 console.log("routes loaded.");

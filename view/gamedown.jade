@@ -1,0 +1,45 @@
+extends layout
+block css_here
+	style.
+		body,.content {
+			background:#d7e3ff;
+		}
+		.downbtn {
+			position:absolute;
+			right:2%;
+			width: 20%;
+			height:40px;
+			display:block;
+			z-index:99;
+		}
+		.qwuxia {
+			top:52%;
+		}
+		.fengshen {
+			top:62%;
+		}
+		.chaojiyingxiong {
+			top:73%;
+		}
+block content_here
+	//- include nav
+	.content
+		-var url = "http://115.28.106.34/down/qwuxia.apk";
+		a.downbtn.qwuxia(href="#{url}")
+		-var url = "http://115.28.106.34/down/fengshen.apk";
+		a.downbtn.fengshen(href="#{url}")
+		-var url = "http://115.28.106.34/down/chaojiyingxiong.apk";
+		a.downbtn.chaojiyingxiong(href="#{url}")
+		img(src="/img/gamedownbg.jpg")
+
+block js_here
+	script.
+		document.addEventListener('WeixinJSBridgeReady', WeixinBridge);
+		function WeixinBridge(evt) {
+			$(".downbtn").each(function(){
+				var url = encodeURIComponent($(this).attr("href"));
+				var newurl = "http://mp.weixin.qq.com/mp/redirect?url={url}#weixin.qq.com%23wechat_redirect";
+				newurl = newurl.replace("{url}",url);
+				$(this).attr("href",newurl);
+			});
+		}

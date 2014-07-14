@@ -11,38 +11,41 @@ block content_here
 					img(src="/img/lucky-bg.jpg")
 				div.random
 					div.items
-						div.item
-							img(src="/img/icon-l-1.png")
-						div.item
-							img(src="/img/icon-l-2.png")
-						div.item
-							img(src="/img/icon-l-3.png")
-						div.item
-							img(src="/img/icon-l-4.png")
-						div.item
-							img(src="/img/icon-l-5.png")
+						-for (var i=0;i<10;i++)
+							div.item
+								img(src="/img/icon-l-1.png")
+							div.item
+								img(src="/img/icon-l-2.png")
+							div.item
+								img(src="/img/icon-l-3.png")
+							div.item
+								img(src="/img/icon-l-4.png")
+							div.item
+								img(src="/img/icon-l-5.png")
 					div.items
-						div.item
-							img(src="/img/icon-l-1.png")
-						div.item
-							img(src="/img/icon-l-2.png")
-						div.item
-							img(src="/img/icon-l-3.png")
-						div.item
-							img(src="/img/icon-l-4.png")
-						div.item
-							img(src="/img/icon-l-5.png")
+						-for (var i=0;i<10;i++)
+							div.item
+								img(src="/img/icon-l-1.png")
+							div.item
+								img(src="/img/icon-l-2.png")
+							div.item
+								img(src="/img/icon-l-3.png")
+							div.item
+								img(src="/img/icon-l-4.png")
+							div.item
+								img(src="/img/icon-l-5.png")
 					div.items
-						div.item
-							img(src="/img/icon-l-1.png")
-						div.item
-							img(src="/img/icon-l-2.png")
-						div.item
-							img(src="/img/icon-l-3.png")
-						div.item
-							img(src="/img/icon-l-4.png")
-						div.item
-							img(src="/img/icon-l-5.png")
+						-for (var i=0;i<10;i++)
+							div.item
+								img(src="/img/icon-l-1.png")
+							div.item
+								img(src="/img/icon-l-2.png")
+							div.item
+								img(src="/img/icon-l-3.png")
+							div.item
+								img(src="/img/icon-l-4.png")
+							div.item
+								img(src="/img/icon-l-5.png")
 				//- div.pline
 					img(src="/img/lucky-line.png")
 			div.lucky-btn
@@ -69,24 +72,60 @@ block js_here
 	script.
 
 		_loting = false
-		function getLot() {
+		function getLot(list,url) {
+			var lots = list.split(",");
 			var h = $(".random .item").height();
-			h = -h*2
-			$(".random .items").css({
-				"transition":"0.5s",
-				"-ms-transition":"0.5s",
-				"-webkit-transition":"0.5s",
-				"-moz-transition":"0.5s",
-				"-o-transition":"0.5s", 
-				"transform":"translate3d(0px, "+h+"px, 0px)",
-				"-ms-transform":"translate3d(0px, "+h+"px, 0px)",
-				"-webkit-transform":"translate3d(0px, "+h+"px, 0px)",
-				"-moz-transform":"translate3d(0px, "+h+"px, 0px)",
-				"-o-transform":"translate3d(0px, "+h+"px, 0px)"
+			hw = -h*parseInt(lots[0])
+			$(".random .items").eq(0).css({
+				"transition":"2s",
+				"-ms-transition":"2s",
+				"-webkit-transition":"2s",
+				"-moz-transition":"2s",
+				"-o-transition":"2s", 
+				"transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-ms-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-webkit-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-moz-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-o-transform":"translate3d(0px, "+hw+"px, 0px)"
 			});
+			hw = -h*parseInt(lots[1])
+			$(".random .items").eq(1).css({
+				"transition":"2s",
+				"-ms-transition":"2s",
+				"-webkit-transition":"2s",
+				"-moz-transition":"2s",
+				"-o-transition":"2s", 
+				"transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-ms-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-webkit-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-moz-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-o-transform":"translate3d(0px, "+hw+"px, 0px)"
+			});
+			hw = -h*parseInt(lots[2])
+			$(".random .items").eq(2).css({
+				"transition":"2s",
+				"-ms-transition":"2s",
+				"-webkit-transition":"2s",
+				"-moz-transition":"2s",
+				"-o-transition":"2s", 
+				"transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-ms-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-webkit-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-moz-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-o-transform":"translate3d(0px, "+hw+"px, 0px)"
+			});
+			
 			setTimeout(function(){
-			$("#luckybtn").hide();
-			$("#luckysubmit").show();
+				if (list == "13,12,13" || list == "11,13,15" || list == "13,15,11") {
+					alert("可惜没中奖,再试一次");
+					return setdefault();
+				}
+				if (list == "15,15,15") {
+					alert("恭喜获得300积分,已经充入您的账号");	
+					return setdefault();
+				}
+				$("#luckybtn").hide();
+				$("#luckysubmit").attr("href",url).show();
 			},600);
 
 			//- if (_loting){
@@ -104,6 +143,20 @@ block js_here
 
 			//- },4000);
 		}
+		function setdefault() {
+			$(".random .items").css({
+				"transition":"0s",
+				"-ms-transition":"0s",
+				"-webkit-transition":"0s",
+				"-moz-transition":"0s",
+				"-o-transition":"0s", 
+				"transform":"translate3d(0px, 0px, 0px)",
+				"-ms-transform":"translate3d(0px, 0px, 0px)",
+				"-webkit-transform":"translate3d(0px, 0px, 0px)",
+				"-moz-transform":"translate3d(0px, 0px, 0px)",
+				"-o-transform":"translate3d(0px, 0px, 0px)"
+			});
+		}
 		_submit = false; 
 		function post() {
 			_submit = true;
@@ -114,7 +167,7 @@ block js_here
 				dataType: 'json',
 				success: function(msg) {
 					if (msg.recode == 200) {
-						getLot();
+						getLot(msg.reason,msg.url);
 					}else{
 						alert(msg.reason);
 					}
