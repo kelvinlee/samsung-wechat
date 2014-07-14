@@ -45,7 +45,7 @@ block css_here
 		}
 		.body .content-c{
 		position: relative;
-		margin: 6% 0 2%;
+		margin: 0% 0 2%;
 		}
 		.body .text, .body .text2{
 		position: relative;
@@ -57,29 +57,40 @@ block css_here
 		position: absolute;
 		right: 5%;
 		}
+		.short {
+			padding:10px;
+		}
+		.info {
+			padding:0px 10px;
+		}
+		.info p {
+			margin:0px;
+		}
+		.info-s {
+			padding:0px 10px;
+			border-bottom:solid 1px #ccc;
+			margin-bottom:10px;
+			padding-bottom:10px;
+		}
 block content_here
 	include nav
 	.content(style="background-color:#fff;")
 		.body
 			.head
-				img(src='/img/headbg.jpg', width='100%')
-				.downloadbtn
-					//- a(href='http://www.baidu.com', target='_blank')
-				.form
-					input(type='text', value='#{lot.content}')
-					.copy
-						img(src='/img/copy.png', width='100%')
+				img(src='#{lotinfo.headerimg}', width='100%')
+			.short
+				p !{lotinfo.info_a}
 			.content-c
-				img(src='/img/contentbg.jpg', width='100%')
-			.info
-				.text
-					p
-						| 版本：3.5.2.0
-						span.right 6.032MB
-					p 2014年6云1日
-					p 适合所有年龄段人士
-				.text2
-					p 说明
+				img(src='#{lotinfo.descriptionimg}', width='100%')
+			.dh
+				input(type="text",value="#{lot.content}",style="width:50%")
+			.info-s !{lotinfo.info_b}
+			.info 
+				h2 说明
+				|!{lotinfo.info_c}
+
+
+				
 	script.
 		window.onload = function () {
 		$('.form .copy').on('click', function () {

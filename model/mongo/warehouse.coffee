@@ -1,8 +1,8 @@
 models = require './base'
 Warehouse = models.Warehouse
 
-exports.getByUserId = (id,callback)->
-	Warehouse.findOne {usedby:id},callback
+exports.getByUserId = (id,lid,callback)->
+	Warehouse.findOne {usedby:id,info:lid},callback
 exports.getById = (id,callback)->
 	Warehouse.findOne {_id:id},callback
 exports.getOne = (id,callback)->

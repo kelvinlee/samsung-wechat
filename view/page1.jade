@@ -1,4 +1,21 @@
 extends layout
+block css_here
+	style.
+		.active-1 {
+			position:relative;
+		}
+		.active-1 .m {
+			display:block;
+			width:80%;
+			height:60px;
+			position:absolute;
+			top:93%;
+			left:10%;
+		}
 block content_here
 	.content
-		img(src="/img/page1.jpg") 
+		div.active-1
+			a.m(href="/sign/lucky")
+			img(src="/img/active-1.jpg") 
+		
+

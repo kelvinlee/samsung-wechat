@@ -128,6 +128,21 @@ LotsSchema = new Schema({
   img: {
     type: String
   },
+  headerimg: {
+    type: String
+  },
+  descriptionimg: {
+    type: String
+  },
+  info_a: {
+    type: String
+  },
+  info_b: {
+    type: String
+  },
+  info_c: {
+    type: String
+  },
   order: {
     type: Number
   },
@@ -154,7 +169,8 @@ exports.Lots = Lots;
 WarehouseSchema = new Schema({
   info: {
     type: ObjectId,
-    index: true
+    index: true,
+    rel: "Lots"
   },
   content: {
     type: String

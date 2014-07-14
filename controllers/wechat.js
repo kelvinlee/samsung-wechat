@@ -208,7 +208,7 @@ newactive = {
       title: "关注三星乐园微信公众账号,惊喜大礼等你拿!",
       description: '关注三星乐园微信公众账号,惊喜大礼等你拿!',
       picurl: "" + config.host + "/img/banner-1.jpg",
-      url: "" + config.host + "/art/1"
+      url: "" + config.host + "/page1"
     }, {
       title: "GALAXY K zoom让每个瞬间都精彩!",
       description: 'GALAXY K zoom让每个瞬间都精彩!',

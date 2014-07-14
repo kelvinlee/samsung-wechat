@@ -1,5 +1,5 @@
 WarehouseSchema = new Schema({
-  info:{type:ObjectId,index:true}
+  info:{type:ObjectId,index:true,rel:"Lots"}
   content:{type:String}
   used:{type:Boolean,default:false,index:true}
   usedby:{type:ObjectId,rel:"user",index:true}
