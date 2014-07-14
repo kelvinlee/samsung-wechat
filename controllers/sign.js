@@ -101,18 +101,14 @@ exports.middle = function(req, res, next) {
   var openid;
   openid = req.params.openid;
   url = req.query.url;
-  console.log(openid, url);
   return User.getUserOpenId(openid, function(err, user) {
     if (user != null) {
       res.cookie("userid", user._id);
-      console.log(url);
       return res.redirect(url);
     } else {
       return User.regbyOpenId(openid, function(err, user) {
-        console.log(url);
         res.cookie("userid", user._id);
         return Inte.newInte(user._id, 1000, "初次注册赠送积分活动,1000积分", function(err, inte) {
-          console.log("初次注册赠送积分活动,1000积分");
           return res.redirect(url);
         });
       });
@@ -317,12 +313,16 @@ exports.mylot = function(req, res, next) {
   });
 };
 
+exports.luckyframe = function(req, res, next) {
+  return res.render("luckyframe");
+};
+
 exports.getlucky = function(req, res, next) {
   var re;
   re = new helper.recode();
   return Inte.getInteAll(res.locals.userid, function(err, resutls) {
-    if (resutls >= 50) {
-      return Inte.newInte(res.locals.userid, -50, "抽奖", function(err, int) {
+    if (resutls >= 5) {
+      return Inte.newInte(res.locals.userid, -5, "抽奖", function(err, int) {
         return res.send(re);
       });
     } else {

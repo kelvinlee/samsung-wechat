@@ -52,6 +52,7 @@ module.exports = (app)->
   # 抽奖
   app.get "/sign/lucky", sign.lucky
   app.get "/sign/getlucky", sign.getlucky
+  app.get "/sign/luckyframe", sign.luckyframe
   # 每日签到
   app.get "/sign/tointe", sign.tointe
 

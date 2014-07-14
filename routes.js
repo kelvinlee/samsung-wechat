@@ -32,6 +32,7 @@ module.exports = function(app) {
   app.get("/sign/exchangelot/:lots_id", sign.exchangelot);
   app.get("/sign/lucky", sign.lucky);
   app.get("/sign/getlucky", sign.getlucky);
+  app.get("/sign/luckyframe", sign.luckyframe);
   app.get("/sign/tointe", sign.tointe);
   app.get("/sign/topic", sign.topic);
   app.post("/sign/comment", sign.comment);

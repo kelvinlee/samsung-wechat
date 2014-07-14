@@ -1,9 +1,10 @@
-init(50,"mylegend",640,397,main);
+init(50,"mylegend",640,500,main);
 
 var loadingLayer;
 var backLayer;
 var stopLayer;
 var startLayer;
+var lotLayer;
 var loadIndex = 0;
 var imglist = {};
 var btnup,btndown,btnleft,btnright;
@@ -22,9 +23,9 @@ var stopBtn = new Array();
 var start;
 var win;
 function main(){
-	imgData.push({name:"stop_up",path:"/img/slot_stop_up.png"});
-	imgData.push({name:"stop_over",path:"/img/slot_stop_over.png"});
-	// imgData.push({name:"start",path:"./img/slot_start.jpg"});
+	imgData.push({name:"lot",path:"/img/submit-lucky.png"});
+	// imgData.push({name:"stop_over",path:"/img/slot_stop_over.png"});
+	imgData.push({name:"start",path:"/img/lucky-try.png"});
 	// imgData.push({name:"kake",path:"./img/slot_kake.png"});
 	imgData.push({name:"slot_back",path:"/img/lucky-bg.jpg"});
 	// imgData.push({name:"slot_ok",path:"./img/slot_ok.png"});
@@ -86,10 +87,19 @@ function gameInit(event){
 	startLayer = new LSprite();
 	addChild(startLayer);
 	start = new LButton(new LBitmap(new LBitmapData(imglist["start"])),new LBitmap(new LBitmapData(imglist["start"])));
-	start.x = 55;
-	start.y = 450;
+	start.x = 215;
+	start.y = 410;
 	startLayer.addChild(start);
-	// start.addEventListener(LMouseEvent.MOUSE_UP, onmouseup);
+	start.addEventListener(LMouseEvent.MOUSE_UP, onmouseup);
+
+	lotLayer = new LSprite();
+	addChild(lotLayer);
+	lot = new LButton(new LBitmap(new LBitmapData(imglist["lot"])),new LBitmap(new LBitmapData(imglist["lot"])));
+	lot.x = 215;
+	lot.y = 410;
+	lotLayer.addChild(lot);
+	lot.addEventListener(LMouseEvent.MOUSE_UP, onmouseuplot);
+	lotLayer.visible = false;
 
 	
 	win = new LButton(new LBitmap(new LBitmapData(imglist["slot_ok"])),new LBitmap(new LBitmapData(imglist["slot_ok"])));
@@ -98,6 +108,19 @@ function gameInit(event){
 	win.addEventListener(LMouseEvent.MOUSE_UP, winclick);
 	
 	backLayer.addEventListener(LEvent.ENTER_FRAME,onframe);
+
+	$(".tab-item").each(function(){
+		this.addEventListener("click",gotopage);
+	});
+}
+function onmouseuplot (event) {
+	window.location.href = "http://wservice.yazuosoft.com/yazuo-weixin/weixin/phonePage/registerPage.do?brandId=1631&weixinId=o_bYSuF_emkC8kJ6MZOgK_4o7i9U&from=singlemessage&isappinstalled=0";
+}
+function GameOver () {
+	lotLayer.visible = true;
+}
+function gotopage (event) {
+	console.log(event);
 }
 function onframe(){
 	var i;
@@ -110,6 +133,9 @@ function stopevent(event,currentTarget){
 	reels[currentTarget.index].stopFlag = true;
 }
 function onmouseup(event){
+	post();
+}
+function starplay(event) {
 	var i;
 	var stopNum = Math.floor(Math.random()*(combination.length/3));
 	start.visible = false;

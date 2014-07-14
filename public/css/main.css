@@ -315,6 +315,11 @@ ul {
 .note1 {
   padding-top: 10px;
 }
+iframe.content {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 .registration {
   position: relative;
 }

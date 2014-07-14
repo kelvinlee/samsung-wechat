@@ -76,19 +76,19 @@ exports.before = (req,res,next)->
 exports.middle = (req,res,next)->
 	openid = req.params.openid
 	url = req.query.url
-	console.log openid,url
+	# console.log openid,url
 
 	User.getUserOpenId openid,(err,user)->
 		if user?
 			res.cookie "userid",user._id
-			console.log url
+			# console.log url
 			res.redirect url
 		else
 			User.regbyOpenId openid,(err,user)->
-				console.log url
+				# console.log url
 				res.cookie "userid",user._id
 				Inte.newInte user._id,1000,"初次注册赠送积分活动,1000积分",(err,inte)->
-					console.log "初次注册赠送积分活动,1000积分"
+					# console.log "初次注册赠送积分活动,1000积分"
 					res.redirect url
 
 
@@ -242,14 +242,16 @@ exports.mylot = (req,res,next)->
 				res.render "elot",{lot:lot,lotinfo:lotinfo}
 		else
 			res.render "elot",{lot:null}
+exports.luckyframe = (req,res,next)->
+	res.render "luckyframe"
 
 exports.getlucky = (req,res,next)->
 	re = new helper.recode()
 	Inte.getInteAll res.locals.userid,(err,resutls)->
 		# ep.emit "inte",resutls
 		# getlucky
-		if resutls >= 50
-			Inte.newInte res.locals.userid,-50,"抽奖",(err,int)->
+		if resutls >= 5
+			Inte.newInte res.locals.userid,-5,"抽奖",(err,int)->
 				res.send re
 		else
 			re.recode = 201
