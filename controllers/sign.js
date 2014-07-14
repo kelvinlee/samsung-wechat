@@ -111,8 +111,8 @@ exports.middle = function(req, res, next) {
       return User.regbyOpenId(openid, function(err, user) {
         console.log(url);
         res.cookie("userid", user._id);
-        return Inte.newInte(user._id, 1000, "初次注册赠送积分活动,100积分", function(err, inte) {
-          console.log("初次注册赠送积分活动,100积分");
+        return Inte.newInte(user._id, 1000, "初次注册赠送积分活动,1000积分", function(err, inte) {
+          console.log("初次注册赠送积分活动,1000积分");
           return res.redirect(url);
         });
       });
