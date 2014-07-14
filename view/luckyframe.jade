@@ -4,9 +4,9 @@ block css_here
 block content_here
 	//- include nav
 	.content
-		div#mylegend(style="height:300px;") 加载中
+		//- div#mylegend(style="height:300px;") 加载中
 		.content-padded
-			//- div.slot
+			div.slot
 				div.bg
 					img(src="/img/lucky-bg.jpg")
 				div.random
@@ -45,7 +45,7 @@ block content_here
 							img(src="/img/icon-l-5.png")
 				div.pline
 					img(src="/img/lucky-line.png")
-			//- div.lucky-btn
+			div.lucky-btn
 				a#luckybtn(href="/sign/getlucky",onclick=" post(this); return false;")
 					img(src="/img/lucky-try.png")
 				a#luckysubmit(href="http://wservice.yazuosoft.com/yazuo-weixin/weixin/phonePage/registerPage.do?brandId=1631&weixinId=o_bYSuF_emkC8kJ6MZOgK_4o7i9U&from=singlemessage&isappinstalled=0",style="display:none;")
@@ -56,33 +56,52 @@ block content_here
 
 
 block js_here
-	script(src="/js/lufylegend-1.8.6.min.js")
-	script.
-		console.log(LGlobal.canTouch);
-		if(LGlobal.canTouch){
-			LGlobal.stageScale = LStageScaleMode.NO_BORDER;
-			LSystem.screen(LStage.FULL_SCREEN);
-		}
-	script(src="/js/reel.js")
-	script(src="/js/game.js")
+	//- script(src="/js/lufylegend-1.8.6.min.js")
+	//- script.
+	//- 	console.log(LGlobal.canTouch);
+	//- 	if(LGlobal.canTouch){
+	//- 		LGlobal.stageScale = LStageScaleMode.NO_BORDER;
+	//- 		LSystem.screen(LStage.FULL_SCREEN);
+	//- 	}
+	//- script(src="/js/reel.js")
+	//- script(src="/js/game.js")
 	script.
 
 		_loting = false
 		function getLot() {
-			if (_loting){
-				return false; 
-			}
-			starplay({});
+			var h = $(".random .item").height();
+			h = -h*2
+			$(".random .item").css({
+				"transition":"0.5s",
+				"-ms-transition":"0.5s",
+				"-webkit-transition":"0.5s",
+				"-moz-transition":"0.5s",
+				"-o-transition":"0.5s", 
+				"transform":"translate3d(0px, "+h+"px, 0px)",
+				"-ms-transform":"translate3d(0px, "+h+"px, 0px)",
+				"-webkit-transform":"translate3d(0px, "+h+"px, 0px)",
+				"-moz-transform":"translate3d(0px, "+h+"px, 0px)",
+				"-o-transform":"translate3d(0px, "+h+"px, 0px)"
+			});
 			setTimeout(function(){
-				stopevent({},{index:1});
-			},3000);
-			setTimeout(function(){
-				stopevent({},{index:2});
-			},3500);
-			setTimeout(function(){
-				stopevent({},{index:0});
+			$("#luckybtn").hide();
+			$("#luckysubmit").show();
+			},600);
 
-			},4000);
+			//- if (_loting){
+			//- 	return false; 
+			//- }
+			//- starplay({});
+			//- setTimeout(function(){
+			//- 	stopevent({},{index:1});
+			//- },3000);
+			//- setTimeout(function(){
+			//- 	stopevent({},{index:2});
+			//- },3500);
+			//- setTimeout(function(){
+			//- 	stopevent({},{index:0});
+
+			//- },4000);
 		}
 		_submit = false; 
 		function post() {
