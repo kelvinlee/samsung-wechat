@@ -1,9 +1,19 @@
 extends layout
+block css_here
+	script(src="/js/lufylegend-1.8.6.min.js")
+	script.
+		if(LGlobal.canTouch){
+			LGlobal.stageScale = LStageScaleMode.NO_BORDER;
+			LSystem.screen(LStage.FULL_SCREEN);
+		}
+	script(src="/js/reel.js")
+	script(src="/js/game.js")
 block content_here
 	include nav
 	.content
+		div#mylegend(style="height:240px;") 加载中
 		.content-padded
-			div.slot
+			//- div.slot
 				div.bg
 					img(src="/img/lucky-bg.jpg")
 				div.random
@@ -43,13 +53,39 @@ block content_here
 				div.pline
 					img(src="/img/lucky-line.png")
 			div.lucky-btn
-				a(href="/sign/getlucky",onclick=" post(this); return false;")
+				a#luckybtn(href="/sign/getlucky",onclick=" post(this); return false;")
 					img(src="/img/lucky-try.png")
+				a#luckysubmit(href="http://wservice.yazuosoft.com/yazuo-weixin/weixin/phonePage/registerPage.do?brandId=1631&weixinId=o_bYSuF_emkC8kJ6MZOgK_4o7i9U&from=singlemessage&isappinstalled=0",style="display:none;")
+					img(src="/img/submit-lucky.png")
 			div.lucky-content
 				img(src="/img/lucky-content.png")
-block js_here 
+
+
+
+block js_here
 	script.
+		_loting = false
+		function getLot() {
+			if (_loting){
+				return false; 
+			}
+			onmouseup({});
+			setTimeout(function(){
+				stopevent({},{index:1});
+			},3000);
+			setTimeout(function(){
+				stopevent({},{index:2});
+			},3500);
+			setTimeout(function(){
+				stopevent({},{index:0});
+
+			},4000);
+		}
 		_submit = false;
+		function GameOver() {
+			$("#luckysubmit").show()
+			$("#luckybtn").hide()
+		}
 		function post(o) {
 			_submit = true;
 			$.ajax({
@@ -58,7 +94,11 @@ block js_here
 				type: 'GET',
 				dataType: 'json',
 				success: function(msg) {
-					alert('积分不足');
+					if (msg.recode == 200) {
+						getLot();
+					}else{
+						alert(msg.reason);
+					}
 				}
 			});
 		}

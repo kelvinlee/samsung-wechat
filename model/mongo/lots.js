@@ -13,7 +13,7 @@ exports.getById = function(id, callback) {
 
 exports.getLots = function(callback) {
   return Lots.find({}).sort({
-    order: -1
+    order: 1
   }).exec(callback);
 };
 

@@ -49,13 +49,13 @@ jianxingpin = {
 			title:"Samsung GALAXY Tab S Super AMOLED 炫丽屏重新定义视界"
 			description: 'Samsung GALAXY Tab S Super AMOLED 炫丽屏重新定义视界'
 			picurl:"#{config.host}/img/banner-11.jpg"
-			url: "#{config.host}/art/11"
+			url: "#{config.host}/art/12"
 		}
 		{
-			title:"Samsung GALAXY Tab S 最好的多媒体平板"
-			description: 'Samsung GALAXY Tab S 最好的多媒体平板'
+			title:"Samsung GALAXY Tab S"
+			description: 'Samsung GALAXY Tab S'
 			picurl:"#{config.host}/img/banner-12.jpg"
-			url: "#{config.host}/art/12"
+			url: "#{config.host}/art/11"
 		}
 		{
 			title:"Samsung GALAXY K zoom 让每个瞬间都精彩"
@@ -111,7 +111,7 @@ my = {
 		{
 			title:"积分信息查询"
 			description: '您的积分是:{jf}积分,点击《阅读全文》查看详细信息. [请勿转发此条信息,包含您的个人信息]'
-			picurl:"#{config.host}/img/banner-1.jpg"
+			picurl:"#{config.host}/img/banner-into.jpg"
 			url: "#{config.host}/middle/{openid}?url=/sign/my"
 		}
 	]
@@ -124,7 +124,7 @@ regsinto = {
 		{
 			title:"签到获取更多积分"
 			description: '您的积分是:{jf}积分,点击《阅读全文》查看详细信息. [请勿转发此条信息,包含您的个人信息]'
-			picurl:"#{config.host}/img/banner-1.jpg"
+			picurl:"#{config.host}/img/banner-qd.jpg"
 			url: "#{config.host}/middle/{openid}?url=/page7"
 		}
 	]
@@ -137,7 +137,7 @@ topicmenu = {
 		{
 			title:"本期话题:最让你遗憾的事"
 			description: '聊话题赢大奖. [请勿转发此条信息,包含您的个人信息]'
-			picurl:"#{config.host}/img/banner-7.jpg"
+			picurl:"#{config.host}/img/banner-topic.jpg"
 			url: "#{config.host}/middle/{openid}?url=/sign/topic"
 		}
 	]
@@ -150,7 +150,7 @@ luckymenu = {
 		{
 			title:"来试试看你的手气,赢大奖"
 			description: '摇转轮盘赢大奖. [请勿转发此条信息,包含您的个人信息]'
-			picurl:"#{config.host}/img/banner-1.jpg"
+			picurl:"#{config.host}/img/banner-lucky.jpg"
 			url: "#{config.host}/middle/{openid}?url=/sign/lucky"
 		}
 	]

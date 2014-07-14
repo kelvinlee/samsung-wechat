@@ -320,7 +320,17 @@ exports.mylot = function(req, res, next) {
 exports.getlucky = function(req, res, next) {
   var re;
   re = new helper.recode();
-  return res.send(re);
+  return Inte.getInteAll(res.locals.userid, function(err, resutls) {
+    if (resutls >= 50) {
+      return Inte.newInte(res.locals.userid, -50, "抽奖", function(err, int) {
+        return res.send(re);
+      });
+    } else {
+      re.recode = 201;
+      re.reason = "积分不足";
+      return res.send(re);
+    }
+  });
 };
 
 exports.nickname = function(req, res, next) {

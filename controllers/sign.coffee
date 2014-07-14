@@ -245,7 +245,16 @@ exports.mylot = (req,res,next)->
 
 exports.getlucky = (req,res,next)->
 	re = new helper.recode()
-	res.send re
+	Inte.getInteAll res.locals.userid,(err,resutls)->
+		# ep.emit "inte",resutls
+		# getlucky
+		if resutls >= 50
+			Inte.newInte res.locals.userid,-50,"抽奖",(err,int)->
+				res.send re
+		else
+			re.recode = 201
+			re.reason = "积分不足"
+			res.send re
 
 exports.nickname = (req,res,next)->
 	res.render "nickname"

@@ -6,7 +6,7 @@ exports.getById = (id,callback)->
 	Lots.findOne {_id:id},callback
 
 exports.getLots = (callback)->
-	Lots.find({}).sort({order:-1}).exec callback
+	Lots.find({}).sort({order:1}).exec callback
 
 # Lots.newlots name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,(err,lots)->
 exports.newlots = (name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,callback)->
