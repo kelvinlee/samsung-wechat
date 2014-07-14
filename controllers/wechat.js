@@ -439,6 +439,19 @@ plugs_menu = function(message, callback) {
         return callback(newmy);
       }
     });
+  } else if (message.EventKey === "game") {
+    newmy = gamemenu;
+    newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
+    return User.getUserOpenId(message.FromUserName, function(err, user) {
+      console.log(newmy.items[0].url);
+      if (user != null) {
+        return Inte.getInteAll(user._id, function(err, count) {
+          return callback(newmy);
+        });
+      } else {
+        return callback(newmy);
+      }
+    });
   } else {
     return callback(empty);
   }

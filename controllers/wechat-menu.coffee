@@ -230,6 +230,16 @@ plugs_menu = (message,callback)->
 					callback newmy
 			else
 				callback newmy
+	else if message.EventKey is "game"
+		newmy = gamemenu
+		newmy.items[0].url = newmy.items[0].url.replace "{openid}",message.FromUserName
+		User.getUserOpenId message.FromUserName,(err,user)->
+			console.log newmy.items[0].url
+			if user?
+				Inte.getInteAll user._id,(err,count)->
+					callback newmy
+			else
+				callback newmy
 	else
 		callback empty
 
