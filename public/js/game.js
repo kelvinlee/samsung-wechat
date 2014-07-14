@@ -1,5 +1,7 @@
 init(50,"mylegend",640,500,main);
 
+
+
 var loadingLayer;
 var backLayer;
 var stopLayer;
