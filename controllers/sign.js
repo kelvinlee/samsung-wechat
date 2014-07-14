@@ -111,7 +111,7 @@ exports.middle = function(req, res, next) {
       return User.regbyOpenId(openid, function(err, user) {
         console.log(url);
         res.cookie("userid", user._id);
-        return Inte.newInte(user._id, 100, "初次注册赠送积分活动,100积分", function(err, inte) {
+        return Inte.newInte(user._id, 1000, "初次注册赠送积分活动,100积分", function(err, inte) {
           console.log("初次注册赠送积分活动,100积分");
           return res.redirect(url);
         });
@@ -523,7 +523,7 @@ setsomeDefautleLots = function() {
       headerimg = "/img/game-1-title.jpg";
       descriptionimg = "/img/game-1-decription.jpg";
       order = 1;
-      inte = 15;
+      inte = 0;
       Lots.newlots(name, description, img, order, inte, info_a, info_b, info_c, headerimg, descriptionimg, function(err, lots) {
         if (lots != null) {
           Warehouse.newlot(lots._id, "game-1-1", function(err, lot) {});
@@ -541,7 +541,7 @@ setsomeDefautleLots = function() {
       headerimg = "/img/game-2-title.jpg";
       descriptionimg = "/img/game-2-decription.jpg";
       order = 2;
-      inte = 15;
+      inte = 0;
       Lots.newlots(name, description, img, order, inte, info_a, info_b, info_c, headerimg, descriptionimg, function(err, lots) {
         if (lots != null) {
           Warehouse.newlot(lots._id, "game-2-1", function(err, lot) {});
@@ -559,7 +559,7 @@ setsomeDefautleLots = function() {
       headerimg = "/img/game-3-title.jpg";
       descriptionimg = "/img/game-3-decription.jpg";
       order = 3;
-      inte = 15;
+      inte = 0;
       Lots.newlots(name, description, img, order, inte, info_a, info_b, info_c, headerimg, descriptionimg, function(err, lots) {
         if (lots != null) {
           Warehouse.newlot(lots._id, "game-3-1", function(err, lot) {});
@@ -577,7 +577,7 @@ setsomeDefautleLots = function() {
       headerimg = "/img/game-4-title.jpg";
       descriptionimg = "/img/game-4-decription.jpg";
       order = 4;
-      inte = 15;
+      inte = 0;
       return Lots.newlots(name, description, img, order, inte, info_a, info_b, info_c, headerimg, descriptionimg, function(err, lots) {
         if (lots != null) {
           Warehouse.newlot(lots._id, "game-4-1", function(err, lot) {});

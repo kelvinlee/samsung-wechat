@@ -87,7 +87,7 @@ exports.middle = (req,res,next)->
 			User.regbyOpenId openid,(err,user)->
 				console.log url
 				res.cookie "userid",user._id
-				Inte.newInte user._id,100,"初次注册赠送积分活动,100积分",(err,inte)->
+				Inte.newInte user._id,1000,"初次注册赠送积分活动,100积分",(err,inte)->
 					console.log "初次注册赠送积分活动,100积分"
 					res.redirect url
 
@@ -409,7 +409,7 @@ setsomeDefautleLots = ()->
 			headerimg = "/img/game-1-title.jpg"
 			descriptionimg = "/img/game-1-decription.jpg"
 			order = 1
-			inte = 15
+			inte = 0
 			Lots.newlots name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,(err,lots)->
 				if lots?
 					Warehouse.newlot lots._id,"game-1-1",(err,lot)->
@@ -425,7 +425,7 @@ setsomeDefautleLots = ()->
 			headerimg = "/img/game-2-title.jpg"
 			descriptionimg = "/img/game-2-decription.jpg"
 			order = 2
-			inte = 15
+			inte = 0
 			Lots.newlots name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,(err,lots)->
 				if lots?
 					Warehouse.newlot lots._id,"game-2-1",(err,lot)->
@@ -441,7 +441,7 @@ setsomeDefautleLots = ()->
 			headerimg = "/img/game-3-title.jpg"
 			descriptionimg = "/img/game-3-decription.jpg"
 			order = 3
-			inte = 15
+			inte = 0
 			Lots.newlots name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,(err,lots)->
 				if lots?
 					Warehouse.newlot lots._id,"game-3-1",(err,lot)->
@@ -457,7 +457,7 @@ setsomeDefautleLots = ()->
 			headerimg = "/img/game-4-title.jpg"
 			descriptionimg = "/img/game-4-decription.jpg"
 			order = 4
-			inte = 15
+			inte = 0
 			Lots.newlots name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,(err,lots)->
 				if lots?
 					Warehouse.newlot lots._id,"game-4-1",(err,lot)->
