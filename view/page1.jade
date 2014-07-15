@@ -1,4 +1,6 @@
 extends layout
+block title
+	| 关注三星乐园微信公众帐号，惊喜大礼等你认领！
 block css_here
 	style.
 		.active-1 {
@@ -13,6 +15,8 @@ block css_here
 			left:10%;
 		}
 block content_here
+	div.weixin-share
+		img(src="http://115.28.106.34/img/weixin-topic.jpg")
 	.content
 		div.active-1
 			a.m(href="/sign/lucky")

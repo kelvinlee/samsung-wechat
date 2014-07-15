@@ -94,7 +94,7 @@ exports.before = function(req, res, next) {
   if ((req.cookies.userid != null) && req.cookies.userid !== "undefined" && req.cookies.userid !== "") {
     return next();
   } else {
-    return res.redirect("/login");
+    return res.redirect(Noconcern);
   }
 };
 
@@ -412,8 +412,8 @@ exports.getlucky = function(req, res, next) {
           res.send(re);
         }
         if (lot >= 500 && lot <= 700) {
-          console.log("50话费");
-          return Warehouse.getWinnerByInfo("50hf", function(err, lots) {
+          console.log("搜狐公仔");
+          return Warehouse.getWinnerByInfo("sohugz", function(err, lots) {
             var none;
             if (lots != null) {
               lots.usedby = req.cookies.userid;
@@ -693,10 +693,10 @@ exports.winner_post = function(req, res, next) {
 
 setDefaultTopic = function() {
   var description, endtime, list, lot, name, startime;
-  list = ["最让你遗憾的事", "最让你遗憾的事", "最让你遗憾的事", "最让你遗憾的事", "最让你遗憾的事"];
+  list = ["你敢不敢说走就走", "你敢不敢说走就走", "你敢不敢说走就走", "你敢不敢说走就走", "你敢不敢说走就走"];
   name = list[Math.ceil(Math.random() * 4)];
-  description = "简介";
-  lot = "UME电影票2张";
+  description = "你敢不敢说走就走，去那向往的远方，你犹豫着不走，到底是为何？每次旅行都遗憾放弃，到底是什么令你迟迟不走？快来说说牵绊你脚步的那些事儿吧~";
+  lot = "迪士尼玩偶";
   startime = new Date();
   endtime = new Date(new Date().getTime() + 1000 * 60 * 60 * 2);
   return Topic.getOne(function(err, t) {
@@ -724,16 +724,16 @@ setDefaultWinner = function() {
   Warehouse.newwinner("Power", "三等奖", "lots-3.jpg", function(err, win) {});
   Warehouse.newwinner("Power", "三等奖", "lots-3.jpg", function(err, win) {});
   Warehouse.newwinner("Power", "三等奖", "lots-3.jpg", function(err, win) {});
-  Warehouse.newwinner("50hf", "1234567890", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("50hf", "1234567891", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("50hf", "1234567892", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("50hf", "1234567893", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("50hf", "1234567894", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("50hf", "1234567895", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("50hf", "1234567896", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("50hf", "1234567897", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("50hf", "1234567898", "lots-4.jpg", function(err, win) {});
-  return Warehouse.newwinner("50hf", "1234567899", "lots-4.jpg", function(err, win) {});
+  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
+  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
+  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
+  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
+  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
+  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
+  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
+  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
+  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
+  return Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
 };
 
 setsomeDefautleLots = function() {
@@ -745,7 +745,7 @@ setsomeDefautleLots = function() {
       console.log("初始化了一些奖品");
       setDefaultWinner();
       name = "神偷奶爸：小黄人快跑";
-      description = "既搞笑又有趣的跑酷游戏";
+      description = "小黄人快跑！一路搞笑逗趣停不住！";
       img = "/img/game-1.png";
       info_a = "版本：2.4.0 大小:47.68MB<br/>  2014年5月31日 <br/>适合所有年龄段人士";
       info_b = "兑换说明：进入游戏主页，点击设置按钮（右上角），输入兑换码<br/>注：此礼包仅可使用于三星专版游戏中";
@@ -763,7 +763,7 @@ setsomeDefautleLots = function() {
         }
       });
       name = "武侠Q传";
-      description = "体验\"拳拳到肉\"的真实打斗快感";
+      description = "拳拳到肉，亲眼见证！体验真实打斗的畅快感受~";
       img = "/img/game-2.png";
       info_a = "版本：3.0.0.4.0  大小:107.01MB<br/>2014年7月10日<br/>适合12+年龄段人士";
       info_b = "兑换说明：进入游戏主页，点击设置按钮（右上角），输入兑换码<br/>注：此礼包仅可使用于三星专版游戏中";
@@ -781,7 +781,7 @@ setsomeDefautleLots = function() {
         }
       });
       name = "封神英雄榜";
-      description = "可体验如梦似幻的游戏乐趣";
+      description = "群雄聚集，等你加入！体验如梦似幻的英雄之旅~";
       img = "/img/game-3.png";
       info_a = "版本：1.1.0 大小:92.95MB <br/>2014年7月10日 <br/>适合所有年龄段人士";
       info_b = "兑换说明：进入游戏主页，点击设置按钮（右上角），输入兑换码<br/>注：此礼包仅可使用于三星专版游戏中";
@@ -799,7 +799,7 @@ setsomeDefautleLots = function() {
         }
       });
       name = "超级英雄";
-      description = "国内首款冒险卡牌手游";
+      description = "最强英雄，华丽上阵！史上最强英雄穿越来袭~";
       img = "/img/game-4.png";
       info_a = "版本：1.1.6  大小:95.51MB<br/>2014年7月10日<br/>适合所有年龄段人士";
       info_b = "兑换说明：进入游戏主页，点击设置按钮（右上角），输入兑换码<br/>注：此礼包仅可使用于三星专版游戏中";

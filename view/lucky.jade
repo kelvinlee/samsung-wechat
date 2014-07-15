@@ -1,6 +1,9 @@
 extends layout
-block css_here
+block title
+	| 幸运降临，等你伸手，你的好运气都在这里~
 	
 block content_here
+	.weixin-share
+		img(src="http://115.28.106.34/img/weixin-lucky.jpg")
 	include nav
 	iframe(src="/sign/luckyframe").content 

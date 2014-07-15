@@ -1,6 +1,10 @@
 extends layout
+block title
+	| 顶尖趋势，潮流热点，你想聊的话题都在这里~
 block content_here
 	//- include nav
+	div.weixin-share
+		img(src="http://115.28.106.34/img/weixin-topic.jpg")
 	nav.bar.bar-tab
 		div.sendmsg
 			form.form(action="/sign/comment",name="register",onsubmit="post(); return false;")
@@ -18,8 +22,11 @@ block content_here
 							//- span#runtime.h4(data-time="#{topic.end_at.getTime()}") 
 							div.topic-description
 								img(src="/img/logo-topic.png")
-								h2.h3 <span>##{topic.name}#</span>人非圣贤，孰能无悔！激烈的比赛虽然落幕，但足球月里的各种遗憾事儿却让小伙伴们惋惜不已，刻骨铭心！快来分享足球月里，让你最遗憾的那些事儿！
-							p 本期话题奖品:#{topic.lot} 
+								h2.h4 <span>##{topic.name}#</span>#{topic.description}
+
+							p.clearfix(style="line-height:50px;") 本期话题奖品:#{topic.lot} 
+								img(src="/img/icon-lot.jpg",style="float:right;")
+						div.lots-perv
 							p 上期中奖名单查询:
 							p 136****3651（迪士尼玩偶） 136****3651（迪士尼玩偶）
 

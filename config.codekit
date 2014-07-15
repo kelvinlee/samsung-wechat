@@ -87,6 +87,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
+	"\/controllers\/sign.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/controllers\/sign.js",
+		"outputAbbreviatedPath": "\/controllers\/min\/sign-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/controllers\/wechat-menu.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -162,6 +173,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
+		},
+	"\/controllers\/wechat.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/controllers\/wechat.js",
+		"outputAbbreviatedPath": "\/controllers\/min\/wechat-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/helper.coffee": {
 		"createSourceMap": 0,
@@ -1139,6 +1161,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/game-weixin-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 49703,
+		"inputAbbreviatedPath": "\/public\/img\/game-weixin-1.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/game-weixin-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/game-weixin-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 91258,
+		"inputAbbreviatedPath": "\/public\/img\/game-weixin-2.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/game-weixin-2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/game-weixin-3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 97485,
+		"inputAbbreviatedPath": "\/public\/img\/game-weixin-3.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/game-weixin-3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/game-weixin-4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 77001,
+		"inputAbbreviatedPath": "\/public\/img\/game-weixin-4.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/game-weixin-4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/gamedownbg.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1212,6 +1278,17 @@
 		"initialSize": 7634,
 		"inputAbbreviatedPath": "\/public\/img\/icon-l-5.png",
 		"outputAbbreviatedPath": "\/public\/img\/icon-l-5.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/icon-lot.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2438,
+		"inputAbbreviatedPath": "\/public\/img\/icon-lot.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/icon-lot.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1619,6 +1696,83 @@
 		"initialSize": 84941,
 		"inputAbbreviatedPath": "\/public\/img\/type-video.png",
 		"outputAbbreviatedPath": "\/public\/img\/type-video.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/weixin-game.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 104912,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-game.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-game.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/weixin-lucky.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 45221,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-lucky.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-lucky.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/weixin-my.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54173,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-my.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-my.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/weixin-page4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 51868,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-page4.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-page4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/weixin-page5.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 49779,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-page5.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-page5.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/weixin-page7.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 51372,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-page7.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-page7.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/weixin-topic.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 67127,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-topic.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-topic.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

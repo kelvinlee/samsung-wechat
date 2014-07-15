@@ -219,9 +219,16 @@ ul {
 .topic .topic-title ~ .comment {
   border-top: solid 5px #ebebeb;
 }
+.topic .lots-perv {
+  padding: 10px 10px;
+  background: #f6ffc5;
+}
+.topic .lots-perv p {
+  margin: 0 auto;
+  padding: 0px;
+}
 .topic ul li {
   padding: 5px 10px;
-  background: #fee5c2;
   margin-bottom: 10px;
 }
 .topic ul li p {
@@ -366,6 +373,11 @@ iframe.content {
 }
 .h4 {
   font-size: 0.8rem;
+}
+.weixin-share {
+  position: absolute;
+  top: -1000px;
+  z-index: -1;
 }
 @media screen and (max-width: 321px) {
   body {

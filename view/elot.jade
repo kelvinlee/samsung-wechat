@@ -76,8 +76,12 @@ block css_here
 			float:right;
 			width:48%;
 		}
+block title
+	| #{lot.description}
 block content_here
 	//- include nav
+	.weixin-share
+		img(src="http://115.28.106.34/img/game-weixin-#{lot.order}.jpg")
 	.content(style="background-color:#fff;")
 		.body
 			.head
