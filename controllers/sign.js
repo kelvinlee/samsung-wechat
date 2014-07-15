@@ -103,7 +103,8 @@ exports.middle = function(req, res, next) {
   url = req.query.url;
   return res.send({
     openid: openid,
-    url: url
+    url: url,
+    cookie: req.cookies.userid
   });
   console.log("openid:", openid);
   return User.getUserOpenId(openid, function(err, user) {

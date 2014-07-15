@@ -77,7 +77,7 @@ exports.middle = (req,res,next)->
 	openid = req.params.openid
 	url = req.query.url
 
-	return res.send {openid:openid,url:url}
+	return res.send {openid:openid,url:url,cookie:req.cookies.userid}
 
 	console.log "openid:",openid
 	User.getUserOpenId openid,(err,user)->

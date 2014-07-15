@@ -32,3 +32,4 @@ exports.newAndSave = (mobile,password, callback)->
   user.password = password
   user.active = true
   user.save callback
+  
