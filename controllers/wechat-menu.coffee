@@ -179,13 +179,13 @@ empty = {
 plugs_menu = (message,callback)->
 	console.log message
 	if message.EventKey is "oversite"
-		callback oversite
+		callback new oversite()
 	else if message.EventKey is "jianxingpin"
-		callback jianxingpin
+		callback new jianxingpin()
 	else if message.EventKey is "magazine"
-		callback magazine
+		callback new magazine()
 	else if message.EventKey is "newactive"
-		callback newactive
+		callback new newactive()
 	else if message.EventKey is "my"
 		newmy = new my()
 		newmy.items[0].url = newmy.items[0].url.replace "{openid}",message.FromUserName

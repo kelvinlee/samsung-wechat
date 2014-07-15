@@ -21,6 +21,9 @@ Comment = require('../model/mongo').Comment
 # 需要授权
 Authorize_Url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{config.APPID}&redirect_uri={url}&response_type=code&scope=snsapi_userinfo&state={state}#wechat_redirect"
 
+Noconcern = "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200560267&idx=1&sn=ff18fdd9bbf0efe2dde9ccc8d3028fb4#rd"
+
+
 
 # 授权逻辑. 菜单授权,判断是否授权过,判断是否注册过.
 
@@ -402,20 +405,23 @@ exports.topic = (req,res,next)->
 	
 	# tid = req.params.topic_id
 	console.log "topic:",req.cookies.openid
-	User.getUserOpenId req.cookies.openid,(err,user)->
-		console.log user
-		if user? and user.nickname?
-			Topic.getOne (err,topic)->
-				if topic?
-					Comment.getByTopic topic._id,(err,comments)->
-						# console.log topic,comments
-						res.render "topic",{topic:topic,comments:comments}
-						topic.view += 1
-						topic.save()
-				else
-					res.render "topic",{topic:null}
-		else
-			res.redirect "/nickname"
+	if req.cookies.openid?
+		User.getUserOpenId req.cookies.openid,(err,user)->
+			console.log user
+			if user? and user.nickname?
+				Topic.getOne (err,topic)->
+					if topic?
+						Comment.getByTopic topic._id,(err,comments)->
+							# console.log topic,comments
+							res.render "topic",{topic:topic,comments:comments}
+							topic.view += 1
+							topic.save()
+					else
+						res.render "topic",{topic:null}
+			else
+				res.redirect "/nickname"
+	else
+		res.redirect Noconcern
 # 接受
 exports.comment = (req,res,next)->
 	content = req.body.comment

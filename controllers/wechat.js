@@ -394,13 +394,13 @@ plugs_menu = function(message, callback) {
   var newmy;
   console.log(message);
   if (message.EventKey === "oversite") {
-    return callback(oversite);
+    return callback(new oversite());
   } else if (message.EventKey === "jianxingpin") {
-    return callback(jianxingpin);
+    return callback(new jianxingpin());
   } else if (message.EventKey === "magazine") {
-    return callback(magazine);
+    return callback(new magazine());
   } else if (message.EventKey === "newactive") {
-    return callback(newactive);
+    return callback(new newactive());
   } else if (message.EventKey === "my") {
     newmy = new my();
     newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
