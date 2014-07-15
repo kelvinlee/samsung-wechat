@@ -46,7 +46,8 @@ block content_here
 								img(src="/img/icon-l-4.png")
 							div.item
 								img(src="/img/icon-l-5.png")
-				div.pline(style="display:none")
+				//- (style="display:none")
+				div.pline
 					img(src="/img/lucky-line.png")
 			div.lucky-btn
 				a#luckybtn(href="/sign/getlucky",onclick=" post(this); return false;")
@@ -118,20 +119,20 @@ block js_here
 			setTimeout(function(){
 				_moving = false;
 				if (list == "13,12,13" || list == "11,13,15" || list == "13,15,11") {
-					$(".pline").show();
+					//- $(".pline").show();
 					alert("可惜没中奖,再试一次");
 					//- return setdefault();
 					return "";
 				}
 				if (list == "15,15,15") {
-					$(".pline").show();
+					//- $(".pline").show();
 					alert("恭喜获得300积分,已经充入您的账号");	
 					//- return setdefault();
 					return "";
 				}
 				$("#luckybtn").hide();
 				$("#luckysubmit").attr("href",url).show();
-				$(".pline").show();
+				//- $(".pline").show();
 			},2200);
 
 			//- if (_loting){
@@ -151,7 +152,7 @@ block js_here
 		}
 
 		function setdefault() {
-			$(".pline").hide();
+			//- $(".pline").hide();
 			$(".random .items").css({
 				"transition":"0s",
 				"-ms-transition":"0s",
