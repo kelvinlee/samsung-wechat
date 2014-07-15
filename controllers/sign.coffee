@@ -83,15 +83,16 @@ exports.middle = (req,res,next)->
 	User.getUserOpenId openid,(err,user)->
 		if user?
 			res.cookie "userid",user._id
-			res.send {"has":true,user:user}
-			# res.redirect url
+			# res.send {"has":true,user:user}
+			console.log {"has":true,user:user,cookie:req.cookies.userid}
+			res.redirect url
 		else
 			User.regbyOpenId openid,(err,user)->
 				res.cookie "userid",user._id
 				Inte.newInte user._id,1000,"初次注册赠送积分活动,1000积分",(err,inte)->
 					# console.log "初次注册赠送积分活动,1000积分"
-					res.send {"has":false,user:user}
-					# res.redirect url
+					console.log {"has":false,user:user,cookie:req.cookies.userid}
+					res.redirect url
 
 
 exports.up = (req,res,next)->

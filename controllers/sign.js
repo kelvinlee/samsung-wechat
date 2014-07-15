@@ -105,18 +105,22 @@ exports.middle = function(req, res, next) {
   return User.getUserOpenId(openid, function(err, user) {
     if (user != null) {
       res.cookie("userid", user._id);
-      return res.send({
+      console.log({
         "has": true,
-        user: user
+        user: user,
+        cookie: req.cookies.userid
       });
+      return res.redirect(url);
     } else {
       return User.regbyOpenId(openid, function(err, user) {
         res.cookie("userid", user._id);
         return Inte.newInte(user._id, 1000, "初次注册赠送积分活动,1000积分", function(err, inte) {
-          return res.send({
+          console.log({
             "has": false,
-            user: user
+            user: user,
+            cookie: req.cookies.userid
           });
+          return res.redirect(url);
         });
       });
     }
