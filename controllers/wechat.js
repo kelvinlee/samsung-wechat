@@ -233,9 +233,9 @@ oversite = function() {
     items: [
       {
         title: "重新定义“视”界 三星 GALAXY Tab S 开启色彩大门",
-        description: '揭开万众期待的神秘面纱，三星 GALAXY Tab S为你开启全新的色彩大门',
-        picurl: "" + config.host + "/img/banner-7.jpg",
-        url: "" + config.host + "/art/6"
+        description: '【2014 年 7 月 7 日，上海】三星电子于上海世博创意秀场正式推出旗下迄今最轻薄的平板电脑 GALAXY Tab S，为中国消费者揭开了这款万众期待的平板电脑的神秘面纱。',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHfExcwyqI7M2wbuPcJwiaKmWASIhFeNMc9jLy5p0xevNicFme4oeic1lZg/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559799&idx=1&sn=9f9276bef86f5fa505897df138559a31#rd"
       }
     ]
   };
@@ -279,25 +279,25 @@ magazine = function() {
     type: "news",
     items: [
       {
-        title: "新炫刊，汇聚海量精品杂志，畅爽的交互体验，带来全新视觉盛宴。",
-        description: '新炫刊，汇聚海量精品杂志，畅爽的交互体验，带来全新视觉盛宴。',
-        picurl: "" + config.host + "/img/banner-15.jpg",
-        url: "" + config.host + "/art/15"
+        title: "新炫刊，汇聚海量竞品杂志，畅爽的交互体验，带来全新视觉盛宴。",
+        description: '新炫刊，汇聚海量竞品杂志，畅爽的交互体验，带来全新视觉盛宴。',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHvpxEibG6M8wCIKGg6xXqicV91GaJLzia2ZyYzEOMCB3FrRY2xMJfyicsCA/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=1&sn=15090e2e6a8708a6cf9e5373dcf061a8#rd"
       }, {
         title: "华夏地理——多角度深度探索世界，为您带来世界变迁的精彩内容",
         description: '华夏地理——多角度深度探索世界，为您带来世界变迁的精彩内容',
-        picurl: "" + config.host + "/img/banner-16.jpg",
-        url: "" + config.host + "/art/16"
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHBpYE54co69qNgDkSTVDHQC8nibVMkuHs4YltD35weSZiacFiaOZUx7j5g/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=2&sn=b050f7dfe3e5aab18f1a667413318631#rd"
       }, {
         title: "新潮电子——领导数码时尚新生活",
         description: '新潮电子——领导数码时尚新生活',
-        picurl: "" + config.host + "/img/banner-17.jpg",
-        url: "" + config.host + "/art/17"
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHbsbXMN7icbWrS4Lx4HibQFUHBIwGITAc0gviaaIqUkFKUodMfqH1m4BfA/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=3&sn=357c8eb2b5550bd4d9cac3fc3c284f8e#rd"
       }, {
         title: "时尚旅游——独特视角带你探索世界",
         description: '时尚旅游——独特视角带你探索世界',
-        picurl: "" + config.host + "/img/banner-18.jpg",
-        url: "" + config.host + "/art/18"
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHjOCk70AwCCtECVibxCBoDubvOqSb2AzIQTryMoibenibZMdJ7H1BTKq3g/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=4&sn=2581fb570a19e435c6b35050598a9444#rd"
       }
     ]
   };
