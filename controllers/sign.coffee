@@ -427,6 +427,7 @@ exports.comment = (req,res,next)->
 	Topic.getOne (err,topic)->
 		if topic?
 			User.getUserOpenId req.cookies.openid,(err,user)->
+				console.log "话题评论:",err,user,req.cookies.openid
 				if user?
 					reg = /(\d{3})\d{4}(\d{4})/
 					# name = user.mobile.replace reg,"$1****$2"

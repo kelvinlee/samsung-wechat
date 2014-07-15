@@ -526,6 +526,7 @@ exports.comment = function(req, res, next) {
     if (topic != null) {
       return User.getUserOpenId(req.cookies.openid, function(err, user) {
         var name, reg;
+        console.log("话题评论:", err, user, req.cookies.openid);
         if (user != null) {
           reg = /(\d{3})\d{4}(\d{4})/;
           name = user.nickname;
