@@ -426,7 +426,7 @@ exports.comment = (req,res,next)->
 		return res.send re
 	Topic.getOne (err,topic)->
 		if topic?
-			User.getUserById req.cookies.userid,(err,user)->
+			User.getUserOpenId req.cookies.openid,(err,user)->
 				if user?
 					reg = /(\d{3})\d{4}(\d{4})/
 					# name = user.mobile.replace reg,"$1****$2"

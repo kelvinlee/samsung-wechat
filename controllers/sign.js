@@ -524,7 +524,7 @@ exports.comment = function(req, res, next) {
   }
   return Topic.getOne(function(err, topic) {
     if (topic != null) {
-      return User.getUserById(req.cookies.userid, function(err, user) {
+      return User.getUserOpenId(req.cookies.openid, function(err, user) {
         var name, reg;
         if (user != null) {
           reg = /(\d{3})\d{4}(\d{4})/;
