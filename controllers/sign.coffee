@@ -252,7 +252,7 @@ exports.getlucky = (req,res,next)->
 		# ep.emit "inte",resutls
 		# getlucky
 		if resutls >= 5
-			Inte.newInte res.locals.userid,-5,"抽奖",(err,int)->
+			Inte.newInte res.locals.userid,-50,"抽奖",(err,int)->
 				list = [[14,14,14],[14,14,12],[14,12,12],[15,15,15],[13,13,13],[12,12,11],[11,11,11]]
 				lot = Math.ceil(Math.random()*10000)
 				console.log lot

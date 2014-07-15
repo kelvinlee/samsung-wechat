@@ -323,7 +323,7 @@ exports.getlucky = function(req, res, next) {
   re.url = "";
   return Inte.getInteAll(res.locals.userid, function(err, resutls) {
     if (resutls >= 5) {
-      return Inte.newInte(res.locals.userid, -5, "抽奖", function(err, int) {
+      return Inte.newInte(res.locals.userid, -50, "抽奖", function(err, int) {
         var list, lot, none;
         list = [[14, 14, 14], [14, 14, 12], [14, 12, 12], [15, 15, 15], [13, 13, 13], [12, 12, 11], [11, 11, 11]];
         lot = Math.ceil(Math.random() * 10000);
