@@ -46,7 +46,7 @@ block content_here
 								img(src="/img/icon-l-4.png")
 							div.item
 								img(src="/img/icon-l-5.png")
-				//- div.pline
+				div.pline(style="display:none")
 					img(src="/img/lucky-line.png")
 			div.lucky-btn
 				a#luckybtn(href="/sign/getlucky",onclick=" post(this); return false;")
@@ -114,19 +114,25 @@ block js_here
 				"-moz-transform":"translate3d(0px, "+hw+"px, 0px)",
 				"-o-transform":"translate3d(0px, "+hw+"px, 0px)"
 			});
-			
+			_moving = true;
 			setTimeout(function(){
+				_moving = false;
 				if (list == "13,12,13" || list == "11,13,15" || list == "13,15,11") {
+					$(".pline").show();
 					alert("可惜没中奖,再试一次");
-					return setdefault();
+					//- return setdefault();
+					return "";
 				}
 				if (list == "15,15,15") {
+					$(".pline").show();
 					alert("恭喜获得300积分,已经充入您的账号");	
-					return setdefault();
+					//- return setdefault();
+					return "";
 				}
 				$("#luckybtn").hide();
 				$("#luckysubmit").attr("href",url).show();
-			},600);
+				$(".pline").show();
+			},2200);
 
 			//- if (_loting){
 			//- 	return false; 
@@ -143,7 +149,9 @@ block js_here
 
 			//- },4000);
 		}
+
 		function setdefault() {
+			$(".pline").hide();
 			$(".random .items").css({
 				"transition":"0s",
 				"-ms-transition":"0s",
@@ -158,7 +166,10 @@ block js_here
 			});
 		}
 		_submit = false; 
+		_moving = false;
 		function post() {
+			if (_moving){return false;}
+			setdefault();
 			_submit = true;
 			$.ajax({
 				async: false,
