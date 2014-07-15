@@ -21,7 +21,7 @@ newactive = {
 			title:"参与话题#最让你遗憾的事#人非圣贤，孰能无悔！足球月里，让你最遗憾的那些事儿！"
 			description: '参与话题#最让你遗憾的事#人非圣贤，孰能无悔！足球月里，让你最遗憾的那些事儿！'
 			picurl:"#{config.host}/img/banner-10.jpg"
-			url: "#{config.host}/sign/topic"
+			url: "#{config.host}/middle/{openid}?url=/sign/topic"
 		}
 	]
 }
