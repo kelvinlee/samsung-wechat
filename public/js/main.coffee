@@ -18,7 +18,8 @@ qiandao = ->
 			__qiaodao = false;
 			if msg.recode is 200
 				alert "恭喜您今天签到成功了."
-				window.location.reload()
+				# window.location.reload()
+				window.location.href = "/sign/my"
 			else
 				alert msg.reason
 	return false

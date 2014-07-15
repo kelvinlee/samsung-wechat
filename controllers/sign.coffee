@@ -83,12 +83,14 @@ exports.middle = (req,res,next)->
 	User.getUserOpenId openid,(err,user)->
 		if user?
 			res.cookie "userid",user._id
+			res.cookie "openid",openid
 			# res.send {"has":true,user:user}
 			console.log {"has":true,user:user,cookie:req.cookies.userid}
 			res.redirect url
 		else
 			User.regbyOpenId openid,(err,user)->
 				res.cookie "userid",user._id
+				res.cookie "openid",openid
 				Inte.newInte user._id,1000,"初次注册赠送积分活动,1000积分",(err,inte)->
 					# console.log "初次注册赠送积分活动,1000积分"
 					console.log {"has":false,user:user,cookie:req.cookies.userid}
@@ -399,7 +401,8 @@ exports.postnickname = (req,res,next)->
 exports.topic = (req,res,next)->
 	
 	# tid = req.params.topic_id
-	User.getUserById req.cookies.userid,(err,user)->
+	console.log "topic:",req.cookies.openid
+	User.getUserOpenId req.cookies.openid,(err,user)->
 		console.log user
 		if user? and user.nickname?
 			Topic.getOne (err,topic)->

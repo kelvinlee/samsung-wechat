@@ -366,7 +366,7 @@ qiandao = function() {
       __qiaodao = false;
       if (msg.recode === 200) {
         alert("恭喜您今天签到成功了.");
-        return window.location.reload();
+        return window.location.href = "/sign/my";
       } else {
         return alert(msg.reason);
       }

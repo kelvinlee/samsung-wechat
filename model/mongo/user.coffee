@@ -8,7 +8,7 @@ exports.login = (mobile,password,callback)->
 exports.getUserById = (id, callback)->
 	User.findOne {_id:id}, callback 
 exports.getUserOpenId = (openid, callback)->
-  User.findOne {openid:openid}, callback 
+  User.findOne {openid:openid}, callback
 exports.getUsersByQuery = (query, opt, callback)->
 	User.find query, null, opt, callback
 
@@ -32,4 +32,3 @@ exports.newAndSave = (mobile,password, callback)->
   user.password = password
   user.active = true
   user.save callback
-  

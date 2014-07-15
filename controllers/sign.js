@@ -104,6 +104,7 @@ exports.middle = function(req, res, next) {
   return User.getUserOpenId(openid, function(err, user) {
     if (user != null) {
       res.cookie("userid", user._id);
+      res.cookie("openid", openid);
       console.log({
         "has": true,
         user: user,
@@ -113,6 +114,7 @@ exports.middle = function(req, res, next) {
     } else {
       return User.regbyOpenId(openid, function(err, user) {
         res.cookie("userid", user._id);
+        res.cookie("openid", openid);
         return Inte.newInte(user._id, 1000, "初次注册赠送积分活动,1000积分", function(err, inte) {
           console.log({
             "has": false,
@@ -485,7 +487,8 @@ exports.postnickname = function(req, res, next) {
 };
 
 exports.topic = function(req, res, next) {
-  return User.getUserById(req.cookies.userid, function(err, user) {
+  console.log("topic:", req.cookies.openid);
+  return User.getUserOpenId(req.cookies.openid, function(err, user) {
     console.log(user);
     if ((user != null) && (user.nickname != null)) {
       return Topic.getOne(function(err, topic) {
