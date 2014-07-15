@@ -245,23 +245,23 @@ jianxingpin = {
     {
       title: "Samsung GALAXY Tab S Super AMOLED 炫丽屏重新定义视界",
       description: 'Samsung GALAXY Tab S Super AMOLED 炫丽屏重新定义视界',
-      picurl: "" + config.host + "/img/banner-11.jpg",
-      url: "" + config.host + "/art/12"
+      picurl: "https://mp.weixin.qq.com/cgi-bin/getimgdata?mode=large&source=file&fileId=200559192%3E&token=1921730881&lang=zh_CN",
+      url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=1&sn=65df46c2bf8f852d815d3bb887c96ee2#rd"
     }, {
-      title: "Samsung GALAXY Tab S",
-      description: 'Samsung GALAXY Tab S',
-      picurl: "" + config.host + "/img/banner-12.jpg",
-      url: "" + config.host + "/art/11"
+      title: "Super AMOLED 介绍",
+      description: 'Super AMOLED 介绍',
+      picurl: "https://mp.weixin.qq.com/cgi-bin/getimgdata?mode=large&source=file&fileId=200559193%3E&token=1921730881&lang=zh_CN",
+      url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=2&sn=e63c12ed63c62ade95295f7f04570a01#rd"
     }, {
       title: "Samsung GALAXY K zoom 让每个瞬间都精彩",
       description: 'Samsung GALAXY K zoom 让每个瞬间都精彩',
-      picurl: "" + config.host + "/img/banner-13.jpg",
-      url: "" + config.host + "/art/13"
+      picurl: "https://mp.weixin.qq.com/cgi-bin/getimgdata?mode=large&source=file&fileId=200559194%3E&token=1921730881&lang=zh_CN",
+      url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=3&sn=a3cefce3da85b400072a9303de8be9e4#rd"
     }, {
-      title: "三星GALAXY S5 专享4G应用",
-      description: '三星GALAXY S5 专享4G应用',
-      picurl: "" + config.host + "/img/banner-14.jpg",
-      url: "" + config.host + "/art/14"
+      title: "Samsung GALAXY S5 专享4G应用",
+      description: 'Samsung GALAXY S5 专享4G应用',
+      picurl: "https://mp.weixin.qq.com/cgi-bin/getimgdata?mode=large&source=file&fileId=200559195%3E&token=1921730881&lang=zh_CN",
+      url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=4&sn=84820a9612c169b067729da25596adfe#rd"
     }
   ]
 };
@@ -357,9 +357,9 @@ gamemenu = {
   type: "news",
   items: [
     {
-      title: "积分兑换游戏礼包",
-      description: '下载三星专属游戏积分兑换大礼包. [请勿转发此条信息,包含您的个人信息]',
-      picurl: "" + config.host + "/img/banner-1.jpg",
+      title: "玩热门网游，领豪华礼包！",
+      description: '点击玩·游戏，下载玩网游，超级礼包等你来拿!',
+      picurl: "" + config.host + "/img/banner-20.jpg",
       url: "" + config.host + "/middle/{openid}?url=/sign/exchange/1"
     }
   ]
