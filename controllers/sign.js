@@ -101,6 +101,11 @@ exports.middle = function(req, res, next) {
   var openid;
   openid = req.params.openid;
   url = req.query.url;
+  return res.send({
+    openid: openid,
+    url: url
+  });
+  console.log("openid:", openid);
   return User.getUserOpenId(openid, function(err, user) {
     if (user != null) {
       res.cookie("userid", user._id);
