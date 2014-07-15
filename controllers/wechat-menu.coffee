@@ -1,6 +1,6 @@
 # 根据菜单参数跳转或返回对应数据.
 
-newactive = {
+newactive = -> return {
 	name:"新活动"
 	key:"1"
 	type:"news"
@@ -26,7 +26,7 @@ newactive = {
 	]
 }
 
-oversite = {
+oversite = -> return {
 	name:"临·现场"
 	key:"1"
 	type:"news"
@@ -40,7 +40,7 @@ oversite = {
 	]
 	
 }
-jianxingpin = {
+jianxingpin = -> return {
 	name:"鉴星品"
 	key:"1"
 	type:"news"
@@ -72,7 +72,7 @@ jianxingpin = {
 	]
 	
 }
-magazine = {
+magazine = -> return {
 	name:"看杂志"
 	key:"1"
 	type:"news"
@@ -103,7 +103,7 @@ magazine = {
 		}
 	]
 }
-my = {
+my = -> return {
 	name:"查积分"
 	key:"1"
 	type:"news"
@@ -116,7 +116,7 @@ my = {
 		}
 	]
 }
-regsinto = {
+regsinto = -> return {
 	name:"来签到"
 	key:"1"
 	type:"news"
@@ -129,7 +129,7 @@ regsinto = {
 		}
 	]
 }
-topicmenu = {
+topicmenu = -> return {
 	name:"聊话题"
 	key:"1"
 	type:"news"
@@ -142,7 +142,7 @@ topicmenu = {
 		}
 	]
 }
-luckymenu = {
+luckymenu = -> return {
 	name:"试手气"
 	key:"1"
 	type:"news"
@@ -155,7 +155,7 @@ luckymenu = {
 		}
 	]
 }
-gamemenu = {
+gamemenu = -> return {
 	name:"玩游戏"
 	key:"1"
 	type:"news"
@@ -187,7 +187,7 @@ plugs_menu = (message,callback)->
 	else if message.EventKey is "newactive"
 		callback newactive
 	else if message.EventKey is "my"
-		newmy = my
+		newmy = new my()
 		newmy.items[0].url = newmy.items[0].url.replace "{openid}",message.FromUserName
 		User.getUserOpenId message.FromUserName,(err,user)->
 			console.log newmy.items[0].url
@@ -199,7 +199,7 @@ plugs_menu = (message,callback)->
 				newmy.items[0].description = newmy.items[0].description.replace "{jf}","0"
 				callback newmy
 	else if message.EventKey is "regsinto"
-		newmy = regsinto
+		newmy = new regsinto()
 		newmy.items[0].url = newmy.items[0].url.replace "{openid}",message.FromUserName
 		User.getUserOpenId message.FromUserName,(err,user)->
 			console.log newmy.items[0].url
@@ -211,7 +211,7 @@ plugs_menu = (message,callback)->
 				newmy.items[0].description = newmy.items[0].description.replace "{jf}","0"
 				callback newmy
 	else if message.EventKey is "topic"
-		newmy = topicmenu
+		newmy = new topicmenu()
 		newmy.items[0].url = newmy.items[0].url.replace "{openid}",message.FromUserName
 		User.getUserOpenId message.FromUserName,(err,user)->
 			console.log newmy.items[0].url
@@ -221,7 +221,7 @@ plugs_menu = (message,callback)->
 			else
 				callback newmy
 	else if message.EventKey is "lucky"
-		newmy = luckymenu
+		newmy = new luckymenu()
 		newmy.items[0].url = newmy.items[0].url.replace "{openid}",message.FromUserName
 		User.getUserOpenId message.FromUserName,(err,user)->
 			console.log newmy.items[0].url
@@ -231,7 +231,7 @@ plugs_menu = (message,callback)->
 			else
 				callback newmy
 	else if message.EventKey is "game"
-		newmy = gamemenu
+		newmy = new gamemenu()
 		newmy.items[0].url = newmy.items[0].url.replace "{openid}",message.FromUserName
 		User.getUserOpenId message.FromUserName,(err,user)->
 			console.log newmy.items[0].url
