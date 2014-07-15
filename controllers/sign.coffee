@@ -68,7 +68,7 @@ exports.before = (req,res,next)->
 	setDefaultTopic()
 	# console.log req.cookies.userid
 	if req.cookies.userid? and req.cookies.userid isnt "undefined" and req.cookies.userid isnt ""
-		res.locals.userid = req.cookies.userid
+		# req.cookies.userid = req.cookies.userid
 		next()
 	else
 		res.redirect "/login"
@@ -148,14 +148,14 @@ exports.in_post = (req,res,next)->
 
 tointe = (req,res,next)->
 	re = new helper.recode()
-	if not res.locals.userid?
+	if not req.cookies.userid?
 		re.recode = 201
 		re.reason = "请先登录."
 		res.send re
 		return ""
-	Inte.today res.locals.userid,(err,today)->
+	Inte.today req.cookies.userid,(err,today)->
 		if today? and today.length<=0
-			Inte.newInte res.locals.userid,20,"regs",(err,resutls)->
+			Inte.newInte req.cookies.userid,20,"regs",(err,resutls)->
 				console.log "签到成功:",resutls
 				res.send re
 		else
@@ -167,17 +167,17 @@ exports.tointe = tointe
 exports.my = (req,res,next)->
 	res.locals.menu_my = "active"
 	# res.render "my"
-	console.log "userid:",res.locals.userid
+	console.log "userid:",req.cookies.userid
 	ep = new EventProxy.create "user","inte","today",(user,inte,today)->
 		count = inte
 		
 		res.render "my",{user:user,inte:count,today:today}
 
-	Inte.today res.locals.userid,(err,resutls)->
+	Inte.today req.cookies.userid,(err,resutls)->
 		ep.emit "today",resutls
-	User.getUserById res.locals.userid,(err,resutls)->
+	User.getUserById req.cookies.userid,(err,resutls)->
 		ep.emit "user",resutls
-	Inte.getInteAll res.locals.userid,(err,resutls)->
+	Inte.getInteAll req.cookies.userid,(err,resutls)->
 		ep.emit "inte",resutls
 
 exports.exchange = (req,res,next)->
@@ -200,7 +200,7 @@ exports.exchangelot = (req,res,next)->
 	ep = new EventProxy.create "inte","lots",(inte,lots)->
 		console.log lots,inte
 		
-		Warehouse.getByUserId res.locals.userid,id,(err,ihas)->
+		Warehouse.getByUserId req.cookies.userid,id,(err,ihas)->
 			if ihas?
 				re.reason = ihas._id
 				res.send re
@@ -208,13 +208,13 @@ exports.exchangelot = (req,res,next)->
 				if lots? and inte >= lots.inte
 					Warehouse.getOne lots._id,(err,lot)->
 						if lot?
-							lot.usedby = res.locals.userid
+							lot.usedby = req.cookies.userid
 							lot.used = true
 							used_at = new Date()
 							lot.save()
 							# res.send re
 							re.reason = lot._id
-							Inte.newInte res.locals.userid,-lots.inte,"兑换奖品:"+lot._id,(err,int)->
+							Inte.newInte req.cookies.userid,-lots.inte,"兑换奖品:"+lot._id,(err,int)->
 
 								res.send re
 						else
@@ -232,7 +232,7 @@ exports.exchangelot = (req,res,next)->
 	Lots.getById id,(err,lots)->
 		ep.emit "lots",lots
 
-	Inte.getInteAll res.locals.userid,(err,resutls)->
+	Inte.getInteAll req.cookies.userid,(err,resutls)->
 		ep.emit "inte",resutls
 # 我的奖品
 exports.mylot = (req,res,next)->
@@ -240,7 +240,7 @@ exports.mylot = (req,res,next)->
 	id = req.params.lot_id
 	Warehouse.getById id,(err,lot)->
 		console.log lot
-		if lot? and lot.usedby+"" is res.locals.userid
+		if lot? and lot.usedby+"" is req.cookies.userid
 			Lots.getById lot.info,(err,lotinfo)->
 				res.render "elot",{lot:lot,lotinfo:lotinfo}
 		else
@@ -251,11 +251,11 @@ exports.luckyframe = (req,res,next)->
 exports.getlucky = (req,res,next)->
 	re = new helper.recode()
 	re.url = ""
-	Inte.getInteAll res.locals.userid,(err,resutls)->
+	Inte.getInteAll req.cookies.userid,(err,resutls)->
 		# ep.emit "inte",resutls
 		# getlucky
 		if resutls >= 5
-			Inte.newInte res.locals.userid,-50,"抽奖",(err,int)->
+			Inte.newInte req.cookies.userid,-50,"抽奖",(err,int)->
 				list = [[14,14,14],[14,14,12],[14,12,12],[15,15,15],[13,13,13],[12,12,11],[11,11,11]]
 				lot = Math.ceil(Math.random()*10000)
 				console.log lot
@@ -268,7 +268,7 @@ exports.getlucky = (req,res,next)->
 					# samsung tab s
 					return Warehouse.getWinnerByInfo "Tabs",(err,lots)->
 						if lots?
-							lots.usedby = res.locals.userid
+							lots.usedby = req.cookies.userid
 							lots.used = true
 							lots.save()
 							re.url = "/sign/winner/"+lots._id
@@ -285,7 +285,7 @@ exports.getlucky = (req,res,next)->
 					console.log "耳机"
 					return Warehouse.getWinnerByInfo "Headset",(err,lots)->
 						if lost?
-							lots.usedby = res.locals.userid
+							lots.usedby = req.cookies.userid
 							lots.used = true
 							lots.save()
 							re.url = "/sign/winner/"+lots._id
@@ -302,7 +302,7 @@ exports.getlucky = (req,res,next)->
 					console.log "移动电源"
 					return Warehouse.getWinnerByInfo "Power",(err,lots)->
 						if lots?
-							lots.usedby = res.locals.userid
+							lots.usedby = req.cookies.userid
 							lots.used = true
 							lots.save()
 							re.url = "/sign/winner/"+lots._id
@@ -317,8 +317,8 @@ exports.getlucky = (req,res,next)->
 				if lot >=100 and lot<=500
 					# 300积分
 					console.log "300积分"
-					if res.locals.userid?
-						Inte.newInte res.locals.userid,300,"抽奖获得,300积分",(err,inte)->
+					if req.cookies.userid?
+						Inte.newInte req.cookies.userid,300,"抽奖获得,300积分",(err,inte)->
 					re.reason = list[3]
 					re.reason = re.reason.join(",")
 					res.send re
@@ -327,7 +327,7 @@ exports.getlucky = (req,res,next)->
 					console.log "50话费"
 					return Warehouse.getWinnerByInfo "50hf",(err,lots)->
 						if lots?
-							lots.usedby = res.locals.userid
+							lots.usedby = req.cookies.userid
 							lots.used = true
 							lots.save()
 							re.url = "/sign/winner/"+lots._id
@@ -377,9 +377,9 @@ exports.nickname = (req,res,next)->
 exports.postnickname = (req,res,next)->
 	nickname = req.body.nickname
 	re = new helper.recode()
-	console.log "nickname:",nickname,res.locals.userid
+	console.log "nickname:",nickname,req.cookies.userid
 	if nickname?
-		User.getUserById res.locals.userid,(err,user)->
+		User.getUserById req.cookies.userid,(err,user)->
 			console.log user
 			if user?
 				user.nickname = nickname
@@ -399,7 +399,7 @@ exports.postnickname = (req,res,next)->
 exports.topic = (req,res,next)->
 	
 	# tid = req.params.topic_id
-	User.getUserById res.locals.userid,(err,user)->
+	User.getUserById req.cookies.userid,(err,user)->
 		console.log user
 		if user? and user.nickname?
 			Topic.getOne (err,topic)->
@@ -423,7 +423,7 @@ exports.comment = (req,res,next)->
 		return res.send re
 	Topic.getOne (err,topic)->
 		if topic?
-			User.getUserById res.locals.userid,(err,user)->
+			User.getUserById req.cookies.userid,(err,user)->
 				if user?
 					reg = /(\d{3})\d{4}(\d{4})/
 					# name = user.mobile.replace reg,"$1****$2"
@@ -533,7 +533,7 @@ exports.winner_post = (req,res,next)->
 		re.recode = 201
 		re.reason = "邮寄地址不能为空"
 		return res.send re
-	Warehouse.getWinnerByUandW res.locals.userid,req.params.winner_id,(err,win)->
+	Warehouse.getWinnerByUandW req.cookies.userid,req.params.winner_id,(err,win)->
 		if win? and win.username?
 			re.recode = 201
 			re.reason = "您已经提交过此中奖信息,无法更改."

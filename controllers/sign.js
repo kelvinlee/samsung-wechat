@@ -90,7 +90,6 @@ exports.before = function(req, res, next) {
   setsomeDefautleLots();
   setDefaultTopic();
   if ((req.cookies.userid != null) && req.cookies.userid !== "undefined" && req.cookies.userid !== "") {
-    res.locals.userid = req.cookies.userid;
     return next();
   } else {
     return res.redirect("/login");
@@ -194,15 +193,15 @@ exports.in_post = function(req, res, next) {
 tointe = function(req, res, next) {
   var re;
   re = new helper.recode();
-  if (res.locals.userid == null) {
+  if (req.cookies.userid == null) {
     re.recode = 201;
     re.reason = "请先登录.";
     res.send(re);
     return "";
   }
-  return Inte.today(res.locals.userid, function(err, today) {
+  return Inte.today(req.cookies.userid, function(err, today) {
     if ((today != null) && today.length <= 0) {
-      return Inte.newInte(res.locals.userid, 20, "regs", function(err, resutls) {
+      return Inte.newInte(req.cookies.userid, 20, "regs", function(err, resutls) {
         console.log("签到成功:", resutls);
         return res.send(re);
       });
@@ -219,7 +218,7 @@ exports.tointe = tointe;
 exports.my = function(req, res, next) {
   var ep;
   res.locals.menu_my = "active";
-  console.log("userid:", res.locals.userid);
+  console.log("userid:", req.cookies.userid);
   ep = new EventProxy.create("user", "inte", "today", function(user, inte, today) {
     var count;
     count = inte;
@@ -229,13 +228,13 @@ exports.my = function(req, res, next) {
       today: today
     });
   });
-  Inte.today(res.locals.userid, function(err, resutls) {
+  Inte.today(req.cookies.userid, function(err, resutls) {
     return ep.emit("today", resutls);
   });
-  User.getUserById(res.locals.userid, function(err, resutls) {
+  User.getUserById(req.cookies.userid, function(err, resutls) {
     return ep.emit("user", resutls);
   });
-  return Inte.getInteAll(res.locals.userid, function(err, resutls) {
+  return Inte.getInteAll(req.cookies.userid, function(err, resutls) {
     return ep.emit("inte", resutls);
   });
 };
@@ -264,7 +263,7 @@ exports.exchangelot = function(req, res, next) {
   console.log(req.params);
   ep = new EventProxy.create("inte", "lots", function(inte, lots) {
     console.log(lots, inte);
-    return Warehouse.getByUserId(res.locals.userid, id, function(err, ihas) {
+    return Warehouse.getByUserId(req.cookies.userid, id, function(err, ihas) {
       if (ihas != null) {
         re.reason = ihas._id;
         return res.send(re);
@@ -273,12 +272,12 @@ exports.exchangelot = function(req, res, next) {
           return Warehouse.getOne(lots._id, function(err, lot) {
             var used_at;
             if (lot != null) {
-              lot.usedby = res.locals.userid;
+              lot.usedby = req.cookies.userid;
               lot.used = true;
               used_at = new Date();
               lot.save();
               re.reason = lot._id;
-              return Inte.newInte(res.locals.userid, -lots.inte, "兑换奖品:" + lot._id, function(err, int) {
+              return Inte.newInte(req.cookies.userid, -lots.inte, "兑换奖品:" + lot._id, function(err, int) {
                 return res.send(re);
               });
             } else {
@@ -298,7 +297,7 @@ exports.exchangelot = function(req, res, next) {
   Lots.getById(id, function(err, lots) {
     return ep.emit("lots", lots);
   });
-  return Inte.getInteAll(res.locals.userid, function(err, resutls) {
+  return Inte.getInteAll(req.cookies.userid, function(err, resutls) {
     return ep.emit("inte", resutls);
   });
 };
@@ -309,7 +308,7 @@ exports.mylot = function(req, res, next) {
   id = req.params.lot_id;
   return Warehouse.getById(id, function(err, lot) {
     console.log(lot);
-    if ((lot != null) && lot.usedby + "" === res.locals.userid) {
+    if ((lot != null) && lot.usedby + "" === req.cookies.userid) {
       return Lots.getById(lot.info, function(err, lotinfo) {
         return res.render("elot", {
           lot: lot,
@@ -332,9 +331,9 @@ exports.getlucky = function(req, res, next) {
   var re;
   re = new helper.recode();
   re.url = "";
-  return Inte.getInteAll(res.locals.userid, function(err, resutls) {
+  return Inte.getInteAll(req.cookies.userid, function(err, resutls) {
     if (resutls >= 5) {
-      return Inte.newInte(res.locals.userid, -50, "抽奖", function(err, int) {
+      return Inte.newInte(req.cookies.userid, -50, "抽奖", function(err, int) {
         var list, lot, none;
         list = [[14, 14, 14], [14, 14, 12], [14, 12, 12], [15, 15, 15], [13, 13, 13], [12, 12, 11], [11, 11, 11]];
         lot = Math.ceil(Math.random() * 10000);
@@ -344,7 +343,7 @@ exports.getlucky = function(req, res, next) {
           return Warehouse.getWinnerByInfo("Tabs", function(err, lots) {
             var none;
             if (lots != null) {
-              lots.usedby = res.locals.userid;
+              lots.usedby = req.cookies.userid;
               lots.used = true;
               lots.save();
               re.url = "/sign/winner/" + lots._id;
@@ -364,7 +363,7 @@ exports.getlucky = function(req, res, next) {
           return Warehouse.getWinnerByInfo("Headset", function(err, lots) {
             var none;
             if (typeof lost !== "undefined" && lost !== null) {
-              lots.usedby = res.locals.userid;
+              lots.usedby = req.cookies.userid;
               lots.used = true;
               lots.save();
               re.url = "/sign/winner/" + lots._id;
@@ -384,7 +383,7 @@ exports.getlucky = function(req, res, next) {
           return Warehouse.getWinnerByInfo("Power", function(err, lots) {
             var none;
             if (lots != null) {
-              lots.usedby = res.locals.userid;
+              lots.usedby = req.cookies.userid;
               lots.used = true;
               lots.save();
               re.url = "/sign/winner/" + lots._id;
@@ -401,8 +400,8 @@ exports.getlucky = function(req, res, next) {
         }
         if (lot >= 100 && lot <= 500) {
           console.log("300积分");
-          if (res.locals.userid != null) {
-            Inte.newInte(res.locals.userid, 300, "抽奖获得,300积分", function(err, inte) {});
+          if (req.cookies.userid != null) {
+            Inte.newInte(req.cookies.userid, 300, "抽奖获得,300积分", function(err, inte) {});
           }
           re.reason = list[3];
           re.reason = re.reason.join(",");
@@ -413,7 +412,7 @@ exports.getlucky = function(req, res, next) {
           return Warehouse.getWinnerByInfo("50hf", function(err, lots) {
             var none;
             if (lots != null) {
-              lots.usedby = res.locals.userid;
+              lots.usedby = req.cookies.userid;
               lots.used = true;
               lots.save();
               re.url = "/sign/winner/" + lots._id;
@@ -464,9 +463,9 @@ exports.postnickname = function(req, res, next) {
   var nickname, re;
   nickname = req.body.nickname;
   re = new helper.recode();
-  console.log("nickname:", nickname, res.locals.userid);
+  console.log("nickname:", nickname, req.cookies.userid);
   if (nickname != null) {
-    return User.getUserById(res.locals.userid, function(err, user) {
+    return User.getUserById(req.cookies.userid, function(err, user) {
       console.log(user);
       if (user != null) {
         user.nickname = nickname;
@@ -486,7 +485,7 @@ exports.postnickname = function(req, res, next) {
 };
 
 exports.topic = function(req, res, next) {
-  return User.getUserById(res.locals.userid, function(err, user) {
+  return User.getUserById(req.cookies.userid, function(err, user) {
     console.log(user);
     if ((user != null) && (user.nickname != null)) {
       return Topic.getOne(function(err, topic) {
@@ -522,7 +521,7 @@ exports.comment = function(req, res, next) {
   }
   return Topic.getOne(function(err, topic) {
     if (topic != null) {
-      return User.getUserById(res.locals.userid, function(err, user) {
+      return User.getUserById(req.cookies.userid, function(err, user) {
         var name, reg;
         if (user != null) {
           reg = /(\d{3})\d{4}(\d{4})/;
@@ -661,7 +660,7 @@ exports.winner_post = function(req, res, next) {
     re.reason = "邮寄地址不能为空";
     return res.send(re);
   }
-  return Warehouse.getWinnerByUandW(res.locals.userid, req.params.winner_id, function(err, win) {
+  return Warehouse.getWinnerByUandW(req.cookies.userid, req.params.winner_id, function(err, win) {
     if ((win != null) && (win.username != null)) {
       re.recode = 201;
       re.reason = "您已经提交过此中奖信息,无法更改.";
