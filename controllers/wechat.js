@@ -245,22 +245,22 @@ jianxingpin = {
     {
       title: "Samsung GALAXY Tab S Super AMOLED 炫丽屏重新定义视界",
       description: 'Samsung GALAXY Tab S Super AMOLED 炫丽屏重新定义视界',
-      picurl: "https://mp.weixin.qq.com/cgi-bin/getimgdata?mode=large&source=file&fileId=200559192%3E&token=1921730881&lang=zh_CN",
+      picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBH9RQ1iaJH9XK6iatFxjdE8WQ8qFqEZ2MOz89T8ZcBBLJP9gIzH9pTbpeQ/0",
       url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=1&sn=65df46c2bf8f852d815d3bb887c96ee2#rd"
     }, {
       title: "Super AMOLED 介绍",
       description: 'Super AMOLED 介绍',
-      picurl: "https://mp.weixin.qq.com/cgi-bin/getimgdata?mode=large&source=file&fileId=200559193%3E&token=1921730881&lang=zh_CN",
+      picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHRQObuicHPsbAsdZxcVuoqNiatI3jCoVOmiaqtYGV0ObgL4KESxVmnk6Qw/0",
       url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=2&sn=e63c12ed63c62ade95295f7f04570a01#rd"
     }, {
       title: "Samsung GALAXY K zoom 让每个瞬间都精彩",
       description: 'Samsung GALAXY K zoom 让每个瞬间都精彩',
-      picurl: "https://mp.weixin.qq.com/cgi-bin/getimgdata?mode=large&source=file&fileId=200559194%3E&token=1921730881&lang=zh_CN",
+      picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBH6fTuuEtLsy7fGvZsBflV9SOpY5iacHiaDd056ZA3aq8HGPxEzzpEq5aw/0",
       url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=3&sn=a3cefce3da85b400072a9303de8be9e4#rd"
     }, {
       title: "Samsung GALAXY S5 专享4G应用",
       description: 'Samsung GALAXY S5 专享4G应用',
-      picurl: "https://mp.weixin.qq.com/cgi-bin/getimgdata?mode=large&source=file&fileId=200559195%3E&token=1921730881&lang=zh_CN",
+      picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHhMDv4OicBJTCVnhTfSa0g6UPAick0MFVfBr86PtDVe9akcS844s3YYJQ/0",
       url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=4&sn=84820a9612c169b067729da25596adfe#rd"
     }
   ]

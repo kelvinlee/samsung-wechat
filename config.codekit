@@ -853,6 +853,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/banner-20.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 144912,
+		"inputAbbreviatedPath": "\/public\/img\/banner-20.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/banner-20.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/banner-3.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
