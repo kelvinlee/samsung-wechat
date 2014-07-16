@@ -10,6 +10,9 @@ exports.getInteAll = (userid,callback)->
 			count = a.total if a._id.userid+"" is userid+""
 		callback null,count
 
+exports.getInteAction = (action,callback)->
+	Inte.find({action:action}).count().exec callback
+
 exports.today = (userid,callback)->
 	now = new Date()
 	star = new Date now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+" 00:00:00"

@@ -323,16 +323,22 @@ exports.getlucky = (req,res,next)->
 							res.send re
 				if lot >=100 and lot<=500
 					# 300积分
-					console.log "300积分"
-					if req.cookies.userid?
-						Inte.newInte req.cookies.userid,300,"抽奖获得,300积分",(err,inte)->
-					re.reason = list[3]
-					re.reason = re.reason.join(",")
-					res.send re
+					# console.log "300积分"
+					return Inte.getInteAction "抽奖获得,300积分",(err,resutls)->
+						if resutls<300
+							if req.cookies.userid?
+								Inte.newInte req.cookies.userid,300,"抽奖获得,300积分",(err,inte)->
+							re.reason = list[3]
+							re.reason = re.reason.join(",")
+							res.send re
+						else
+							none = [[13,12,13],[11,13,15],[13,15,11]]
+							re.reason = none[Math.ceil(Math.random()*(none.length-1))]
+							re.reason = re.reason.join(",")
+							res.send re
 
-				# if lot >=500 and lot <= 700
-				if lot?
-					# 50元 话费
+				if lot >=500 and lot <= 600
+					# 搜狐公仔
 					console.log "搜狐公仔"
 					return Warehouse.getWinnerByInfo "sohugz",(err,lots)->
 						if lots?
@@ -350,12 +356,12 @@ exports.getlucky = (req,res,next)->
 							res.send re
 
 					
-				if lot >=1000 and lot <= 3000
+				if lot >=1000 and lot <= 4000
 					# 东坡
 					re.url = "/sign/winner/dp"
 					re.reason = list[5]
 					re.reason = re.reason.join(",")
-					res.send re
+					return res.send re
 				# if lot >=3000 and lot <= 6000
 				# 	# 火锅
 				# 	re.url = "/sign/winner/hg"
@@ -373,7 +379,7 @@ exports.getlucky = (req,res,next)->
 					none = [[13,12,13],[11,13,15],[13,15,11]]
 					re.reason = none[Math.ceil(Math.random()*(none.length-1))]
 					re.reason = re.reason.join(",")
-					res.send re
+					return res.send re
 		else
 			re.recode = 201
 			re.reason = "积分不足"
@@ -589,32 +595,15 @@ setDefaultTopic = ->
 
 # 初始化奖品
 setDefaultWinner = ()->
-	Warehouse.newwinner "Tabs","一等奖","lots-1.jpg",(err,win)->
-	Warehouse.newwinner "Tabs","一等奖","lots-1.jpg",(err,win)->
-	Warehouse.newwinner "Tabs","一等奖","lots-1.jpg",(err,win)->
-	Warehouse.newwinner "Headset","二等奖","lots-2.jpg",(err,win)->
-	Warehouse.newwinner "Headset","二等奖","lots-2.jpg",(err,win)->
-	Warehouse.newwinner "Headset","二等奖","lots-2.jpg",(err,win)->
-	Warehouse.newwinner "Headset","二等奖","lots-2.jpg",(err,win)->
-	Warehouse.newwinner "Headset","二等奖","lots-2.jpg",(err,win)->
-	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
-	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
-	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
-	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
-	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
-	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
-	Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
-	Warehouse.newwinner "sohugz","四等奖","lots-4.jpg",(err,win)->
-	Warehouse.newwinner "sohugz","四等奖","lots-4.jpg",(err,win)->
-	Warehouse.newwinner "sohugz","四等奖","lots-4.jpg",(err,win)->
-	Warehouse.newwinner "sohugz","四等奖","lots-4.jpg",(err,win)->
-	Warehouse.newwinner "sohugz","四等奖","lots-4.jpg",(err,win)->
-	Warehouse.newwinner "sohugz","四等奖","lots-4.jpg",(err,win)->
-	Warehouse.newwinner "sohugz","四等奖","lots-4.jpg",(err,win)->
-	Warehouse.newwinner "sohugz","四等奖","lots-4.jpg",(err,win)->
-	Warehouse.newwinner "sohugz","四等奖","lots-4.jpg",(err,win)->
-	Warehouse.newwinner "sohugz","四等奖","lots-4.jpg",(err,win)->
-
+	for i in [0...5]
+		Warehouse.newwinner "Tabs","一等奖","lots-1.jpg",(err,win)->
+	for i in [0...10]
+		Warehouse.newwinner "Headset","二等奖","lots-2.jpg",(err,win)->
+	for i in [0...20]
+		Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
+	for i in [0...50]
+		Warehouse.newwinner "sohugz","四等奖","lots-4.jpg",(err,win)->
+	
 
 
 # 设置初始化游戏.

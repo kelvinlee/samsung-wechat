@@ -28,6 +28,12 @@ exports.getInteAll = function(userid, callback) {
   });
 };
 
+exports.getInteAction = function(action, callback) {
+  return Inte.find({
+    action: action
+  }).count().exec(callback);
+};
+
 exports.today = function(userid, callback) {
   var end, now, star;
   now = new Date();

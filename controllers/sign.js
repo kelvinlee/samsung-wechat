@@ -403,15 +403,24 @@ exports.getlucky = function(req, res, next) {
           });
         }
         if (lot >= 100 && lot <= 500) {
-          console.log("300积分");
-          if (req.cookies.userid != null) {
-            Inte.newInte(req.cookies.userid, 300, "抽奖获得,300积分", function(err, inte) {});
-          }
-          re.reason = list[3];
-          re.reason = re.reason.join(",");
-          res.send(re);
+          return Inte.getInteAction("抽奖获得,300积分", function(err, resutls) {
+            var none;
+            if (resutls < 300) {
+              if (req.cookies.userid != null) {
+                Inte.newInte(req.cookies.userid, 300, "抽奖获得,300积分", function(err, inte) {});
+              }
+              re.reason = list[3];
+              re.reason = re.reason.join(",");
+              return res.send(re);
+            } else {
+              none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];
+              re.reason = none[Math.ceil(Math.random() * (none.length - 1))];
+              re.reason = re.reason.join(",");
+              return res.send(re);
+            }
+          });
         }
-        if (lot != null) {
+        if (lot >= 500 && lot <= 600) {
           console.log("搜狐公仔");
           return Warehouse.getWinnerByInfo("sohugz", function(err, lots) {
             var none;
@@ -431,11 +440,11 @@ exports.getlucky = function(req, res, next) {
             }
           });
         }
-        if (lot >= 1000 && lot <= 3000) {
+        if (lot >= 1000 && lot <= 4000) {
           re.url = "/sign/winner/dp";
           re.reason = list[5];
           re.reason = re.reason.join(",");
-          res.send(re);
+          return res.send(re);
         }
         if (re.reason === "success") {
           console.log("没有抽中");
@@ -712,31 +721,21 @@ setDefaultTopic = function() {
 };
 
 setDefaultWinner = function() {
-  Warehouse.newwinner("Tabs", "一等奖", "lots-1.jpg", function(err, win) {});
-  Warehouse.newwinner("Tabs", "一等奖", "lots-1.jpg", function(err, win) {});
-  Warehouse.newwinner("Tabs", "一等奖", "lots-1.jpg", function(err, win) {});
-  Warehouse.newwinner("Headset", "二等奖", "lots-2.jpg", function(err, win) {});
-  Warehouse.newwinner("Headset", "二等奖", "lots-2.jpg", function(err, win) {});
-  Warehouse.newwinner("Headset", "二等奖", "lots-2.jpg", function(err, win) {});
-  Warehouse.newwinner("Headset", "二等奖", "lots-2.jpg", function(err, win) {});
-  Warehouse.newwinner("Headset", "二等奖", "lots-2.jpg", function(err, win) {});
-  Warehouse.newwinner("Power", "三等奖", "lots-3.jpg", function(err, win) {});
-  Warehouse.newwinner("Power", "三等奖", "lots-3.jpg", function(err, win) {});
-  Warehouse.newwinner("Power", "三等奖", "lots-3.jpg", function(err, win) {});
-  Warehouse.newwinner("Power", "三等奖", "lots-3.jpg", function(err, win) {});
-  Warehouse.newwinner("Power", "三等奖", "lots-3.jpg", function(err, win) {});
-  Warehouse.newwinner("Power", "三等奖", "lots-3.jpg", function(err, win) {});
-  Warehouse.newwinner("Power", "三等奖", "lots-3.jpg", function(err, win) {});
-  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
-  Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
-  return Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {});
+  var i, _i, _j, _k, _l, _results;
+  for (i = _i = 0; _i < 5; i = ++_i) {
+    Warehouse.newwinner("Tabs", "一等奖", "lots-1.jpg", function(err, win) {});
+  }
+  for (i = _j = 0; _j < 10; i = ++_j) {
+    Warehouse.newwinner("Headset", "二等奖", "lots-2.jpg", function(err, win) {});
+  }
+  for (i = _k = 0; _k < 20; i = ++_k) {
+    Warehouse.newwinner("Power", "三等奖", "lots-3.jpg", function(err, win) {});
+  }
+  _results = [];
+  for (i = _l = 0; _l < 50; i = ++_l) {
+    _results.push(Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {}));
+  }
+  return _results;
 };
 
 setsomeDefautleLots = function() {
