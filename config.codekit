@@ -87,6 +87,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
+	"\/controllers\/sign.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/controllers\/sign.js",
+		"outputAbbreviatedPath": "\/controllers\/min\/sign-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/controllers\/wechat-menu.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -1018,6 +1029,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/game-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 65646,
+		"inputAbbreviatedPath": "\/public\/img\/game-1.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/game-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/game-2-decription.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1040,6 +1062,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/game-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 90666,
+		"inputAbbreviatedPath": "\/public\/img\/game-2.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/game-2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/game-3-decription.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1058,6 +1091,17 @@
 		"initialSize": 96241,
 		"inputAbbreviatedPath": "\/public\/img\/game-3-title.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/game-3-title.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/game-3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 80221,
+		"inputAbbreviatedPath": "\/public\/img\/game-3.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/game-3.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1091,6 +1135,17 @@
 		"initialSize": 70629,
 		"inputAbbreviatedPath": "\/public\/img\/game-4-title.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/game-4-title.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/game-4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 80687,
+		"inputAbbreviatedPath": "\/public\/img\/game-4.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/game-4.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

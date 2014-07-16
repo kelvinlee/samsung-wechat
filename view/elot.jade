@@ -107,3 +107,14 @@ block content_here
 			alert('复制完成');
 		})
 		}
+block js_here
+	script.
+		var dataForWeixin={
+		appId:  "",
+		img:    "http://115.28.106.34/img/weixin-jianianhua.jpg",
+		url:    location.href,
+		title:  "三星乐园嘉年华，关注有礼赢大奖",
+		desc:   "关注得积分，抽奖有惊喜，赢取Samsung GALAXY Tab S 等千份好礼~" || location.href || "For protection, click the condoms now.",
+		fakeid: "",
+		};
+	script(src="/js/weixin.js")
