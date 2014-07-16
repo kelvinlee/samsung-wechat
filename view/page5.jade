@@ -1,30 +1,21 @@
 extends layout
 block title
-	| 还傻站着张望什么！赶快加入乐园一起合作吧~
+	| 寻合作
 block content_here
 	//- 寻合作
-	.weixin-share
+	//- .weixin-share
 		img(src="http://115.28.106.34/img/weixin-page5.jpg")
 	.content
 		img(src="/img/page5.jpg")
-		//- .content-padded
-			div.topic
-				div.box
-					div.topic-title
-						h1.h3 战略合作
-					div.comment
-						div.text 
-							p.h4 联系方式 : partnerchina@samsung.com 
-			div.topic
-				div.box
-					div.topic-title
-						h1.h3 开发者平台合作
-					div.comment
-						img(src="/img/page-5-1.jpg")
-			div.topic
-				div.box
-					div.topic-title
-						h1.h3 活动及推广合作
-					div.comment
-						div.text 
-							p.h4 联系方式 : samsungapps@163.com
+
+block js_here
+	script.
+		var dataForWeixin={
+		appId:  "",
+		img:    "http://115.28.106.34/img/weixin-page5.jpg",
+		url:    location.href,
+		title:  "寻合作",
+		desc:   "还傻站着张望什么！赶快加入乐园一起合作吧~" || location.href || "For protection, click the condoms now.",
+		fakeid: "",
+		};
+	script(src="/js/weixin.js")

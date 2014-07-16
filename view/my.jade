@@ -1,8 +1,8 @@
 extends layout
 block title
-	| 您专属的积分银行，快来看看你的小金库~
+	| 查积分
 block content_here
-	.weixin-share
+	//- .weixin-share
 		img(src="http://115.28.106.34/img/weixin-my.jpg")
 	include nav
 	.content
@@ -17,3 +17,15 @@ block content_here
 		div.line
 		div.note1
 			img(src="/img/note-1.jpg")
+
+block js_here
+	script.
+		var dataForWeixin={
+		appId:  "",
+		img:    "http://115.28.106.34/img/weixin-my.jpg",
+		url:    location.href,
+		title:  "查积分",
+		desc:   "您专属的积分银行，快来看看你的小金库~" || location.href || "For protection, click the condoms now.",
+		fakeid: "",
+		};
+	script(src="/js/weixin.js")

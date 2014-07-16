@@ -1,9 +1,9 @@
 extends layout
 block title
-	| 若要得积分，赶紧来签到！每日签到都可获得积分哦~
+	| 来签到
 block content_here
-	//- 签到
-	.weixin-share
+	//- 来签到
+	//- .weixin-share
 		img(src="http://115.28.106.34/img/weixin-page7.jpg")
 	.content
 		div.registration
@@ -14,3 +14,15 @@ block content_here
 			img(src="/img/qiandao-list.jpg")
 		a(href="/sign/tointe",onclick="return qiandao()")
 			img(src="/img/qdbtn.png")
+
+block js_here
+	script.
+		var dataForWeixin={
+		appId:  "",
+		img:    "http://115.28.106.34/img/weixin-page7.jpg",
+		url:    location.href,
+		title:  "来签到",
+		desc:   "若要得积分，赶紧来签到！每日签到都可获得积分哦~" || location.href || "For protection, click the condoms now.",
+		fakeid: "",
+		};
+	script(src="/js/weixin.js")

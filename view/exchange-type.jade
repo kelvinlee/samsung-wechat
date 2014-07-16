@@ -1,9 +1,9 @@
 extends layout
 block title
-	| 幸运降临，等你伸手，你的好运气都在这里~
+	| 玩游戏
 block content_here
 	//- include nav
-	.weixin-share
+	//- .weixin-share
 		img(src="http://115.28.106.34/img/weixin-game.jpg")
 	.content
 		.content-padded
@@ -12,24 +12,34 @@ block content_here
 					a.item(href="/sign/exchangelot/#{list[i]._id}",onclick="post(this); return false;")
 						img(src="#{list[i].img}")
 
-	block js_here
-		script.
-			_submit = false;
-			function post(o) {
-				_submit = true;
-				$.ajax({
-					async: false,
-					url: $(o).attr("href"),
-					type: 'GET',
-					dataType: 'json',
-					success: function(msg) {
-						if (msg.recode === 200) {
-							window.location.href = "/sign/mylot/"+msg.reason;
-							//- _hmt.push(['_trackEvent', '注册', '提交', '']);
-						} else {
-							_submit = false
-							return alert(msg.reason);
-						}
+block js_here
+	script.
+		var dataForWeixin={
+		appId:  "",
+		img:    "http://115.28.106.34/img/weixin-game.jpg",
+		url:    location.href,
+		title:  "玩游戏",
+		desc:   "幸运降临，等你伸手，你的好运气都在这里~" || location.href || "For protection, click the condoms now.",
+		fakeid: "",
+		};
+	script(src="/js/weixin.js")
+	script.
+		_submit = false;
+		function post(o) {
+			_submit = true;
+			$.ajax({
+				async: false,
+				url: $(o).attr("href"),
+				type: 'GET',
+				dataType: 'json',
+				success: function(msg) {
+					if (msg.recode === 200) {
+						window.location.href = "/sign/mylot/"+msg.reason;
+						//- _hmt.push(['_trackEvent', '注册', '提交', '']);
+					} else {
+						_submit = false
+						return alert(msg.reason);
 					}
-				});
-			}
+				}
+			});
+		}

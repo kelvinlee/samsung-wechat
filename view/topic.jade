@@ -1,9 +1,9 @@
 extends layout
 block title
-	| 顶尖趋势，潮流热点，你想聊的话题都在这里~
+	| 聊话题
 block content_here
 	//- include nav
-	div.weixin-share
+	//- div.weixin-share
 		img(src="http://115.28.106.34/img/weixin-topic.jpg")
 	nav.bar.bar-tab
 		div.sendmsg
@@ -44,6 +44,16 @@ block content_here
 									li(style="line-height:20px;text-align:center;") 还没有评论,快来抢先评论.
 
 block js_here
+	script.
+		var dataForWeixin={
+		appId:  "",
+		img:    "http://115.28.106.34/img/weixin-topic.jpg",
+		url:    location.href,
+		title:  "聊话题",
+		desc:   "顶尖趋势，潮流热点，你想聊的话题都在这里~" || location.href || "For protection, click the condoms now.",
+		fakeid: "",
+		};
+	script(src="/js/weixin.js")
 	script.
 		function getTime(date) {
 		now = new Date();
