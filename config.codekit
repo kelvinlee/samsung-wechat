@@ -87,17 +87,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
-	"\/controllers\/sign.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/controllers\/sign.js",
-		"outputAbbreviatedPath": "\/controllers\/min\/sign-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/controllers\/wechat-menu.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -1634,6 +1623,72 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/share-dp.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 60403,
+		"inputAbbreviatedPath": "\/public\/img\/share-dp.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/share-dp.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/share-Headset.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 52503,
+		"inputAbbreviatedPath": "\/public\/img\/share-Headset.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/share-Headset.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/share-hg.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 56999,
+		"inputAbbreviatedPath": "\/public\/img\/share-hg.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/share-hg.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/share-Power.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54981,
+		"inputAbbreviatedPath": "\/public\/img\/share-Power.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/share-Power.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/share-sohugz.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 66949,
+		"inputAbbreviatedPath": "\/public\/img\/share-sohugz.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/share-sohugz.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/share-Tabs.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 68251,
+		"inputAbbreviatedPath": "\/public\/img\/share-Tabs.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/share-Tabs.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/sharenow.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1711,6 +1766,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/weixin-dp.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 47793,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-dp.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-dp.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/weixin-game.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1729,6 +1795,17 @@
 		"initialSize": 11449,
 		"inputAbbreviatedPath": "\/public\/img\/weixin-Headset.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/weixin-Headset.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/weixin-hg.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 42234,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-hg.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-hg.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1806,6 +1883,17 @@
 		"initialSize": 6218,
 		"inputAbbreviatedPath": "\/public\/img\/weixin-Power.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/weixin-Power.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/weixin-sohugz.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 76297,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-sohugz.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-sohugz.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1967,17 +2055,6 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
-		},
-	"\/routes.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/routes.js",
-		"outputAbbreviatedPath": "\/min\/routes-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
 		}
 	},
 "hooks": [

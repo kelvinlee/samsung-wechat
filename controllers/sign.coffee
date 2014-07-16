@@ -566,6 +566,12 @@ exports.winner_post = (req,res,next)->
 			re.reason = "请不要使用其他用户的兑奖码"
 			res.send re
 
+exports.share = (req,res,next)->
+	info = req.params.info
+	res.render "share",{info:info}
+
+
+
 
 # 初始化一个话题
 setDefaultTopic = ->

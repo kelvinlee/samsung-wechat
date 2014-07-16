@@ -686,6 +686,14 @@ exports.winner_post = function(req, res, next) {
   });
 };
 
+exports.share = function(req, res, next) {
+  var info;
+  info = req.params.info;
+  return res.render("share", {
+    info: info
+  });
+};
+
 setDefaultTopic = function() {
   var description, endtime, list, lot, name, startime;
   list = ["你敢不敢说走就走", "你敢不敢说走就走", "你敢不敢说走就走", "你敢不敢说走就走", "你敢不敢说走就走"];
