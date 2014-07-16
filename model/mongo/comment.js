@@ -10,7 +10,7 @@ exports.getByTopic = function(tid, callback) {
     topic: tid
   }).sort({
     _id: -1
-  }).limit(200).exec(callback);
+  }).limit(20).exec(callback);
 };
 
 exports.getByTime = function(tid, startime, callback) {
@@ -18,7 +18,7 @@ exports.getByTime = function(tid, startime, callback) {
     topic: tid
   }).sort({
     create_at: -1
-  }).limit(200).exec(callback);
+  }).limit(20).exec(callback);
 };
 
 exports.newComment = function(uid, topic, name, content, callback) {

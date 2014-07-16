@@ -87,17 +87,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
-	"\/controllers\/sign.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/controllers\/sign.js",
-		"outputAbbreviatedPath": "\/controllers\/min\/sign-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/controllers\/wechat-menu.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -173,6 +162,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
+		},
+	"\/controllers\/wechat.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/controllers\/wechat.js",
+		"outputAbbreviatedPath": "\/controllers\/min\/wechat-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/helper.coffee": {
 		"createSourceMap": 0,
@@ -1018,17 +1018,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/public\/img\/game-1.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 302108,
-		"inputAbbreviatedPath": "\/public\/img\/game-1.png",
-		"outputAbbreviatedPath": "\/public\/img\/game-1.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/public\/img\/game-2-decription.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1051,17 +1040,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/public\/img\/game-2.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 930662,
-		"inputAbbreviatedPath": "\/public\/img\/game-2.png",
-		"outputAbbreviatedPath": "\/public\/img\/game-2.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/public\/img\/game-3-decription.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1080,17 +1058,6 @@
 		"initialSize": 96241,
 		"inputAbbreviatedPath": "\/public\/img\/game-3-title.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/game-3-title.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/public\/img\/game-3.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 337847,
-		"inputAbbreviatedPath": "\/public\/img\/game-3.png",
-		"outputAbbreviatedPath": "\/public\/img\/game-3.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1124,17 +1091,6 @@
 		"initialSize": 70629,
 		"inputAbbreviatedPath": "\/public\/img\/game-4-title.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/game-4-title.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/public\/img\/game-4.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 337847,
-		"inputAbbreviatedPath": "\/public\/img\/game-4.png",
-		"outputAbbreviatedPath": "\/public\/img\/game-4.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1912,6 +1868,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
+		},
+	"\/routes.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/routes.js",
+		"outputAbbreviatedPath": "\/min\/routes-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		}
 	},
 "hooks": [
