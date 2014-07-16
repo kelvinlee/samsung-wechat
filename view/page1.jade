@@ -1,6 +1,6 @@
 extends layout
 block title
-	| 关注三星乐园微信公众帐号，惊喜大礼等你认领！
+	| 嘉年华
 block css_here
 	style.
 		.active-1 {
@@ -15,7 +15,7 @@ block css_here
 			left:10%;
 		}
 block content_here
-	div.weixin-share
+	//- div.weixin-share
 		img(src="http://115.28.106.34/img/weixin-jianianhua.jpg")
 	.content
 		div.active-1
@@ -23,16 +23,16 @@ block content_here
 			img(src="/img/active-1.jpg") 
 		
 block js_here
-	//- script.
-	//- 	var dataForWeixin={
-	//- 	appId:  "",
-	//- 	img:    "http://115.28.106.34/img/weixin-topic.jpg",// "http://weixinniang-static.stor.sinaapp.com/durexsaylove/wxshare.jpg",
-	//- 	url:    location.href,
-	//- 	title:  "指尖上的激情",
-	//- 	desc:   "自由放纵吧，骚年！速度与激情再度引爆！" || location.href || "For protection, click the condoms now.",
-	//- 	fakeid: "",
-	//- 	};
-	//- script(src="/js/weixin.js")
+	script.
+		var dataForWeixin={
+		appId:  "",
+		img:    "http://115.28.106.34/img/weixin-jianianhua.jpg",
+		url:    location.href,
+		title:  "嘉年华",
+		desc:   "关注三星乐园微信公众帐号，惊喜大礼等你认领！" || location.href || "For protection, click the condoms now.",
+		fakeid: "",
+		};
+	script(src="/js/weixin.js")
 
 
 

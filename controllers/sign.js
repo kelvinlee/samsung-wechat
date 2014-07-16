@@ -632,6 +632,7 @@ exports.lots = function(req, res, next) {
 
 exports.winner = function(req, res, next) {
   var id;
+  res.locals.menu_lucky = "active";
   id = req.params.winner_id;
   if (id === "dp") {
     return res.render("lots-dp");

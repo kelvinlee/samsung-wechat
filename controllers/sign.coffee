@@ -515,6 +515,8 @@ exports.lots = (req,res,next)->
 	res.render "lots"
 
 exports.winner = (req,res,next)->
+	res.locals.menu_lucky = "active"
+
 	id = req.params.winner_id
 	if id is "dp"
 		return res.render "lots-dp"

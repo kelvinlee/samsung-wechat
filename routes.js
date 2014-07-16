@@ -16,6 +16,7 @@ module.exports = function(app) {
   app.get("/page5", sign.page5);
   app.get("/page6", sign.page6);
   app.get("/page7", sign.page7);
+  app.get("/game", sign.game);
   app.get("/art/:art_id", sign.art);
   app.get("/active/:ac_id", sign.active);
   app.get("/middle/:openid", sign.middle);
@@ -30,7 +31,6 @@ module.exports = function(app) {
   app.get("/sign/exchange", sign.exchange);
   app.get("/sign/exchange/:type_id", sign.exchange_type);
   app.get("/sign/exchangelot/:lots_id", sign.exchangelot);
-  app.get("/sign/game", sign.game);
   app.get("/sign/lucky", sign.lucky);
   app.get("/sign/getlucky", sign.getlucky);
   app.get("/sign/luckyframe", sign.luckyframe);

@@ -6,4 +6,187 @@ block content_here
 	.weixin-share
 		img(src="http://115.28.106.34/img/weixin-lucky.jpg")
 	include nav
-	iframe(src="/sign/luckyframe").content 
+	//- iframe(src="/sign/luckyframe").content 
+	.content
+		//- div#mylegend(style="height:300px;") 加载中
+		.content-padded
+			div.slot
+				div.bg
+					img(src="/img/lucky-bg.jpg")
+				div.random
+					div.items
+						-for (var i=0;i<10;i++)
+							div.item
+								img(src="/img/icon-l-1.png")
+							div.item
+								img(src="/img/icon-l-2.png")
+							div.item
+								img(src="/img/icon-l-3.png")
+							div.item
+								img(src="/img/icon-l-4.png")
+							div.item
+								img(src="/img/icon-l-5.png")
+					div.items
+						-for (var i=0;i<10;i++)
+							div.item
+								img(src="/img/icon-l-1.png")
+							div.item
+								img(src="/img/icon-l-2.png")
+							div.item
+								img(src="/img/icon-l-3.png")
+							div.item
+								img(src="/img/icon-l-4.png")
+							div.item
+								img(src="/img/icon-l-5.png")
+					div.items
+						-for (var i=0;i<10;i++)
+							div.item
+								img(src="/img/icon-l-1.png")
+							div.item
+								img(src="/img/icon-l-2.png")
+							div.item
+								img(src="/img/icon-l-3.png")
+							div.item
+								img(src="/img/icon-l-4.png")
+							div.item
+								img(src="/img/icon-l-5.png")
+				//- (style="display:none")
+				div.pline
+					img(src="/img/lucky-line.png")
+			div.lucky-btn
+				a#luckybtn(href="/sign/getlucky",onclick=" post(this); return false;")
+					img(src="/img/lucky-try.png")
+				//- a#luckysubmit(href="http://wservice.yazuosoft.com/yazuo-weixin/weixin/phonePage/registerPage.do?brandId=1631&weixinId=o_bYSuF_emkC8kJ6MZOgK_4o7i9U&from=singlemessage&isappinstalled=0",style="display:none;")
+				a#luckysubmit(href="meizhoudongpojituan",style="display:none;")
+					img(src="/img/submit-lucky.png")
+			div.lucky-content
+				img(src="/img/lucky-content.png")
+
+
+
+block js_here
+	//- script(src="/js/lufylegend-1.8.6.min.js")
+	//- script.
+	//- 	console.log(LGlobal.canTouch);
+	//- 	if(LGlobal.canTouch){
+	//- 		LGlobal.stageScale = LStageScaleMode.NO_BORDER;
+	//- 		LSystem.screen(LStage.FULL_SCREEN);
+	//- 	}
+	//- script(src="/js/reel.js")
+	//- script(src="/js/game.js")
+	script.
+
+		_loting = false
+		function getLot(list,url) {
+			var lots = list.split(",");
+			var h = $(".random .item").height();
+			hw = -h*parseInt(lots[0])
+			$(".random .items").eq(0).css({
+				"transition":"2s",
+				"-ms-transition":"2s",
+				"-webkit-transition":"2s",
+				"-moz-transition":"2s",
+				"-o-transition":"2s", 
+				"transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-ms-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-webkit-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-moz-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-o-transform":"translate3d(0px, "+hw+"px, 0px)"
+			});
+			hw = -h*parseInt(lots[1])
+			$(".random .items").eq(1).css({
+				"transition":"2s",
+				"-ms-transition":"2s",
+				"-webkit-transition":"2s",
+				"-moz-transition":"2s",
+				"-o-transition":"2s", 
+				"transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-ms-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-webkit-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-moz-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-o-transform":"translate3d(0px, "+hw+"px, 0px)"
+			});
+			hw = -h*parseInt(lots[2])
+			$(".random .items").eq(2).css({
+				"transition":"2s",
+				"-ms-transition":"2s",
+				"-webkit-transition":"2s",
+				"-moz-transition":"2s",
+				"-o-transition":"2s", 
+				"transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-ms-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-webkit-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-moz-transform":"translate3d(0px, "+hw+"px, 0px)",
+				"-o-transform":"translate3d(0px, "+hw+"px, 0px)"
+			});
+			_moving = true;
+			setTimeout(function(){
+				_moving = false;
+				if (list == "13,12,13" || list == "11,13,15" || list == "13,15,11") {
+					//- $(".pline").show();
+					alert("可惜没中奖,再试一次");
+					//- return setdefault();
+					return "";
+				}
+				if (list == "15,15,15") {
+					//- $(".pline").show();
+					alert("恭喜获得300积分,已经充入您的账号");	
+					//- return setdefault();
+					return "";
+				}
+				$("#luckybtn").hide();
+				$("#luckysubmit").attr("href",url).show();
+				//- $(".pline").show();
+			},2200);
+
+			//- if (_loting){
+			//- 	return false; 
+			//- }
+			//- starplay({});
+			//- setTimeout(function(){
+			//- 	stopevent({},{index:1});
+			//- },3000);
+			//- setTimeout(function(){
+			//- 	stopevent({},{index:2});
+			//- },3500);
+			//- setTimeout(function(){
+			//- 	stopevent({},{index:0});
+
+			//- },4000);
+		}
+
+		function setdefault() {
+			//- $(".pline").hide();
+			$(".random .items").css({
+				"transition":"0s",
+				"-ms-transition":"0s",
+				"-webkit-transition":"0s",
+				"-moz-transition":"0s",
+				"-o-transition":"0s", 
+				"transform":"translate3d(0px, 0px, 0px)",
+				"-ms-transform":"translate3d(0px, 0px, 0px)",
+				"-webkit-transform":"translate3d(0px, 0px, 0px)",
+				"-moz-transform":"translate3d(0px, 0px, 0px)",
+				"-o-transform":"translate3d(0px, 0px, 0px)"
+			});
+		}
+		_submit = false; 
+		_moving = false;
+		function post() {
+			if (_moving){return false;}
+			setdefault();
+			_submit = true;
+			$.ajax({
+				async: false,
+				url: "/sign/getlucky",
+				type: 'GET',
+				dataType: 'json',
+				success: function(msg) {
+					if (msg.recode == 200) {
+						getLot(msg.reason,msg.url);
+					}else{
+						alert(msg.reason);
+					}
+				}
+			});
+		}

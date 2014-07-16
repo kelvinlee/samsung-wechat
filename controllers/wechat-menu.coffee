@@ -185,7 +185,17 @@ plugs_menu = (message,callback)->
 	else if message.EventKey is "magazine"
 		callback new magazine()
 	else if message.EventKey is "newactive"
-		callback new newactive()
+		newmy = new newactive()
+		newmy.items[2].url = newmy.items[2].url.replace "{openid}",message.FromUserName
+		User.getUserOpenId message.FromUserName,(err,user)->
+			console.log newmy.items[2].url
+			if user?
+				Inte.getInteAll user._id,(err,count)->
+					newmy.items[2].description = newmy.items[2].description.replace "{jf}",count
+					callback newmy
+			else
+				newmy.items[2].description = newmy.items[2].description.replace "{jf}","0"
+				callback newmy
 	else if message.EventKey is "my"
 		newmy = new my()
 		newmy.items[0].url = newmy.items[0].url.replace "{openid}",message.FromUserName
