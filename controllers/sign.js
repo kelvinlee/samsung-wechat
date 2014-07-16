@@ -437,12 +437,6 @@ exports.getlucky = function(req, res, next) {
           re.reason = re.reason.join(",");
           res.send(re);
         }
-        if (lot >= 3000 && lot <= 6000) {
-          re.url = "/sign/winner/hg";
-          re.reason = list[6];
-          re.reason = re.reason.join(",");
-          res.send(re);
-        }
         if (re.reason === "success") {
           console.log("没有抽中");
           none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];

@@ -1,5 +1,47 @@
 @import url(less/helper.less);
 
+
+
+
+// animate
+@newline: `"\n"`; // Newline
+.animation_1(@selector, @name, @pxFrom, @pxTo) {
+    .Keyframe(@pre, @post, @vendor) {
+        @keyframe: ~"@{pre}@@{vendor}keyframes @{name} {@{newline}0%";
+        @{keyframe} {
+          top:0%;
+        }
+        0% {
+        	top:0%;
+        }
+        50% {
+        	top:2%;	
+        }
+        100%  {
+        	top:0%;
+        }    
+        .Local(){}
+        .Local() when (@post=1) {
+            @local: ~"}@{newline}@{selector}";
+            @{local} {
+                -moz-animation: @name 0.5s infinite;
+                -webkit-animation: @name 0.5s infinite;
+                -o-animation: @name 0.5s infinite;
+                -ms-animation: @name 0.5s infinite;
+                animation: @name 0.5s infinite;
+            } 
+        }    
+        .Local;
+    } 
+    .Keyframe(""            , 0,    "-moz-");
+    .Keyframe(~"}@{newline}", 0, "-webkit-");
+    .Keyframe(~"}@{newline}", 0,      "-o-");
+    .Keyframe(~"}@{newline}", 0,     "-ms-");
+    .Keyframe(~"}@{newline}", 1,         ""); // <-- Vendorless w3
+} 
+.animation_1(".lotsnote", sp1, 10px, 100px);
+
+
 body {
 	font-size: 14px;
 }

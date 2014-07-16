@@ -356,12 +356,12 @@ exports.getlucky = (req,res,next)->
 					re.reason = list[5]
 					re.reason = re.reason.join(",")
 					res.send re
-				if lot >=3000 and lot <= 6000
-					# 火锅
-					re.url = "/sign/winner/hg"
-					re.reason = list[6]
-					re.reason = re.reason.join(",")
-					res.send re
+				# if lot >=3000 and lot <= 6000
+				# 	# 火锅
+				# 	re.url = "/sign/winner/hg"
+				# 	re.reason = list[6]
+				# 	re.reason = re.reason.join(",")
+				# 	res.send re
 
 				if re.reason is "success"
 					console.log "没有抽中"

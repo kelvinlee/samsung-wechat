@@ -90,6 +90,83 @@
 .clearfix {
   *zoom: 1;
 }
+@-moz-keyframes sp1 {
+0% {
+  top: 0%;
+}
+0% {
+  top: 0%;
+}
+50% {
+  top: 2%;
+}
+100% {
+  top: 0%;
+}
+}
+@-webkit-keyframes sp1 {
+0% {
+  top: 0%;
+}
+0% {
+  top: 0%;
+}
+50% {
+  top: 2%;
+}
+100% {
+  top: 0%;
+}
+}
+@-o-keyframes sp1 {
+0% {
+  top: 0%;
+}
+0% {
+  top: 0%;
+}
+50% {
+  top: 2%;
+}
+100% {
+  top: 0%;
+}
+}
+@-ms-keyframes sp1 {
+0% {
+  top: 0%;
+}
+0% {
+  top: 0%;
+}
+50% {
+  top: 2%;
+}
+100% {
+  top: 0%;
+}
+}
+@keyframes sp1 {
+0% {
+  top: 0%;
+}
+0% {
+  top: 0%;
+}
+50% {
+  top: 2%;
+}
+100% {
+  top: 0%;
+}
+}
+.lotsnote {
+  -moz-animation: sp1 0.5s infinite;
+  -webkit-animation: sp1 0.5s infinite;
+  -o-animation: sp1 0.5s infinite;
+  -ms-animation: sp1 0.5s infinite;
+  animation: sp1 0.5s infinite;
+}
 body {
   font-size: 14px;
 }
