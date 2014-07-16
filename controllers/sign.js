@@ -272,7 +272,7 @@ exports.exchangelot = function(req, res, next) {
         re.reason = ihas._id;
         return res.send(re);
       } else {
-        if ((lots != null) && inte >= lots.inte) {
+        if (lots != null) {
           return Warehouse.getOne(lots._id, function(err, lot) {
             var used_at;
             if (lot != null) {
@@ -292,7 +292,7 @@ exports.exchangelot = function(req, res, next) {
           });
         } else {
           re.recode = 201;
-          re.reason = "积分不足,无法兑换.";
+          re.reason = "此奖品已经被兑换光了,请等待补充.";
           return res.send(re);
         }
       }
@@ -336,7 +336,7 @@ exports.getlucky = function(req, res, next) {
   re = new helper.recode();
   re.url = "";
   return Inte.getInteAll(req.cookies.userid, function(err, resutls) {
-    if (resutls >= 5) {
+    if (resutls >= 50) {
       return Inte.newInte(req.cookies.userid, -50, "抽奖", function(err, int) {
         var list, lot, none;
         list = [[14, 14, 14], [14, 14, 12], [14, 12, 12], [15, 15, 15], [13, 13, 13], [12, 12, 11], [11, 11, 11]];

@@ -210,7 +210,8 @@ exports.exchangelot = (req,res,next)->
 				re.reason = ihas._id
 				res.send re
 			else
-				if lots? and inte >= lots.inte
+				# 无需积分 and inte >= lots.inte
+				if lots? 
 					Warehouse.getOne lots._id,(err,lot)->
 						if lot?
 							lot.usedby = req.cookies.userid
@@ -229,7 +230,8 @@ exports.exchangelot = (req,res,next)->
 
 				else
 					re.recode = 201
-					re.reason = "积分不足,无法兑换."
+					# re.reason = "积分不足,无法兑换."
+					re.reason = "此奖品已经被兑换光了,请等待补充."
 					res.send re
 		# Warehouse.getOne id,(err,lot)->
 
@@ -259,7 +261,7 @@ exports.getlucky = (req,res,next)->
 	Inte.getInteAll req.cookies.userid,(err,resutls)->
 		# ep.emit "inte",resutls
 		# getlucky
-		if resutls >= 5
+		if resutls >= 50
 			Inte.newInte req.cookies.userid,-50,"抽奖",(err,int)->
 				list = [[14,14,14],[14,14,12],[14,12,12],[15,15,15],[13,13,13],[12,12,11],[11,11,11]]
 				lot = Math.ceil(Math.random()*10000)
