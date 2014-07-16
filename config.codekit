@@ -87,6 +87,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
+	"\/controllers\/sign.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/controllers\/sign.js",
+		"outputAbbreviatedPath": "\/controllers\/min\/sign-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/controllers\/wechat-menu.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -1711,6 +1722,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/weixin-Headset.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11449,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-Headset.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-Headset.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/weixin-jianianhua.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1773,6 +1795,28 @@
 		"initialSize": 51372,
 		"inputAbbreviatedPath": "\/public\/img\/weixin-page7.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/weixin-page7.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/weixin-Power.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6218,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-Power.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-Power.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/weixin-Tabs.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20030,
+		"inputAbbreviatedPath": "\/public\/img\/weixin-Tabs.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/weixin-Tabs.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
