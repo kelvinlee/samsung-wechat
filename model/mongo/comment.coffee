@@ -3,7 +3,7 @@ Comment = models.Comment
 
 exports.getByTopic = (tid,callback)->
 	# $gte 大于等于
-	Comment.find({topic:tid}).sort({create_at:-1}).limit(200).exec callback
+	Comment.find({topic:tid}).sort({_id:-1}).limit(200).exec callback
 
 exports.getByTime = (tid,startime,callback)->
 
