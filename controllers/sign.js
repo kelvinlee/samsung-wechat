@@ -411,7 +411,7 @@ exports.getlucky = function(req, res, next) {
           re.reason = re.reason.join(",");
           res.send(re);
         }
-        if (lot >= 500 && lot <= 700) {
+        if (lot != null) {
           console.log("搜狐公仔");
           return Warehouse.getWinnerByInfo("sohugz", function(err, lots) {
             var none;

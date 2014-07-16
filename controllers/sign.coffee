@@ -329,7 +329,9 @@ exports.getlucky = (req,res,next)->
 					re.reason = list[3]
 					re.reason = re.reason.join(",")
 					res.send re
-				if lot >=500 and lot <= 700
+
+				# if lot >=500 and lot <= 700
+				if lot?
 					# 50元 话费
 					console.log "搜狐公仔"
 					return Warehouse.getWinnerByInfo "sohugz",(err,lots)->
