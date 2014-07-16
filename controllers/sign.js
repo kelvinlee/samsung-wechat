@@ -402,7 +402,7 @@ exports.getlucky = function(req, res, next) {
             }
           });
         }
-        if (lot >= 100 && lot <= 500) {
+        if (lot >= 100 && lot <= 900) {
           return Inte.getInteAction("抽奖获得,300积分", function(err, resutls) {
             var none;
             if (resutls < 300) {
@@ -440,7 +440,7 @@ exports.getlucky = function(req, res, next) {
             }
           });
         }
-        if (lot >= 1000 && lot <= 4000) {
+        if (lot >= 1000 && lot <= 5000) {
           re.url = "/sign/winner/dp";
           re.reason = list[5];
           re.reason = re.reason.join(",");

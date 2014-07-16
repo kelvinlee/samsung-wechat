@@ -321,7 +321,7 @@ exports.getlucky = (req,res,next)->
 							re.reason = none[Math.ceil(Math.random()*(none.length-1))]
 							re.reason = re.reason.join(",")
 							res.send re
-				if lot >=100 and lot<=500
+				if lot >=100 and lot<=900
 					# 300积分
 					# console.log "300积分"
 					return Inte.getInteAction "抽奖获得,300积分",(err,resutls)->
@@ -356,7 +356,7 @@ exports.getlucky = (req,res,next)->
 							res.send re
 
 					
-				if lot >=1000 and lot <= 4000
+				if lot >=1000 and lot <= 5000
 					# 东坡
 					re.url = "/sign/winner/dp"
 					re.reason = list[5]
