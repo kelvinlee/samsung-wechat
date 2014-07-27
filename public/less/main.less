@@ -321,6 +321,32 @@ iframe.content {
 	z-index: -1;
 }
 
+.alert {
+	background-color: rgba(0,0,0,0.7);
+	.tl();
+	position: fixed;
+	bottom: 0px;
+	.wh(100%,100%);
+
+	.alert-c {
+		.tl(50%,50%);
+		.wh(80%);
+		.b("../img/alert.jpg",no-repeat,center,center);
+		background-size: contain;
+		padding:15% 10%;
+		.tran(translate3d(-50%,-50%,0px));
+		color: #fff;
+		font-size: 1rem;
+		word-wrap: break-word;
+		word-break: normal; 
+		text-align: center;
+		
+	}
+}
+
+
+
+
 // more than 960
 @media screen and (max-width:321px) {
 	body {

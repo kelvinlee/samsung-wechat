@@ -110,10 +110,10 @@ block js_here
 					dataType: 'json',
 					success: function(msg){
 						if (msg.recode == 200){
-							alert("提交成功,已经将您的信息存入,请不要重复提交.");
+							showalert("提交成功,已经将您的信息存入,请不要重复提交.");
 							//- window.location.reload();
 						}else{
-							alert(msg.reason);
+							showalert(msg.reason);
 						}
 					}
 				});

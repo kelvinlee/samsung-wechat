@@ -17,9 +17,23 @@ qiandao = ->
 		success: (msg)->
 			__qiaodao = false;
 			if msg.recode is 200
-				alert "恭喜您今天签到成功了."
-				# window.location.reload()
-				window.location.href = "/sign/my"
+				showalert "恭喜您今天签到成功了.",->
+					window.location.href = "/sign/my"
 			else
-				alert msg.reason
+				showalert msg.reason
 	return false
+
+
+showalert = (text,callback)->
+	$(".alert").remove()
+	al = $("<div>").addClass("alert")
+	alc = $("<div>").addClass("alert-c")
+	alc.text text
+	al.append alc
+	$("body").append al
+	$(".alert").click ->
+		$(".alert").remove()
+		callback() if typeof callback is "function"
+
+
+

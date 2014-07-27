@@ -13,7 +13,7 @@ var Zepto=function(){function L(t){return null==t?String(t):j[T.call(t)]||"objec
      Begin plugs.coffee
 --------------------------------------------
  */
-var DMHandler, Giccoo, SHAKE_THRESHOLD, deviceMotionHandler, gico, last_update, last_x, last_y, last_z, qiandao, __qiaodao, _x, _y, _z;
+var DMHandler, Giccoo, SHAKE_THRESHOLD, deviceMotionHandler, gico, last_update, last_x, last_y, last_z, qiandao, showalert, __qiaodao, _x, _y, _z;
 
 Giccoo = (function() {
   function Giccoo(name) {
@@ -130,20 +130,14 @@ Giccoo = (function() {
     $ep = this;
     list = {
       "qweibo": "http://v.t.qq.com/share/share.php?title={title}&url={url}&pic={pic}",
-      "renren": "http://share.renren.com/share/buttonshare?title={title}&link={url}&pic={pic}",
+      "renren": "http://share.renren.com/share/buttonshare.do?title={title}&link={url}&pic={pic}",
       "weibo": "http://v.t.sina.com.cn/share/share.php?title={title}&url={url}&pic={pic}",
       "qzone": "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&title={title}&pic={pic}",
       "facebook": "http://www.facebook.com/sharer/sharer.php?s=100&p[url]={url}}&p[title]={title}&p[summary]={title}&pic={pic}",
       "twitter": "https://twitter.com/intent/tweet?text={title}&pic={pic}",
-      "kaixin": "http://www.kaixin001.com/rest/records.php?content={title}&url={url}&pic={pic}",
-      "douban": "http://www.douban.com/share/service?bm=&image={pic}&href={url}&updated=&name={title}"
+      "kaixin": "http://www.kaixin001.com/rest/records.php?content={title}&url={url}&pic={pic}"
     };
-    return $("[data-share]").unbind('click').bind('click', function() {
-      var rep;
-      if ($(this).attr('content')) {
-        rep = $(this).attr('content');
-        content = content.replace('{content}', rep);
-      }
+    return $("a[data-share]").unbind('click').bind('click', function() {
       return $ep.fShare(list[$(this).data('share')], content, url, pic);
     });
   };
@@ -170,17 +164,14 @@ Giccoo = (function() {
       var $div, $i;
       $div = $('<div>').addClass('radio-parent ' + $(this).attr('class'));
       $i = $('<i>');
-      $i.text($(this).attr("value"));
       $(this).before($div);
       $div.addClass($(this).attr('class')).append($(this));
       $div.append($i);
-      if ($(this).is(':checked')) {
-        $div.addClass('on');
-      }
       return $(this).change(function() {
         var $o;
         $o = $(this);
         $('[name=' + $o.attr('name') + ']').parent().removeClass('on');
+        console.log($('[name=' + $o.attr('name') + ']'));
         return setTimeout(function() {
           if ($o.is(':checked')) {
             return $o.parent().addClass('on');
@@ -202,9 +193,6 @@ Giccoo = (function() {
       $(this).before($div);
       $div.addClass($(this).attr('class')).append($(this));
       $div.append($i);
-      if ($(this).is(':checked')) {
-        $div.addClass('on');
-      }
       return $(this).change(function() {
         var $o;
         $o = $(this);
@@ -251,13 +239,6 @@ Giccoo = (function() {
     } else {
       return $(o).next().html($(o).find('option').text());
     }
-  };
-
-  Giccoo.prototype.mobilecheck = function() {
-    if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
-      return true;
-    }
-    return false;
   };
 
   Giccoo.prototype.fBindOrientation = function() {
@@ -365,12 +346,29 @@ qiandao = function() {
     success: function(msg) {
       __qiaodao = false;
       if (msg.recode === 200) {
-        alert("恭喜您今天签到成功了.");
-        return window.location.href = "/sign/my";
+        return showalert("恭喜您今天签到成功了.", function() {
+          return window.location.href = "/sign/my";
+        });
       } else {
-        return alert(msg.reason);
+        return showalert(msg.reason);
       }
     }
   });
   return false;
+};
+
+showalert = function(text, callback) {
+  var al, alc;
+  $(".alert").remove();
+  al = $("<div>").addClass("alert");
+  alc = $("<div>").addClass("alert-c");
+  alc.text(text);
+  al.append(alc);
+  $("body").append(al);
+  return $(".alert").click(function() {
+    $(".alert").remove();
+    if (typeof callback === "function") {
+      return callback();
+    }
+  });
 };

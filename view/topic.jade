@@ -82,7 +82,7 @@ block js_here
 			var endtime = new Date(e.data("time"));
 			var now = new Date();
 			if (endtime < now) {
-				alert("话题讨论时间结束了");
+				showalert("话题讨论时间结束了");
 				window.location.reload();
 			}else{
 				e.html(getTime(endtime));
@@ -95,7 +95,7 @@ block js_here
 		_submit = false;
 		function post() {
 			if ($("[name=comment]").val() == "") {
-				return alert("请填写评论");
+				return showalert("请填写评论");
 			}
 			_submit = true;
 			$.ajax({
@@ -113,7 +113,7 @@ block js_here
 						getnext();
 					} else {
 						_submit = false
-						return alert(msg.reason);
+						return showalert(msg.reason);
 					}
 				}
 			});
@@ -134,7 +134,7 @@ block js_here
 						}
 					} else {
 						_submit = false
-						return alert(msg.reason);
+						return showalert(msg.reason);
 					}
 				}
 			});

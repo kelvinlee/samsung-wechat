@@ -48,12 +48,13 @@ block content_here
 					context: $('body'),
 					success: function(msg) {
 						if (msg.recode === 200) {
-							alert("注册成功,请登录");
-							window.location.href = "/login";
+							showalert("注册成功,请登录",function(){
+								window.location.href = "/login";
+							});
 							//- _hmt.push(['_trackEvent', '注册', '提交', '']);
 						} else {
 							_submit = false
-							return alert(msg.reason);
+							return showalert(msg.reason);
 						}
 					}
 				});
