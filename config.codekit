@@ -63,6 +63,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
+	"\/controllers\/admin.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/controllers\/admin.js",
+		"outputAbbreviatedPath": "\/controllers\/min\/admin-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/controllers\/samsung.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -1632,6 +1643,17 @@
 		"initialSize": 84416,
 		"inputAbbreviatedPath": "\/public\/img\/page5-1.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/page5-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/page5-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 129665,
+		"inputAbbreviatedPath": "\/public\/img\/page5-2.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/page5-2.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
