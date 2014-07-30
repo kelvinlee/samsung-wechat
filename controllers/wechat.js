@@ -401,6 +401,7 @@ plugs_menu = function(message, callback) {
     return callback(new magazine());
   } else if (message.EventKey === "newactive") {
     newmy = new newactive();
+    newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
     newmy.items[2].url = newmy.items[2].url.replace("{openid}", message.FromUserName);
     return User.getUserOpenId(message.FromUserName, function(err, user) {
       console.log(newmy.items[2].url);
