@@ -253,7 +253,7 @@ jianxingpin = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBH9RQ1iaJH9XK6iatFxjdE8WQ8qFqEZ2MOz89T8ZcBBLJP9gIzH9pTbpeQ/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=1&sn=65df46c2bf8f852d815d3bb887c96ee2#rd"
       }, {
-        title: "Super AMOLED 介绍",
+        title: "Samsung Tab S Super AMOLED 介绍",
         description: 'Super AMOLED 介绍',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHRQObuicHPsbAsdZxcVuoqNiatI3jCoVOmiaqtYGV0ObgL4KESxVmnk6Qw/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=2&sn=e63c12ed63c62ade95295f7f04570a01#rd"
@@ -284,18 +284,18 @@ magazine = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHvpxEibG6M8wCIKGg6xXqicV91GaJLzia2ZyYzEOMCB3FrRY2xMJfyicsCA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=1&sn=15090e2e6a8708a6cf9e5373dcf061a8#rd"
       }, {
-        title: "华夏地理——多角度深度探索世界，为您带来世界变迁的精彩内容",
-        description: '华夏地理——多角度深度探索世界，为您带来世界变迁的精彩内容',
+        title: "华夏地理 多角度深度探索世界，为您带来世界变迁的精彩内容",
+        description: '华夏地理 多角度深度探索世界，为您带来世界变迁的精彩内容',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHBpYE54co69qNgDkSTVDHQC8nibVMkuHs4YltD35weSZiacFiaOZUx7j5g/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=2&sn=b050f7dfe3e5aab18f1a667413318631#rd"
       }, {
-        title: "新潮电子——领导数码时尚新生活",
-        description: '新潮电子——领导数码时尚新生活',
+        title: "新潮电子 领导数码时尚新生活",
+        description: '新潮电子 领导数码时尚新生活',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHbsbXMN7icbWrS4Lx4HibQFUHBIwGITAc0gviaaIqUkFKUodMfqH1m4BfA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=3&sn=357c8eb2b5550bd4d9cac3fc3c284f8e#rd"
       }, {
-        title: "时尚旅游——独特视角带你探索世界",
-        description: '时尚旅游——独特视角带你探索世界',
+        title: "时尚旅游 独特视角带你探索世界",
+        description: '时尚旅游 独特视角带你探索世界',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHjOCk70AwCCtECVibxCBoDubvOqSb2AzIQTryMoibenibZMdJ7H1BTKq3g/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=4&sn=2581fb570a19e435c6b35050598a9444#rd"
       }

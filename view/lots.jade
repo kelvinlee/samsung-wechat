@@ -3,57 +3,11 @@ block css_here
 	style.
 		form {
 		}
-		.form table{
-			border-collapse: collapse;
-		}
-		.form table td {
-			border: 1px solid #000;
-		}
-		.form table td input {
-			margin:0px;
-			border:none;
-		}
-		.form table .t {
-			text-align:center;
-			width:25%;
-		}
-		.btns {
-			width:100%;
-			text-align:center;
-			padding-top:10px;
-		}
-		.btns .btn-s {
-			width:25%;
-			display:inline-block;
-		}
-		.hf label{
-			float:left;
-			width:20%;
-			line-height:35px;
-			text-align:center;
-			background-color:#ea8601;
-			border-radius: 5px;
-			margin-right:4%;
-			color:#fff;
-		}
-		.hf input{
-			width:75%;
-		}
-		.sharenow {
-			position:absolute;
-			top:0%;
-			right:-5px;
-			width:15%;
-			padding-top:5px;
-			z-index:999;
-			margin-top:-10px;
-		}
+		
 block content_here
 	include nav
 	.content(style="background-color:#fff;")
 		//- img(src="/img/lots-4.jpg")
-		
-		
 		.content-padded
 			div.sharenow.lotsnote
 				img(src="/img/sharenow.png")

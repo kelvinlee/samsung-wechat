@@ -87,17 +87,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
-	"\/controllers\/sign.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/controllers\/sign.js",
-		"outputAbbreviatedPath": "\/controllers\/min\/sign-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/controllers\/wechat-menu.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -179,7 +168,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/controllers\/wechat.js",
-		"outputAbbreviatedPath": "\/controllers\/min\/wechat-ck.js",
+		"outputAbbreviatedPath": "\/controllers\/min\/wechat-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -985,6 +974,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/bg-j1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 24918,
+		"inputAbbreviatedPath": "\/public\/img\/bg-j1.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/bg-j1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/bg-j2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 38697,
+		"inputAbbreviatedPath": "\/public\/img\/bg-j2.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/bg-j2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/bg-j3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2432,
+		"inputAbbreviatedPath": "\/public\/img\/bg-j3.png",
+		"outputAbbreviatedPath": "\/public\/img\/bg-j3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/btn-iwant.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1392,6 +1414,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/lots-300.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 83570,
+		"inputAbbreviatedPath": "\/public\/img\/lots-300.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/lots-300.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/lots-4.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1568,6 +1601,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/page5-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 84416,
+		"inputAbbreviatedPath": "\/public\/img\/page5-1.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/page5-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/page5.bk.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 76614,
+		"inputAbbreviatedPath": "\/public\/img\/page5.bk.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/page5.bk.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/page5.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1652,6 +1707,17 @@
 		"initialSize": 51853,
 		"inputAbbreviatedPath": "\/public\/img\/qiandao-list.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/qiandao-list.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/share-300.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 58841,
+		"inputAbbreviatedPath": "\/public\/img\/share-300.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/share-300.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2011,6 +2077,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
+		},
+	"\/public\/js\/main.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/public\/js\/main.js",
+		"outputAbbreviatedPath": "\/public\/js\/min\/main-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/public\/js\/ratchet.js": {
 		"fileType": 64,

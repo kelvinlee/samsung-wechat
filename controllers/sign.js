@@ -338,10 +338,35 @@ exports.getlucky = function(req, res, next) {
   return Inte.getInteAll(req.cookies.userid, function(err, resutls) {
     if (resutls >= 50) {
       return Inte.newInte(req.cookies.userid, -50, "抽奖", function(err, int) {
-        var list, lot, none;
+        var list, lot, none, rewritelot;
         list = [[14, 14, 14], [14, 14, 12], [14, 12, 12], [15, 15, 15], [13, 13, 13], [12, 12, 11], [11, 11, 11]];
-        lot = Math.ceil(Math.random() * 10000);
+        lot = Math.round(Math.random() * 10000);
         console.log(lot);
+        rewritelot = Math.round(Math.random() * 6);
+        switch (rewritelot) {
+          case 0:
+            lot = 8;
+            break;
+          case 1:
+            lot = 9;
+            break;
+          case 2:
+            lot = 12;
+            break;
+          case 3:
+            lot = 200;
+            break;
+          case 4:
+            lot = 501;
+            break;
+          case 5:
+            lot = 2000;
+            break;
+          case 6:
+            lot = 9000;
+            break;
+        }
+        console.log("中奖号码:" + lot);
         if (lot === 8) {
           console.log("平板");
           return Warehouse.getWinnerByInfo("Tabs", function(err, lots) {
@@ -362,7 +387,7 @@ exports.getlucky = function(req, res, next) {
             }
           });
         }
-        if (lot >= 1 && lot <= 10) {
+        if (lot >= 1 && lot <= 10 && lot !== 8) {
           console.log("耳机");
           return Warehouse.getWinnerByInfo("Headset", function(err, lots) {
             var none;
@@ -409,6 +434,7 @@ exports.getlucky = function(req, res, next) {
               if (req.cookies.userid != null) {
                 Inte.newInte(req.cookies.userid, 300, "抽奖获得,300积分", function(err, inte) {});
               }
+              re.url = "/sign/winner/300";
               re.reason = list[3];
               re.reason = re.reason.join(",");
               return res.send(re);
@@ -642,6 +668,9 @@ exports.winner = function(req, res, next) {
   }
   if (id === "hg") {
     return res.render("lots-hg");
+  }
+  if (id === "300") {
+    return res.render("lots-300");
   }
   return Warehouse.getWinnerById(id, function(err, win) {
     if (win != null) {

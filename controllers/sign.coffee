@@ -264,12 +264,39 @@ exports.getlucky = (req,res,next)->
 		if resutls >= 50
 			Inte.newInte req.cookies.userid,-50,"抽奖",(err,int)->
 				list = [[14,14,14],[14,14,12],[14,12,12],[15,15,15],[13,13,13],[12,12,11],[11,11,11]]
-				lot = Math.ceil(Math.random()*10000)
+				lot = Math.round(Math.random()*10000)
 				console.log lot
 				# 游戏页面，抽奖概率，奖品单页
 				# 存入中奖信息, 然后更新数据库.
 
-				# if lot?
+
+				rewritelot = Math.round(Math.random()*6)
+				switch rewritelot
+					when 0
+						lot = 8
+						break
+					when 1
+						lot = 9
+						break
+					when 2
+						lot = 12
+						break
+					when 3
+						lot = 200
+						break
+					when 4
+						lot = 501
+						break
+					when 5
+						lot = 2000
+						break 
+					when 6
+						lot = 9000
+						break
+
+
+				console.log "中奖号码:#{lot}"
+
 				if lot is 8
 					console.log "平板"
 					# samsung tab s
@@ -287,7 +314,7 @@ exports.getlucky = (req,res,next)->
 							re.reason = none[Math.ceil(Math.random()*(none.length-1))]
 							re.reason = re.reason.join(",")
 							res.send re
-				if lot >= 1 and lot <=10
+				if lot >= 1 and lot <=10 and lot != 8
 					# 耳机
 					console.log "耳机"
 					return Warehouse.getWinnerByInfo "Headset",(err,lots)->
@@ -328,6 +355,7 @@ exports.getlucky = (req,res,next)->
 						if resutls<300
 							if req.cookies.userid?
 								Inte.newInte req.cookies.userid,300,"抽奖获得,300积分",(err,inte)->
+							re.url = "/sign/winner/300"
 							re.reason = list[3]
 							re.reason = re.reason.join(",")
 							res.send re
@@ -528,6 +556,8 @@ exports.winner = (req,res,next)->
 		return res.render "lots-dp"
 	if id is "hg"
 		return res.render "lots-hg"
+	if id is "300"
+		return res.render "lots-300"
 
 	Warehouse.getWinnerById id,(err,win)->
 		if win?
