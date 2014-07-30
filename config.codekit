@@ -129,7 +129,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/controllers\/wechat-plugs.js",
-		"outputAbbreviatedPath": "\/controllers\/min\/wechat-plugs-ck.js",
+		"outputAbbreviatedPath": "\/controllers\/min\/wechat-plugs-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -1799,6 +1799,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/sj.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2530,
+		"inputAbbreviatedPath": "\/public\/img\/sj.png",
+		"outputAbbreviatedPath": "\/public\/img\/sj.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/slot_stop_over.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2160,7 +2171,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/routes.js",
-		"outputAbbreviatedPath": "\/min\/routes-ck.js",
+		"outputAbbreviatedPath": "\/min\/routes-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

@@ -651,6 +651,10 @@ exports.page7 = function(req, res, next) {
   return res.render("page7");
 };
 
+exports.page8 = function(req, res, next) {
+  return res.render("page8");
+};
+
 exports.game = function(req, res, next) {
   return res.render("gamedown");
 };

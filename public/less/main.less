@@ -390,29 +390,64 @@ iframe.content {
 	margin-top:-10px;
 }
 .coo-item,.coo-item2 {
-	margin-top: 20px;
-	padding:20px;
-	padding-top: 40px;
-	.b("../img/bg-j1.jpg",no-repeat,center,bottom);
-	background-size: cover;
+	margin:10px;
+	// padding:20px;
+	padding-top: 0px;
+	// .b("../img/bg-j1.jpg",no-repeat,center,bottom);
+	// background-size: cover;
+	background: #fff;
+	border-radius: 10px;
+	
+	&.on {
+		padding-bottom: 10px;
+		.coo-title {
+			border-bottom: solid 1px #ebebeb;
+			margin-bottom: 10px;
+			&:before {
+				// .tran();
+				.tran(rotate(0deg) translate3d(0%,-50%,0px));
+			}
+		}
+	}
 	.coo-title {
-		.b("../img/bg-j3.png",no-repeat,center,center);
-		background-size: contain;
-		padding:10px;
+		// .b("../img/bg-j3.png",no-repeat,center,center);
+		// background-size: contain;
+		padding:20px;
 		padding-left:30px;
-		.tl(-10px,5px);
+		// .tl(-10px,5px);
 		right:5px;
-		color: #fff;
+		color: #001f7f;
+		position: relative;
+		&:before {
+			content: " ";
+			.tr(50%,10px);
+			.b("../img/sj.png",no-repeat,center,center);
+			.wh(20px,20px);
+			background-size: cover;
+			.tran(rotate(-90deg) translate3d(50%,0%,0px));
+		}
 	}
 	ul {
 		li {
-			border-bottom: solid 1px #e8b584;
+
+			border-bottom: solid 1px #ebebeb;
 			margin-bottom: 10px;
 			&:last-child {
 				border:none;
 			}
 			h2 {
-				padding-left:30px;
+				padding:5px 20px;
+				padding-left:50px;
+				padding-right: 40px;
+				position: relative;
+				&:before {
+					content: " ";
+					.tr(50%,10px);
+					.b("../img/sj.png",no-repeat,center,center);
+					.wh(20px,20px);
+					background-size: cover;
+					.tran(rotate(-90deg) translate3d(50%,0%,0px));
+				}
 				span {
 					margin-left: -30px;
 					display: inline-block;
@@ -422,16 +457,26 @@ iframe.content {
 				}
 			}
 			p {
-				padding:0px 10px;
+				border-top: solid 1px #ebebeb;
+				padding:5px 30px;
+				// padding:0px 10px;
+			}
+		}
+		.on {
+			h2 {
+				&:before {
+					// .tran();
+					.tran(rotate(0deg) translate3d(0%,-50%,0px));
+				}
 			}
 		}
 	}
 	
 }
 .coo-item2 {
-	padding-bottom: 180px;
-	.b("../img/bg-j2.jpg",no-repeat,center,bottom);
-	background-size: cover;
+	// padding-bottom: 180px;
+	// .b("../img/bg-j2.jpg",no-repeat,center,bottom);
+	// background-size: cover;
 }
 
 

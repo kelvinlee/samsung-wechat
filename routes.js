@@ -16,6 +16,7 @@ module.exports = function(app) {
   app.get("/page5", sign.page5);
   app.get("/page6", sign.page6);
   app.get("/page7", sign.page7);
+  app.get("/page8", sign.page8);
   app.get("/game", sign.game);
   app.get("/share/:info", sign.share);
   app.get("/art/:art_id", sign.art);

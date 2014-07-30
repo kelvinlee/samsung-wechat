@@ -119,10 +119,20 @@ post_data =
 					name:"看·杂志"
 					key:"magazine"
 				}
+				# {
+				# 	type:"view"
+				# 	name:"找·优惠"
+				# 	url: config.host+"/page2"
+				# }
 				{
 					type:"view"
-					name:"找·优惠"
-					url: config.host+"/page2"
+					name:"观·视频"
+					url: config.host+"/page8"
+				}
+				{
+					type:"view"
+					name:"Note·专享"
+					url: config.host+"/page8"
 				}
 				{
 					# type:"view"

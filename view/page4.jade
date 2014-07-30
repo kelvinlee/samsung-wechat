@@ -13,8 +13,8 @@ block content_here
 	.content
 		//- img(src="/img/page-4.jpg")
 		.coo-item.coo
-			.coo-title 最常见问题
-			.coo-content
+			.coo-title.h1 最常见问题
+			.coo-content.hide
 				ul
 					li
 						h2.h3 <span>1</span>【三星账号】需要帮助时，我可以与谁联系？
@@ -49,8 +49,8 @@ block content_here
 						p.h4.hide *在您的设备上转至<a href="http://content.samsung.com">content.samsung.com</a>。<br/>*如果您的设备上尚未安装服务应用程序，请单击每个服务的简介页面中的“使用”按钮。您将会转到Sansung Apps的安装页面以安装服务应用程序。
 
 		.coo-item2.coo
-			.coo-title 最新常见问题
-			.coo-content
+			.coo-title.h1 最新常见问题
+			.coo-content.hide
 				ul
 					li
 						h2.h3 <span>1</span>【三星钱包】我注册了会员卡，但尚未uc黄健条码。
@@ -86,11 +86,23 @@ block js_here
 	script.
 		$(document).ready(function(){
 			$(".coo li").click(function(){
+				$(".coo li").removeClass("on");
 				if ($("p",this).is(".hide")) {
 				$(".coo li p").addClass("hide");
 				$("p",this).removeClass("hide");
+				$(this).addClass("on");
 				}else{
 				$(".coo li p").addClass("hide");
+				}
+			});
+			$(".coo-title").click(function(){
+				var ep = $(this).next();
+				if (ep.is(".hide")) {
+					ep.removeClass("hide");
+					$(this).parent().addClass("on");
+				}else{
+					ep.addClass("hide");
+					$(this).parent().removeClass("on");
 				}
 			});
 		});

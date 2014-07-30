@@ -9,7 +9,7 @@ newactive = -> return {
 			title:"关注三星乐园微信公众账号,惊喜大礼等你拿!"
 			description: '关注三星乐园微信公众账号,惊喜大礼等你拿!'
 			picurl:"#{config.host}/img/banner-1.jpg"
-			url: "#{config.host}/page1"
+			url: "#{config.host}/middle/{openid}?url=/page1"
 		}
 		{
 			title:"GALAXY K zoom让每个瞬间都精彩!"
@@ -78,26 +78,26 @@ magazine = -> return {
 	type:"news"
 	items: [
 		{
-			title:"新炫刊，汇聚海量竞品杂志，畅爽的交互体验，带来全新视觉盛宴。"
-			description: '新炫刊，汇聚海量竞品杂志，畅爽的交互体验，带来全新视觉盛宴。'
+			title:"《新炫刊》，汇聚海量竞品杂志，畅爽的交互体验，带来全新视觉盛宴。"
+			description: '《新炫刊》，汇聚海量竞品杂志，畅爽的交互体验，带来全新视觉盛宴。'
 			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHvpxEibG6M8wCIKGg6xXqicV91GaJLzia2ZyYzEOMCB3FrRY2xMJfyicsCA/0"
 			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=1&sn=15090e2e6a8708a6cf9e5373dcf061a8#rd"
 		}
 		{
-			title:"华夏地理 多角度深度探索世界，为您带来世界变迁的精彩内容"
-			description: '华夏地理 多角度深度探索世界，为您带来世界变迁的精彩内容'
+			title:"《华夏地理》 多角度深度探索世界，为您带来世界变迁的精彩内容"
+			description: '《华夏地理》 多角度深度探索世界，为您带来世界变迁的精彩内容'
 			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHBpYE54co69qNgDkSTVDHQC8nibVMkuHs4YltD35weSZiacFiaOZUx7j5g/0"
 			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=2&sn=b050f7dfe3e5aab18f1a667413318631#rd"
 		}
 		{
-			title:"新潮电子 领导数码时尚新生活"
-			description: '新潮电子 领导数码时尚新生活'
+			title:"《新潮电子》 领导数码时尚新生活"
+			description: '《新潮电子》 领导数码时尚新生活'
 			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHbsbXMN7icbWrS4Lx4HibQFUHBIwGITAc0gviaaIqUkFKUodMfqH1m4BfA/0"
 			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=3&sn=357c8eb2b5550bd4d9cac3fc3c284f8e#rd"
 		}
 		{
-			title:"时尚旅游 独特视角带你探索世界"
-			description: '时尚旅游 独特视角带你探索世界'
+			title:"《时尚旅游》 独特视角带你探索世界"
+			description: '《时尚旅游》 独特视角带你探索世界'
 			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHjOCk70AwCCtECVibxCBoDubvOqSb2AzIQTryMoibenibZMdJ7H1BTKq3g/0"
 			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=4&sn=2581fb570a19e435c6b35050598a9444#rd"
 		}

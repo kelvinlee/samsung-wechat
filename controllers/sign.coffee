@@ -540,6 +540,9 @@ exports.page6 = (req,res,next)->
 
 exports.page7 = (req,res,next)->
 	res.render "page7"
+	
+exports.page8 = (req,res,next)->
+	res.render "page8"
 
 # 
 exports.game = (req,res,next)->
