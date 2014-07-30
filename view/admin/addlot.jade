@@ -1,0 +1,9 @@
+extends layout
+block content_here
+	.content
+		-for(var i=0;i<list.length;i++)
+			br
+			form(method="POST",action="/admin/lot/#{list[i]._id}")
+				label #{list[i].name}
+				textarea(name="lots")
+				input(type="submit",value="提交")

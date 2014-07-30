@@ -662,11 +662,11 @@ setsomeDefautleLots = ()->
 			order = 1
 			inte = 0
 			Lots.newlots name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,(err,lots)->
-				if lots?
-					Warehouse.newlot lots._id,"game-1-1",(err,lot)->
-					Warehouse.newlot lots._id,"game-1-2",(err,lot)->
-					Warehouse.newlot lots._id,"game-1-3",(err,lot)->
-					Warehouse.newlot lots._id,"game-1-4",(err,lot)->
+				# if lots?
+				# 	Warehouse.newlot lots._id,"game-1-1",(err,lot)->
+				# 	Warehouse.newlot lots._id,"game-1-2",(err,lot)->
+				# 	Warehouse.newlot lots._id,"game-1-3",(err,lot)->
+				# 	Warehouse.newlot lots._id,"game-1-4",(err,lot)->
 			name = "武侠Q传"
 			description = "拳拳到肉，亲眼见证！体验真实打斗的畅快感受~"
 			img = "/img/game-2.jpg"
@@ -678,11 +678,11 @@ setsomeDefautleLots = ()->
 			order = 2
 			inte = 0
 			Lots.newlots name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,(err,lots)->
-				if lots?
-					Warehouse.newlot lots._id,"game-2-1",(err,lot)->
-					Warehouse.newlot lots._id,"game-2-2",(err,lot)->
-					Warehouse.newlot lots._id,"game-2-3",(err,lot)->
-					Warehouse.newlot lots._id,"game-2-4",(err,lot)->
+				# if lots?
+				# 	Warehouse.newlot lots._id,"game-2-1",(err,lot)->
+				# 	Warehouse.newlot lots._id,"game-2-2",(err,lot)->
+				# 	Warehouse.newlot lots._id,"game-2-3",(err,lot)->
+				# 	Warehouse.newlot lots._id,"game-2-4",(err,lot)->
 			name = "封神英雄榜"
 			description = "群雄聚集，等你加入！体验如梦似幻的英雄之旅~"
 			img = "/img/game-3.jpg"
@@ -694,11 +694,11 @@ setsomeDefautleLots = ()->
 			order = 3
 			inte = 0
 			Lots.newlots name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,(err,lots)->
-				if lots?
-					Warehouse.newlot lots._id,"game-3-1",(err,lot)->
-					Warehouse.newlot lots._id,"game-3-2",(err,lot)->
-					Warehouse.newlot lots._id,"game-3-3",(err,lot)->
-					Warehouse.newlot lots._id,"game-3-4",(err,lot)->
+				# if lots?
+				# 	Warehouse.newlot lots._id,"game-3-1",(err,lot)->
+				# 	Warehouse.newlot lots._id,"game-3-2",(err,lot)->
+				# 	Warehouse.newlot lots._id,"game-3-3",(err,lot)->
+				# 	Warehouse.newlot lots._id,"game-3-4",(err,lot)->
 			name = "超级英雄"
 			description = "最强英雄，华丽上阵！史上最强英雄穿越来袭~"
 			img = "/img/game-4.jpg"
@@ -710,11 +710,11 @@ setsomeDefautleLots = ()->
 			order = 4
 			inte = 0
 			Lots.newlots name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,(err,lots)->
-				if lots?
-					Warehouse.newlot lots._id,"game-4-1",(err,lot)->
-					Warehouse.newlot lots._id,"game-4-2",(err,lot)->
-					Warehouse.newlot lots._id,"game-4-3",(err,lot)->
-					Warehouse.newlot lots._id,"game-4-4",(err,lot)->
+				# if lots?
+				# 	Warehouse.newlot lots._id,"game-4-1",(err,lot)->
+				# 	Warehouse.newlot lots._id,"game-4-2",(err,lot)->
+				# 	Warehouse.newlot lots._id,"game-4-3",(err,lot)->
+				# 	Warehouse.newlot lots._id,"game-4-4",(err,lot)->
 
 
 

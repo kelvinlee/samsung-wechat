@@ -1,6 +1,7 @@
 # art = require './controllers/art'
 wechat = require './controllers/wechat'
 sign = require './controllers/sign'
+admin = require './controllers/admin'
 # git = require './controllers/git'
 # admin = require './controllers/admin'
 
@@ -75,6 +76,9 @@ module.exports = (app)->
   app.get "/sign/winner/:winner_id", sign.winner
   app.post "/sign/winner/:winner_id", sign.winner_post
 
+
+  app.get "/admin/lot", admin.addlot
+  app.post "/admin/lot/:lot_type", admin.postaddlot
 
   # app.get '*', note.notfind
 
