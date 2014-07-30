@@ -320,9 +320,7 @@ exports.mylot = function(req, res, next) {
         });
       });
     } else {
-      return res.render("elot", {
-        lot: null
-      });
+      return res.redirect("/sign/exchange/1");
     }
   });
 };

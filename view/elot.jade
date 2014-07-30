@@ -77,27 +77,28 @@ block css_here
 			width:48%;
 		}
 block title
-	| #{lotinfo.description}
-block content_here
-	//- include nav
-	//- .weixin-share
-		img(src="http://115.28.106.34/img/game-weixin-#{lotinfo.order}.jpg")
+	-if (lotinfo != null)
+		| #{lotinfo.description}
+block content_here 
 	.content(style="background-color:#fff;")
-		.body
-			.head
-				img(src='#{lotinfo.headerimg}', width='100%')
-			.short
-				p !{lotinfo.info_a}
-			.content-c
-				img(src='#{lotinfo.descriptionimg}', width='100%')
-			.dh
-				input(type="text",value="#{lot.content}",style="width:50%")
-				a.downloadpage(href="/game") 
-					img(src="/img/downloadbtn.jpg")
-			.info-s !{lotinfo.info_b}
-			.info 
-				h2 说明
-				|!{lotinfo.info_c}
+		-if (lotinfo != null)
+			.body
+				.head
+					img(src='#{lotinfo.headerimg}', width='100%')
+				.short
+					p !{lotinfo.info_a}
+				.content-c
+					img(src='#{lotinfo.descriptionimg}', width='100%')
+				.dh
+					input(type="text",value="#{lot.content}",style="width:50%")
+					a.downloadpage(href="/game") 
+						img(src="/img/downloadbtn.jpg")
+				.info-s !{lotinfo.info_b}
+				.info 
+					h2 说明
+					|!{lotinfo.info_c}
+		-else
+			| 此奖品不存在,请<a href="http://115.28.106.34/sign/exchange/1">返回</a>
 
 
 				

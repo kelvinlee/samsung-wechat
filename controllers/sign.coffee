@@ -251,7 +251,10 @@ exports.mylot = (req,res,next)->
 			Lots.getById lot.info,(err,lotinfo)->
 				res.render "elot",{lot:lot,lotinfo:lotinfo}
 		else
-			res.render "elot",{lot:null}
+			# res.render "elot",{lot:null,lotinfo:null}
+			res.redirect "/sign/exchange/1"
+
+
 exports.luckyframe = (req,res,next)->
 	res.render "luckyframe"
 
