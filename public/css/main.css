@@ -636,6 +636,23 @@ iframe.content {
   -o-transform: rotate(0deg) translate3d(0%, -50%, 0px);
   transform: rotate(0deg) translate3d(0%, -50%, 0px);
 }
+.coos {
+  margin: 10px;
+  padding-top: 0px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px #999;
+}
+.coos .coo-title {
+  padding: 10px;
+  color: #001f7f;
+  position: relative;
+  border-bottom: solid 1px #ddd;
+}
+.coos .coo-content {
+  padding: 10px;
+  color: #838383;
+}
 @media screen and (max-width: 321px) {
   body {
     font-size: 12px;
