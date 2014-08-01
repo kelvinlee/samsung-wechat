@@ -39,6 +39,7 @@ exports.today = function(userid, callback) {
   now = new Date();
   star = new Date(now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + " 00:00:00");
   end = new Date(now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + " 23:59:59");
+  console.log("time: " + star + " / " + end);
   return Inte.find({
     create_at: {
       $gte: star,

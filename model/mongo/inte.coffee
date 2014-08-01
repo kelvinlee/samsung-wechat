@@ -17,6 +17,7 @@ exports.today = (userid,callback)->
 	now = new Date()
 	star = new Date now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+" 00:00:00"
 	end = new Date now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+" 23:59:59"
+	console.log "time: #{star} / #{end}"
 	Inte.find {create_at:{$gte:star,$lt:end},action:"regs",userid:userid},callback
 	
 exports.newInte = (userid,inte,action,callback)->

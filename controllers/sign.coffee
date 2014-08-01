@@ -159,6 +159,7 @@ tointe = (req,res,next)->
 		res.send re
 		return ""
 	Inte.today req.cookies.userid,(err,today)->
+		console.log "签到:"+today
 		if today? and today.length<=0
 			Inte.newInte req.cookies.userid,20,"regs",(err,resutls)->
 				console.log "签到成功:",resutls
