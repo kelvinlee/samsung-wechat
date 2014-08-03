@@ -48,7 +48,11 @@ module.exports = function(app) {
   app.get("/sign/winner/:winner_id", sign.winner);
   app.post("/sign/winner/:winner_id", sign.winner_post);
   app.get("/admin/lot", admin.addlot);
-  return app.post("/admin/lot/:lot_type", admin.postaddlot);
+  app.post("/admin/lot/:lot_type", admin.postaddlot);
+  app.get("/admin/topic", admin.topic);
+  app.post("/admin/topic", admin.setDefaultTopic);
+  app.get("/admin/delcomment/:c_id", admin.delcomment);
+  return app.get("/admin/newtopic", admin.newtopic);
 };
 
 console.log("routes loaded.");

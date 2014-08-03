@@ -1,0 +1,20 @@
+extends layout
+block content_here
+	.content
+		div.content-padded
+			a.btn.btn-primary(href="/admin/newtopic") 添加话题
+			
+		-if (topic!=null)
+			div.content-padded
+				h2.h2 ##{topic.name}#
+				ul
+					-if (comments!=null)
+						-for(var i=0;i<comments.length;i++)
+							li.clearfix(data-time="#{comments[i].create_at.getTime()}",style="line-height:20px;")
+								p.username(style="margin:0px;") #{comments[i].name} :
+								p.com-cont(style="word-break:break-all;word-wrap:break-word;")
+									span ##{topic.name}#
+									| #{comments[i].content}
+								a.btn.btn-negative(href="/admin/delcomment/#{comments[i]._id}",onclick="return confirm('你确定要删除这条留言吗?')",style="float:right;") 删除
+		-else
+			h2.h2(style="text-align:center;") 暂无开启的话题

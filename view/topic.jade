@@ -16,20 +16,16 @@ block content_here
 			-if (topic != null)
 				div.topic
 					div.box
-						div.topic-title
-							//- h1.h2 ##{topic.name}#
-							//- p 本期奖品: #{topic.lot}
-							//- span#runtime.h4(data-time="#{topic.end_at.getTime()}") 
+						div.topic-title.clearfix
 							div.topic-description
 								img(src="/img/logo-topic.png")
-								h2.h4 <span>##{topic.name}#</span>#{topic.description}
-
-							p.clearfix(style="line-height:50px;") 本期话题奖品:#{topic.lot} 
+								h2.h4 <span id="topicname">##{topic.name}#</span>#{topic.description}
+							p.clearfix(style="line-height:50px;float:left;width:100%") 本期话题奖品:#{topic.lot} 
 								img(src="/img/icon-lot.jpg",style="float:right;")
 						div.lots-perv
 							p 上期中奖名单查询:
-							p 136****3651（迪士尼玩偶） 136****3651（迪士尼玩偶）
-
+							//- p 136****3651（迪士尼玩偶） 136****3651（迪士尼玩偶）
+							p #{topic.prelot}
 						div.comment
 							-if (comments != null && comments.length>0)
 								ul#comments
@@ -42,6 +38,8 @@ block content_here
 							-else
 								ul#comments
 									li(style="line-height:20px;text-align:center;") 还没有评论,快来抢先评论.
+			-else
+				h2#notopic.h2(style="text-align:center;") 暂无话题
 
 block js_here
 	script.
@@ -94,6 +92,9 @@ block js_here
 		}
 		_submit = false;
 		function post() {
+			if ($("#notopic").length>0) {
+				return alert("暂无话题");	
+			}
 			if ($("[name=comment]").val() == "") {
 				return showalert("请填写评论");
 			}
@@ -144,7 +145,7 @@ block js_here
 			ep.html("");
 			for (var i=json.length-1;i>=0;i--) {
 				var time = new Date(json[i].create_at);
-				html = "<li data-time='"+time.getTime()+"'><p class='username'>"+json[i].name+"</p><p class='com-cont'><span>##{topic.name}#</span>"+json[i].content+"</p></li>";
+				html = "<li data-time='"+time.getTime()+"'><p class='username'>"+json[i].name+"</p><p class='com-cont'><span>"+$("#topicname").text()+"</span>"+json[i].content+"</p></li>";
 				ep.prepend(html);
 			}
 		}

@@ -13,11 +13,12 @@ exports.getById = (id,callback)->
 exports.getTopic = (callback)->
 	Topic.find({}).sort({order:-1}).exec callback
 
-exports.newTopic = (name,description,lot,startime,endtime,callback)->
+exports.newTopic = (name,description,lot,prelot,startime,endtime,callback)->
 	l = new Topic()
 	l.name = name
 	l.description = description
 	l.lot = lot
+	l.prelot = prelot
 	l.start_at = startime
 	l.end_at = endtime
 	l.save callback

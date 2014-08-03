@@ -79,6 +79,11 @@ module.exports = (app)->
 
   app.get "/admin/lot", admin.addlot
   app.post "/admin/lot/:lot_type", admin.postaddlot
+  app.get "/admin/topic", admin.topic
+  app.post "/admin/topic", admin.setDefaultTopic
+  app.get "/admin/delcomment/:c_id", admin.delcomment
+  app.get "/admin/newtopic", admin.newtopic
+
 
   # app.get '*', note.notfind
 

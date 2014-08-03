@@ -1,0 +1,54 @@
+extends layout
+block content_here
+	.content 
+		.content-padded
+			form(method="POST",name="register",action="/admin/topic")
+				label(for="name") 话题:
+				input#name(name="name",type="text")
+				label(for="description") 简介:
+				textarea#description(name="description")
+				label(for="lot") 本期奖品:
+				input#lot(name="lot",type="text")
+				label(for="prelot") 上期中奖:
+				input#prelot(name="prelot",type="text")
+				p(style="color:red;") *同时间只能开启一个话题,请不要将时间设置重复
+				- var date = new Date()
+				- date.setHours(date.getHours()+1,date.getMinutes())
+				- var now = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()
+				- var end = date.setHours(date.getHours()+2,date.getMinutes())
+				- end = date
+				- var endtime = end.getFullYear()+"-"+(end.getMonth()+1)+"-"+end.getDate()+" "+end.getHours()+":"+end.getMinutes()
+				label(for="startime") 开始时间:
+				input#startime(name="startime",type="text",value="#{now}")
+				label(for="endtime") 结束时间:
+				input#endtime(name="endtime",type="text",value="#{endtime}")
+
+				input.btn.btn-primary(type="button",onclick="post()",value="提交")
+				br
+				a.btn.btn-default(href="/admin/topic") 返回
+
+block js_here
+	script.
+		var _submit = false;
+		function post() {
+			if (_submit) {return alert("已经提交请稍后.");}
+			_submit = true;
+			$.ajax({
+				async: false,
+				url: $('[name=register]').attr("action"),
+				type: 'POST',
+				data: $('[name=register]').serializeArray(),
+				dataType: 'json',
+				context: $('body'),
+				success: function(msg) {
+					//- console.log(msg);
+					//- alert('a');
+					if (msg.recode === 200) { 
+						window.location.href="/admin/topic";
+					} else {
+						_submit = false;
+						return alert(msg.reason);
+					}
+				}
+			});
+		}

@@ -56,3 +56,66 @@ exports.postaddlot = function(req, res, next) {
   }
   return res.send(re);
 };
+
+exports.topic = function(req, res, next) {
+  return Topic.getOne(function(err, t) {
+    if (t != null) {
+      return Comment.getByTopic(t._id, function(err, comments) {
+        return res.render("admin/topic", {
+          topic: t,
+          comments: comments
+        });
+      });
+    } else {
+      return res.render("admin/topic", {
+        topic: t
+      });
+    }
+  });
+};
+
+exports.delcomment = function(req, res, next) {
+  var id;
+  id = req.params.c_id;
+  Comment.delById(id, function(err, c) {});
+  return res.redirect("/admin/topic");
+};
+
+exports.newtopic = function(req, res, next) {
+  return res.render("admin/newtopic");
+};
+
+exports.setDefaultTopic = function(req, res, next) {
+  var description, endtime, lot, name, prelot, re, startime;
+  name = req.body.name;
+  description = req.body.description;
+  lot = req.body.lot;
+  prelot = req.body.prelot;
+  startime = new Date(req.body.startime);
+  endtime = new Date(req.body.endtime);
+  re = new helper.recode();
+  if ((name == null) || name === "") {
+    re.recode = 201;
+    re.reason = "标题不能为空";
+  }
+  if ((description == null) || description === "") {
+    re.recode = 201;
+    re.reason = "简介不能为空";
+  }
+  if ((lot == null) || lot === "") {
+    re.recode = 201;
+    re.reason = "如果没有奖品,请填写无";
+  }
+  if ((prelot == null) || prelot === "") {
+    re.recode = 201;
+    re.reason = "如果没有中奖名单,请填写无";
+  }
+  if (re.recode !== 200) {
+    res.send(re);
+    return false;
+  }
+  return Topic.newTopic(name, description, lot, prelot, startime, endtime, function(err, topic) {
+    console.log("创建了一个话题");
+    return res.send(re);
+  });
+};

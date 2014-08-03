@@ -21,6 +21,12 @@ exports.getByTime = function(tid, startime, callback) {
   }).limit(20).exec(callback);
 };
 
+exports.delById = function(id, callback) {
+  return Comment.remove({
+    _id: id
+  }).exec(callback);
+};
+
 exports.newComment = function(uid, topic, name, content, callback) {
   var l;
   l = new Comment();

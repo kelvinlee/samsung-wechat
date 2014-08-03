@@ -215,6 +215,9 @@ TopicSchema = new Schema({
   lot: {
     type: String
   },
+  prelot: {
+    type: String
+  },
   view: {
     type: Number,
     "default": 0

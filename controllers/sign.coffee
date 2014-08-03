@@ -68,7 +68,7 @@ exports.before = (req,res,next)->
 	# console.log "cookie:",req.cookies
 	# 测试奖品,默认值
 	setsomeDefautleLots()
-	setDefaultTopic()
+	# setDefaultTopic()
 	# console.log req.cookies.userid
 	if req.cookies.userid? and req.cookies.userid isnt "undefined" and req.cookies.userid isnt ""
 		# req.cookies.userid = req.cookies.userid
@@ -452,6 +452,7 @@ exports.topic = (req,res,next)->
 			console.log user
 			if user? and user.nickname?
 				Topic.getOne (err,topic)->
+					console.log "topic:"+topic
 					if topic?
 						Comment.getByTopic topic._id,(err,comments)->
 							# console.log topic,comments
@@ -464,6 +465,7 @@ exports.topic = (req,res,next)->
 				res.redirect "/nickname"
 	else
 		res.redirect Noconcern
+		
 # 接受
 exports.comment = (req,res,next)->
 	content = req.body.comment
@@ -618,6 +620,7 @@ exports.share = (req,res,next)->
 
 # 初始化一个话题
 setDefaultTopic = ->
+	# return false
 	list = ["你敢不敢说走就走","你敢不敢说走就走","你敢不敢说走就走","你敢不敢说走就走","你敢不敢说走就走"]
 
 	name = list[Math.ceil(Math.random()*4)]

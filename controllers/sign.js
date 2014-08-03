@@ -90,7 +90,6 @@ exports.before = function(req, res, next) {
   res.locals.menu_lucky = "";
   res.locals.menu_exchange = "";
   setsomeDefautleLots();
-  setDefaultTopic();
   if ((req.cookies.userid != null) && req.cookies.userid !== "undefined" && req.cookies.userid !== "") {
     return next();
   } else {
@@ -523,6 +522,7 @@ exports.topic = function(req, res, next) {
       console.log(user);
       if ((user != null) && (user.nickname != null)) {
         return Topic.getOne(function(err, topic) {
+          console.log("topic:" + topic);
           if (topic != null) {
             return Comment.getByTopic(topic._id, function(err, comments) {
               res.render("topic", {

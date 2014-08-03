@@ -40,7 +40,61 @@ exports.postaddlot = (req,res,next)->
 			Warehouse.newlot req.params.lot_type,a,(err,lot)->
 	res.send re
 
+exports.topic = (req,res,next)->
+	# 设置话题
+	Topic.getOne (err,t)->
+		if t?
+			Comment.getByTopic t._id,(err,comments)->
+				res.render "admin/topic",{topic:t,comments:comments}
+		else
+			res.render "admin/topic",{topic:t}
+	
+exports.delcomment = (req,res,next)->
+	# 删除留言
+	id = req.params.c_id
+	Comment.delById id , (err,c)->
+		# console.log err,c
+	res.redirect "/admin/topic"
+	
+exports.newtopic = (req,res,next)->
+	res.render "admin/newtopic"
+	
 
+# 初始化一个话题
+exports.setDefaultTopic = (req,res,next)->
 
+	# 标题
+	name = req.body.name
+	# 简介
+	description = req.body.description
+	# 奖品
+	lot = req.body.lot
+	# 上期中奖用户
+	prelot = req.body.prelot
 
+	startime = new Date(req.body.startime)
+	endtime  = new Date(req.body.endtime)
+
+	re = new helper.recode()
+
+	if not name? or name is ""
+		re.recode = 201
+		re.reason = "标题不能为空"
+	if not description? or description is ""
+		re.recode = 201
+		re.reason = "简介不能为空"
+	if not lot? or lot is ""
+		re.recode = 201
+		re.reason = "如果没有奖品,请填写无"
+	if not prelot? or prelot is ""
+		re.recode = 201
+		re.reason = "如果没有中奖名单,请填写无"
+
+	if re.recode isnt 200
+		res.send re
+		return false
+
+	Topic.newTopic name,description,lot,prelot,startime,endtime,(err,topic)->
+		console.log "创建了一个话题"
+		res.send re
 
