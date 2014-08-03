@@ -106,11 +106,11 @@ post_data = {
           key: "magazine"
         }, {
           type: "view",
-          name: "Note·专享",
+          name: "观·视频",
           url: config.host + "/page8"
         }, {
           type: "view",
-          name: "观·视频",
+          name: "Note·专享",
           url: config.host + "/page8"
         }, {
           type: "click",
