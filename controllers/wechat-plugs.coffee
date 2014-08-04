@@ -130,16 +130,16 @@ post_data =
 					url: config.host+"/page8"
 				}
 				{
-					type:"view"
-					name:"Note·专享"
-					url: config.host+"/page8"
-				}
-				{
 					# type:"view"
 					type:"click"
 					name:"玩·游戏"
 					key:"game"
 					# url:config.host+"/sign/exchange/1"
+				}
+				{
+					type:"view"
+					name:"Note·专享"
+					url: config.host+"/page8"
 				}
 			]
 		}
