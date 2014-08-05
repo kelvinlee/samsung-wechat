@@ -112,10 +112,6 @@ post_data = {
           type: "click",
           name: "玩·游戏",
           key: "game"
-        }, {
-          type: "view",
-          name: "Note·专享",
-          url: config.host + "/page8"
         }
       ]
     }, {

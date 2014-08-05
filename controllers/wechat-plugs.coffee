@@ -136,11 +136,11 @@ post_data =
 					key:"game"
 					# url:config.host+"/sign/exchange/1"
 				}
-				{
-					type:"view"
-					name:"Note·专享"
-					url: config.host+"/page8"
-				}
+				# {
+				# 	type:"view"
+				# 	name:"Note·专享"
+				# 	url: config.host+"/page8"
+				# }
 			]
 		}
 		{
