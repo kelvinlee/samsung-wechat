@@ -25,4 +25,5 @@ exports.newInte = (userid,inte,action,callback)->
 	i.userid = userid
 	i.inte = inte
 	i.action = action
+	i.create_at = new Date()
 	i.save callback

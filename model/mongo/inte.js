@@ -56,5 +56,6 @@ exports.newInte = function(userid, inte, action, callback) {
   i.userid = userid;
   i.inte = inte;
   i.action = action;
+  i.create_at = new Date();
   return i.save(callback);
 };
