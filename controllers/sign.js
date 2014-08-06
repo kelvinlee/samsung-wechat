@@ -204,7 +204,7 @@ tointe = function(req, res, next) {
   }
   return Inte.today(req.cookies.userid, function(err, today) {
     console.log("签到:" + today);
-    if ((today != null) && today.length <= 0) {
+    if ((today != null) || today.length <= 0) {
       return Inte.newInte(req.cookies.userid, 20, "regs", function(err, resutls) {
         console.log("签到成功:", resutls);
         return res.send(re);
