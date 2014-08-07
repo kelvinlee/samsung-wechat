@@ -160,14 +160,14 @@ tointe = (req,res,next)->
 		return ""
 	Inte.today req.cookies.userid,(err,today)->
 		console.log "签到:"+today
-		if today? or today.length<=0
-			Inte.newInte req.cookies.userid,20,"regs",(err,resutls)->
-				console.log "签到成功:",resutls
-				res.send re
-		else
+		if today?
 			re.recode = 201
 			re.reason = "今天已经签到过了."
 			res.send re
+		else
+			Inte.newInte req.cookies.userid,20,"regs",(err,resutls)->
+				console.log "签到成功:",resutls
+				res.send re
 exports.tointe = tointe
 
 exports.my = (req,res,next)->
