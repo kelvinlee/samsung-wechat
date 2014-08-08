@@ -274,32 +274,32 @@ exports.getlucky = (req,res,next)->
 				# 存入中奖信息, 然后更新数据库.
 
 
-				rewritelot = Math.round(Math.random()*6)
-				switch rewritelot
-					when 0
-						lot = 8
-						break
-					when 1
-						lot = 9
-						break
-					when 2
-						lot = 12
-						break
-					when 3
-						lot = 200
-						break
-					when 4
-						lot = 501
-						break
-					when 5
-						lot = 2000
-						break 
-					when 6
-						lot = 9000
-						break
+				# rewritelot = Math.round(Math.random()*6)
+				# switch rewritelot
+				# 	when 0
+				# 		lot = 8
+				# 		break
+				# 	when 1
+				# 		lot = 9
+				# 		break
+				# 	when 2
+				# 		lot = 12
+				# 		break
+				# 	when 3
+				# 		lot = 200
+				# 		break
+				# 	when 4
+				# 		lot = 501
+				# 		break
+				# 	when 5
+				# 		lot = 2000
+				# 		break 
+				# 	when 6
+				# 		lot = 9000
+				# 		break
 
 
-				console.log "中奖号码:#{lot}"
+				# console.log "中奖号码:#{lot}"
 
 				if lot is 8
 					console.log "平板"
@@ -352,24 +352,8 @@ exports.getlucky = (req,res,next)->
 							re.reason = none[Math.ceil(Math.random()*(none.length-1))]
 							re.reason = re.reason.join(",")
 							res.send re
-				if lot >=100 and lot<=900
-					# 300积分
-					# console.log "300积分"
-					return Inte.getInteAction "抽奖获得,300积分",(err,resutls)->
-						if resutls<300
-							if req.cookies.userid?
-								Inte.newInte req.cookies.userid,300,"抽奖获得,300积分",(err,inte)->
-							re.url = "/sign/winner/300"
-							re.reason = list[3]
-							re.reason = re.reason.join(",")
-							res.send re
-						else
-							none = [[13,12,13],[11,13,15],[13,15,11]]
-							re.reason = none[Math.ceil(Math.random()*(none.length-1))]
-							re.reason = re.reason.join(",")
-							res.send re
 
-				if lot >=500 and lot <= 600
+				if lot >=150 and lot <= 300
 					# 搜狐公仔
 					console.log "搜狐公仔"
 					return Warehouse.getWinnerByInfo "sohugz",(err,lots)->
@@ -387,8 +371,24 @@ exports.getlucky = (req,res,next)->
 							re.reason = re.reason.join(",")
 							res.send re
 
-					
-				if lot >=1000 and lot <= 5000
+				if lot >=1500 and lot<=3000
+					# 300积分
+					# console.log "300积分"
+					return Inte.getInteAction "抽奖获得,300积分",(err,resutls)->
+						if resutls<300
+							if req.cookies.userid?
+								Inte.newInte req.cookies.userid,300,"抽奖获得,300积分",(err,inte)->
+							re.url = "/sign/winner/300"
+							re.reason = list[3]
+							re.reason = re.reason.join(",")
+							res.send re
+						else
+							none = [[13,12,13],[11,13,15],[13,15,11]]
+							re.reason = none[Math.ceil(Math.random()*(none.length-1))]
+							re.reason = re.reason.join(",")
+							res.send re
+
+				if lot >4000 and lot <= 8000
 					# 东坡
 					re.url = "/sign/winner/dp"
 					re.reason = list[5]

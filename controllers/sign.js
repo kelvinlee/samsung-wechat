@@ -336,35 +336,10 @@ exports.getlucky = function(req, res, next) {
   return Inte.getInteAll(req.cookies.userid, function(err, resutls) {
     if (resutls >= 50) {
       return Inte.newInte(req.cookies.userid, -50, "抽奖", function(err, int) {
-        var list, lot, none, rewritelot;
+        var list, lot, none;
         list = [[14, 14, 14], [14, 14, 12], [14, 12, 12], [15, 15, 15], [13, 13, 13], [12, 12, 11], [11, 11, 11]];
         lot = Math.round(Math.random() * 10000);
         console.log(lot);
-        rewritelot = Math.round(Math.random() * 6);
-        switch (rewritelot) {
-          case 0:
-            lot = 8;
-            break;
-          case 1:
-            lot = 9;
-            break;
-          case 2:
-            lot = 12;
-            break;
-          case 3:
-            lot = 200;
-            break;
-          case 4:
-            lot = 501;
-            break;
-          case 5:
-            lot = 2000;
-            break;
-          case 6:
-            lot = 9000;
-            break;
-        }
-        console.log("中奖号码:" + lot);
         if (lot === 8) {
           console.log("平板");
           return Warehouse.getWinnerByInfo("Tabs", function(err, lots) {
@@ -425,26 +400,7 @@ exports.getlucky = function(req, res, next) {
             }
           });
         }
-        if (lot >= 100 && lot <= 900) {
-          return Inte.getInteAction("抽奖获得,300积分", function(err, resutls) {
-            var none;
-            if (resutls < 300) {
-              if (req.cookies.userid != null) {
-                Inte.newInte(req.cookies.userid, 300, "抽奖获得,300积分", function(err, inte) {});
-              }
-              re.url = "/sign/winner/300";
-              re.reason = list[3];
-              re.reason = re.reason.join(",");
-              return res.send(re);
-            } else {
-              none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];
-              re.reason = none[Math.ceil(Math.random() * (none.length - 1))];
-              re.reason = re.reason.join(",");
-              return res.send(re);
-            }
-          });
-        }
-        if (lot >= 500 && lot <= 600) {
+        if (lot >= 150 && lot <= 300) {
           console.log("搜狐公仔");
           return Warehouse.getWinnerByInfo("sohugz", function(err, lots) {
             var none;
@@ -464,7 +420,26 @@ exports.getlucky = function(req, res, next) {
             }
           });
         }
-        if (lot >= 1000 && lot <= 5000) {
+        if (lot >= 1500 && lot <= 3000) {
+          return Inte.getInteAction("抽奖获得,300积分", function(err, resutls) {
+            var none;
+            if (resutls < 300) {
+              if (req.cookies.userid != null) {
+                Inte.newInte(req.cookies.userid, 300, "抽奖获得,300积分", function(err, inte) {});
+              }
+              re.url = "/sign/winner/300";
+              re.reason = list[3];
+              re.reason = re.reason.join(",");
+              return res.send(re);
+            } else {
+              none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];
+              re.reason = none[Math.ceil(Math.random() * (none.length - 1))];
+              re.reason = re.reason.join(",");
+              return res.send(re);
+            }
+          });
+        }
+        if (lot > 4000 && lot <= 8000) {
           re.url = "/sign/winner/dp";
           re.reason = list[5];
           re.reason = re.reason.join(",");
