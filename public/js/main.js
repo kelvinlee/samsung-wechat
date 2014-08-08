@@ -350,7 +350,9 @@ qiandao = function() {
           return window.location.href = "/sign/my";
         });
       } else {
-        return showalert(msg.reason);
+        return showalert(msg.reason, function() {
+          return window.location.href = "/sign/my";
+        });
       }
     }
   });

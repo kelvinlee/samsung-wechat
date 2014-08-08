@@ -20,7 +20,8 @@ qiandao = ->
 				showalert "恭喜您今天签到成功了.",->
 					window.location.href = "/sign/my"
 			else
-				showalert msg.reason
+				showalert msg.reason,->
+					window.location.href = "/sign/my"
 	return false
 
 

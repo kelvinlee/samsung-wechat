@@ -687,17 +687,17 @@ setsomeDefautleLots = ()->
 				# 	Warehouse.newlot lots._id,"game-2-2",(err,lot)->
 				# 	Warehouse.newlot lots._id,"game-2-3",(err,lot)->
 				# 	Warehouse.newlot lots._id,"game-2-4",(err,lot)->
-			name = "封神英雄榜"
-			description = "群雄聚集，等你加入！体验如梦似幻的英雄之旅~"
-			img = "/img/game-3.jpg"
-			info_a = "版本：1.1.0 大小:92.95MB <br/>2014年7月10日 <br/>适合所有年龄段人士"
-			info_b = "兑换说明：进入游戏主页，点击设置按钮（右上角），输入兑换码<br/>注：此礼包仅可使用于三星专版游戏中"
-			info_c = "<p>在《封神英雄榜》是热播神话古装电视剧正版授权的同名手游，游戏创新地将策略、RPG与卡牌元素完美融合，独特的阵营战以及法宝对战系统，让玩家们感受最新颖的卡牌玩法。《封神英雄榜》采用Q版画风，游戏画面整体俏皮可爱，电视剧角色均以卡通形象在游戏中登场，经典台词在游戏中一一重现，中国风的仙界场景美轮美奂，进行游戏的同时，仿佛置身于仙境之中。传奇的神话战斗，海量神将任你差遣，进入《封神英雄榜》便可体验如梦似幻的游戏乐趣。</p><p>【正版授权 封神故事经典延续】 </p><p>原剧角色Q版形象植入，经典台词一一还原，感受掌中神话大剧<p>【仙家法器海量法宝各显神通】</p><p>神话经典法宝乱入，属性培养，技能强化，海量法宝无穷变化</p><p>【阵营对抗 大型战场公平竞技】 </p><p>首创卡牌阵营战，商周两大势力对抗，首创天枰平衡系统，打响卡牌阵营掠夺战役</p><p>【神魔齐聚 各路大咖同场乱斗】 </p><p>不只有封神，西游记、八仙过海乱入，体验最全神话故事</p><p>【策略卡牌收集养成指挥模拟】</p><p>卡片练功、卡片进化、排兵布阵，瞬息万变左右战局</p>"
-			headerimg = "/img/game-3-title.jpg"
-			descriptionimg = "/img/game-3-decription.jpg"
-			order = 3
-			inte = 0
-			Lots.newlots name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,(err,lots)->
+			# name = "封神英雄榜"
+			# description = "群雄聚集，等你加入！体验如梦似幻的英雄之旅~"
+			# img = "/img/game-3.jpg"
+			# info_a = "版本：1.1.0 大小:92.95MB <br/>2014年7月10日 <br/>适合所有年龄段人士"
+			# info_b = "兑换说明：进入游戏主页，点击设置按钮（右上角），输入兑换码<br/>注：此礼包仅可使用于三星专版游戏中"
+			# info_c = "<p>在《封神英雄榜》是热播神话古装电视剧正版授权的同名手游，游戏创新地将策略、RPG与卡牌元素完美融合，独特的阵营战以及法宝对战系统，让玩家们感受最新颖的卡牌玩法。《封神英雄榜》采用Q版画风，游戏画面整体俏皮可爱，电视剧角色均以卡通形象在游戏中登场，经典台词在游戏中一一重现，中国风的仙界场景美轮美奂，进行游戏的同时，仿佛置身于仙境之中。传奇的神话战斗，海量神将任你差遣，进入《封神英雄榜》便可体验如梦似幻的游戏乐趣。</p><p>【正版授权 封神故事经典延续】 </p><p>原剧角色Q版形象植入，经典台词一一还原，感受掌中神话大剧<p>【仙家法器海量法宝各显神通】</p><p>神话经典法宝乱入，属性培养，技能强化，海量法宝无穷变化</p><p>【阵营对抗 大型战场公平竞技】 </p><p>首创卡牌阵营战，商周两大势力对抗，首创天枰平衡系统，打响卡牌阵营掠夺战役</p><p>【神魔齐聚 各路大咖同场乱斗】 </p><p>不只有封神，西游记、八仙过海乱入，体验最全神话故事</p><p>【策略卡牌收集养成指挥模拟】</p><p>卡片练功、卡片进化、排兵布阵，瞬息万变左右战局</p>"
+			# headerimg = "/img/game-3-title.jpg"
+			# descriptionimg = "/img/game-3-decription.jpg"
+			# order = 3
+			# inte = 0
+			# Lots.newlots name,description,img,order,inte,info_a,info_b,info_c,headerimg,descriptionimg,(err,lots)->
 				# if lots?
 				# 	Warehouse.newlot lots._id,"game-3-1",(err,lot)->
 				# 	Warehouse.newlot lots._id,"game-3-2",(err,lot)->

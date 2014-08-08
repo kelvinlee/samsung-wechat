@@ -314,8 +314,8 @@ magazine = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGHS2qliaoQ2yDM8jvVggzoWSmaTor6FJvJLfviahUzrnvnoAFtomNSSNA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=3&sn=357c8eb2b5550bd4d9cac3fc3c284f8e#rd"
       }, {
-        title: "时尚芭莎 ︳Angelababy 活的开心 做到最好",
-        description: '时尚芭莎 ︳Angelababy 活的开心 做到最好',
+        title: "时尚芭莎 ︳Angelababy 活得开心 做到最好",
+        description: '时尚芭莎 ︳Angelababy 活得开心 做到最好',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGaljB9Sz9OHJOQa0otw8ibPyyia3pTFVuqluORGRAN10UuJia3X9e6K0VA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=4&sn=2581fb570a19e435c6b35050598a9444#rd"
       }
