@@ -5,7 +5,7 @@
      Begin wechat.coffee
 --------------------------------------------
  */
-var BufferHelper, Comment, EventProxy, Inte, Lots, Topic, User, Warehouse, checkMessage, checkSignature, clearQA, config, crypto, empty, formatMessage, fs, gamemenu, getMessage, getQA, jianxingpin, luckymenu, magazine, my, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, regsinto, searchQA, topicmenu, welcometext, xml2js, _nr, _qa;
+var BufferHelper, Comment, EventProxy, Inte, Lots, Topic, User, Warehouse, checkMessage, checkSignature, clearQA, config, crypto, empty, formatMessage, fs, gamemenu, getMessage, getQA, jianxingpin, luckymenu, magazine, my, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, regsinto, searchQA, topicmenu, videos, welcometext, xml2js, _nr, _qa;
 
 fs = require('fs');
 
@@ -206,8 +206,8 @@ newactive = function() {
     type: "news",
     items: [
       {
-        title: "关注三星乐园微信公众账号,惊喜大礼等你拿!",
-        description: '关注三星乐园微信公众账号,惊喜大礼等你拿!',
+        title: "关注三星乐园微信公众账号,惊喜大礼等你拿",
+        description: '关注三星乐园微信公众账号,惊喜大礼等你拿',
         picurl: "" + config.host + "/img/banner-1.jpg",
         url: "" + config.host + "/middle/{openid}?url=/page1"
       }, {
@@ -248,8 +248,8 @@ jianxingpin = function() {
     type: "news",
     items: [
       {
-        title: "Samsung GALAXY Tab S Super AMOLED 炫丽屏重新定义视界",
-        description: 'Samsung GALAXY Tab S Super AMOLED 炫丽屏重新定义视界',
+        title: "Samsung GALAXY Tab 炫丽屏重新定义「视」界",
+        description: 'Samsung GALAXY Tab 炫丽屏重新定义「视」界',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBH9RQ1iaJH9XK6iatFxjdE8WQ8qFqEZ2MOz89T8ZcBBLJP9gIzH9pTbpeQ/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=1&sn=65df46c2bf8f852d815d3bb887c96ee2#rd"
       }, {
@@ -263,9 +263,9 @@ jianxingpin = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBH6fTuuEtLsy7fGvZsBflV9SOpY5iacHiaDd056ZA3aq8HGPxEzzpEq5aw/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=3&sn=a3cefce3da85b400072a9303de8be9e4#rd"
       }, {
-        title: "Samsung GALAXY S5 专享4G应用",
-        description: 'Samsung GALAXY S5 专享4G应用',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHhMDv4OicBJTCVnhTfSa0g6UPAick0MFVfBr86PtDVe9akcS844s3YYJQ/0",
+        title: "Samsung GALAXY S Pen 笔随心动，点滴记录",
+        description: 'Samsung GALAXY S Pen 笔随心动，点滴记录',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGPFib5A84LCWuIS7LAKlAqE1al4wd4dWoXUlhcbfGBtLq5dJgjQeCCUQ/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=4&sn=84820a9612c169b067729da25596adfe#rd"
       }
     ]
@@ -279,24 +279,24 @@ magazine = function() {
     type: "news",
     items: [
       {
-        title: "《新炫刊》，汇聚海量竞品杂志，畅爽的交互体验，带来全新视觉盛宴。",
-        description: '《新炫刊》，汇聚海量竞品杂志，畅爽的交互体验，带来全新视觉盛宴。',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHvpxEibG6M8wCIKGg6xXqicV91GaJLzia2ZyYzEOMCB3FrRY2xMJfyicsCA/0",
+        title: "新潮电子 ︳Samsung GALAXY K zoom 极视界 致手机",
+        description: '新潮电子 ︳Samsung GALAXY K zoom 极视界 致手机',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGG6uUDMBE7qiaVlx22cbJ66bDicun4KicAIwnQNVa1vLFcMhViaoqyEbPLQ/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=1&sn=15090e2e6a8708a6cf9e5373dcf061a8#rd"
       }, {
-        title: "《华夏地理》 多角度深度探索世界，为您带来世界变迁的精彩内容",
-        description: '《华夏地理》 多角度深度探索世界，为您带来世界变迁的精彩内容',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHBpYE54co69qNgDkSTVDHQC8nibVMkuHs4YltD35weSZiacFiaOZUx7j5g/0",
+        title: "华夏地理 ︳国宝浙江",
+        description: '华夏地理 ︳国宝浙江',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGXeDqDHibykBPPSXHxggTYdKbhOJPj81mkZnSiciahfEESnrIhLQZdtbkg/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=2&sn=b050f7dfe3e5aab18f1a667413318631#rd"
       }, {
-        title: "《新潮电子》 领导数码时尚新生活",
-        description: '《新潮电子》 领导数码时尚新生活',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHbsbXMN7icbWrS4Lx4HibQFUHBIwGITAc0gviaaIqUkFKUodMfqH1m4BfA/0",
+        title: "瑞丽服饰美容 ︳戴对表，秒变韩剧女主角",
+        description: '瑞丽服饰美容 ︳戴对表，秒变韩剧女主角',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGHS2qliaoQ2yDM8jvVggzoWSmaTor6FJvJLfviahUzrnvnoAFtomNSSNA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=3&sn=357c8eb2b5550bd4d9cac3fc3c284f8e#rd"
       }, {
-        title: "《时尚旅游》 独特视角带你探索世界",
-        description: '《时尚旅游》 独特视角带你探索世界',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHjOCk70AwCCtECVibxCBoDubvOqSb2AzIQTryMoibenibZMdJ7H1BTKq3g/0",
+        title: "时尚芭莎 ︳Angelababy 活的开心 做到最好",
+        description: '时尚芭莎 ︳Angelababy 活的开心 做到最好',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGaljB9Sz9OHJOQa0otw8ibPyyia3pTFVuqluORGRAN10UuJia3X9e6K0VA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=4&sn=2581fb570a19e435c6b35050598a9444#rd"
       }
     ]
@@ -378,6 +378,37 @@ gamemenu = function() {
         description: '点击玩·游戏，下载玩网游，超级礼包等你来拿!',
         picurl: "" + config.host + "/img/banner-20.jpg",
         url: "" + config.host + "/middle/{openid}?url=/sign/exchange/1"
+      }
+    ]
+  };
+};
+
+videos = function() {
+  return {
+    name: "看杂志",
+    key: "1",
+    type: "news",
+    items: [
+      {
+        title: "搜狐视频独播《巡夜人日志》第一集创韩国月火剧收视冠军！",
+        description: '搜狐视频独播《巡夜人日志》第一集创韩国月火剧收视冠军！',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGOK1oLv8AmxicppGDsiatrJ1dP2t7VECcfwotwNthMUzysywXVckjmfrg/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=1&sn=1e5ec46885ceabc0531703b442f0cce7#rd"
+      }, {
+        title: "《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用",
+        description: '《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGqziaptWvH56GQd7HSR6MENCo9XD8YX37qKIjQAf4CND7xaicicjBiam0xA/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=2&sn=350a13b6b1aabb9a27a7911309a73111#rd"
+      }, {
+        title: "《Jessica&Krystal》收官，闪瞎综艺档收视率！",
+        description: '《Jessica&Krystal》收官，闪瞎综艺档收视率！',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGv3CLYhYoyKuKNkdR1dsm176WaXIR4zFbN5k2gMp7j3hlb4PDzlyULQ/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=3&sn=ce36d8402e61e53e5267fe02997b2f13#rd"
+      }, {
+        title: "搜狐入股金秀贤所属公司Keyeast 成第二大股东",
+        description: '搜狐入股金秀贤所属公司Keyeast 成第二大股东',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGbevib8u2iarKiaj7jcoYQPMYxpUMN3GPmFcNK1UumNBef7y8RejjVWqEw/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=4&sn=2c0626281303dc2a457914ab10761355#rd"
       }
     ]
   };
@@ -473,6 +504,19 @@ plugs_menu = function(message, callback) {
     });
   } else if (message.EventKey === "game") {
     newmy = new gamemenu();
+    newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
+    return User.getUserOpenId(message.FromUserName, function(err, user) {
+      console.log(newmy.items[0].url);
+      if (user != null) {
+        return Inte.getInteAll(user._id, function(err, count) {
+          return callback(newmy);
+        });
+      } else {
+        return callback(newmy);
+      }
+    });
+  } else if (message.EventKey === "videos") {
+    newmy = new videos();
     newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
     return User.getUserOpenId(message.FromUserName, function(err, user) {
       console.log(newmy.items[0].url);

@@ -125,9 +125,10 @@ post_data =
 				# 	url: config.host+"/page2"
 				# }
 				{
-					type:"view"
+					type:"click"
 					name:"观·视频"
-					url: config.host+"/page8"
+					# url: config.host+"/page8"
+					key:"videos"
 				}
 				{
 					# type:"view"

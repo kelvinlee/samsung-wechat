@@ -105,9 +105,9 @@ post_data = {
           name: "看·杂志",
           key: "magazine"
         }, {
-          type: "view",
+          type: "click",
           name: "观·视频",
-          url: config.host + "/page8"
+          key: "videos"
         }, {
           type: "click",
           name: "玩·游戏",

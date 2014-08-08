@@ -111,6 +111,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
+	"\/controllers\/sign.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/controllers\/sign.js",
+		"outputAbbreviatedPath": "\/controllers\/min\/sign-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/controllers\/wechat-menu.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -186,17 +197,6 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
-		},
-	"\/controllers\/wechat.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/controllers\/wechat.js",
-		"outputAbbreviatedPath": "\/controllers\/min\/wechat-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/helper.coffee": {
 		"createSourceMap": 0,
@@ -771,7 +771,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 141911,
+		"initialSize": 137463,
 		"inputAbbreviatedPath": "\/public\/img\/banner-1.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/banner-1.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -1959,7 +1959,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 36161,
+		"initialSize": 144926,
 		"inputAbbreviatedPath": "\/public\/img\/weixin-jianianhua.jpg",
 		"outputAbbreviatedPath": "\/public\/img\/weixin-jianianhua.jpg",
 		"outputPathIsOutsideProject": 0,
