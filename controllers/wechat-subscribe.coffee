@@ -14,22 +14,28 @@ welcometext = {
 	type:"news"
 	items:[
 		{
-			title:"关注三星乐园微信公众账号,惊喜大礼等你拿"
-			description: '关注三星乐园微信公众账号,惊喜大礼等你拿'
+			title:"乐园嘉年华，关注赢好礼。您已获得100积分，快去游乐场试手气吧！"
+			description: '乐园嘉年华，关注赢好礼。您已获得100积分，快去游乐场试手气吧！'
 			picurl:"#{config.host}/img/banner-1.jpg"
 			url: "#{config.host}/middle/{openid}?url=/page1"
 		}
 		{
-			title:"GALAXY K zoom让每个瞬间都精彩!"
-			description: 'GALAXY K zoom让每个瞬间都精彩!'
-			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPrkjqVuXnZk7kv2dM1ed7uuJ11IicjPwfuicc6tmAVhrLyolJTe2oThaatNbInYZBdmBAlJMWfrZqw/0"
-			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200501036&idx=1&sn=7c19d06ff08719359639336eb357bbfe#rd"
+			title:"Samsung GALAXY Tab 炫丽屏重新定义「视」界"
+			description: 'Samsung GALAXY Tab 炫丽屏重新定义「视」界'
+			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBH9RQ1iaJH9XK6iatFxjdE8WQ8qFqEZ2MOz89T8ZcBBLJP9gIzH9pTbpeQ/0"
+			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=1&sn=65df46c2bf8f852d815d3bb887c96ee2#rd"
 		}
 		{
-			title:"参与每日话题，赢取精美礼品"
-			description: '参与每日话题，赢取精美礼品'
-			picurl:"#{config.host}/img/banner-10.jpg"
-			url: "#{config.host}/middle/{openid}?url=/sign/topic"
+			title:"新潮电子 ︳Samsung GALAXY K zoom 极视界 致手机"
+			description: '新潮电子 ︳Samsung GALAXY K zoom 极视界 致手机'
+			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGG6uUDMBE7qiaVlx22cbJ66bDicun4KicAIwnQNVa1vLFcMhViaoqyEbPLQ/0"
+			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=1&sn=15090e2e6a8708a6cf9e5373dcf061a8#rd"
+		}
+		{
+			title:"搜狐视频独播《巡夜人日志》第一集创韩国月火剧收视冠军！"
+			description: '搜狐视频独播《巡夜人日志》第一集创韩国月火剧收视冠军！'
+			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGOK1oLv8AmxicppGDsiatrJ1dP2t7VECcfwotwNthMUzysywXVckjmfrg/0"
+			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=1&sn=1e5ec46885ceabc0531703b442f0cce7#rd"
 		}
 	]
 }
@@ -38,14 +44,6 @@ welcometext = {
 plugs_subscribe = (message,callback)->
 	newmy = new newactive()
 	newmy.items[0].url = newmy.items[0].url.replace "{openid}",message.FromUserName
-	newmy.items[2].url = newmy.items[2].url.replace "{openid}",message.FromUserName
-	User.getUserOpenId message.FromUserName,(err,user)->
-		console.log newmy.items[2].url
-		if user?
-			Inte.getInteAll user._id,(err,count)->
-				newmy.items[2].description = newmy.items[2].description.replace "{jf}",count
-				callback newmy
-		else
-			newmy.items[2].description = newmy.items[2].description.replace "{jf}","0"
-			callback newmy
+	callback newmy
+	
 	# callback welcometext

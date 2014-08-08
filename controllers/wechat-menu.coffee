@@ -20,7 +20,7 @@ newactive = -> return {
 		{
 			title:"参与每日话题，赢取精美礼品"
 			description: '参与每日话题，赢取精美礼品'
-			picurl:"#{config.host}/img/banner-10.jpg"
+			picurl:"#{config.host}/img/weixin-topic.jpg"
 			url: "#{config.host}/middle/{openid}?url=/sign/topic"
 		}
 	]
@@ -169,7 +169,7 @@ gamemenu = -> return {
 	]
 }
 videos = -> return {
-	name:"看杂志"
+	name:"观视频"
 	key:"1"
 	type:"news"
 	items: [
