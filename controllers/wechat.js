@@ -216,8 +216,8 @@ newactive = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPrkjqVuXnZk7kv2dM1ed7uuJ11IicjPwfuicc6tmAVhrLyolJTe2oThaatNbInYZBdmBAlJMWfrZqw/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200501036&idx=1&sn=7c19d06ff08719359639336eb357bbfe#rd"
       }, {
-        title: "参与今日话题#你敢不敢说走就走#赢取迪士尼小玩偶",
-        description: '参与今日话题#你敢不敢说走就走#赢取迪士尼小玩偶',
+        title: "参与每日话题，赢取精美礼品",
+        description: '参与每日话题，赢取精美礼品',
         picurl: "" + config.host + "/img/banner-10.jpg",
         url: "" + config.host + "/middle/{openid}?url=/sign/topic"
       }
