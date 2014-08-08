@@ -40,8 +40,8 @@ jianxingpin = -> return {
 	type:"news"
 	items:[
 		{
-			title:"Samsung GALAXY Tab 炫丽屏重新定义「视」界"
-			description: 'Samsung GALAXY Tab 炫丽屏重新定义「视」界'
+			title:"Samsung GALAXY Tab S 炫丽屏重新定义「视」界"
+			description: 'Samsung GALAXY Tab S 炫丽屏重新定义「视」界'
 			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBH9RQ1iaJH9XK6iatFxjdE8WQ8qFqEZ2MOz89T8ZcBBLJP9gIzH9pTbpeQ/0"
 			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=1&sn=65df46c2bf8f852d815d3bb887c96ee2#rd"
 		}
@@ -92,7 +92,7 @@ magazine = -> return {
 		{
 			title:"时尚芭莎 ︳Angelababy 活得开心 做到最好"
 			description: '时尚芭莎 ︳Angelababy 活得开心 做到最好'
-			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGaljB9Sz9OHJOQa0otw8ibPyyia3pTFVuqluORGRAN10UuJia3X9e6K0VA/0"
+			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGbeZ5fIhQV8m9Lw712mtOYb01aden2Vsa7Jr9FmtpDnPpHp0zcjKsug/0"
 			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=4&sn=2581fb570a19e435c6b35050598a9444#rd"
 		}
 	]
