@@ -213,10 +213,10 @@ welcometext = function() {
 };
 
 plugs_subscribe = function(message, callback) {
-  var newmy;
-  newmy = new welcometext();
-  newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
-  return callback(newmy);
+  var subscribe;
+  subscribe = new welcometext();
+  subscribe.items[0].url = subscribe.items[0].url.replace("{openid}", message.FromUserName);
+  return callback(subscribe);
 };
 
 
