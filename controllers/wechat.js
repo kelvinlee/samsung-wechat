@@ -182,14 +182,46 @@ exports.index = function(req, res, next) {
  */
 
 welcometext = {
-  name: "welcome",
-  key: "你好",
-  type: "text",
-  content: "欢迎关注【三星乐园】官⽅微信。参与活动赢取Samsung GALAXY K zoom，还等什么？回复【1】了解活动详情。"
+  name: "新活动",
+  key: "1",
+  type: "news",
+  items: [
+    {
+      title: "关注三星乐园微信公众账号,惊喜大礼等你拿",
+      description: '关注三星乐园微信公众账号,惊喜大礼等你拿',
+      picurl: "" + config.host + "/img/banner-1.jpg",
+      url: "" + config.host + "/middle/{openid}?url=/page1"
+    }, {
+      title: "GALAXY K zoom让每个瞬间都精彩!",
+      description: 'GALAXY K zoom让每个瞬间都精彩!',
+      picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPrkjqVuXnZk7kv2dM1ed7uuJ11IicjPwfuicc6tmAVhrLyolJTe2oThaatNbInYZBdmBAlJMWfrZqw/0",
+      url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200501036&idx=1&sn=7c19d06ff08719359639336eb357bbfe#rd"
+    }, {
+      title: "参与每日话题，赢取精美礼品",
+      description: '参与每日话题，赢取精美礼品',
+      picurl: "" + config.host + "/img/banner-10.jpg",
+      url: "" + config.host + "/middle/{openid}?url=/sign/topic"
+    }
+  ]
 };
 
 plugs_subscribe = function(message, callback) {
-  return callback(welcometext);
+  var newmy;
+  newmy = new newactive();
+  newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
+  newmy.items[2].url = newmy.items[2].url.replace("{openid}", message.FromUserName);
+  return User.getUserOpenId(message.FromUserName, function(err, user) {
+    console.log(newmy.items[2].url);
+    if (user != null) {
+      return Inte.getInteAll(user._id, function(err, count) {
+        newmy.items[2].description = newmy.items[2].description.replace("{jf}", count);
+        return callback(newmy);
+      });
+    } else {
+      newmy.items[2].description = newmy.items[2].description.replace("{jf}", "0");
+      return callback(newmy);
+    }
+  });
 };
 
 
