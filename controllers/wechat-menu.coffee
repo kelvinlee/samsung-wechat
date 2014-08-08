@@ -12,12 +12,6 @@ newactive = -> return {
 			url: "#{config.host}/middle/{openid}?url=/page1"
 		}
 		{
-			title:"GALAXY K zoom让每个瞬间都精彩!"
-			description: 'GALAXY K zoom让每个瞬间都精彩!'
-			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPrkjqVuXnZk7kv2dM1ed7uuJ11IicjPwfuicc6tmAVhrLyolJTe2oThaatNbInYZBdmBAlJMWfrZqw/0"
-			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200501036&idx=1&sn=7c19d06ff08719359639336eb357bbfe#rd"
-		}
-		{
 			title:"参与每日话题，赢取精美礼品"
 			description: '参与每日话题，赢取精美礼品'
 			picurl:"#{config.host}/img/weixin-topic.jpg"
