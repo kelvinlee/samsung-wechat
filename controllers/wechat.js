@@ -342,7 +342,7 @@ topicmenu = function() {
     type: "news",
     items: [
       {
-        title: "本期话题:最让你遗憾的事",
+        title: "聊话题",
         description: '聊话题赢大奖. [请勿转发此条信息,包含您的个人信息]',
         picurl: "" + config.host + "/img/banner-topic.jpg",
         url: "" + config.host + "/middle/{openid}?url=/sign/topic"
