@@ -455,16 +455,12 @@ plugs_menu = function(message, callback) {
   } else if (message.EventKey === "newactive") {
     newmy = new newactive();
     newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
-    newmy.items[2].url = newmy.items[2].url.replace("{openid}", message.FromUserName);
     return User.getUserOpenId(message.FromUserName, function(err, user) {
-      console.log(newmy.items[2].url);
       if (user != null) {
         return Inte.getInteAll(user._id, function(err, count) {
-          newmy.items[2].description = newmy.items[2].description.replace("{jf}", count);
           return callback(newmy);
         });
       } else {
-        newmy.items[2].description = newmy.items[2].description.replace("{jf}", "0");
         return callback(newmy);
       }
     });
