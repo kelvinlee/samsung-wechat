@@ -20,8 +20,8 @@ welcometext = -> return {
 			url: "#{config.host}/middle/{openid}?url=/page1"
 		}
 		{
-			title:"Samsung GALAXY Tab 炫丽屏重新定义「视」界"
-			description: 'Samsung GALAXY Tab 炫丽屏重新定义「视」界'
+			title:"Samsung GALAXY Tab S 炫丽屏重新定义「视」界"
+			description: 'Samsung GALAXY Tab S 炫丽屏重新定义「视」界'
 			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBH9RQ1iaJH9XK6iatFxjdE8WQ8qFqEZ2MOz89T8ZcBBLJP9gIzH9pTbpeQ/0"
 			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=1&sn=65df46c2bf8f852d815d3bb887c96ee2#rd"
 		}
