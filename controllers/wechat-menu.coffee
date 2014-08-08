@@ -135,7 +135,7 @@ topicmenu = -> return {
 	type:"news"
 	items: [
 		{
-			title:"聊话题"
+			title:"参与每日话题，赢取精美礼品"
 			description: '聊话题赢大奖. [请勿转发此条信息,包含您的个人信息]'
 			picurl:"#{config.host}/img/banner-topic.jpg"
 			url: "#{config.host}/middle/{openid}?url=/sign/topic"
