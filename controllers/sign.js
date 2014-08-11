@@ -754,12 +754,18 @@ setDefaultWinner = function() {
 };
 
 setsomeDefautleLots = function() {
+  Warehouse.counts(function(err, couts) {
+    if (couts <= 0) {
+      console.log("初始化了一些手气奖品");
+      return setDefaultWinner();
+    }
+  });
   return Lots.getLots(function(err, list) {
     var description, descriptionimg, headerimg, img, info_a, info_b, info_c, inte, name, order;
     if ((list != null) && list.length > 0) {
 
     } else {
-      console.log("初始化了一些奖品");
+      console.log("初始化了一些游戏奖品");
       setDefaultWinner();
       name = "神偷奶爸：小黄人快跑";
       description = "小黄人快跑！一路搞笑逗趣停不住！";

@@ -42,6 +42,10 @@ exports.newlot = function(info, content, callback) {
   return l.save(callback);
 };
 
+exports.counts = function(callback) {
+  return Winner.find().count().exec(callback);
+};
+
 exports.getWinnerByInfo = function(info, callback) {
   return Winner.findOne({
     info: info,

@@ -655,11 +655,16 @@ setDefaultWinner = ()->
 
 # 设置初始化游戏.
 setsomeDefautleLots = ()->
+	Warehouse.counts (err,couts)->
+		if couts<=0
+			console.log "初始化了一些手气奖品"
+			setDefaultWinner()
+
 	Lots.getLots (err,list)->
 		if list? and list.length > 0
 			# console.log "奖品列表,存在"
 		else
-			console.log "初始化了一些奖品"
+			console.log "初始化了一些游戏奖品"
 			setDefaultWinner()
 			
 			name = "神偷奶爸：小黄人快跑"

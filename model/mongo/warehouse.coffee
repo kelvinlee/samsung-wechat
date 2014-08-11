@@ -20,7 +20,9 @@ exports.newlot = (info,content,callback)->
 
 
 # for  winner
-
+exports.counts = (callback)->
+	Winner.find().count().exec callback
+	
 exports.getWinnerByInfo = (info,callback)->
 	Winner.findOne {info:info,used:false},callback
 
