@@ -397,7 +397,7 @@ gamemenu = function() {
     items: [
       {
         title: "玩热门网游，领豪华礼包！",
-        description: '点击玩游戏，下载三星专版游戏，超级礼包等你来拿！',
+        description: '点击玩·游戏，下载三星专版游戏，超级礼包等你来拿！',
         picurl: "" + config.host + "/img/banner-20.jpg",
         url: "" + config.host + "/middle/{openid}?url=/sign/exchange/1"
       }

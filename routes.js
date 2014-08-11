@@ -52,7 +52,8 @@ module.exports = function(app) {
   app.get("/admin/topic", admin.topic);
   app.post("/admin/topic", admin.setDefaultTopic);
   app.get("/admin/delcomment/:c_id", admin.delcomment);
-  return app.get("/admin/newtopic", admin.newtopic);
+  app.get("/admin/newtopic", admin.newtopic);
+  return app.get("/admin/deltopic/:t_id", admin.deltopic);
 };
 
 console.log("routes loaded.");

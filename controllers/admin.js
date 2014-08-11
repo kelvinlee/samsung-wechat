@@ -85,6 +85,15 @@ exports.newtopic = function(req, res, next) {
   return res.render("admin/newtopic");
 };
 
+exports.deltopic = function(req, res, next) {
+  var id;
+  id = req.params.t_id;
+  Topic.getById(id, function(err, t) {
+    return t.remove();
+  });
+  return res.redirect("/admin/topic");
+};
+
 exports.setDefaultTopic = function(req, res, next) {
   var description, endtime, lot, name, prelot, re, startime;
   name = req.body.name;

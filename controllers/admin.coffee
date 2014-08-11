@@ -58,6 +58,14 @@ exports.delcomment = (req,res,next)->
 	
 exports.newtopic = (req,res,next)->
 	res.render "admin/newtopic"
+
+exports.deltopic = (req,res,next)->
+	# 删除留言
+	id = req.params.t_id
+	Topic.getById id , (err,t)->
+		# console.log err,c
+		t.remove()
+	res.redirect "/admin/topic"
 	
 
 # 初始化一个话题

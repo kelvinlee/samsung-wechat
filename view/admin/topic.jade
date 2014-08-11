@@ -3,7 +3,9 @@ block content_here
 	.content
 		div.content-padded
 			a.btn.btn-primary(href="/admin/newtopic") 添加话题
-			
+			-if (topic!=null)
+				span &nbsp;&nbsp;
+				a.btn.btn-negative(href="/admin/deltopic/#{topic._id}",onclick="return confirm('您确定要删除<#{topic.name}>此话题吗?');") 删除当前开启的话题
 		-if (topic!=null)
 			div.content-padded
 				h2.h2 ##{topic.name}#
