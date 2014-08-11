@@ -116,7 +116,7 @@ exports.middle = function(req, res, next) {
       return User.regbyOpenId(openid, function(err, user) {
         res.cookie("userid", user._id);
         res.cookie("openid", openid);
-        return Inte.newInte(user._id, 1000, "初次注册赠送积分活动,1000积分", function(err, inte) {
+        return Inte.newInte(user._id, 100, "初次注册赠送积分活动,100积分", function(err, inte) {
           console.log({
             "has": false,
             user: user,
@@ -471,17 +471,25 @@ exports.postnickname = function(req, res, next) {
   re = new helper.recode();
   console.log("nickname:", nickname, req.cookies.userid);
   if (nickname != null) {
-    return User.getUserById(req.cookies.userid, function(err, user) {
-      console.log(user);
+    return User.findByNickname(nickname, function(err, user) {
+      console.log("nickname:", err, user);
       if (user != null) {
-        user.nickname = nickname;
-        user.save();
-        return res.send(re);
-      } else {
         re.recode = 201;
-        re.reason = "还没有登录";
+        re.reason = "昵称已经存在,再试试其他的名称.";
         return res.send(re);
       }
+      return User.getUserById(req.cookies.userid, function(err, user) {
+        console.log(user);
+        if (user != null) {
+          user.nickname = nickname;
+          user.save();
+          return res.send(re);
+        } else {
+          re.recode = 201;
+          re.reason = "还没有登录";
+          return res.send(re);
+        }
+      });
     });
   } else {
     re.recode = 201;

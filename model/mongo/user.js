@@ -30,6 +30,12 @@ exports.getUserOpenId = function(openid, callback) {
   }, callback);
 };
 
+exports.findByNickname = function(nickname, callback) {
+  return User.findOne({
+    nickname: nickname
+  }, callback);
+};
+
 exports.getUsersByQuery = function(query, opt, callback) {
   return User.find(query, null, opt, callback);
 };

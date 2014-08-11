@@ -9,8 +9,12 @@ exports.getUserById = (id, callback)->
 	User.findOne {_id:id}, callback 
 exports.getUserOpenId = (openid, callback)->
   User.findOne {openid:openid}, callback
+exports.findByNickname = (nickname,callback)->
+  User.findOne {nickname:nickname}, callback
 exports.getUsersByQuery = (query, opt, callback)->
 	User.find query, null, opt, callback
+
+
 
 exports.regbyOpenId = (openid,callback)->
   user = new User()

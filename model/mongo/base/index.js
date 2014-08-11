@@ -44,7 +44,10 @@ UserSchema = new Schema({
     }
   },
   nickname: {
-    type: String
+    type: String,
+    index: {
+      unique: true
+    }
   },
   sex: {
     type: Number,

@@ -94,7 +94,7 @@ exports.middle = (req,res,next)->
 			User.regbyOpenId openid,(err,user)->
 				res.cookie "userid",user._id
 				res.cookie "openid",openid
-				Inte.newInte user._id,1000,"初次注册赠送积分活动,1000积分",(err,inte)->
+				Inte.newInte user._id,100,"初次注册赠送积分活动,100积分",(err,inte)->
 					# console.log "初次注册赠送积分活动,1000积分"
 					console.log {"has":false,user:user,cookie:req.cookies.userid}
 					res.redirect url
@@ -426,16 +426,22 @@ exports.postnickname = (req,res,next)->
 	re = new helper.recode()
 	console.log "nickname:",nickname,req.cookies.userid
 	if nickname?
-		User.getUserById req.cookies.userid,(err,user)->
-			console.log user
+		User.findByNickname nickname,(err,user)->
+			console.log "nickname:",err,user
 			if user?
-				user.nickname = nickname
-				user.save()
-				res.send re
-			else
 				re.recode = 201
-				re.reason = "还没有登录"
-				res.send re
+				re.reason = "昵称已经存在,再试试其他的名称."
+				return res.send re
+			User.getUserById req.cookies.userid,(err,user)->
+				console.log user
+				if user?
+					user.nickname = nickname
+					user.save()
+					res.send re
+				else
+					re.recode = 201
+					re.reason = "还没有登录"
+					res.send re
 	else
 		re.recode = 201
 		re.reason = "昵称不能为空"
