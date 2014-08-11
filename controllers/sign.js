@@ -470,6 +470,16 @@ exports.postnickname = function(req, res, next) {
   nickname = req.body.nickname;
   re = new helper.recode();
   console.log("nickname:", nickname, req.cookies.userid);
+  if (nickname.toLowerCase() === "三星乐园" || nickname.toLowerCase() === "samsung" || nickname.toLowerCase() === "samsungapps") {
+    re.recode = 201;
+    re.reason = "昵称已经存在,再试试其他的名称.";
+    return res.send(re);
+  }
+  if (nickname.length > 16 || nickname.length < 3) {
+    re.recode = 201;
+    re.reason = "昵称只能在3~16个字符之间.";
+    return res.send(re);
+  }
   if (nickname != null) {
     return User.findByNickname(nickname, function(err, user) {
       console.log("nickname:", err, user);

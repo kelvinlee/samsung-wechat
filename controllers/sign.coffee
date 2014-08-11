@@ -426,6 +426,14 @@ exports.postnickname = (req,res,next)->
 	nickname = req.body.nickname
 	re = new helper.recode()
 	console.log "nickname:",nickname,req.cookies.userid
+	if nickname.toLowerCase() is "三星乐园" or nickname.toLowerCase() is "samsung" or nickname.toLowerCase() is "samsungapps"
+		re.recode = 201
+		re.reason = "昵称已经存在,再试试其他的名称."
+		return res.send re
+	if nickname.length > 16 or nickname.length < 3
+		re.recode = 201
+		re.reason = "昵称只能在3~16个字符之间."
+		return res.send re
 	if nickname?
 		User.findByNickname nickname,(err,user)->
 			console.log "nickname:",err,user
