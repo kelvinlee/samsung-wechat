@@ -9,7 +9,7 @@ block css_here
 block content_here
 	//- 解问题
 	//- .weixin-share
-		img(src="http://115.28.106.34/img/weixin-page4.jpg")
+		img(src="http://#{config.host}/img/weixin-page4.jpg")
 	.content
 		//- img(src="/img/page-4.jpg")
 		.coo-item.coo
@@ -110,7 +110,7 @@ block js_here
 	script.
 		var dataForWeixin={
 		appId:  "",
-		img:    "http://115.28.106.34/img/weixin-page4.jpg",
+		img:    "http://#{config.host}/img/weixin-page4.jpg",
 		url:    location.href,
 		title:  "解问题",
 		desc:   "你遇到的问题，这里都能解决~" || location.href || "For protection, click the condoms now.",
