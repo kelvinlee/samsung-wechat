@@ -4,7 +4,7 @@ block title
 block content_here
 	//- include nav
 	//- div.weixin-share
-		img(src="http://#{config.host}/img/weixin-topic.jpg")
+		img(src="#{config.host}/img/weixin-topic.jpg")
 	nav.bar.bar-tab
 		div.sendmsg
 			form.form(action="/sign/comment",name="register",onsubmit="post(); return false;")
@@ -45,7 +45,7 @@ block js_here
 	script.
 		var dataForWeixin={
 		appId:  "",
-		img:    "http://#{config.host}/img/weixin-topic.jpg",
+		img:    "#{config.host}/img/weixin-topic.jpg",
 		url:    location.href,
 		title:  "聊话题",
 		desc:   "顶尖趋势，潮流热点，你想聊的话题都在这里~" || location.href || "For protection, click the condoms now.",

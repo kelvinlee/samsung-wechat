@@ -24,11 +24,11 @@ block css_here
 block content_here
 	//- include nav
 	.content
-		-var url = "http://#{config.host}/down/qwuxia.apk";
+		-var url = "#{config.host}/down/qwuxia.apk";
 		a.downbtn.qwuxia(href="#{url}")
-		-var url = "http://#{config.host}/down/fengshen.apk";
+		-var url = "#{config.host}/down/fengshen.apk";
 		a.downbtn.fengshen(href="#{url}")
-		-var url = "http://#{config.host}/down/chaojiyingxiong.apk";
+		-var url = "#{config.host}/down/chaojiyingxiong.apk";
 		a.downbtn.chaojiyingxiong(href="#{url}")
 		img(src="/img/gamedownbg.jpg")
 
@@ -36,7 +36,7 @@ block js_here
 	script.
 		var dataForWeixin={
 		appId:  "",
-		img:    "http://#{config.host}/img/weixin-game.jpg",
+		img:    "#{config.host}/img/weixin-game.jpg",
 		url:    location.href,
 		title:  "玩游戏",
 		desc:   "三星专属游戏礼包等你来拿~" || location.href || "For protection, click the condoms now.",

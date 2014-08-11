@@ -16,7 +16,7 @@ block css_here
 		}
 block content_here
 	//- div.weixin-share
-		img(src="http://#{config.host}/img/weixin-jianianhua.jpg")
+		img(src="#{config.host}/img/weixin-jianianhua.jpg")
 	.content
 		div.active-1
 			a.m(href="/sign/lucky")
@@ -26,7 +26,7 @@ block js_here
 	script.
 		var dataForWeixin={
 		appId:  "",
-		img:    "http://#{config.host}/img/weixin-jianianhua.jpg",
+		img:    "#{config.host}/img/weixin-jianianhua.jpg",
 		url:    location.href,
 		title:  "嘉年华",
 		desc:   "关注三星乐园微信公众帐号，惊喜大礼等你认领！" || location.href || "For protection, click the condoms now.",

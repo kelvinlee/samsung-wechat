@@ -5,7 +5,7 @@ block title
 block content_here
 	//- 寻合作
 	//- .weixin-share
-		img(src="http://#{config.host}/img/weixin-page5.jpg")
+		img(src="#{config.host}/img/weixin-page5.jpg")
 	.content(style="background:#ebebeb;")
 		//- img(src="/img/page5.jpg")
 		.coos
@@ -20,7 +20,7 @@ block js_here
 	script.
 		var dataForWeixin={
 		appId:  "",
-		img:    "http://#{config.host}/img/weixin-page5.jpg",
+		img:    "#{config.host}/img/weixin-page5.jpg",
 		url:    location.href,
 		title:  "寻合作",
 		desc:   "还傻站着张望什么！赶快加入乐园一起合作吧~" || location.href || "For protection, click the condoms now.",

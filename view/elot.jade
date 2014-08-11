@@ -98,7 +98,7 @@ block content_here
 					h2 说明
 					|!{lotinfo.info_c}
 		-else
-			| 此奖品不存在,请<a href="http://#{config.host}/sign/exchange/1">返回</a>
+			| 此奖品不存在,请<a href="#{config.host}/sign/exchange/1">返回</a>
 
 
 				
@@ -112,7 +112,7 @@ block js_here
 	script.
 		var dataForWeixin={
 		appId:  "",
-		img:    "http://#{config.host}/img/weixin-game.jpg",
+		img:    "#{config.host}/img/weixin-game.jpg",
 		url:    location.href,
 		title:  "玩游戏",
 		desc:   "三星专属游戏礼包等你来拿~" || location.href || "For protection, click the condoms now.",
