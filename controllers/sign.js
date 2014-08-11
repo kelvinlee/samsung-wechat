@@ -737,17 +737,17 @@ setDefaultTopic = function() {
 
 setDefaultWinner = function() {
   var i, _i, _j, _k, _l, _results;
-  for (i = _i = 0; _i < 5; i = ++_i) {
+  for (i = _i = 0; _i < 1; i = ++_i) {
     Warehouse.newwinner("Tabs", "一等奖", "lots-1.jpg", function(err, win) {});
   }
-  for (i = _j = 0; _j < 10; i = ++_j) {
+  for (i = _j = 0; _j < 3; i = ++_j) {
     Warehouse.newwinner("Headset", "二等奖", "lots-2.jpg", function(err, win) {});
   }
-  for (i = _k = 0; _k < 20; i = ++_k) {
+  for (i = _k = 0; _k < 5; i = ++_k) {
     Warehouse.newwinner("Power", "三等奖", "lots-3.jpg", function(err, win) {});
   }
   _results = [];
-  for (i = _l = 0; _l < 50; i = ++_l) {
+  for (i = _l = 0; _l < 300; i = ++_l) {
     _results.push(Warehouse.newwinner("sohugz", "四等奖", "lots-4.jpg", function(err, win) {}));
   }
   return _results;

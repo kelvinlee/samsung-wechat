@@ -642,13 +642,13 @@ setDefaultTopic = ->
 
 # 初始化奖品
 setDefaultWinner = ()->
-	for i in [0...5]
+	for i in [0...1]
 		Warehouse.newwinner "Tabs","一等奖","lots-1.jpg",(err,win)->
-	for i in [0...10]
+	for i in [0...3]
 		Warehouse.newwinner "Headset","二等奖","lots-2.jpg",(err,win)->
-	for i in [0...20]
+	for i in [0...5]
 		Warehouse.newwinner "Power","三等奖","lots-3.jpg",(err,win)->
-	for i in [0...50]
+	for i in [0...300]
 		Warehouse.newwinner "sohugz","四等奖","lots-4.jpg",(err,win)->
 	
 
