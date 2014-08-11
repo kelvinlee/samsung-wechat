@@ -455,6 +455,7 @@ plugs_menu = function(message, callback) {
   } else if (message.EventKey === "newactive") {
     newmy = new newactive();
     newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
+    newmy.items[1].url = newmy.items[1].url.replace("{openid}", message.FromUserName);
     return User.getUserOpenId(message.FromUserName, function(err, user) {
       if (user != null) {
         return Inte.getInteAll(user._id, function(err, count) {

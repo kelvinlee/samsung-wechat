@@ -211,7 +211,7 @@ plugs_menu = (message,callback)->
 	else if message.EventKey is "newactive"
 		newmy = new newactive()
 		newmy.items[0].url = newmy.items[0].url.replace "{openid}",message.FromUserName
-		# newmy.items[2].url = newmy.items[2].url.replace "{openid}",message.FromUserName
+		newmy.items[1].url = newmy.items[1].url.replace "{openid}",message.FromUserName
 		User.getUserOpenId message.FromUserName,(err,user)->
 			# console.log newmy.items[2].url
 			if user?
