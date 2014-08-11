@@ -46,7 +46,8 @@ UserSchema = new Schema({
   nickname: {
     type: String,
     index: {
-      unique: true
+      unique: true,
+      sparse: true
     }
   },
   sex: {

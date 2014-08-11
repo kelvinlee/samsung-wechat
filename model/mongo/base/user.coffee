@@ -2,7 +2,7 @@ UserSchema = new Schema({
 	mobile: {type: String, index: true}
 	password:{type:String}
 	openid: {type: String, index: {unique:true}}
-	nickname: {type: String, index: {unique:true}}
+	nickname: {type: String, index: {unique:true,sparse:true}}
 	sex : {type: Number, default: 0}
 	province: {type: String}
 	country: {type:String}
