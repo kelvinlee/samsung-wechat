@@ -163,7 +163,7 @@ exports.index = function(req, res, next) {
       console.log(err);
     }
     if (!result) {
-      return res.send(to ? parse.echostr : "what?");
+      return res.send(to ? parse.echostr : "v1.0.1");
     }
     message = formatMessage(result);
     ep.emit('message', message);

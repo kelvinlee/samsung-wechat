@@ -139,7 +139,7 @@ exports.index = (req,res,next)->
 	getMessage req, (err,result)->
 		console.log err if err
 		# console.log result
-		(return res.send if to then parse.echostr else "what?" ) if not result
+		(return res.send if to then parse.echostr else "v1.0.1" ) if not result
 		message = formatMessage result
 		ep.emit 'message', message
 		# console.log "session:",user[message.FromUserName]
