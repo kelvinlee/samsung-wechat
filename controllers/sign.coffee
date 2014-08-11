@@ -82,8 +82,9 @@ exports.middle = (req,res,next)->
 
 	# return res.send {openid:openid,url:url,cookie:req.cookies.userid}
 
-	console.log "openid:",openid
+	# console.log "openid:",openid
 	User.getUserOpenId openid,(err,user)->
+		console.log "openid:",openid,err,user
 		if user?
 			res.cookie "userid",user._id
 			res.cookie "openid",openid
