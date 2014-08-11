@@ -14,8 +14,8 @@ welcometext = -> return {
 	type:"news"
 	items:[
 		{
-			title:"乐园嘉年华，关注赢好礼。您已获得100积分，快去游乐场试手气吧！"
-			description: '乐园嘉年华，关注赢好礼。您已获得100积分，快去游乐场试手气吧！'
+			title:"乐园嘉年华，关注赢好礼，GALAXY Tab S 等你来拿。"
+			description: '乐园嘉年华，关注赢好礼，GALAXY Tab S 等你来拿。'
 			picurl:"#{config.host}/img/banner-1.jpg"
 			url: "#{config.host}/middle/{openid}?url=/page1"
 		}
