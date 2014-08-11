@@ -204,7 +204,7 @@ tointe = function(req, res, next) {
   }
   return Inte.today(req.cookies.userid, function(err, today) {
     console.log("签到:" + today);
-    if (today != null) {
+    if ((today != null) && today.length !== 0) {
       re.recode = 201;
       re.reason = "今天已经签到过了.";
       return res.send(re);

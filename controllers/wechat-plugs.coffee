@@ -4,6 +4,7 @@
 # 此页内的均为高级功能,需要高级权限.
 # 
 https = require 'https'
+http = require 'http'
 URL = require 'url'
 querystring = require 'querystring'
 config = require('../config').config
@@ -176,6 +177,31 @@ post_data =
 			]
 		}
 	]
+# post_data =
+# 	"button":[
+# 		{
+# 			"name":"菜单",
+# 			"sub_button":[
+# 				{	
+# 				 "type":"view",
+# 				 "name":"搜索",
+# 				 "url":"http://www.soso.com/"
+# 				},
+# 				{
+# 				 "type":"view",
+# 				 "name":"视频",
+# 				 "url":"http://v.qq.com/"
+# 				},
+# 				{
+# 				 "type":"click",
+# 				 "name":"赞一下我们",
+# 				 "key":"V1001_GOOD"
+# 				}
+# 			]
+# 		}
+# 	]
+
+
 
 # 检测token值,并向下执行
 checkToken = (callback)->
@@ -213,20 +239,29 @@ sendMenus = ->
 	u = URL.parse options_create_menu.host
 	p = if u['port'] then u['port'] else 80
 
+	postdata = JSON.stringify post_data
+	headers = {
+		'Content-Type': 'application/json',
+		'Content-Length': postdata.length
+	}
+
 	op = 
 		hostname: u['host']
 		port: 443
 		path: u['path']+access_token.access_token
 		method: 'POST'
-	console.log op,p
+		headers: headers
+
+	console.log op
 	request = https.request op, (res)->
+		console.log "menu_json:", postdata
 		console.log "statusCode: ",res.statusCode
 		console.log "headers: ",res.headers
 
 		res.on 'data', (chunk)->
 			obj = JSON.parse chunk
 			console.log obj
-	console.log JSON.stringify post_data
+	# console.log JSON.stringify post_data
 	request.write JSON.stringify(post_data)+'\n'
 	request.end()
 exports.sendMenus = ->

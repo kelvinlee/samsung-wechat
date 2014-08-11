@@ -161,7 +161,7 @@ tointe = (req,res,next)->
 		return ""
 	Inte.today req.cookies.userid,(err,today)->
 		console.log "签到:"+today
-		if today?
+		if today? and today.length isnt 0
 			re.recode = 201
 			re.reason = "今天已经签到过了."
 			res.send re

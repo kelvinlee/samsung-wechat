@@ -13,6 +13,7 @@ module.exports = (app)->
   app.post '/', wechat.index
 
   app.get '/menu', wechat.sendmenu
+  # app.get '/checkmenu', wechat.checkMenus
 
 
   app.get "/page1", sign.page1
