@@ -6,6 +6,7 @@ $(document).ready ->
 
 __qiaodao = false;
 qiandao = ->
+	_hmt.push(['_trackEvent', "qiandao", "click", "qiandao"]);
 	if __qiaodao
 		alert("正在签到,请稍后");
 		return ""
