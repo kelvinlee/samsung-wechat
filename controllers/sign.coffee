@@ -301,6 +301,8 @@ exports.getlucky = (req,res,next)->
 
 
 				# console.log "中奖号码:#{lot}"
+				# 暂时取消中奖
+				lot = 100000
 
 				if lot is 8
 					console.log "平板"
