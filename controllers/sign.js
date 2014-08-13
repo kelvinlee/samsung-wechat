@@ -340,7 +340,6 @@ exports.getlucky = function(req, res, next) {
         list = [[14, 14, 14], [14, 14, 12], [14, 12, 12], [15, 15, 15], [13, 13, 13], [12, 12, 11], [11, 11, 11]];
         lot = Math.round(Math.random() * 100000);
         console.log(lot);
-        lot = 100000;
         if (lot === 8) {
           console.log("平板");
           return Warehouse.getWinnerByInfo("Tabs", function(err, lots) {

@@ -33,6 +33,10 @@ getWinnerById = (id,callback)->
 	Winner.findOne {_id:id},callback
 exports.getWinnerById = getWinnerById
 
+getWinnerByUid = (id,callback)->
+	Winner.find {usedby:id},callback
+exports.getWinnerByUid = getWinnerByUid
+
 exports.updatewinner = (id,username,mobile,adr,callback)->
 	getWinnerById id,(err,win)->
 		if win?

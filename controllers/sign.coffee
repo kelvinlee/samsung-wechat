@@ -260,6 +260,11 @@ exports.mylot = (req,res,next)->
 exports.luckyframe = (req,res,next)->
 	res.render "luckyframe"
 
+# exports.luckylist = (req,res,next)->
+	
+		
+
+
 exports.getlucky = (req,res,next)->
 	re = new helper.recode()
 	re.url = ""
@@ -302,7 +307,7 @@ exports.getlucky = (req,res,next)->
 
 				# console.log "中奖号码:#{lot}"
 				# 暂时取消中奖
-				lot = 100000
+				# lot = 100000
 
 				if lot is 8
 					console.log "平板"
