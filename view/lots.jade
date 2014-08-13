@@ -56,6 +56,7 @@ block js_here
 	script(src="/js/weixin.js")
 	script.
 		$(document).ready(function(){
+			$("body,.content").css({"position":"relative"});
 			$("[name=submit]").click(function(){
 				$.ajax({
 					url:$('[name=register]').attr("action"),
