@@ -93,6 +93,7 @@ exports.middle = (req,res,next)->
 			res.redirect url
 		else
 			User.regbyOpenId openid,(err,user)->
+				console.log err,user
 				res.cookie "userid",user._id
 				res.cookie "openid",openid
 				Inte.newInte user._id,100,"初次注册赠送积分活动,100积分",(err,inte)->
