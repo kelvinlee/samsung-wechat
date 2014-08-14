@@ -1,6 +1,6 @@
 extends layout
 block content_here
-	-function getDates(date){ if (date == null){return "";} return date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds(); }
+	-function getDates(date){ if (date == null){return "";} return date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate(); }
 	.content
 		div.content-padded
 			-if (lucky != null)
