@@ -262,7 +262,7 @@ exports.luckyframe = (req,res,next)->
 
 # exports.luckylist = (req,res,next)->
 	
-		
+
 
 
 exports.getlucky = (req,res,next)->
@@ -278,7 +278,6 @@ exports.getlucky = (req,res,next)->
 				console.log lot
 				# 游戏页面，抽奖概率，奖品单页
 				# 存入中奖信息, 然后更新数据库.
-
 
 				# rewritelot = Math.round(Math.random()*6)
 				# switch rewritelot
@@ -308,7 +307,8 @@ exports.getlucky = (req,res,next)->
 				# console.log "中奖号码:#{lot}"
 				# 暂时取消中奖
 				# lot = 100000
-
+				# lot = 11
+				
 				if lot is 8
 					console.log "平板"
 					# samsung tab s
@@ -537,8 +537,8 @@ exports.comments = (req,res,next)->
 exports.lucky = (req,res,next)->
 
 	res.locals.menu_lucky = "active"
-
-	res.render "lucky"
+	Warehouse.getWinnerByUid req.cookies.userid,(err,resutls)->
+		res.render "lucky",{luckylist:resutls}
 
 exports.art = (req,res,next)->
 	art = "active-"+req.params.art_id

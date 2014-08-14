@@ -59,6 +59,13 @@ block content_here
 				//- a#luckysubmit(href="http://wservice.yazuosoft.com/yazuo-weixin/weixin/phonePage/registerPage.do?brandId=1631&weixinId=o_bYSuF_emkC8kJ6MZOgK_4o7i9U&from=singlemessage&isappinstalled=0",style="display:none;")
 				a#luckysubmit(href="meizhoudongpojituan",style="display:none;")
 					img(src="/img/submit-lucky.png")
+			-if (luckylist!=null)
+				div.lucky-list
+					ul
+						li.lucky-title 恭喜你获得以下奖品:
+						-for(var i=0;i<luckylist.length;i++)
+							li 
+								a(href="/sign/winner/#{luckylist[i]._id}") #{luckylist[i].content}
 			div.lucky-content
 				img(src="/img/lucky-content.png")
 

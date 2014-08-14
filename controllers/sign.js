@@ -600,7 +600,11 @@ exports.comments = function(req, res, next) {
 
 exports.lucky = function(req, res, next) {
   res.locals.menu_lucky = "active";
-  return res.render("lucky");
+  return Warehouse.getWinnerByUid(req.cookies.userid, function(err, resutls) {
+    return res.render("lucky", {
+      luckylist: resutls
+    });
+  });
 };
 
 exports.art = function(req, res, next) {
