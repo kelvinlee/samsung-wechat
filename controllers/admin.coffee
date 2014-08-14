@@ -24,6 +24,11 @@ Noconcern = "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200560267&idx=
 
 
 
+exports.lucky = (req,res,next)->
+	Warehouse.winnerlist (err,resultes)->
+		res.render "admin/lucky",{"lucky":resultes}
+		
+
 exports.addlot = (req,res,next)->
 	Lots.getLots (err,list)->
 		res.render "admin/addlot",{list:list}

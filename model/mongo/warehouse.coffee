@@ -36,6 +36,9 @@ exports.getWinnerById = getWinnerById
 getWinnerByUid = (id,callback)->
 	Winner.find {usedby:id},callback
 exports.getWinnerByUid = getWinnerByUid
+winnerlist = (callback)->
+	Winner.find().sort({create_at:-1}).exec callback
+exports.winnerlist = winnerlist
 
 exports.updatewinner = (id,username,mobile,adr,callback)->
 	getWinnerById id,(err,win)->

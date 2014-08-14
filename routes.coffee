@@ -86,6 +86,9 @@ module.exports = (app)->
   app.get "/admin/newtopic", admin.newtopic
   app.get "/admin/deltopic/:t_id", admin.deltopic
 
+  app.get "/admin/lucky", admin.lucky
+
+
 
   # app.get '*', note.notfind
 

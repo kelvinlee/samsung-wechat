@@ -35,6 +35,14 @@ Authorize_Url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + c
 
 Noconcern = "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200560267&idx=1&sn=ff18fdd9bbf0efe2dde9ccc8d3028fb4#rd";
 
+exports.lucky = function(req, res, next) {
+  return Warehouse.winnerlist(function(err, resultes) {
+    return res.render("admin/lucky", {
+      "lucky": resultes
+    });
+  });
+};
+
 exports.addlot = function(req, res, next) {
   return Lots.getLots(function(err, list) {
     return res.render("admin/addlot", {

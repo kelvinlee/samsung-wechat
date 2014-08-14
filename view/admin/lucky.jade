@@ -1,0 +1,19 @@
+extends layout
+block content_here
+	.content
+		div.content-padded
+			-if (lucky != null)
+				table(style="text-align:left;width:100%")
+					thead
+						tr
+							th.sorting_desc 电话
+							th 姓名
+							th 奖品
+							th 地址 
+					tbody
+						-for(var i=0;i<lucky.length;i++)
+							tr
+								td #{lucky[i].mobile} 
+								td #{lucky[i].username}
+								td #{lucky[i].content}
+								td #{lucky[i].adr}
