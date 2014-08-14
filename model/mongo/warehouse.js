@@ -77,7 +77,9 @@ getWinnerByUid = function(id, callback) {
 exports.getWinnerByUid = getWinnerByUid;
 
 winnerlist = function(callback) {
-  return Winner.find().sort({
+  return Winner.find({
+    used: true
+  }).sort({
     create_at: -1
   }).exec(callback);
 };
