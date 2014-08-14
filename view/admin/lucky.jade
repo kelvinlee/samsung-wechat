@@ -1,5 +1,6 @@
 extends layout
 block content_here
+	-function getDates(date){ if (date == null){return "";} return date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds(); }
 	.content
 		div.content-padded
 			-if (lucky != null)
@@ -17,3 +18,4 @@ block content_here
 								td #{lucky[i].username}
 								td #{lucky[i].content}
 								td #{lucky[i].adr}
+								td #{getDates(lucky[i].create_at)}
