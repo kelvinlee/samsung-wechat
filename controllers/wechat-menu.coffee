@@ -72,28 +72,28 @@ magazine = -> return {
 	type:"news"
 	items: [
 		{
-			title:"新潮电子 ︳Samsung GALAXY K zoom 极视界 致手机"
-			description: '新潮电子 ︳Samsung GALAXY K zoom 极视界 致手机'
-			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGG6uUDMBE7qiaVlx22cbJ66bDicun4KicAIwnQNVa1vLFcMhViaoqyEbPLQ/0"
-			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=1&sn=15090e2e6a8708a6cf9e5373dcf061a8#rd"
+			title:"星炫刊 ︳我们与 Samsung GALAXY Tab S 的色彩故事"
+			description: '星炫刊 ︳我们与 Samsung GALAXY Tab S 的色彩故事'
+			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzM7uFF29KWYB3HePFqWtoicwicuEZJhh9GTibeBQibCugllg2uYSKzRzbJ1WOVEeibXDxQic3CicicOEEXdXw/0"
+			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=1&sn=ae32c9b9fd34996932f72d4ee173b69c#rd"
 		}
 		{
-			title:"华夏地理 ︳国宝浙江"
-			description: '华夏地理 ︳国宝浙江'
-			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGXeDqDHibykBPPSXHxggTYdKbhOJPj81mkZnSiciahfEESnrIhLQZdtbkg/0"
-			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=2&sn=b050f7dfe3e5aab18f1a667413318631#rd"
+			title:"时尚健康 ︳李冰冰 拥抱生活，随心做自己"
+			description: '时尚健康 ︳李冰冰 拥抱生活，随心做自己'
+			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzM7uFF29KWYB3HePFqWtoicwz9LjbFIFmQEB9nia5dJf2bsjSxfOepMJI138icjOiaRpbygPCKvgHzCSg/0"
+			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=2&sn=ada286e859560db1270408723163276a#rd"
 		}
 		{
-			title:"瑞丽服饰美容 ︳戴对表，秒变韩剧女主角"
-			description: '瑞丽服饰美容 ︳戴对表，秒变韩剧女主角'
-			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGHS2qliaoQ2yDM8jvVggzoWSmaTor6FJvJLfviahUzrnvnoAFtomNSSNA/0"
-			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=3&sn=357c8eb2b5550bd4d9cac3fc3c284f8e#rd"
+			title:"时尚旅游 ︳神秘南美，写实人生"
+			description: '时尚旅游 ︳神秘南美，写实人生'
+			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzM7uFF29KWYB3HePFqWtoicwLYzp0icM1EINIc3uGlvhWojT1VqhxEOARWGlyXwXzeDbDvxW9DibKd9Q/0"
+			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=3&sn=ae8a9084e3205f8cbc9fc0ad873f77f3#rd"
 		}
 		{
-			title:"时尚芭莎 ︳Angelababy 活得开心 做到最好"
-			description: '时尚芭莎 ︳Angelababy 活得开心 做到最好'
-			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGbeZ5fIhQV8m9Lw712mtOYb01aden2Vsa7Jr9FmtpDnPpHp0zcjKsug/0"
-			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559296&idx=4&sn=2581fb570a19e435c6b35050598a9444#rd"
+			title:"名车志 ︳超豪华杀器，让你体验更多"
+			description: '名车志 ︳超豪华杀器，让你体验更多'
+			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzM7uFF29KWYB3HePFqWtoicwiaDDkRwYGpIyXmwgNlbsrcBcR877Ad1eVfM0jCH0uAFo10fJetib7omA/0"
+			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=4&sn=979f46d7f03d3affdc746e27780e44b3#rd"
 		}
 	]
 }
