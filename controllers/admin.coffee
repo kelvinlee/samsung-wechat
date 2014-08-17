@@ -18,6 +18,8 @@ Lots = require('../model/mongo').Lots
 Warehouse = require('../model/mongo').Warehouse
 Topic = require('../model/mongo').Topic
 Comment = require('../model/mongo').Comment
+TopicLot = require('../model/mongo').TopicLot
+
 # 需要授权
 Authorize_Url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{config.APPID}&redirect_uri={url}&response_type=code&scope=snsapi_userinfo&state={state}#wechat_redirect"
 Noconcern = "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200560267&idx=1&sn=ff18fdd9bbf0efe2dde9ccc8d3028fb4#rd"
@@ -53,7 +55,7 @@ exports.topic = (req,res,next)->
 				res.render "admin/topic",{topic:t,comments:comments}
 		else
 			res.render "admin/topic",{topic:t}
-	
+
 exports.delcomment = (req,res,next)->
 	# 删除留言
 	id = req.params.c_id
@@ -71,11 +73,18 @@ exports.deltopic = (req,res,next)->
 		# console.log err,c
 		t.remove()
 	res.redirect "/admin/topic"
-	
+
+exports.topiclot = (req,res,next)->
+	nickname = req.body.nickname
+	User.getUserByNickname nickname,(err,resultes)->
+		res.render "admin/topiclot",{list:resultes}
+
+exports.topiclotlist = (req,res,next)->
+	TopicLot.getTopiclotList (err,list)->
+		res.render "admin/topiclotlist",{list:list}
 
 # 初始化一个话题
 exports.setDefaultTopic = (req,res,next)->
-
 	# 标题
 	name = req.body.name
 	# 简介

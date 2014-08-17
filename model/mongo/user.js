@@ -40,6 +40,12 @@ exports.getUsersByQuery = function(query, opt, callback) {
   return User.find(query, null, opt, callback);
 };
 
+exports.getUserByNickname = function(nickname, callback) {
+  return User.find({
+    nickname: nickname
+  }, callback);
+};
+
 exports.regbyOpenId = function(openid, callback) {
   var user;
   user = new User();

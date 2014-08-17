@@ -1,0 +1,39 @@
+extends layout
+block content_here
+	.content 
+		.content-padded
+			form(method="POST",name="register",action="/admin/topiclot")
+				label(for="nickname") 中奖人:
+				input#nickname(name="nickname",type="text")
+				label(for="lot") 奖品:
+				input#lot(name="lot",type="text")
+				p
+					input.btn.btn-primary(type="button",onclick="post()",value="提交")
+				p
+					a.btn.btn-default(href="/admin/topic") 返回
+
+block js_here
+	script.
+		var _submit = false;
+		function post() {
+			if (_submit) {return alert("已经提交请稍后.");}
+			_submit = true;
+			$.ajax({
+				async: false,
+				url: $('[name=register]').attr("action"),
+				type: 'POST',
+				data: $('[name=register]').serializeArray(),
+				dataType: 'json',
+				context: $('body'),
+				success: function(msg) {
+					//- console.log(msg);
+					//- alert('a');
+					if (msg.recode === 200) { 
+						window.location.href="/admin/topic";
+					} else {
+						_submit = false;
+						return alert(msg.reason);
+					}
+				}
+			});
+		}

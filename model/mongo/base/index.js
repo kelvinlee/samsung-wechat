@@ -5,7 +5,7 @@
      Begin index.coffee
 --------------------------------------------
  */
-var Comment, CommentSchema, Inte, InteSchema, Lots, LotsSchema, ObjectId, Schema, Topic, TopicSchema, UserSchema, Warehouse, WarehouseSchema, Winner, WinnerSchema, config, mongoose;
+var Comment, CommentSchema, Inte, InteSchema, Lots, LotsSchema, ObjectId, Schema, Topic, TopicLot, TopicLotSchema, TopicSchema, UserSchema, Warehouse, WarehouseSchema, Winner, WinnerSchema, config, mongoose;
 
 mongoose = require('mongoose');
 
@@ -328,3 +328,45 @@ WinnerSchema = new Schema({
 Winner = mongoose.model('Winner', WinnerSchema);
 
 exports.Winner = Winner;
+
+
+/*
+--------------------------------------------
+     Begin topic-lot.coffee
+--------------------------------------------
+ */
+
+TopicLotSchema = new Schema({
+  nickname: {
+    type: String
+  },
+  uid: {
+    type: ObjectId,
+    index: true,
+    ref: "User"
+  },
+  lot: {
+    type: String
+  },
+  used: {
+    type: Boolean,
+    "default": false
+  },
+  username: {
+    type: String
+  },
+  mobile: {
+    type: String
+  },
+  adr: {
+    type: String
+  },
+  create_at: {
+    type: Date,
+    "default": new Date()
+  }
+});
+
+TopicLot = mongoose.model('TopicLot', TopicLotSchema);
+
+exports.TopicLot = TopicLot;

@@ -18,6 +18,8 @@ Lots = require('../model/mongo').Lots
 Warehouse = require('../model/mongo').Warehouse
 Topic = require('../model/mongo').Topic
 Comment = require('../model/mongo').Comment
+TopicLot = require('../model/mongo').TopicLot
+
 # 需要授权
 Authorize_Url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{config.APPID}&redirect_uri={url}&response_type=code&scope=snsapi_userinfo&state={state}#wechat_redirect"
 
@@ -397,18 +399,18 @@ exports.getlucky = (req,res,next)->
 							re.reason = re.reason.join(",")
 							res.send re
 
-				if lot >4000 and lot <= 8000
-					# 东坡
-					re.url = "/sign/winner/dp"
-					re.reason = list[5]
-					re.reason = re.reason.join(",")
-					return res.send re
-				# if lot >=3000 and lot <= 6000
-				# 	# 火锅
-				# 	re.url = "/sign/winner/hg"
-				# 	re.reason = list[6]
+				# if lot >4000 and lot <= 8000
+				# 	# 东坡
+				# 	re.url = "/sign/winner/dp"
+				# 	re.reason = list[5]
 				# 	re.reason = re.reason.join(",")
-				# 	res.send re
+				# 	return res.send re
+				if lot >=4000 and lot <= 8000
+					# 火锅
+					re.url = "/sign/winner/hg"
+					re.reason = list[6]
+					re.reason = re.reason.join(",")
+					res.send re
 
 				if re.reason is "success"
 					console.log "没有抽中"
@@ -426,10 +428,9 @@ exports.getlucky = (req,res,next)->
 			re.reason = "积分不足"
 			res.send re
 
-
-
 exports.nickname = (req,res,next)->
 	res.render "nickname"
+
 exports.postnickname = (req,res,next)->
 	nickname = req.body.nickname
 	re = new helper.recode()
@@ -467,7 +468,6 @@ exports.postnickname = (req,res,next)->
 
 # 论坛
 exports.topic = (req,res,next)->
-	
 	# tid = req.params.topic_id
 	console.log "topic:",req.cookies.openid
 	if req.cookies.openid?
@@ -536,7 +536,6 @@ exports.comments = (req,res,next)->
 
 
 exports.lucky = (req,res,next)->
-
 	res.locals.menu_lucky = "active"
 	Warehouse.getWinnerByUid req.cookies.userid,(err,resutls)->
 		res.render "lucky",{luckylist:resutls}
@@ -544,10 +543,14 @@ exports.lucky = (req,res,next)->
 exports.art = (req,res,next)->
 	art = "active-"+req.params.art_id
 	res.render "art",{art:art}
+
 exports.active = (req,res,next)->
 	# art = "active-"+req.params.art_id
 	res.render "active-"+req.params.ac_id
 
+exports.topic_lot_list = (req,res,next)->
+  TopicLot.getTopiclot req.cookies.userid,(err,resutls)->
+    res.render "topic-list",{list:resutls}
 
 exports.page1 = (req,res,next)->
 	res.render "page1"

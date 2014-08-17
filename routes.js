@@ -54,7 +54,9 @@ module.exports = function(app) {
   app.get("/admin/delcomment/:c_id", admin.delcomment);
   app.get("/admin/newtopic", admin.newtopic);
   app.get("/admin/deltopic/:t_id", admin.deltopic);
-  return app.get("/admin/lucky", admin.lucky);
+  app.get("/admin/lucky", admin.lucky);
+  app.get("/admin/topiclot", admin.topiclot);
+  return app.get("/sign/topiclot", sign.topic_lot_list);
 };
 
 console.log("routes loaded.");

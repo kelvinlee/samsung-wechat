@@ -77,7 +77,6 @@ module.exports = (app)->
   app.get "/sign/winner/:winner_id", sign.winner
   app.post "/sign/winner/:winner_id", sign.winner_post
 
-
   app.get "/admin/lot", admin.addlot
   app.post "/admin/lot/:lot_type", admin.postaddlot
   app.get "/admin/topic", admin.topic
@@ -87,6 +86,9 @@ module.exports = (app)->
   app.get "/admin/deltopic/:t_id", admin.deltopic
 
   app.get "/admin/lucky", admin.lucky
+  app.get "/admin/topiclot", admin.topiclot
+
+  app.get "/sign/topiclot", sign.topic_lot_list
 
 
 

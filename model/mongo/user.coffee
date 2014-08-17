@@ -13,7 +13,8 @@ exports.findByNickname = (nickname,callback)->
   User.findOne {nickname:nickname}, callback
 exports.getUsersByQuery = (query, opt, callback)->
 	User.find query, null, opt, callback
-
+exports.getUserByNickname = (nickname,callback)->
+  User.find {nickname:nickname}, callback
 
 
 exports.regbyOpenId = (openid,callback)->
