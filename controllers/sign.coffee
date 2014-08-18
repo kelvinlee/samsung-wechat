@@ -277,7 +277,7 @@ exports.getlucky = (req,res,next)->
 		if resutls >= 50
 			Inte.newInte req.cookies.userid,-50,"抽奖",(err,int)->
 				list = [[14,14,14],[14,14,12],[14,12,12],[15,15,15],[13,13,13],[12,12,11],[11,11,11]]
-				lot = Math.round(Math.random()*100000)
+				lot = Math.round(Math.random()*20000)
 				console.log lot
 				# 游戏页面，抽奖概率，奖品单页
 				# 存入中奖信息, 然后更新数据库.

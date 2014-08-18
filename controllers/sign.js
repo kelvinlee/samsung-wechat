@@ -341,7 +341,7 @@ exports.getlucky = function(req, res, next) {
       return Inte.newInte(req.cookies.userid, -50, "抽奖", function(err, int) {
         var list, lot, none;
         list = [[14, 14, 14], [14, 14, 12], [14, 12, 12], [15, 15, 15], [13, 13, 13], [12, 12, 11], [11, 11, 11]];
-        lot = Math.round(Math.random() * 100000);
+        lot = Math.round(Math.random() * 20000);
         console.log(lot);
         if (lot === 8) {
           console.log("平板");
