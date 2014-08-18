@@ -13,9 +13,10 @@ block content_here
 							th 地址 
 					tbody
 						-for(var i=0;i<lucky.length;i++)
-							tr
-								td #{lucky[i].mobile} 
-								td #{lucky[i].username}
-								td #{lucky[i].content}
-								td #{lucky[i].adr}
-								td #{getDates(lucky[i].create_at)}
+							-if (lucky[i].content != "六等奖")
+								tr
+									td #{lucky[i].mobile} 
+									td #{lucky[i].username}
+									td #{lucky[i].content}
+									td #{lucky[i].adr}
+									td #{getDates(lucky[i].create_at)}
