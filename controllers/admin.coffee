@@ -74,14 +74,45 @@ exports.deltopic = (req,res,next)->
 		t.remove()
 	res.redirect "/admin/topic"
 
+exports.topiclotpage = (req,res,next)->
+	res.render "admin/topiclot"
+
 exports.topiclot = (req,res,next)->
+	console.log req.body
 	nickname = req.body.nickname
+	lot = req.body.lot
+	re = new helper.recode()
+	if not lot? or lot is ""
+		re.recode = 201
+		re.reason = "奖品不能为空"
+	if not nickname? or nickname is ""
+		re.recode = 201
+		re.reason = "中奖人昵称不能为空"
+	if re.recode isnt 200
+		return res.send re
+
 	User.getUserByNickname nickname,(err,resultes)->
-		res.render "admin/topiclot",{list:resultes}
+		console.log "中奖人信息:",resultes
+		if resultes?
+			TopicLot.newtopiclot nickname,resultes._id,lot,(err,resulte)->
+				res.send re
+			# res.render "admin/topiclot",{list:resultes}
+		else
+			re.recode = 201
+			re.reason = "昵称不存在,请确认名称."
+			res.send re
+
 
 exports.topiclotlist = (req,res,next)->
 	TopicLot.getTopiclotList (err,list)->
 		res.render "admin/topiclotlist",{list:list}
+
+exports.deltopic = (req,res,next)->
+	id = req.params.id
+	TopicLot.getId id,(err,resultes)->
+		resultes.remove()
+	res.redirect "/admin/topiclotlist"
+
 
 # 初始化一个话题
 exports.setDefaultTopic = (req,res,next)->

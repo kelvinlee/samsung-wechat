@@ -1,0 +1,63 @@
+extends layout
+block title
+	| 恭喜您中奖啦
+block content_here
+	.content
+		.content-padded
+			form(name="register",action="/sign/tlot/#{winner._id}").form
+				.form-title
+					img(src="/img/lots-title.png")
+				.form-list
+					table
+						tr
+							td.t 奖品
+							td
+								input(type="text",name="lot",value="#{winner.lot}",readonly)
+						tr
+							td.t 姓名
+							td
+								input(type="text",name="username")
+						tr
+							td.t 电话
+							td 
+								input(type="text",name="mobile")
+						tr
+							td.t 邮寄地址
+							td
+								input(type="text",name="adr")
+				.btns
+					div.btn-s(name="submit")
+						img(src="/img/submit-lucky.png")
+
+
+block js_here
+	script.
+		var dataForWeixin={
+		appId:  "",
+		img:    "#{config.host}/img/weixin-jianianhua.jpg",
+		url:    "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200560267&idx=1&sn=ff18fdd9bbf0efe2dde9ccc8d3028fb4#rd",
+		title:  "三星乐园嘉年华，关注有礼赢大奖",
+		desc:   "关注得积分，抽奖有惊喜，赢取Samsung GALAXY Tab S 等千份好礼~" || location.href || "For protection, click the condoms now.",
+		fakeid: "",
+		};
+	script(src="/js/weixin.js")
+	script.
+		$(document).ready(function(){
+			//- $("body,.content").css({"position":"relative"});
+			$("[name=submit]").click(function(){
+				$.ajax({
+					url:$('[name=register]').attr("action"),
+					type: 'POST',
+					data: $('[name=register]').serializeArray(),
+					dataType: 'json',
+					success: function(msg){
+						if (msg.recode == 200){
+							showalert("提交成功,已经将您的信息存入,请不要重复提交.");
+							//- window.location.reload();
+						}else{
+							showalert(msg.reason);
+						}
+					}
+				});
+			});
+		});

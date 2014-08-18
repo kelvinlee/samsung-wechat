@@ -7,6 +7,7 @@ block content_here
 				input#nickname(name="nickname",type="text")
 				label(for="lot") 奖品:
 				input#lot(name="lot",type="text")
+				p 注意,添加到奖品里的并不显示,依旧需要在话题内添加中奖人信息.
 				p
 					input.btn.btn-primary(type="button",onclick="post()",value="提交")
 				p
@@ -26,10 +27,10 @@ block js_here
 				dataType: 'json',
 				context: $('body'),
 				success: function(msg) {
-					//- console.log(msg);
+					//- return console.log(msg);
 					//- alert('a');
 					if (msg.recode === 200) { 
-						window.location.href="/admin/topic";
+						window.location.href="/admin/topiclotlist";
 					} else {
 						_submit = false;
 						return alert(msg.reason);

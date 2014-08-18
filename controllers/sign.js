@@ -624,9 +624,67 @@ exports.active = function(req, res, next) {
 
 exports.topic_lot_list = function(req, res, next) {
   return TopicLot.getTopiclot(req.cookies.userid, function(err, resutls) {
+    console.log(req.cookies.userid, resutls);
     return res.render("topic-list", {
       list: resutls
     });
+  });
+};
+
+exports.topic_lot = function(req, res, next) {
+  var id;
+  id = req.params.id;
+  return TopicLot.getId(id, function(err, resutls) {
+    return res.render("tlots", {
+      winner: resutls
+    });
+  });
+};
+
+exports.topic_lot_post = function(req, res, next) {
+  var adr, check, id, mobile, re, username;
+  id = req.params.id;
+  username = req.body.username;
+  mobile = req.body.mobile;
+  adr = req.body.adr;
+  re = new helper.recode();
+  if ((username == null) || username === "") {
+    re.recode = 201;
+    re.reason = "姓名不能为空";
+  }
+  if ((mobile == null) || mobile === "") {
+    re.recode = 201;
+    re.reason = "手机号码不能为空";
+  }
+  check = /^[1][3-8]\d{9}$/;
+  if (!check.test(mobile)) {
+    re.recode = 201;
+    re.reason = "请验证手机号码格式";
+  }
+  if ((adr == null) || adr === "") {
+    re.recode = 201;
+    re.reason = "请输入邮寄地址";
+  }
+  if (re.recode !== 200) {
+    return res.send(re);
+  }
+  return TopicLot.getId(id, function(err, resutls) {
+    if ((resutls != null) && resutls.used) {
+      re.recode = 201;
+      re.reason = "此奖品已经兑换过了";
+      return res.send(re);
+    } else if ((resutls != null) && resutls.uid + "" === req.cookies.userid) {
+      resutls.used = true;
+      resutls.username = username;
+      resutls.mobile = mobile;
+      resutls.adr = adr;
+      resutls.save();
+      return res.send(re);
+    } else {
+      re.recode = 201;
+      re.reason = "您不是此奖品的获得人.";
+      return res.send(re);
+    }
   });
 };
 

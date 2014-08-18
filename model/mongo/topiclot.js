@@ -15,10 +15,18 @@ exports.getTopiclot = function(uid, callback) {
   }, callback);
 };
 
-exports.newtopiclot = function(nickname, uid, callback) {
+exports.getId = function(id, callback) {
+  return TopicLot.findOne({
+    _id: id
+  }, callback);
+};
+
+exports.newtopiclot = function(nickname, uid, topiclot, callback) {
   var lot;
+  console.log(nickname, uid, lot);
   lot = new TopicLot();
   lot.nickname = nickname;
   lot.uid = uid;
+  lot.lot = topiclot;
   return lot.save(callback);
 };

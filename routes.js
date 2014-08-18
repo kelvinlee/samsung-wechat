@@ -55,8 +55,13 @@ module.exports = function(app) {
   app.get("/admin/newtopic", admin.newtopic);
   app.get("/admin/deltopic/:t_id", admin.deltopic);
   app.get("/admin/lucky", admin.lucky);
-  app.get("/admin/topiclot", admin.topiclot);
-  return app.get("/sign/topiclot", sign.topic_lot_list);
+  app.get("/admin/topiclotlist", admin.topiclotlist);
+  app.get("/admin/topiclot", admin.topiclotpage);
+  app.get("/admin/deltopiclot/:id", admin.deltopic);
+  app.post("/admin/topiclot", admin.topiclot);
+  app.get("/sign/topiclot", sign.topic_lot_list);
+  app.get("/sign/tlot/:id", sign.topic_lot);
+  return app.post("/sign/tlot/:id", sign.topic_lot_post);
 };
 
 console.log("routes loaded.");

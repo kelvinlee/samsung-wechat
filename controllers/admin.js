@@ -104,13 +104,38 @@ exports.deltopic = function(req, res, next) {
   return res.redirect("/admin/topic");
 };
 
+exports.topiclotpage = function(req, res, next) {
+  return res.render("admin/topiclot");
+};
+
 exports.topiclot = function(req, res, next) {
-  var nickname;
+  var lot, nickname, re;
+  console.log(req.body);
   nickname = req.body.nickname;
+  lot = req.body.lot;
+  re = new helper.recode();
+  if ((lot == null) || lot === "") {
+    re.recode = 201;
+    re.reason = "奖品不能为空";
+  }
+  if ((nickname == null) || nickname === "") {
+    re.recode = 201;
+    re.reason = "中奖人昵称不能为空";
+  }
+  if (re.recode !== 200) {
+    return res.send(re);
+  }
   return User.getUserByNickname(nickname, function(err, resultes) {
-    return res.render("admin/topiclot", {
-      list: resultes
-    });
+    console.log("中奖人信息:", resultes);
+    if (resultes != null) {
+      return TopicLot.newtopiclot(nickname, resultes._id, lot, function(err, resulte) {
+        return res.send(re);
+      });
+    } else {
+      re.recode = 201;
+      re.reason = "昵称不存在,请确认名称.";
+      return res.send(re);
+    }
   });
 };
 
@@ -120,6 +145,15 @@ exports.topiclotlist = function(req, res, next) {
       list: list
     });
   });
+};
+
+exports.deltopic = function(req, res, next) {
+  var id;
+  id = req.params.id;
+  TopicLot.getId(id, function(err, resultes) {
+    return resultes.remove();
+  });
+  return res.redirect("/admin/topiclotlist");
 };
 
 exports.setDefaultTopic = function(req, res, next) {

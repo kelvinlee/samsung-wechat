@@ -1,0 +1,12 @@
+extends layout
+block content_here
+	.content 
+		.content-padded
+			p
+				a.btn(href="/admin/topic") 返回
+			ul
+				-for (var i=0;i<list.length;i++)
+					li 奖品: #{list[i].lot} 中奖人:#{list[i].nickname}
+						a.btn.btn-negative(style="float:right;",href="/admin/deltopiclot/#{list[i]._id}",onclick="return confirm('确定要删除此中奖吗?')") 删除
+						-if (list[i].username != null)
+							p 用户名: #{list[i].username}, 手机号: #{list[i].mobile}, 地址: #{list[i].adr}

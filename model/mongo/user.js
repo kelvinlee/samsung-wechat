@@ -41,7 +41,7 @@ exports.getUsersByQuery = function(query, opt, callback) {
 };
 
 exports.getUserByNickname = function(nickname, callback) {
-  return User.find({
+  return User.findOne({
     nickname: nickname
   }, callback);
 };

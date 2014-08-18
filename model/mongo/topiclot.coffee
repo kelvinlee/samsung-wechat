@@ -7,8 +7,14 @@ exports.getTopiclotList = (callback)->
 exports.getTopiclot = (uid,callback)->
 	TopicLot.find {uid:uid},callback
 
-exports.newtopiclot = (nickname,uid,callback)->
+exports.getId = (id,callback)->
+	TopicLot.findOne {_id:id},callback
+
+
+exports.newtopiclot = (nickname,uid,topiclot,callback)->
+	console.log nickname,uid,lot
 	lot = new TopicLot()
 	lot.nickname = nickname
 	lot.uid = uid
+	lot.lot = topiclot
 	lot.save callback

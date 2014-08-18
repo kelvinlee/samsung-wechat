@@ -86,9 +86,15 @@ module.exports = (app)->
   app.get "/admin/deltopic/:t_id", admin.deltopic
 
   app.get "/admin/lucky", admin.lucky
-  app.get "/admin/topiclot", admin.topiclot
+  app.get "/admin/topiclotlist",admin.topiclotlist
+  app.get "/admin/topiclot", admin.topiclotpage
+  app.get "/admin/deltopiclot/:id", admin.deltopic
+  app.post "/admin/topiclot", admin.topiclot
+
 
   app.get "/sign/topiclot", sign.topic_lot_list
+  app.get "/sign/tlot/:id", sign.topic_lot
+  app.post "/sign/tlot/:id", sign.topic_lot_post
 
 
 

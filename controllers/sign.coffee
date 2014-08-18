@@ -550,7 +550,55 @@ exports.active = (req,res,next)->
 
 exports.topic_lot_list = (req,res,next)->
   TopicLot.getTopiclot req.cookies.userid,(err,resutls)->
+    console.log req.cookies.userid,resutls
     res.render "topic-list",{list:resutls}
+
+exports.topic_lot = (req,res,next)->
+	id = req.params.id
+	TopicLot.getId id,(err,resutls)->
+		res.render "tlots",{winner:resutls}
+
+exports.topic_lot_post = (req,res,next)->
+	id = req.params.id
+	username = req.body.username
+	mobile = req.body.mobile
+	adr = req.body.adr
+	re = new helper.recode()
+
+	if not username? or username is ""
+		re.recode = 201
+		re.reason = "姓名不能为空"
+	if not mobile? or mobile is ""
+		re.recode = 201
+		re.reason = "手机号码不能为空"
+	check = /^[1][3-8]\d{9}$/
+	if not check.test mobile
+		re.recode = 201
+		re.reason = "请验证手机号码格式"
+	if not adr? or adr is ""
+		re.recode = 201
+		re.reason = "请输入邮寄地址"
+	if re.recode isnt 200
+		return res.send re
+
+	TopicLot.getId id,(err,resutls)->
+		# console.log resutls.uid,req.cookies.userid
+		if resutls? and resutls.used
+			re.recode = 201
+			re.reason = "此奖品已经兑换过了"
+			res.send re
+		else if resutls? and resutls.uid+"" is req.cookies.userid
+			resutls.used = true
+			resutls.username = username
+			resutls.mobile = mobile
+			resutls.adr = adr
+			resutls.save()
+			res.send re
+		else
+			re.recode = 201
+			re.reason = "您不是此奖品的获得人."
+			res.send re
+
 
 exports.page1 = (req,res,next)->
 	res.render "page1"

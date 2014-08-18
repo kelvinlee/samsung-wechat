@@ -1,0 +1,8 @@
+extends layout
+block content_here
+	.content 
+		.content-padded
+			ul
+				-for (var i=0;i<list.length;i++)
+					li 奖品: #{list[i].lot} 中奖人:#{list[i].nickname}
+						a(href="/admin/deltopiclot/#{list[i]._id}") 删除

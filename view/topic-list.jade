@@ -1,0 +1,17 @@
+extends layout
+block title
+	| 聊话题
+block content_here
+	.content
+		.content-padded
+			p
+				a.btn.btn-default(href="/sign/topic") 返回
+			-if (list.length>0)
+				ul
+					-for (var i=0;i<list.length;i++)
+						li 恭喜获得奖品: [#{list[i].lot}]
+							-if (list[i].used)
+								|  [已经兑换]
+							a.btn.btn-primary(href="/sign/tlot/#{list[i]._id}",style="float:right;") 立即兑换
+			-else
+				h2.h2(style="text-align:center;line-height:1.8em;") 抱歉您还没有中奖,多多参与话题讨论就有可能中奖
