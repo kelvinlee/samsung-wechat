@@ -386,7 +386,7 @@ exports.getlucky = (req,res,next)->
 					# 300积分
 					# console.log "300积分"
 					return Inte.getInteAction "抽奖获得,300积分",(err,resutls)->
-						if resutls<300
+						if resutls<500
 							if req.cookies.userid?
 								Inte.newInte req.cookies.userid,300,"抽奖获得,300积分",(err,inte)->
 							re.url = "/sign/winner/300"
@@ -405,12 +405,16 @@ exports.getlucky = (req,res,next)->
 				# 	re.reason = list[5]
 				# 	re.reason = re.reason.join(",")
 				# 	return res.send re
-				if lot >=4000 and lot <= 8000
+				if lot >=4000 and lot <= 14000
 					# 火锅
 					re.url = "/sign/winner/hg"
 					re.reason = list[6]
 					re.reason = re.reason.join(",")
-					res.send re
+					Warehouse.newwinner "hg","六等奖","none",(err,win)->
+						win.used = true
+						win.usedby = req.cookies.userid
+						win.save()
+						res.send re
 
 				if re.reason is "success"
 					console.log "没有抽中"
@@ -419,6 +423,7 @@ exports.getlucky = (req,res,next)->
 					# 13 50元
 					# 12 东坡
 					# 11 火锅 不能和12同时出现
+					
 					none = [[13,12,13],[11,13,15],[13,15,11]]
 					re.reason = none[Math.ceil(Math.random()*(none.length-1))]
 					re.reason = re.reason.join(",")

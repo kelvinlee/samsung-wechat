@@ -426,7 +426,7 @@ exports.getlucky = function(req, res, next) {
         if (lot >= 1500 && lot <= 3000) {
           return Inte.getInteAction("抽奖获得,300积分", function(err, resutls) {
             var none;
-            if (resutls < 300) {
+            if (resutls < 500) {
               if (req.cookies.userid != null) {
                 Inte.newInte(req.cookies.userid, 300, "抽奖获得,300积分", function(err, inte) {});
               }
@@ -442,11 +442,16 @@ exports.getlucky = function(req, res, next) {
             }
           });
         }
-        if (lot >= 4000 && lot <= 8000) {
+        if (lot >= 4000 && lot <= 14000) {
           re.url = "/sign/winner/hg";
           re.reason = list[6];
           re.reason = re.reason.join(",");
-          res.send(re);
+          Warehouse.newwinner("hg", "六等奖", "none", function(err, win) {
+            win.used = true;
+            win.usedby = req.cookies.userid;
+            win.save();
+            return res.send(re);
+          });
         }
         if (re.reason === "success") {
           console.log("没有抽中");
