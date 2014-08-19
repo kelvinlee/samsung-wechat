@@ -28,8 +28,8 @@ welcometext = -> return {
 		{
 			title:"星炫刊 ︳我们与 Samsung GALAXY Tab S 的色彩故事"
 			description: '星炫刊 ︳我们与 Samsung GALAXY Tab S 的色彩故事'
-			picurl:"http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=1&sn=ae32c9b9fd34996932f72d4ee173b69c#rd"
-			url: config.host+"/img/icon-1.jpg"
+			picurl:config.host+"/img/icon-1.jpg"
+			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=1&sn=ae32c9b9fd34996932f72d4ee173b69c#rd"
 		}
 		{
 			title:"搜狐视频独播《巡夜人日志》第一集创韩国月火剧收视冠军！"
