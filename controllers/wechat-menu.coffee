@@ -35,7 +35,7 @@ oversite = -> return {
 	
 }
 jianxingpin = -> return {
-	name:"鉴星品"
+	name:"鉴·星品"
 	key:"1"
 	type:"news"
 	items:[
@@ -58,8 +58,8 @@ jianxingpin = -> return {
 			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=3&sn=a3cefce3da85b400072a9303de8be9e4#rd"
 		}
 		{
-			title:"Samsung GALAXY S Pen 笔随心动，点滴记录"
-			description: 'Samsung GALAXY S Pen 笔随心动，点滴记录'
+			title:"S Pen魔幻之笔，点你所需，触你所想"
+			description: 'S Pen魔幻之笔，点你所需，触你所想'
 			picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGPFib5A84LCWuIS7LAKlAqE1al4wd4dWoXUlhcbfGBtLq5dJgjQeCCUQ/0"
 			url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=4&sn=84820a9612c169b067729da25596adfe#rd"
 		}
