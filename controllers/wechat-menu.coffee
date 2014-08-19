@@ -1,7 +1,7 @@
 # 根据菜单参数跳转或返回对应数据.
 
 newactive = -> return {
-	name:"新活动"
+	name:"新·活动"
 	key:"1"
 	type:"news"
 	items:[

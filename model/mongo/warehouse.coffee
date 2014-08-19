@@ -36,6 +36,12 @@ exports.getWinnerById = getWinnerById
 getWinnerByUid = (id,callback)->
 	Winner.find {usedby:id},callback
 exports.getWinnerByUid = getWinnerByUid
+
+getWinnerByLotAndUid = (lot,uid,callback)->
+	Winner.find {usedby:uid,content:lot},callback
+exports.getWinnerByLotAndUid = getWinnerByLotAndUid
+
+
 winnerlist = (callback)->
 	Winner.find({used:true}).sort({create_at:-1}).exec callback
 exports.winnerlist = winnerlist

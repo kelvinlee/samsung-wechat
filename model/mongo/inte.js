@@ -28,6 +28,13 @@ exports.getInteAll = function(userid, callback) {
   });
 };
 
+exports.getInteByUid = function(inte, uid, callback) {
+  return Inte.find({
+    inte: 300,
+    userid: uid
+  }).exec(callback);
+};
+
 exports.getInteAction = function(action, callback) {
   return Inte.find({
     action: action

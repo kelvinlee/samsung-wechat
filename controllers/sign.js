@@ -424,33 +424,52 @@ exports.getlucky = function(req, res, next) {
           });
         }
         if (lot >= 1500 && lot <= 3000) {
-          return Inte.getInteAction("抽奖获得,300积分", function(err, resutls) {
+          return Inte.getInteByUid(300, req.cookies.userid, function(err, inte) {
             var none;
-            if (resutls < 500) {
-              if (req.cookies.userid != null) {
-                Inte.newInte(req.cookies.userid, 300, "抽奖获得,300积分", function(err, inte) {});
-              }
-              re.url = "/sign/winner/300";
-              re.reason = list[3];
-              re.reason = re.reason.join(",");
-              return res.send(re);
-            } else {
+            if (inte.length >= 3) {
               none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];
               re.reason = none[Math.ceil(Math.random() * (none.length - 1))];
               re.reason = re.reason.join(",");
               return res.send(re);
             }
+            return Inte.getInteAction("抽奖获得,300积分", function(err, resutls) {
+              if (resutls < 500) {
+                if (req.cookies.userid != null) {
+                  Inte.newInte(req.cookies.userid, 300, "抽奖获得,300积分", function(err, inte) {});
+                }
+                re.url = "/sign/winner/300";
+                re.reason = list[3];
+                re.reason = re.reason.join(",");
+                return res.send(re);
+              } else {
+                none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];
+                re.reason = none[Math.ceil(Math.random() * (none.length - 1))];
+                re.reason = re.reason.join(",");
+                return res.send(re);
+              }
+            });
           });
         }
         if (lot >= 4000 && lot <= 14000) {
-          re.url = "/sign/winner/hg";
-          re.reason = list[6];
-          re.reason = re.reason.join(",");
-          Warehouse.newwinner("hg", "六等奖", "none", function(err, win) {
-            win.used = true;
-            win.usedby = req.cookies.userid;
-            win.save();
-            return res.send(re);
+          return Warehouse.getWinnerByLotAndUid("六等奖", req.cookies.userid, function(err, resutls) {
+            var none;
+            if ((resutls != null) && resutls.length > 0) {
+              console.log("已经中过六等奖.");
+              none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];
+              re.reason = none[Math.ceil(Math.random() * (none.length - 1))];
+              re.reason = re.reason.join(",");
+              return res.send(re);
+            } else {
+              return Warehouse.newwinner("hg", "六等奖", "none", function(err, win) {
+                win.used = true;
+                win.usedby = req.cookies.userid;
+                win.save();
+                re.url = "/sign/winner/hg";
+                re.reason = list[6];
+                re.reason = re.reason.join(",");
+                return res.send(re);
+              });
+            }
           });
         }
         if (re.reason === "success") {

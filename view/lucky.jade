@@ -64,8 +64,12 @@ block content_here
 					ul
 						li.lucky-title 恭喜你获得以下奖品:
 						-for(var i=0;i<luckylist.length;i++)
-							li 
-								a(href="/sign/winner/#{luckylist[i]._id}") #{luckylist[i].content}
+							-if (luckylist[i].content == "六等奖")
+								li
+									a(href="/sign/winner/hg") #{luckylist[i].content}
+							-else
+								li 
+									a(href="/sign/winner/#{luckylist[i]._id}") #{luckylist[i].content}
 			div.lucky-content
 				img(src="/img/lucky-content.png")
 

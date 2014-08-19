@@ -228,7 +228,7 @@ plugs_subscribe = function(message, callback) {
 
 newactive = function() {
   return {
-    name: "新活动",
+    name: "新·活动",
     key: "1",
     type: "news",
     items: [

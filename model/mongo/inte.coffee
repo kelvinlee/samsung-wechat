@@ -10,6 +10,9 @@ exports.getInteAll = (userid,callback)->
 			count = a.total if a._id.userid+"" is userid+""
 		callback null,count
 
+exports.getInteByUid = (inte,uid,callback)->
+	Inte.find({inte:300,userid:uid}).exec callback
+
 exports.getInteAction = (action,callback)->
 	Inte.find({action:action}).count().exec callback
 
