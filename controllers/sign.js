@@ -425,12 +425,24 @@ exports.getlucky = function(req, res, next) {
         }
         if (lot >= 1500 && lot <= 3000) {
           return Inte.getInteByUid(300, req.cookies.userid, function(err, inte) {
-            var none;
+            var none, nowt, nowtx, oldt, oldtx;
             if (inte.length >= 3) {
               none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];
               re.reason = none[Math.ceil(Math.random() * (none.length - 1))];
               re.reason = re.reason.join(",");
               return res.send(re);
+            } else if (inte.length > 0) {
+              oldt = inte[0].create_at;
+              nowt = new Date();
+              oldtx = oldt.getFullYear() + "-" + (oldt.getMonth() + 1) + "-" + oldt.getDate();
+              nowtx = nowt.getFullYear() + "-" + (nowt.getMonth() + 1) + "-" + nowt.getDate();
+              console.log("判断相同日期积分:", oldtx, nowtx);
+              if (oldtx === nowtx) {
+                none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];
+                re.reason = none[Math.ceil(Math.random() * (none.length - 1))];
+                re.reason = re.reason.join(",");
+                return res.send(re);
+              }
             }
             return Inte.getInteAction("抽奖获得,300积分", function(err, resutls) {
               if (resutls < 500) {

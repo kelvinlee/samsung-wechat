@@ -11,7 +11,7 @@ exports.getInteAll = (userid,callback)->
 		callback null,count
 
 exports.getInteByUid = (inte,uid,callback)->
-	Inte.find({inte:300,userid:uid}).exec callback
+	Inte.find({inte:300,userid:uid}).sort({create_at:-1}).exec callback
 
 exports.getInteAction = (action,callback)->
 	Inte.find({action:action}).count().exec callback
@@ -22,7 +22,14 @@ exports.today = (userid,callback)->
 	end = new Date now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+" 23:59:59"
 	console.log "time: #{star} / #{end}"
 	Inte.find {create_at:{$gte:star,$lt:end},action:"regs",userid:userid},callback
-	
+
+exports.today = (userid,callback)->
+	now = new Date()
+	star = new Date now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+" 00:00:00"
+	end = new Date now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+" 23:59:59"
+	console.log "time: #{star} / #{end}"
+	Inte.find {create_at:{$gte:star,$lt:end},action:"regs",userid:userid},callback
+
 exports.newInte = (userid,inte,action,callback)->
 	i = new Inte()
 	i.userid = userid

@@ -32,6 +32,8 @@ exports.getInteByUid = function(inte, uid, callback) {
   return Inte.find({
     inte: 300,
     userid: uid
+  }).sort({
+    create_at: -1
   }).exec(callback);
 };
 
@@ -39,6 +41,22 @@ exports.getInteAction = function(action, callback) {
   return Inte.find({
     action: action
   }).count().exec(callback);
+};
+
+exports.today = function(userid, callback) {
+  var end, now, star;
+  now = new Date();
+  star = new Date(now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + " 00:00:00");
+  end = new Date(now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + " 23:59:59");
+  console.log("time: " + star + " / " + end);
+  return Inte.find({
+    create_at: {
+      $gte: star,
+      $lt: end
+    },
+    action: "regs",
+    userid: userid
+  }, callback);
 };
 
 exports.today = function(userid, callback) {

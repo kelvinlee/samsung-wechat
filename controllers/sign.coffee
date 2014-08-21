@@ -279,7 +279,7 @@ exports.getlucky = (req,res,next)->
 				list = [[14,14,14],[14,14,12],[14,12,12],[15,15,15],[13,13,13],[12,12,11],[11,11,11]]
 				lot = Math.round(Math.random()*20000)
 				console.log lot
-				# 游戏页面，抽奖概率，奖品单页
+				# 游戏页面，抽奖概率，奖品单页,抽奖逻辑
 				# 存入中奖信息, 然后更新数据库.
 
 				# rewritelot = Math.round(Math.random()*6)
@@ -312,7 +312,7 @@ exports.getlucky = (req,res,next)->
 				# lot = 100000
 				# lot = 11
 				# lot = 1600 #300积分
-				
+
 				if lot is 8
 					console.log "平板"
 					# samsung tab s
@@ -392,6 +392,17 @@ exports.getlucky = (req,res,next)->
 							re.reason = none[Math.ceil(Math.random()*(none.length-1))]
 							re.reason = re.reason.join(",")
 							return res.send re
+						else if inte.length>0
+							oldt = inte[0].create_at
+							nowt = new Date()
+							oldtx = oldt.getFullYear()+"-"+(oldt.getMonth()+1)+"-"+oldt.getDate()
+							nowtx = nowt.getFullYear()+"-"+(nowt.getMonth()+1)+"-"+nowt.getDate()
+							console.log "判断相同日期积分:",oldtx,nowtx
+							if oldtx is nowtx
+								none = [[13,12,13],[11,13,15],[13,15,11]]
+								re.reason = none[Math.ceil(Math.random()*(none.length-1))]
+								re.reason = re.reason.join(",")
+								return res.send re
 						return Inte.getInteAction "抽奖获得,300积分",(err,resutls)->
 							if resutls<500
 								if req.cookies.userid?
