@@ -639,9 +639,12 @@ exports.comments = function(req, res, next) {
 
 exports.lucky = function(req, res, next) {
   res.locals.menu_lucky = "active";
-  return Warehouse.getWinnerByUid(req.cookies.userid, function(err, resutls) {
-    return res.render("lucky", {
-      luckylist: resutls
+  Inte.getInteAll(req.cookies.userid, function(err, inte) {
+    return Warehouse.getWinnerByUid(req.cookies.userid, function(err, resutls) {
+      return res.render("lucky", {
+        luckylist: resutls,
+        inte: inte
+      });
     });
   });
 };

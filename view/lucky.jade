@@ -59,6 +59,9 @@ block content_here
 				//- a#luckysubmit(href="http://wservice.yazuosoft.com/yazuo-weixin/weixin/phonePage/registerPage.do?brandId=1631&weixinId=o_bYSuF_emkC8kJ6MZOgK_4o7i9U&from=singlemessage&isappinstalled=0",style="display:none;")
 				a#luckysubmit(href="meizhoudongpojituan",style="display:none;")
 					img(src="/img/submit-lucky.png")
+			div.lucky-inte
+				p 剩余积分:
+					span#jifen #{inte}
 			-if (luckylist!=null && luckylist.length>0)
 				div.lucky-list
 					ul
@@ -205,6 +208,7 @@ block js_here
 				success: function(msg) {
 					if (msg.recode == 200) {
 						getLot(msg.reason,msg.url);
+						$("#jifen").text($("#jifen").text()-50);
 					}else{
 						showalert(msg.reason);
 					}
