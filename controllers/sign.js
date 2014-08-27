@@ -416,11 +416,11 @@ exports.getlucky = function(req, res, next) {
               re.reason = re.reason.join(",");
               return res.send(re);
             } else {
-              return Warehouse.newwinner("hg", "四等奖", "none", function(err, win) {
+              return Warehouse.newwinner("sohugz", "四等奖", "none", function(err, win) {
                 win.used = true;
                 win.usedby = req.cookies.userid;
                 win.save();
-                re.url = "/sign/winner/hg";
+                re.url = "/sign/winner/sohugz";
                 re.reason = list[4];
                 re.reason = re.reason.join(",");
                 return res.send(re);
