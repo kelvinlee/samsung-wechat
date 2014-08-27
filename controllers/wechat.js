@@ -285,9 +285,9 @@ jianxingpin = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBH6fTuuEtLsy7fGvZsBflV9SOpY5iacHiaDd056ZA3aq8HGPxEzzpEq5aw/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=3&sn=a3cefce3da85b400072a9303de8be9e4#rd"
       }, {
-        title: "S Pen魔幻之笔，点你所需，触你所想",
-        description: 'S Pen魔幻之笔，点你所需，触你所想',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGPFib5A84LCWuIS7LAKlAqE1al4wd4dWoXUlhcbfGBtLq5dJgjQeCCUQ/0",
+        title: "现实和想象之间，你只差一支S Pen！",
+        description: '现实和想象之间，你只差一支S Pen！',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOPwleqZ6YIf3gIpsbSpDAFWovUURD2hakiazSdwgiaFzO72OGvX9hGXQ7tCAGAX8A7Ih5icoDQRleYA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=4&sn=84820a9612c169b067729da25596adfe#rd"
       }
     ]
@@ -311,15 +311,15 @@ magazine = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPNLIaia4TiapR3voMk5aKSl8eXDvJqa3djkjYwib00RibSBwv2BVn5jic51u776t4O72JUP5Dq5icia2hlg/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=2&sn=ada286e859560db1270408723163276a#rd"
       }, {
-        title: "时尚旅游 ︳神秘南美，写实人生",
-        description: '时尚旅游 ︳神秘南美，写实人生',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzM7uFF29KWYB3HePFqWtoicwLYzp0icM1EINIc3uGlvhWojT1VqhxEOARWGlyXwXzeDbDvxW9DibKd9Q/0",
+        title: "伊周 ︳姚晨：刚刚好的女王人生",
+        description: '伊周 ︳姚晨：刚刚好的女王人生',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOPwleqZ6YIf3gIpsbSpDAFOCroSibtuJZPB5qYguetvFmyBY8o5fVBEPibico6qicC8ThiaW2B0OKRp8g/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=3&sn=ae8a9084e3205f8cbc9fc0ad873f77f3#rd"
       }, {
-        title: "名车志 ︳超豪华杀器，让你体验更多",
-        description: '名车志 ︳超豪华杀器，让你体验更多',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzM7uFF29KWYB3HePFqWtoicwiaDDkRwYGpIyXmwgNlbsrcBcR877Ad1eVfM0jCH0uAFo10fJetib7omA/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=4&sn=979f46d7f03d3affdc746e27780e44b3#rd"
+        title: "时尚·COSMOPOLITAN ︳秀色可餐心机搭配，潮的自然才是真理！",
+        description: '时尚·COSMOPOLITAN ︳秀色可餐心机搭配，潮的自然才是真理！',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOPwleqZ6YIf3gIpsbSpDAFbRrt3woqRbaLlVGEFbXwyibFdqo0xRQOMJk4qDMXg6omnZ7oe6jTpAw/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=3&sn=ae8a9084e3205f8cbc9fc0ad873f77f3#rd"
       }
     ]
   };
