@@ -407,27 +407,7 @@ exports.getlucky = function(req, res, next) {
         }
         if (lot >= 150 && lot <= 300) {
           console.log("搜狐公仔");
-		  return Warehouse.getWinnerByLotAndUid("四等奖", req.cookies.userid, function(err, resutls) {
-            var none;
-            if ((resutls != null) && resutls.length > 0) {
-              console.log("已经中过四等奖.");
-              none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];
-              re.reason = none[Math.ceil(Math.random() * (none.length - 1))];
-              re.reason = re.reason.join(",");
-              return res.send(re);
-            } else {
-              return Warehouse.newwinner("sohugz", "四等奖", "none", function(err, win) {
-                win.used = true;
-                win.usedby = req.cookies.userid;
-                win.save();
-                re.url = "/sign/winner/sohugz";
-                re.reason = list[4];
-                re.reason = re.reason.join(",");
-                return res.send(re);
-              });
-            }
-          });
-		  /*
+		  
           return Warehouse.getWinnerByInfo("sohugz", function(err, lots) {
             var none;
             if (lots != null) {
@@ -444,7 +424,7 @@ exports.getlucky = function(req, res, next) {
               re.reason = re.reason.join(",");
               return res.send(re);
             }
-          });*/
+          });
         }
         if (lot >= 1500 && lot <= 3000) {
           return Inte.getInteByUid(300, req.cookies.userid, function(err, inte) {
