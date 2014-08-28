@@ -112,7 +112,7 @@ exports.middle = function(req, res, next) {
   var openid;
   openid = req.params.openid;
   url = req.query.url;
-  var ips = ["117.70.147.124","127.0.0.1"];
+  var ips = ["117.70.147.124"];
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
   ip = ip + "";
   console.log("测试:",ip,ips.indexOf(ip));
