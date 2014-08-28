@@ -93,6 +93,13 @@ exports.before = function(req, res, next) {
   res.locals.menu_my = "";
   res.locals.menu_lucky = "";
   res.locals.menu_exchange = "";
+  var ips = ["117.70.147.124"];
+  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+  if (ips.indexOf(ip)>-1) {
+    console.log(ip);
+    return res.send("被禁止的名单.");
+  }
+  
   setsomeDefautleLots();
   if ((req.cookies.userid != null) && req.cookies.userid !== "undefined" && req.cookies.userid !== "") {
     return next();
@@ -228,12 +235,7 @@ exports.my = function(req, res, next) {
   var ep;
   res.locals.menu_my = "active";
   console.log("userid:", req.cookies.userid);
-  var ips = ["117.70.147.124"];
-  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
-  if (ips.indexOf(ip)>-1) {
-    console.log(ip);
-    return res.send("被禁止的名单.");
-  }
+  
   ep = new EventProxy.create("user", "inte", "today", function(user, inte, today) {
     var count;
     count = inte;
