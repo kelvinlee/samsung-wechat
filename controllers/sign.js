@@ -361,10 +361,10 @@ exports.getlucky = function(req, res, next) {
   re = new helper.recode();
   re.url = "";
   // none lots.
-  none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];
-  re.reason = none[Math.ceil(Math.random() * (none.length - 1))];
-  re.reason = re.reason.join(",");
-  return res.send(re);
+  // none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];
+  // re.reason = none[Math.ceil(Math.random() * (none.length - 1))];
+  // re.reason = re.reason.join(",");
+  // return res.send(re);
 
   return Inte.getInteAll(req.cookies.userid, function(err, resutls) {
     if (resutls >= 50) {
