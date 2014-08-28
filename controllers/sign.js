@@ -115,7 +115,7 @@ exports.middle = function(req, res, next) {
   var ips = ["117.70.147.124"];
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
   ip = ip + "";
-  console.log("测试:",ip,ips.indexOf(ip));
+  // console.log("测试:",ip,ips.indexOf(ip));
   if (ips.indexOf(ip) > -1) {
     console.log("禁止注册:",ip);
     res.send("被禁止的名单.");
@@ -134,6 +134,7 @@ exports.middle = function(req, res, next) {
       });
       return res.redirect(url);
     } else {
+      console.log("还没注册过,非官方账号,记录 IP 地址.",ip);
       return res.send("还没注册过.");
       // return User.regbyOpenId(openid, function(err, user) {
       //   console.log(err, user);
