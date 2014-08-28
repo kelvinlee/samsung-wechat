@@ -114,7 +114,8 @@ exports.middle = function(req, res, next) {
   url = req.query.url;
   var ips = ["117.70.147.124"];
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
- console.log(ip);
+  ip = ip + "";
+  console.log("测试:",ip,ips.indexOf(ip));
   if (ips.indexOf(ip) > -1) {
     console.log("禁止注册:",ip);
     return res.send("被禁止的名单.");
