@@ -448,6 +448,37 @@ empty = {
 plugs_menu = function(message, callback) {
   var newmy;
   console.log(message);
+  openid = message.FromUserName;
+  User.getUserOpenId(openid, function(err, user) {
+    console.log("openid:", openid, err, user);
+    if (user != null) {
+      res.cookie("userid", user._id);
+      res.cookie("openid", openid);
+      console.log({
+        "老用户": true,
+        user: user
+      });
+      // return res.redirect(url);
+      plugs_event(message,callback);
+    } else {
+      return User.regbyOpenId(openid, function(err, user) {
+        console.log(err, user);
+        res.cookie("userid", user._id);
+        res.cookie("openid", openid);
+        return Inte.newInte(user._id, 100, "初次注册赠送积分活动,100积分", function(err, inte) {
+          console.log({
+            "老用户": false,
+            user: user
+          });
+          // return res.redirect(url);
+          plugs_event(message,callback);
+        });
+      });
+    }
+  });
+};
+
+plugs_event = function(message,callback) {
   if (message.EventKey === "oversite") {
     return callback(new oversite());
   } else if (message.EventKey === "jianxingpin") {
@@ -552,7 +583,7 @@ plugs_menu = function(message, callback) {
   } else {
     return callback(empty);
   }
-};
+}
 
 
 /*

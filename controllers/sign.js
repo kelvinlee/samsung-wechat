@@ -134,19 +134,20 @@ exports.middle = function(req, res, next) {
       });
       return res.redirect(url);
     } else {
-      return User.regbyOpenId(openid, function(err, user) {
-        console.log(err, user);
-        res.cookie("userid", user._id);
-        res.cookie("openid", openid);
-        return Inte.newInte(user._id, 100, "初次注册赠送积分活动,100积分", function(err, inte) {
-          console.log({
-            "has": false,
-            user: user,
-            cookie: req.cookies.userid
-          });
-          return res.redirect(url);
-        });
-      });
+      return res.send("还没注册过.");
+      // return User.regbyOpenId(openid, function(err, user) {
+      //   console.log(err, user);
+      //   res.cookie("userid", user._id);
+      //   res.cookie("openid", openid);
+      //   return Inte.newInte(user._id, 100, "初次注册赠送积分活动,100积分", function(err, inte) {
+      //     console.log({
+      //       "has": false,
+      //       user: user,
+      //       cookie: req.cookies.userid
+      //     });
+      //     return res.redirect(url);
+      //   });
+      // });
     }
   });
 };
