@@ -7,6 +7,8 @@ path = require('path');
 
 crypto = require('crypto');
 
+ejs = require("ejs");
+
 EventProxy = require('eventproxy');
 
 config = require('../config').config;
@@ -229,7 +231,8 @@ exports.my = function(req, res, next) {
   ep = new EventProxy.create("user", "inte", "today", function(user, inte, today) {
     var count;
     count = inte;
-    return res.render("my", {
+    return res.render("ejs/my.ejs", {
+      title: "查积分",
       user: user,
       inte: count,
       today: today
@@ -644,7 +647,8 @@ exports.lucky = function(req, res, next) {
   res.locals.menu_lucky = "active";
   Inte.getInteAll(req.cookies.userid, function(err, inte) {
     return Warehouse.getWinnerByUid(req.cookies.userid, function(err, resutls) {
-      return res.render("lucky", {
+      return res.render("ejs/lucky.ejs", {
+        title:"试手气",
         luckylist: resutls,
         inte: inte
       });

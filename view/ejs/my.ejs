@@ -1,0 +1,26 @@
+<% include header %>
+<% include nav %>
+<div class="content">
+	<div class="content-padded">
+		<div class="myinte">
+			<h1><span>我的资料</span></h1>
+			<div class="jf"><span><%=inte%></span><a href="/sign/lucky">试试手气</a></div>
+		</div>
+		<div class="line"></div>
+		<div class="note1"><img src="/img/note-1.jpg" alt=""></div>
+	</div>
+</div>
+
+<script>
+	var dataForWeixin={
+	appId:  "",
+	img:    "<%=config.host%>/img/weixin-jianianhua.jpg",
+	url:    "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200560267&idx=1&sn=ff18fdd9bbf0efe2dde9ccc8d3028fb4#rd",
+	title:  "三星乐园嘉年华，关注有礼赢大奖",
+	desc:   "关注得积分，抽奖有惊喜，赢取Samsung GALAXY Tab S 等千份好礼~" || location.href || "For protection, click the condoms now.",
+	fakeid: "",
+	};
+</script>
+<script src="/js/weixin.js"></script>
+
+<% include footer %>

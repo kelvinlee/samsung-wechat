@@ -1,0 +1,193 @@
+<% include header %>
+<% include nav %>
+<div class="content">
+	<div class="content-padded">
+		<div class="slot">
+			<div class="bg"><img src="/img/lucky-bg.jpg" alt=""></div>
+			<div class="random">
+				<div class="items">
+					<%for (var i=0;i<10;i++) {%>
+					<div class="item"><img src="/img/icon-l-1.png" alt=""></div>
+					<div class="item"><img src="/img/icon-l-2.png" alt=""></div>
+					<div class="item"><img src="/img/icon-l-3.png" alt=""></div>
+					<div class="item"><img src="/img/icon-l-4.png" alt=""></div>
+					<div class="item"><img src="/img/icon-l-5.png" alt=""></div>
+					<%}%>
+				</div>
+				<div class="items">
+					<%for (var i=0;i<10;i++) {%>
+					<div class="item"><img src="/img/icon-l-1.png" alt=""></div>
+					<div class="item"><img src="/img/icon-l-2.png" alt=""></div>
+					<div class="item"><img src="/img/icon-l-3.png" alt=""></div>
+					<div class="item"><img src="/img/icon-l-4.png" alt=""></div>
+					<div class="item"><img src="/img/icon-l-5.png" alt=""></div>
+					<%}%>
+				</div>
+				<div class="items">
+					<%for (var i=0;i<10;i++) {%>
+					<div class="item"><img src="/img/icon-l-1.png" alt=""></div>
+					<div class="item"><img src="/img/icon-l-2.png" alt=""></div>
+					<div class="item"><img src="/img/icon-l-3.png" alt=""></div>
+					<div class="item"><img src="/img/icon-l-4.png" alt=""></div>
+					<div class="item"><img src="/img/icon-l-5.png" alt=""></div>
+					<%}%>
+				</div>
+
+			</div>
+			<div class="pline"><img src="/img/lucky-line.png" alt=""></div>
+		</div>
+		<div class="lucky-btn">
+			<a onclick="post(this); return false;" id="luckybtn"><img src="/img/lucky-try.png" alt=""></a>
+			<a href="meizhoudongpojituan" style="display:none;" id="luckysubmit"><img src="/img/submit-lucky.png" alt=""></a>
+		</div>
+		<div class="lucky-inte">
+			<p>剩余积分: <span id="jifen"><%=inte%></span></p>
+		</div>
+		<% if (luckylist!=null && luckylist.length>0) { %>
+		<div class="lucky-list">
+			<ul>
+				<li class="lucky-title">恭喜你获得以下奖品:</li>
+				<%for(var i=0;i<luckylist.length;i++) {%>
+				<%if (luckylist[i].content == "六等奖") {%>
+				<li><a href="/sign/winner/hg"><%=luckylist[i].content%></a></li>
+				<%}else{%>
+				<li><a href="/sign/winner/<%=luckylist[i]._id%>"><%=luckylist[i].content%></a></li>
+				<%}%>
+				<%}%>
+			</ul>
+		</div>
+		<% } %>
+		<div class="lucky-content"><img src="/img/lucky-content.png" alt=""></div>
+
+	</div>
+</div>
+
+<script>
+	var dataForWeixin={
+		appId:  "",
+		img:    "<%=config.host%>/img/weixin-jianianhua.jpg",
+		url:    "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200560267&idx=1&sn=ff18fdd9bbf0efe2dde9ccc8d3028fb4#rd",
+		title:  "三星乐园嘉年华，关注有礼赢大奖",
+		desc:   "关注得积分，抽奖有惊喜，赢取Samsung GALAXY Tab S 等千份好礼~" || location.href || "For protection, click the condoms now.",
+		fakeid: "",
+		};
+</script>
+<script src="/js/weixin.js"></script>
+<script type="text/javascript">
+	_loting = false
+	function getLot(list,url) {
+		var lots = list.split(",");
+		var h = $(".random .item").height();
+		hw = -h*parseInt(lots[0])
+		$(".random .items").eq(0).css({
+			"transition":"2s",
+			"-ms-transition":"2s",
+			"-webkit-transition":"2s",
+			"-moz-transition":"2s",
+			"-o-transition":"2s", 
+			"transform":"translate3d(0px, "+hw+"px, 0px)",
+			"-ms-transform":"translate3d(0px, "+hw+"px, 0px)",
+			"-webkit-transform":"translate3d(0px, "+hw+"px, 0px)",
+			"-moz-transform":"translate3d(0px, "+hw+"px, 0px)",
+			"-o-transform":"translate3d(0px, "+hw+"px, 0px)"
+		});
+		hw = -h*parseInt(lots[1])
+		$(".random .items").eq(1).css({
+			"transition":"2s",
+			"-ms-transition":"2s",
+			"-webkit-transition":"2s",
+			"-moz-transition":"2s",
+			"-o-transition":"2s", 
+			"transform":"translate3d(0px, "+hw+"px, 0px)",
+			"-ms-transform":"translate3d(0px, "+hw+"px, 0px)",
+			"-webkit-transform":"translate3d(0px, "+hw+"px, 0px)",
+			"-moz-transform":"translate3d(0px, "+hw+"px, 0px)",
+			"-o-transform":"translate3d(0px, "+hw+"px, 0px)"
+		});
+		hw = -h*parseInt(lots[2])
+		$(".random .items").eq(2).css({
+			"transition":"2s",
+			"-ms-transition":"2s",
+			"-webkit-transition":"2s",
+			"-moz-transition":"2s",
+			"-o-transition":"2s", 
+			"transform":"translate3d(0px, "+hw+"px, 0px)",
+			"-ms-transform":"translate3d(0px, "+hw+"px, 0px)",
+			"-webkit-transform":"translate3d(0px, "+hw+"px, 0px)",
+			"-moz-transform":"translate3d(0px, "+hw+"px, 0px)",
+			"-o-transform":"translate3d(0px, "+hw+"px, 0px)"
+		});
+		_moving = true;
+		setTimeout(function(){
+			_moving = false;
+			if (list == "13,12,13" || list == "11,13,15" || list == "13,15,11") {
+				//- $(".pline").show();
+				showalert("可惜没中奖,再试一次");
+				//- return setdefault();
+				return "";
+			}
+			//- if (list == "15,15,15") {
+			//- 	//- $(".pline").show();
+			//- 	showalert("恭喜获得300积分,已经充入您的账号");	
+			//- 	//- return setdefault();
+			//- 	return "";
+			//- }
+			$("#luckybtn").hide();
+			$("#luckysubmit").attr("href",url).show();
+			//- $(".pline").show();
+		},2200);
+
+		//- if (_loting){
+		//- 	return false; 
+		//- }
+		//- starplay({});
+		//- setTimeout(function(){
+		//- 	stopevent({},{index:1});
+		//- },3000);
+		//- setTimeout(function(){
+		//- 	stopevent({},{index:2});
+		//- },3500);
+		//- setTimeout(function(){
+		//- 	stopevent({},{index:0});
+
+		//- },4000);
+	}
+
+	function setdefault() {
+		//- $(".pline").hide();
+		$(".random .items").css({
+			"transition":"0s",
+			"-ms-transition":"0s",
+			"-webkit-transition":"0s",
+			"-moz-transition":"0s",
+			"-o-transition":"0s", 
+			"transform":"translate3d(0px, 0px, 0px)",
+			"-ms-transform":"translate3d(0px, 0px, 0px)",
+			"-webkit-transform":"translate3d(0px, 0px, 0px)",
+			"-moz-transform":"translate3d(0px, 0px, 0px)",
+			"-o-transform":"translate3d(0px, 0px, 0px)"
+		});
+	}
+	_submit = false; 
+	_moving = false;
+	function post() {
+		if (_moving){return false;}
+		setdefault();
+		_submit = true;
+		$.ajax({
+			async: false,
+			url: "/sign/getlucky",
+			type: 'GET',
+			dataType: 'json',
+			success: function(msg) {
+				if (msg.recode == 200) {
+					getLot(msg.reason,msg.url);
+					$("#jifen").text($("#jifen").text()-50);
+				}else{
+					showalert(msg.reason);
+				}
+			}
+		});
+	}
+</script>
+<% include footer %>
