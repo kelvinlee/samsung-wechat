@@ -339,6 +339,12 @@ exports.getlucky = function(req, res, next) {
   var re;
   re = new helper.recode();
   re.url = "";
+  // none lots.
+  none = [[13, 12, 13], [11, 13, 15], [13, 15, 11]];
+  re.reason = none[Math.ceil(Math.random() * (none.length - 1))];
+  re.reason = re.reason.join(",");
+  return res.send(re);
+
   return Inte.getInteAll(req.cookies.userid, function(err, resutls) {
     if (resutls >= 50) {
       return Inte.newInte(req.cookies.userid, -50, "抽奖", function(err, int) {
