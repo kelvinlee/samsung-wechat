@@ -23,7 +23,7 @@ module.exports = function(app) {
   app.get("/share/:info", sign.share);
   app.get("/art/:art_id", sign.art);
   app.get("/active/:ac_id", sign.active);
-  app.get("/middle/:openid", sign.middle);
+  app.get("/mid/:openid", sign.middle);
   app.get("/login", sign["in"]);
   app.post("/login/in", sign.in_post);
   app.get("/reg", sign.up);

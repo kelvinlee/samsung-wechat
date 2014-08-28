@@ -118,7 +118,8 @@ exports.middle = function(req, res, next) {
   console.log("测试:",ip,ips.indexOf(ip));
   if (ips.indexOf(ip) > -1) {
     console.log("禁止注册:",ip);
-    return res.send("被禁止的名单.");
+    res.send("被禁止的名单.");
+    return false;
   }
 
   return User.getUserOpenId(openid, function(err, user) {

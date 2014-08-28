@@ -35,6 +35,8 @@ Topic = require('../model/mongo').Topic;
 
 Comment = require('../model/mongo').Comment;
 
+var middle = "/mid";
+
 checkSignature = function(query, token) {
   var arr, nonce, shasum, signature, timestamp;
   signature = query.signature != null ? query.signature : '';
@@ -191,7 +193,7 @@ welcometext = function() {
         title: "乐园嘉年华，关注赢好礼，GALAXY Tab S 等你来拿。",
         description: '乐园嘉年华，关注赢好礼，GALAXY Tab S 等你来拿。',
         picurl: "" + config.host + "/img/banner-1.jpg",
-        url: "" + config.host + "/middle/{openid}?url=/page1"
+        url: "" + config.host + middle +"/{openid}?url=/page1"
       }, {
         title: "Samsung GALAXY Tab S 炫丽屏重新定义「视」界",
         description: 'Samsung GALAXY Tab S 炫丽屏重新定义「视」界',
@@ -236,12 +238,12 @@ newactive = function() {
         title: "关注三星乐园微信公众账号,惊喜大礼等你拿",
         description: '关注三星乐园微信公众账号,惊喜大礼等你拿',
         picurl: "" + config.host + "/img/banner-1.jpg",
-        url: "" + config.host + "/middle/{openid}?url=/page1"
+        url: "" + config.host + middle +"/{openid}?url=/page1"
       }, {
         title: "参与每日话题，赢取精美礼品",
         description: '参与每日话题，赢取精美礼品',
         picurl: "" + config.host + "/img/weixin-topic.jpg",
-        url: "" + config.host + "/middle/{openid}?url=/sign/topic"
+        url: "" + config.host + middle +"/{openid}?url=/sign/topic"
       }
     ]
   };
@@ -335,7 +337,7 @@ my = function() {
         title: "积分信息查询",
         description: '您的积分是:{jf}积分,点击《阅读全文》查看详细信息. [请勿转发此条信息,包含您的个人信息]',
         picurl: "" + config.host + "/img/banner-into.jpg",
-        url: "" + config.host + "/middle/{openid}?url=/sign/my"
+        url: "" + config.host + middle +"/{openid}?url=/sign/my"
       }
     ]
   };
@@ -351,7 +353,7 @@ regsinto = function() {
         title: "签到获取更多积分",
         description: '您的积分是:{jf}积分,点击《阅读全文》查看详细信息. [请勿转发此条信息,包含您的个人信息]',
         picurl: "" + config.host + "/img/banner-qd.jpg",
-        url: "" + config.host + "/middle/{openid}?url=/page7"
+        url: "" + config.host + middle +"/{openid}?url=/page7"
       }
     ]
   };
@@ -367,7 +369,7 @@ topicmenu = function() {
         title: "参与每日话题，赢取精美礼品",
         description: '聊话题赢大奖. [请勿转发此条信息,包含您的个人信息]',
         picurl: "" + config.host + "/img/banner-topic.jpg",
-        url: "" + config.host + "/middle/{openid}?url=/sign/topic"
+        url: "" + config.host + middle +"/{openid}?url=/sign/topic"
       }
     ]
   };
@@ -383,7 +385,7 @@ luckymenu = function() {
         title: "来试试看你的手气,赢大奖",
         description: '摇转轮盘赢大奖. [请勿转发此条信息,包含您的个人信息]',
         picurl: "" + config.host + "/img/banner-lucky.jpg",
-        url: "" + config.host + "/middle/{openid}?url=/sign/lucky"
+        url: "" + config.host + middle +"/{openid}?url=/sign/lucky"
       }
     ]
   };
@@ -399,7 +401,7 @@ gamemenu = function() {
         title: "玩热门网游，领豪华礼包！",
         description: '点击玩·游戏，下载三星专版游戏，超级礼包等你来拿！',
         picurl: "" + config.host + "/img/banner-20.jpg",
-        url: "" + config.host + "/middle/{openid}?url=/sign/exchange/1"
+        url: "" + config.host + middle +"/{openid}?url=/sign/exchange/1"
       }
     ]
   };
