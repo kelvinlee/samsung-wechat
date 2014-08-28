@@ -95,11 +95,11 @@ exports.before = function(req, res, next) {
   res.locals.menu_exchange = "";
   var ips = ["117.70.147.124"];
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
-  if (ips.indexOf(ip)>-1) {
-    console.log(ip);
+  if (ips.indexOf(ip) > -1) {
+    console.log("被禁止:",ip);
     return res.send("被禁止的名单.");
   }
-  
+
   setsomeDefautleLots();
   if ((req.cookies.userid != null) && req.cookies.userid !== "undefined" && req.cookies.userid !== "") {
     return next();
@@ -344,7 +344,7 @@ exports.luckyframe = function(req, res, next) {
 };
 
 exports.getlucky = function(req, res, next) {
-  console.log(req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress);
+  // console.log(req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress);
   var re;
   re = new helper.recode();
   re.url = "";
