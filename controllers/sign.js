@@ -373,7 +373,7 @@ exports.getlucky = function(req, res, next) {
         list = [[14, 14, 14], [14, 14, 12], [14, 12, 12], [15, 15, 15], [13, 13, 13], [12, 12, 11], [11, 11, 11]];
         lot = Math.round(Math.random() * 10000);
         //---固定中奖－公仔
-        lot =160;
+        lot =10+Math.round(Math.random() * 40);
         console.log(lot);
         if (lot === 8) {
           console.log("平板");
