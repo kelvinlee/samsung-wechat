@@ -336,6 +336,7 @@ exports.luckyframe = function(req, res, next) {
 };
 
 exports.getlucky = function(req, res, next) {
+  console.log(req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress);
   var re;
   re = new helper.recode();
   re.url = "";
