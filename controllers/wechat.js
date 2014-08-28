@@ -452,8 +452,8 @@ plugs_menu = function(message, callback) {
   User.getUserOpenId(openid, function(err, user) {
     console.log("openid:", openid, err, user);
     if (user != null) {
-      res.cookie("userid", user._id);
-      res.cookie("openid", openid);
+      // res.cookie("userid", user._id);
+      // res.cookie("openid", openid);
       console.log({
         "老用户": true,
         user: user
@@ -463,8 +463,8 @@ plugs_menu = function(message, callback) {
     } else {
       return User.regbyOpenId(openid, function(err, user) {
         console.log(err, user);
-        res.cookie("userid", user._id);
-        res.cookie("openid", openid);
+        // res.cookie("userid", user._id);
+        // res.cookie("openid", openid);
         return Inte.newInte(user._id, 100, "初次注册赠送积分活动,100积分", function(err, inte) {
           console.log({
             "老用户": false,
