@@ -378,7 +378,7 @@ topicmenu = function() {
 luckymenu = function() {
   return {
     name: "试手气",
-    key: "1",
+    key: "1",	
     type: "news",
     items: [
       {
@@ -542,7 +542,10 @@ plugs_event = function(message,callback) {
       }
     });
   } else if (message.EventKey === "lucky") {
-    newmy = new luckymenu();
+	
+	return "活动已经结束";
+    
+	newmy = new luckymenu();
     newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
     return User.getUserOpenId(message.FromUserName, function(err, user) {
       console.log(newmy.items[0].url);
