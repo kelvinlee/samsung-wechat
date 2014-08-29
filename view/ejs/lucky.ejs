@@ -170,24 +170,24 @@
 	}
 	_submit = false; 
 	_moving = false;
-	function post() {
-		if (_moving){return false;}
-		setdefault();
-		_submit = true;
-		$.ajax({
-			async: false,
-			url: "/sign/getlucky",
-			type: 'GET',
-			dataType: 'json',
-			success: function(msg) {
-				if (msg.recode == 200) {
-					getLot(msg.reason,msg.url);
-					$("#jifen").text($("#jifen").text()-50);
-				}else{
-					showalert(msg.reason);
-				}
-			}
-		});
-	}
+	// function post() {
+// 		if (_moving){return false;}
+// 		setdefault();
+// 		_submit = true;
+// 		$.ajax({
+// 			async: false,
+// 			url: "/sign/getlucky",
+// 			type: 'GET',
+// 			dataType: 'json',
+// 			success: function(msg) {
+// 				if (msg.recode == 200) {
+// 					getLot(msg.reason,msg.url);
+// 					$("#jifen").text($("#jifen").text()-50);
+// 				}else{
+// 					showalert(msg.reason);
+// 				}
+// 			}
+// 		});
+// 	}
 </script>
 <% include footer %>

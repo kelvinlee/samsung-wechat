@@ -89,11 +89,12 @@ post_data = {
           type: "click",
           name: "聊·话题",
           key: "topic"
-        }, {
-          type: "click",
-          name: "试·手气",
-          key: "lucky"
         }
+// , {
+//           type: "click",
+//           name: "试·手气",
+//           key: "lucky"
+//         }
       ]
     }, {
       name: "星专享",
