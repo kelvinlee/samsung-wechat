@@ -414,9 +414,9 @@ videos = function() {
     type: "news",
     items: [
       {
-        title: "【我们被他逗笑又被他惹哭】罗宾·威廉姆斯最后一部电视作品《疯人疯语》",
-        description: '【我们被他逗笑又被他惹哭】罗宾·威廉姆斯最后一部电视作品《疯人疯语》',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPNLIaia4TiapR3voMk5aKSl8fWUv8XzJC0o72nXsJMpDftjwB4Pe36FLIqoicRVm1HchxUkHM8F4vCA/0",
+        title: "搜狐视频再成第66届艾美奖最大赢家 美剧美综居第一",
+        description: '搜狐视频再成第66届艾美奖最大赢家 美剧美综居第一',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOUal0R5iaut3osxResl2hJ4icqrkUdaPjqjlJ2CiazBZiaT1yl9U7xCwC4mrIy5bL5AlvQu97QyQufwA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=1&sn=1e5ec46885ceabc0531703b442f0cce7#rd"
       }, {
         title: "《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用",
@@ -424,14 +424,14 @@ videos = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGqziaptWvH56GQd7HSR6MENCo9XD8YX37qKIjQAf4CND7xaicicjBiam0xA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=2&sn=350a13b6b1aabb9a27a7911309a73111#rd"
       }, {
-        title: "韩版《命中注定我爱你》上演改编逆袭成夏季档最大黑马",
-        description: '韩版《命中注定我爱你》上演改编逆袭成夏季档最大黑马',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPNLIaia4TiapR3voMk5aKSl8BAYYf9FO5LsVQgjEYadupIqCa7lD6NanOxN2Co4ggSk2DXlPv69PTQ/0",
+        title: "重磅美综《WWE》《超级减肥王》搜狐视频独家上线 打造美综第一平台",
+        description: '重磅美综《WWE》《超级减肥王》搜狐视频独家上线 打造美综第一平台',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOUal0R5iaut3osxResl2hJ4V4m4eVr7iaL5A8IUnIs86LXgS93flL0UpvHTqN20BLEVONQpxk0YGBQ/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=3&sn=ce36d8402e61e53e5267fe02997b2f13#rd"
       }, {
-        title: "【看点】 《新济公活佛》搜狐发布会 陈浩民基情卖腐",
-        description: '【看点】 《新济公活佛》搜狐发布会 陈浩民基情卖腐',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPNLIaia4TiapR3voMk5aKSl8XMbQtMZf3zuELvBcEbDVAaiad9JCajY84GxgNE6mRYk8X55g24yso9w/0",
+        title: "《极速前进》十获艾美奖 搜狐视频独播中美两版",
+        description: '《极速前进》十获艾美奖 搜狐视频独播中美两版',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOUal0R5iaut3osxResl2hJ4ZmsbPkp6siaS865SjtDD4V93VGPlpQShzzWjia5yQyZUtDAdYPd9gc5A/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=4&sn=2c0626281303dc2a457914ab10761355#rd"
       }
     ]
