@@ -545,8 +545,6 @@ plugs_event = function(message,callback) {
       }
     });
   } else if (message.EventKey === "lucky") {
-	
-	return "活动已经结束";
     
 	newmy = new luckymenu();
     newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
