@@ -5,7 +5,7 @@
      Begin wechat.coffee
 --------------------------------------------
  */
-var BufferHelper, Comment, EventProxy, Inte, Lots, Topic, User, Warehouse, checkMessage, checkSignature, clearQA, config, crypto, empty, formatMessage, fs, gamemenu, getMessage, getQA, jianxingpin, luckymenu, magazine, my, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, regsinto, searchQA, topicmenu, videos, welcometext, xml2js, _nr, _qa;
+var BufferHelper, Comment, EventProxy, Inte, Lots, Topic, User, Warehouse, checkMessage, checkSignature, clearQA, config, crypto, empty,luckyOver, formatMessage, fs, gamemenu, getMessage, getQA, jianxingpin, luckymenu, magazine, my, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, regsinto, searchQA, topicmenu, videos, welcometext, xml2js, _nr, _qa;
 
 fs = require('fs');
 
@@ -379,10 +379,9 @@ luckymenu = function() {
   return {
 	  
 	  
-    name: "试手气已经关闭",
+    name: "试手气",
     key: "1",	
-    //type: "news",
-	type: "text",
+    type: "news",
     items: [
       {
         title: "来试试看你的手气,赢大奖",
@@ -443,6 +442,13 @@ videos = function() {
 
 empty = {
   name: "返回收到图片信息.",
+  key: "1",
+  type: "text",
+  backContent: ""
+};
+
+luckyOver = {
+  name: "活动已经结束.",
   key: "1",
   type: "text",
   backContent: ""
@@ -545,7 +551,8 @@ plugs_event = function(message,callback) {
       }
     });
   } else if (message.EventKey === "lucky") {
-    
+    return callback(luckyOver);
+	
 	newmy = new luckymenu();
     newmy.items[0].url = newmy.items[0].url.replace("{openid}", message.FromUserName);
     return User.getUserOpenId(message.FromUserName, function(err, user) {
