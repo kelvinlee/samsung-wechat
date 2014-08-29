@@ -377,9 +377,12 @@ topicmenu = function() {
 
 luckymenu = function() {
   return {
-    name: "试手气",
+	  
+	  
+    name: "试手气已经关闭",
     key: "1",	
-    type: "news",
+    //type: "news",
+	type: "text",
     items: [
       {
         title: "来试试看你的手气,赢大奖",
