@@ -78,9 +78,12 @@ post_data = {
       name: "游乐场",
       sub_button: [
         {
-          type: "click",
+        //  type: "click",
+          //name: "新·活动",
+          //key: "newactive"
+		  type: "view",
           name: "新·活动",
-          key: "newactive"
+          url: config.host + "/page1"
         }, {
           type: "click",
           name: "临·现场",
