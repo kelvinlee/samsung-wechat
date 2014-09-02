@@ -131,15 +131,16 @@ post_data = {
           type: "view",
           name: "寻·合作",
           url: config.host + "/page5"
-        }, {
-          type: "click",
-          name: "查·积分",
-          key: "my"
-        }, {
-          type: "click",
-          name: "来·签到",
-          key: "regsinto"
         }
+		//, {
+        //  type: "click",
+         // name: "查·积分",
+         // key: "my"
+        //}, {
+        //  type: "click",
+         // name: "来·签到",
+         // key: "regsinto"
+        //}
       ]
     }
   ]
