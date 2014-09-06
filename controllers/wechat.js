@@ -321,7 +321,7 @@ magazine = function() {
         title: "时尚旅游 | 港味最美BRUNCH",
         description: '时尚旅游 | 港味最美BRUNCH',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMkBZZFdcHTkYCABrBibvZO8IHWicACrxibTTticufnPLU1OupYsOic06iaeibAkTkY7kAibBibhX3DIV1hJ8A/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=3&sn=ae8a9084e3205f8cbc9fc0ad873f77f3#rd"
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=203698011&idx=5&sn=dec06b9986b94b87581d9c1f9f95cd6b#rd"
       }
     ]
   };
