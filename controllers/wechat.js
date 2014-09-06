@@ -308,9 +308,9 @@ magazine = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzM7uFF29KWYB3HePFqWtoicwicuEZJhh9GTibeBQibCugllg2uYSKzRzbJ1WOVEeibXDxQic3CicicOEEXdXw/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=1&sn=ae32c9b9fd34996932f72d4ee173b69c#rd"
       }, {
-        title: "ELLEDECO家居廊 ︳乐观前行十周年，源创时代米兰周",
-        description: 'ELLEDECO家居廊 ︳乐观前行十周年，源创时代米兰周',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPNLIaia4TiapR3voMk5aKSl8eXDvJqa3djkjYwib00RibSBwv2BVn5jic51u776t4O72JUP5Dq5icia2hlg/0",
+        title: "芭莎男士 ︳吴秀波：浮华世界来去自如",
+        description: '芭莎男士 ︳吴秀波：浮华世界来去自如',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMkBZZFdcHTkYCABrBibvZO8kDkArhYCoeUsL1PtsrRl0U4krWgeMDrW6JyQDZAw3JmPIHPmSCsiaYg/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=2&sn=ada286e859560db1270408723163276a#rd"
       }, {
         title: "伊周 ︳姚晨：刚刚好的女王人生",
@@ -318,9 +318,9 @@ magazine = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOPwleqZ6YIf3gIpsbSpDAFOCroSibtuJZPB5qYguetvFmyBY8o5fVBEPibico6qicC8ThiaW2B0OKRp8g/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=3&sn=ae8a9084e3205f8cbc9fc0ad873f77f3#rd"
       }, {
-        title: "时尚·COSMOPOLITAN ︳秀色可餐心机搭配，潮的自然才是真理！",
-        description: '时尚·COSMOPOLITAN ︳秀色可餐心机搭配，潮的自然才是真理！',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOPwleqZ6YIf3gIpsbSpDAFbRrt3woqRbaLlVGEFbXwyibFdqo0xRQOMJk4qDMXg6omnZ7oe6jTpAw/0",
+        title: "时尚旅游 | 港味最美BRUNCH",
+        description: '时尚旅游 | 港味最美BRUNCH',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMkBZZFdcHTkYCABrBibvZO8IHWicACrxibTTticufnPLU1OupYsOic06iaeibAkTkY7kAibBibhX3DIV1hJ8A/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=3&sn=ae8a9084e3205f8cbc9fc0ad873f77f3#rd"
       }
     ]
@@ -426,14 +426,14 @@ videos = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGqziaptWvH56GQd7HSR6MENCo9XD8YX37qKIjQAf4CND7xaicicjBiam0xA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=2&sn=350a13b6b1aabb9a27a7911309a73111#rd"
       }, {
-        title: "重磅美综《WWE》《超级减肥王》搜狐视频独家上线 打造美综第一平台",
-        description: '重磅美综《WWE》《超级减肥王》搜狐视频独家上线 打造美综第一平台',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOUal0R5iaut3osxResl2hJ4V4m4eVr7iaL5A8IUnIs86LXgS93flL0UpvHTqN20BLEVONQpxk0YGBQ/0",
+        title: "打造最好的女生喜剧 《极品女士》第三季重装开播",
+        description: '打造最好的女生喜剧 《极品女士》第三季重装开播',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMkBZZFdcHTkYCABrBibvZO8cibRIjZHefTTdJZklV5Kvr7cS9dVVKhpNQSMUbC22a7OicVuRe4S70PQ/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=3&sn=ce36d8402e61e53e5267fe02997b2f13#rd"
       }, {
-        title: "《极速前进》十获艾美奖 搜狐视频独播中美两版",
-        description: '《极速前进》十获艾美奖 搜狐视频独播中美两版',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOUal0R5iaut3osxResl2hJ4ZmsbPkp6siaS865SjtDD4V93VGPlpQShzzWjia5yQyZUtDAdYPd9gc5A/0",
+        title: "【热荐】日剧《麻辣教师GTO 2014》热血湘南风物诗",
+        description: '【热荐】日剧《麻辣教师GTO 2014》热血湘南风物诗',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMkBZZFdcHTkYCABrBibvZO80qZQc2cSniaptRyAXMvpOFGfzpRs4o6jibllIbDQJz2ZDqVBtPcYC0Ug/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=4&sn=2c0626281303dc2a457914ab10761355#rd"
       }
     ]
