@@ -1077,6 +1077,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/img\/game-1-description.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 101282,
+		"inputAbbreviatedPath": "\/public\/img\/game-1-description.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/game-1-description.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/game-1-title.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 65053,
+		"inputAbbreviatedPath": "\/public\/img\/game-1-title.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/game-1-title.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/img\/game-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 65646,
+		"inputAbbreviatedPath": "\/public\/img\/game-1.jpg",
+		"outputAbbreviatedPath": "\/public\/img\/game-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/img\/game-2-decription.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
