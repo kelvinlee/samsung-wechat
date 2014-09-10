@@ -24,12 +24,20 @@ block css_here
 block content_here
 	//- include nav
 	.content
-		-var url = config.host+"/down/qwuxia.apk";
-		a.downbtn.qwuxia(href="#{url}")
+		//-var url = config.host+"/down/qwuxia.apk";
+//		a.downbtn.qwuxia(href="#{url}")
+//		-var url = config.host+"/down/fengshen.apk";
+//		a.downbtn.fengshen(href="#{url}")
+//		-var url = config.host+"/down/chaojiyingxiong.apk";
+//		a.downbtn.chaojiyingxiong(href="#{url}")
+		
 		-var url = config.host+"/down/fengshen.apk";
+		a.downbtn.qwuxia(href="#{url}")
+		-var url = config.host+"/down/chaojiyingxiong.apk";
 		a.downbtn.fengshen(href="#{url}")
 		-var url = config.host+"/down/chaojiyingxiong.apk";
 		a.downbtn.chaojiyingxiong(href="#{url}")
+		
 		img(src="/img/gamedownbg.jpg")
 
 block js_here
