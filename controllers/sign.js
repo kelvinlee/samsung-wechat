@@ -921,7 +921,7 @@ setsomeDefautleLots = function() {
     if ((list != null) && list.length > 0) {
 
     } else {
-      console.log("初始化了一些游戏奖品");
+      /*console.log("初始化了一些游戏奖品");
       setDefaultWinner();
       name = "神偷奶爸：小黄人快跑";
       description = "小黄人快跑！一路搞笑逗趣停不住！";
@@ -934,7 +934,8 @@ setsomeDefautleLots = function() {
       order = 1;
       inte = 0;
       Lots.newlots(name, description, img, order, inte, info_a, info_b, info_c, headerimg, descriptionimg, function(err, lots) {});
-      name = "武侠Q传";
+     */
+	  name = "武侠Q传";
       description = "拳拳到肉，亲眼见证！体验真实打斗的畅快感受~";
       img = "/img/game-2.jpg";
       info_a = "版本：3.0.0.4.0  大小:107.01MB<br/>2014年7月10日<br/>适合12+年龄段人士";
