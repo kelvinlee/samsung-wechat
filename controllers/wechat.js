@@ -313,15 +313,15 @@ magazine = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMkBZZFdcHTkYCABrBibvZO8kDkArhYCoeUsL1PtsrRl0U4krWgeMDrW6JyQDZAw3JmPIHPmSCsiaYg/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=2&sn=ada286e859560db1270408723163276a#rd"
       }, {
-        title: "伊周 ︳姚晨：刚刚好的女王人生",
-        description: '伊周 ︳姚晨：刚刚好的女王人生',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOPwleqZ6YIf3gIpsbSpDAFOCroSibtuJZPB5qYguetvFmyBY8o5fVBEPibico6qicC8ThiaW2B0OKRp8g/0",
+        title: "瑞丽服饰美容 ︳从容优雅清凉妆 热情似火美丽心",
+        description: '瑞丽服饰美容 ︳从容优雅清凉妆 热情似火美丽心',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOqjESwvNbgqPCEKjfd24wAGWCF32NHEHmd3DlJNHkBMhSm1U36QibKkgEtAEB8wBKBKJj7NOic2Zzg/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=3&sn=ae8a9084e3205f8cbc9fc0ad873f77f3#rd"
       }, {
-        title: "时尚旅游 | 港味最美BRUNCH",
-        description: '时尚旅游 | 港味最美BRUNCH',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMkBZZFdcHTkYCABrBibvZO8IHWicACrxibTTticufnPLU1OupYsOic06iaeibAkTkY7kAibBibhX3DIV1hJ8A/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=203698011&idx=5&sn=dec06b9986b94b87581d9c1f9f95cd6b#rd"
+        title: "时尚·COSMOPOLITAN ︳潮流尖端21载—时尚COSMO21周年巨制",
+        description: '时尚·COSMOPOLITAN ︳潮流尖端21载—时尚COSMO21周年巨制',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOqjESwvNbgqPCEKjfd24wAP9lnXn9aZk3YUV8AQhCNLCZmqmRwWXDjMjJsgzwa3H8fRbtTG9VXCQ/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=4&sn=979f46d7f03d3affdc746e27780e44b3#rd"
       }
     ]
   };
@@ -416,9 +416,9 @@ videos = function() {
     type: "news",
     items: [
       {
-        title: "搜狐视频再成第66届艾美奖最大赢家 美剧美综居第一",
-        description: '搜狐视频再成第66届艾美奖最大赢家 美剧美综居第一',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOUal0R5iaut3osxResl2hJ4icqrkUdaPjqjlJ2CiazBZiaT1yl9U7xCwC4mrIy5bL5AlvQu97QyQufwA/0",
+        title: "《奔跑吧兄弟》搜狐视频10月开播“跑男团”七人首次现身",
+        description: '《奔跑吧兄弟》搜狐视频10月开播“跑男团”七人首次现身',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOqjESwvNbgqPCEKjfd24wArGJGL8wxIER5OzUtYLPNtCQarGWrMXbAfuFjWuxtEZzlzpLHdJE6Pg/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=1&sn=1e5ec46885ceabc0531703b442f0cce7#rd"
       }, {
         title: "《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用",
@@ -426,14 +426,14 @@ videos = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGqziaptWvH56GQd7HSR6MENCo9XD8YX37qKIjQAf4CND7xaicicjBiam0xA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=2&sn=350a13b6b1aabb9a27a7911309a73111#rd"
       }, {
-        title: "打造最好的女生喜剧 《极品女士》第三季重装开播",
-        description: '打造最好的女生喜剧 《极品女士》第三季重装开播',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMkBZZFdcHTkYCABrBibvZO8cibRIjZHefTTdJZklV5Kvr7cS9dVVKhpNQSMUbC22a7OicVuRe4S70PQ/0",
+        title: "【热荐】《极品女士》第三季第2集 陈伟霆为爱“入赘” 温兆伦奇葩方式测胸围",
+        description: '【热荐】《极品女士》第三季第2集 陈伟霆为爱“入赘” 温兆伦奇葩方式测胸围',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOqjESwvNbgqPCEKjfd24wAwibx2SPkvY3qpAywpMWibes9eNibiakMeDTjvHEn9Aiaiay0KQtvFesaGO2g/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=3&sn=ce36d8402e61e53e5267fe02997b2f13#rd"
       }, {
-        title: "【热荐】日剧《麻辣教师GTO 2014》热血湘南风物诗",
-        description: '【热荐】日剧《麻辣教师GTO 2014》热血湘南风物诗',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMkBZZFdcHTkYCABrBibvZO80qZQc2cSniaptRyAXMvpOFGfzpRs4o6jibllIbDQJz2ZDqVBtPcYC0Ug/0",
+        title: "【重磅】《风中奇缘》定档10月1日 “莫相离”海报曝光",
+        description: '【重磅】《风中奇缘》定档10月1日 “莫相离”海报曝光',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOqjESwvNbgqPCEKjfd24wARZ8RqvlHsT1xxcKiaarcX5L6U0WgFAbGBOMneEtibybNSVUJyJqyP2Pg/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=4&sn=2c0626281303dc2a457914ab10761355#rd"
       }
     ]
