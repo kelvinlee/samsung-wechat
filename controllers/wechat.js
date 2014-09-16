@@ -229,7 +229,7 @@ welcometext = function() {
 plugs_subscribe = function(message, callback) {
   var subscribe;
   subscribe = new welcometext();
-  subscribe.items[0].url = subscribe.items[0].url.replace("{openid}", message.FromUserName);
+  //subscribe.items[0].url = subscribe.items[0].url.replace("{openid}", message.FromUserName);
   return callback(subscribe);
 };
 
