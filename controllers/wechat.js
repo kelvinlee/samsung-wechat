@@ -182,7 +182,7 @@ exports.index = function(req, res, next) {
      Begin wechat-subscribe.coffee
 --------------------------------------------
  */
-
+/*
 welcometext = function() {
   return {
     name: "新活动",
@@ -213,6 +213,18 @@ welcometext = function() {
     ]
   };
 };
+
+*/
+
+welcometext = function() {
+  return {
+    name: "欢迎关注三星乐园.",
+  	key: "1",
+ 	type: "text",
+ 	backContent: ""
+  };
+};
+
 
 plugs_subscribe = function(message, callback) {
   var subscribe;
