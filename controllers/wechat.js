@@ -182,7 +182,7 @@ exports.index = function(req, res, next) {
      Begin wechat-subscribe.coffee
 --------------------------------------------
  */
-/*
+
 welcometext = function() {
   return {
     name: "新活动",
@@ -214,7 +214,7 @@ welcometext = function() {
   };
 };
 
-*/
+/*
 
 welcometext = function() {
   return {
@@ -225,11 +225,11 @@ welcometext = function() {
   };
 };
 
-
+*/
 plugs_subscribe = function(message, callback) {
   var subscribe;
   subscribe = new welcometext();
-  //subscribe.items[0].url = subscribe.items[0].url.replace("{openid}", message.FromUserName);
+  subscribe.items[0].url = subscribe.items[0].url.replace("{openid}", message.FromUserName);
   return callback(subscribe);
 };
 
