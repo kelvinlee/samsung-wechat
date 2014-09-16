@@ -218,10 +218,10 @@ welcometext = function() {
 
 welcometext = function() {
   return {
-    name: "欢迎关注三星乐园.",
+    name: "欢迎语",
   	key: "1",
  	type: "text",
- 	backContent: ""
+ 	backContent: "欢迎关注三星乐园"
   };
 };
 
