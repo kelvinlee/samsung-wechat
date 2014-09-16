@@ -182,7 +182,7 @@ exports.index = function(req, res, next) {
      Begin wechat-subscribe.coffee
 --------------------------------------------
  */
-
+/*
 welcometext = function() {
   return {
     name: "新活动",
@@ -213,23 +213,23 @@ welcometext = function() {
     ]
   };
 };
+*/
 
-/*
 
 welcometext = function() {
   return {
     name: "欢迎语",
   	key: "1",
  	type: "text",
- 	backContent: "欢迎关注三星乐园"
+ 	content: "欢迎关注三星乐园"
   };
 };
 
-*/
+
 plugs_subscribe = function(message, callback) {
   var subscribe;
   subscribe = new welcometext();
-  subscribe.items[0].url = subscribe.items[0].url.replace("{openid}", message.FromUserName);
+  // subscribe.items[0].url = subscribe.items[0].url.replace("{openid}", message.FromUserName);
   return callback(subscribe);
 };
 
