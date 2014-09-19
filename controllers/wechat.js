@@ -320,19 +320,19 @@ magazine = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzM7uFF29KWYB3HePFqWtoicwicuEZJhh9GTibeBQibCugllg2uYSKzRzbJ1WOVEeibXDxQic3CicicOEEXdXw/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=1&sn=ae32c9b9fd34996932f72d4ee173b69c#rd"
       }, {
-        title: "芭莎男士 ︳吴秀波：浮华世界来去自如",
-        description: '芭莎男士 ︳吴秀波：浮华世界来去自如',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMkBZZFdcHTkYCABrBibvZO8kDkArhYCoeUsL1PtsrRl0U4krWgeMDrW6JyQDZAw3JmPIHPmSCsiaYg/0",
+        title: "伊周 | 桂纶镁—生活文艺不矫情，片中只为爱守候",
+        description: '伊周 | 桂纶镁—生活文艺不矫情，片中只为爱守候',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPP2kiaohQYSJGk9JwywA9PXibsQSSREIMPg8ibEvkytfeCcyricVzvgxPfw4qy86bkdswC2unSIyPTzA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=2&sn=ada286e859560db1270408723163276a#rd"
       }, {
-        title: "瑞丽服饰美容 ︳从容优雅清凉妆 热情似火美丽心",
-        description: '瑞丽服饰美容 ︳从容优雅清凉妆 热情似火美丽心',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOqjESwvNbgqPCEKjfd24wAGWCF32NHEHmd3DlJNHkBMhSm1U36QibKkgEtAEB8wBKBKJj7NOic2Zzg/0",
+        title: "华夏地理 | 重拾国粹传统，精雕细刻境造世外桃源",
+        description: '华夏地理 | 重拾国粹传统，精雕细刻境造世外桃源',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPP2kiaohQYSJGk9JwywA9PX3oFaibVdAvYXfc2oB2mw4URTSk7U80omVtjY6XH9budsics7xtLSBI7A/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=3&sn=ae8a9084e3205f8cbc9fc0ad873f77f3#rd"
       }, {
-        title: "时尚·COSMOPOLITAN ︳潮流尖端21载—时尚COSMO21周年巨制",
-        description: '时尚·COSMOPOLITAN ︳潮流尖端21载—时尚COSMO21周年巨制',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOqjESwvNbgqPCEKjfd24wAP9lnXn9aZk3YUV8AQhCNLCZmqmRwWXDjMjJsgzwa3H8fRbtTG9VXCQ/0",
+        title: "商业周刊 | 掌握财经潮流，锁定金融趋势",
+        description: '商业周刊 | 掌握财经潮流，锁定金融趋势',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPP2kiaohQYSJGk9JwywA9PXVMOZbzeQBUIarcyBuWaEakgQWAHTCpd6DUfQduBC75niaOele6zFfgw/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=4&sn=979f46d7f03d3affdc746e27780e44b3#rd"
       }
     ]
