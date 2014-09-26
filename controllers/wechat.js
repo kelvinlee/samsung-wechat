@@ -362,14 +362,14 @@ magazine = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPP2kiaohQYSJGk9JwywA9PXibsQSSREIMPg8ibEvkytfeCcyricVzvgxPfw4qy86bkdswC2unSIyPTzA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=2&sn=ada286e859560db1270408723163276a#rd"
       }, {
-        title: "华夏地理 | 重拾国粹传统，精雕细刻境造世外桃源",
-        description: '华夏地理 | 重拾国粹传统，精雕细刻境造世外桃源',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPP2kiaohQYSJGk9JwywA9PX3oFaibVdAvYXfc2oB2mw4URTSk7U80omVtjY6XH9budsics7xtLSBI7A/0",
+        title: "时尚芭莎 | 中国成功男士的品味教科书",
+        description: '时尚芭莎 | 中国成功男士的品味教科书',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicM7mmQiaofnszhQNgLiaRXhubN45U7fIibbDcBG72kyoxQ4JufUm9LcKRvw/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=3&sn=ae8a9084e3205f8cbc9fc0ad873f77f3#rd"
       }, {
-        title: "商业周刊 | 掌握财经潮流，锁定金融趋势",
-        description: '商业周刊 | 掌握财经潮流，锁定金融趋势',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPP2kiaohQYSJGk9JwywA9PXVMOZbzeQBUIarcyBuWaEakgQWAHTCpd6DUfQduBC75niaOele6zFfgw/0",
+        title: "新潮电子 | 最精彩的数字时尚生活",
+        description: '新潮电子 | 最精彩的数字时尚生活',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMwASEEz0Sw43BmeYhsibMc3LIjlh1lSCOI6MFK012l0YrKyf7licUwDTA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=4&sn=979f46d7f03d3affdc746e27780e44b3#rd"
       }
     ]
@@ -465,25 +465,25 @@ videos = function() {
     type: "news",
     items: [
       {
-        title: "【重磅】搜狐视频秋季美剧新剧巡览 新欢驾到旧爱回归",
-        description: '【重磅】搜狐视频秋季美剧新剧巡览 新欢驾到旧爱回归',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPP2kiaohQYSJGk9JwywA9PXGGsgl5QA9FbCgH1sicBjOa8Tz2ia47iaHCwgXjywplZyACTeDYlwzJkmQ/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=204552405&idx=1&sn=fd789e8b445387c18fa5eead36dc8850#rd"
+        title: "【看点】《古剑奇谭》将结局 杨幂李易峰生死诀别",
+        description: '【看点】《古剑奇谭》将结局 杨幂李易峰生死诀别',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMppUTmlH8ITeR4YHS20IUVic0gOsmyoYaaKneicWLarr9mibAyCdUxbSTA/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=1&sn=1e5ec46885ceabc0531703b442f0cce7#rd"
       }, {
         title: "《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用",
         description: '《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGqziaptWvH56GQd7HSR6MENCo9XD8YX37qKIjQAf4CND7xaicicjBiam0xA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=2&sn=350a13b6b1aabb9a27a7911309a73111#rd"
       }, {
-        title: "搜狐视频独播韩剧《命中注定我爱你》韩国庆功",
-        description: '搜狐视频独播韩剧《命中注定我爱你》韩国庆功',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPP2kiaohQYSJGk9JwywA9PXhbEibfZdtEKLjvsuGQyGQe1pDBzv5E21Q1fT8ibcCLsQUs5tWottkmVQ/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=204552405&idx=2&sn=57627de97b1591438fab82aad49d2cfc#rd"
+        title: "搜狐视频独家探班韩剧《巡夜人日志》 揭秘大场面背后故事",
+        description: '搜狐视频独家探班韩剧《巡夜人日志》 揭秘大场面背后故事',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMS7MDN06Zn1GibZ2ZhKEQaeULiaxlvso9yNrVZbjrbhQD9K6oSnMpD1lw/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=3&sn=ce36d8402e61e53e5267fe02997b2f13#rd"
       }, {
-        title: "【热荐】《The Kelly Show》査可欣吐槽美剧女神",
-        description: '【热荐】《The Kelly Show》査可欣吐槽美剧女神',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPP2kiaohQYSJGk9JwywA9PXLvicJPD4BDcQvqDsnxoakN1t3N5deTIfo1S2sqfLQibtrDXWiauFtjviaQ/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=204552405&idx=3&sn=5cd6ed08af2959a18e27a2933516e4ee#rd"
+        title: "【热点】《HERO 2014》收视再上涨 高收视本季封神",
+        description: '【热点】《HERO 2014》收视再上涨 高收视本季封神',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMibYPnrzQDdribbsDuKOcPAFBdrAaJg4jqKfFfIN7OanSr12UibQDCSfoA/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=4&sn=2c0626281303dc2a457914ab10761355#rd"
       }
     ]
   };
