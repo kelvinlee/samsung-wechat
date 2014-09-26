@@ -5,7 +5,7 @@
      Begin wechat.coffee
 --------------------------------------------
  */
-var BufferHelper, Comment, EventProxy, Inte, Lots, Topic, User, Warehouse, checkMessage, checkSignature, clearQA, config, crypto, empty,luckyOver, formatMessage, fs, gamemenu, getMessage, getQA, jianxingpin, luckymenu, magazine, my, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, regsinto, searchQA, topicmenu, videos, welcometext, xml2js, _nr, _qa;
+var BufferHelper, Comment, EventProxy, Inte, Lots, Topic, User, Warehouse, checkMessage, checkSignature, clearQA, config, crypto, empty,luckyOver, formatMessage, fs, gamemenu, getMessage, getQA, jianxingpin, luckymenu, magazine, my, myProcess, newactive, overQA, oversite, path, plugs, plugs_menu, plugs_subscribe, regsinto, searchQA, topicmenu, videos, huishenghuo, welcometext, xml2js, _nr, _qa;
 
 fs = require('fs');
 
@@ -261,6 +261,8 @@ newactive = function() {
   };
 };
 
+
+
 oversite = function() {
   return {
     name: "临·现场",
@@ -308,6 +310,41 @@ jianxingpin = function() {
   };
 };
 
+huishenghuo = function() {
+  return {
+    name: "绘·生活",
+    key: "1",
+    type: "news",
+    items: [
+      {
+        title: "画你所想，写你所愿，S Pen-你的百变万能“喵”",
+        description: '画你所想，写你所愿，S Pen-你的百变万能“喵”',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMMKaqPml5WBaFIQ0x5uDic3cbr4hT2X2huDbx1YZsoyxT36YgYZ4fwicg/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205066535&idx=1&sn=93628cb11f6fe5790852c60d6fde8306#rd"
+      }, {
+        title: "S Pen书写回忆，涂鸦童真",
+        description: 'S Pen书写回忆，涂鸦童真',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMPsuG3KIZPTpVtmL8FHPicTiaLkYJh0xF49ibr3312CJzibW17hAedsJAPg/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205066535&idx=2&sn=fbca8f72a600e469a6908f8ea74920c8#rd"
+      }, {
+        title: "再忙也要甜蜜蜜，陪你去看流星雨",
+        description: '再忙也要甜蜜蜜，陪你去看流星雨',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMYV3WjPzZibkOF52h3xibyhSx4dGB3zNz19LxR2JQ48EL5qOpRO869BJg/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205066535&idx=3&sn=65e5bb94d517337a5c8e9bd9c5f4aa73#rd"
+      }, {
+        title: "随心描绘百变美丽",
+        description: '随心描绘百变美丽',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMSeSQsZaaddmdttiaMY235wKry2epic8tjic7JicZmJ8Uia9qROVQXDFsdNg/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205066535&idx=4&sn=aa75a5f9d8eadd02f91106c756cc36a2#rd"
+      }, {
+        title: "一起来“黑”家中萌宠",
+        description: '一起来“黑”家中萌宠',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMF79Iq6CgSzfMavfqsH6f6iaBgkKwcFDfxQmVe04QwvWa6A7NG5wKpvg/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205066535&idx=5&sn=0ee2951577373dc9eba19844d68487f3#rd"
+      }
+    ]
+  };
+};
 magazine = function() {
   return {
     name: "看杂志",
@@ -504,6 +541,8 @@ plugs_event = function(message,callback) {
     return callback(new oversite());
   } else if (message.EventKey === "jianxingpin") {
     return callback(new jianxingpin());
+  } else if (message.EventKey === "huishenghuo") {
+    return callback(new huishenghuo());
   } else if (message.EventKey === "magazine") {
     return callback(new magazine());
   } else if (message.EventKey === "newactive") {
