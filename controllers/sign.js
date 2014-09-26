@@ -923,7 +923,7 @@ setsomeDefautleLots = function() {
     } else {
       console.log("初始化了一些游戏奖品");
       setDefaultWinner();
-      name = "神偷奶爸：小黄人快跑";
+      name = "蜡笔小新3D大冲浪";
       description = "小黄人快跑！一路搞笑逗趣停不住！";
       img = "/img/game-1.jpg";
       info_a = "版本：2.4.0 大小:47.68MB<br/>  2014年5月31日 <br/>适合所有年龄段人士";
