@@ -465,25 +465,25 @@ videos = function() {
     type: "news",
     items: [
       {
-        title: "【看点】《古剑奇谭》将结局 杨幂李易峰生死诀别",
-        description: '【看点】《古剑奇谭》将结局 杨幂李易峰生死诀别',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMppUTmlH8ITeR4YHS20IUVic0gOsmyoYaaKneicWLarr9mibAyCdUxbSTA/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=1&sn=1e5ec46885ceabc0531703b442f0cce7#rd"
+        title: "【9月末重磅首播】《X战警：逆转未来》同系列7部连播 带你过足英雄瘾",
+        description: '【9月末重磅首播】《X战警：逆转未来》同系列7部连播 带你过足英雄瘾',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNFcqj4wtb61omibGVPszWgHcuEMBNJgibFE4sQsQjGRHHOzeFFI3Jjib4B4InTf6fOmbA7Ip2MKKpkQ/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205336735&idx=1&sn=bfae41f6abe8fe13ff66238295454d35#rd"
       }, {
         title: "《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用",
         description: '《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGqziaptWvH56GQd7HSR6MENCo9XD8YX37qKIjQAf4CND7xaicicjBiam0xA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=2&sn=350a13b6b1aabb9a27a7911309a73111#rd"
       }, {
-        title: "搜狐视频独家探班韩剧《巡夜人日志》 揭秘大场面背后故事",
-        description: '搜狐视频独家探班韩剧《巡夜人日志》 揭秘大场面背后故事',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMS7MDN06Zn1GibZ2ZhKEQaeULiaxlvso9yNrVZbjrbhQD9K6oSnMpD1lw/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=3&sn=ce36d8402e61e53e5267fe02997b2f13#rd"
+        title: "【十一新剧推荐】《风中奇缘》不负三年等待 鸳鸯剧照曝光",
+        description: '【十一新剧推荐】《风中奇缘》不负三年等待 鸳鸯剧照曝光',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNFcqj4wtb61omibGVPszWgHn7Ocqs6oicNPz7SxqvhwSr0cV9ab1Sg2amvS7R2RPSny7mqrrDRWlfQ/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205336735&idx=2&sn=019ce210d1d82ad520dece22a4a174df#rd"
       }, {
-        title: "【热点】《HERO 2014》收视再上涨 高收视本季封神",
-        description: '【热点】《HERO 2014》收视再上涨 高收视本季封神',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMibYPnrzQDdribbsDuKOcPAFBdrAaJg4jqKfFfIN7OanSr12UibQDCSfoA/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=4&sn=2c0626281303dc2a457914ab10761355#rd"
+        title: "【TFBOYS偶像手记】易烊千玺语录",
+        description: '【TFBOYS偶像手记】易烊千玺语录',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNFcqj4wtb61omibGVPszWgH6F1WqBgKT4aCRZnO5VJaqg2ZUTejkZ9Lwdx0icxFK6Co7BWxZrFYibfg/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205336735&idx=3&sn=35a05e1e162930772e95f8ebec7d916e#rd"
       }
     ]
   };
