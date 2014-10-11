@@ -357,15 +357,15 @@ magazine = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzM7uFF29KWYB3HePFqWtoicwicuEZJhh9GTibeBQibCugllg2uYSKzRzbJ1WOVEeibXDxQic3CicicOEEXdXw/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=1&sn=ae32c9b9fd34996932f72d4ee173b69c#rd"
       }, {
-        title: "伊周 | 桂纶镁—生活文艺不矫情，片中只为爱守候",
-        description: '伊周 | 桂纶镁—生活文艺不矫情，片中只为爱守候',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPP2kiaohQYSJGk9JwywA9PXibsQSSREIMPg8ibEvkytfeCcyricVzvgxPfw4qy86bkdswC2unSIyPTzA/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=2&sn=ada286e859560db1270408723163276a#rd"
+        title: "时尚健康 | 时尚生活，健康领跑",
+        description: '时尚健康 | 时尚生活，健康领跑',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMFOibMfChYQiclHwBaGW7kfelthH4cVBruQJdPYXBHsvxia0uLhicE5ouT0o7A96yicZibPvby84gGpAPQ/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205865171&idx=4&sn=f81e661685c4d360491b640b2fed2870#rd"
       }, {
-        title: "时尚芭莎 | 中国成功男士的品味教科书",
-        description: '时尚芭莎 | 中国成功男士的品味教科书',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicM7mmQiaofnszhQNgLiaRXhubN45U7fIibbDcBG72kyoxQ4JufUm9LcKRvw/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=3&sn=ae8a9084e3205f8cbc9fc0ad873f77f3#rd"
+        title: "伊周 | 精美图文，新鲜咨询，吃喝玩乐尽在指尖",
+        description: '伊周 | 精美图文，新鲜咨询，吃喝玩乐尽在指尖',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMFOibMfChYQiclHwBaGW7kfe7Mkweg0MghoHbxyTPIg1TmRy5eISGR3gSmJ7c3FdofCoDocEtLSaFg/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205865171&idx=5&sn=c787241ec3eb51c787f0eed5d51e0fa0#rd"
       }, {
         title: "新潮电子 | 最精彩的数字时尚生活",
         description: '新潮电子 | 最精彩的数字时尚生活',
@@ -465,25 +465,25 @@ videos = function() {
     type: "news",
     items: [
       {
-        title: "【9月末重磅首播】《X战警：逆转未来》同系列7部连播 带你过足英雄瘾",
-        description: '【9月末重磅首播】《X战警：逆转未来》同系列7部连播 带你过足英雄瘾',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNFcqj4wtb61omibGVPszWgHcuEMBNJgibFE4sQsQjGRHHOzeFFI3Jjib4B4InTf6fOmbA7Ip2MKKpkQ/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205336735&idx=1&sn=bfae41f6abe8fe13ff66238295454d35#rd"
+        title: "【刷新IQ神剧】年度巨制《北平无战事》洗脑来袭",
+        description: '【刷新IQ神剧】年度巨制《北平无战事》洗脑来袭',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMFOibMfChYQiclHwBaGW7kfeNvyWLZicWYBkmv8GDykg4D89ZV9h8ayZlxiaia2ClkLteaPsZf29T9IcQ/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205865171&idx=1&sn=2c338b67e378feb6ed71d7d7fbe52cbb#rd"
       }, {
         title: "《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用",
         description: '《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGqziaptWvH56GQd7HSR6MENCo9XD8YX37qKIjQAf4CND7xaicicjBiam0xA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=2&sn=350a13b6b1aabb9a27a7911309a73111#rd"
       }, {
-        title: "【十一新剧推荐】《风中奇缘》不负三年等待 鸳鸯剧照曝光",
-        description: '【十一新剧推荐】《风中奇缘》不负三年等待 鸳鸯剧照曝光',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNFcqj4wtb61omibGVPszWgHn7Ocqs6oicNPz7SxqvhwSr0cV9ab1Sg2amvS7R2RPSny7mqrrDRWlfQ/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205336735&idx=2&sn=019ce210d1d82ad520dece22a4a174df#rd"
+        title: "【节后继续看大片】暴力美学电影伴你上班路赛过小长假",
+        description: '【节后继续看大片】暴力美学电影伴你上班路赛过小长假',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMFOibMfChYQiclHwBaGW7kfeGfShf8ZDicP4GpO6hrsHpcE01ibrkBq4BF4vRAdtQJcxKA1c1y0JrIgA/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205865171&idx=2&sn=d72746762670b3259b106ea5f7115abe#rd"
       }, {
-        title: "【TFBOYS偶像手记】易烊千玺语录",
-        description: '【TFBOYS偶像手记】易烊千玺语录',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNFcqj4wtb61omibGVPszWgH6F1WqBgKT4aCRZnO5VJaqg2ZUTejkZ9Lwdx0icxFK6Co7BWxZrFYibfg/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205336735&idx=3&sn=35a05e1e162930772e95f8ebec7d916e#rd"
+        title: "【我们结婚了】精灵夫妇——你有没有因为他们重新看我结？",
+        description: '【我们结婚了】精灵夫妇——你有没有因为他们重新看我结？',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMFOibMfChYQiclHwBaGW7kfecthmiattUgDibFPKhJvpuJ4JnsibtkS4M74Oz5HFxQI1nLARQSmPlGsNQ/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205865171&idx=3&sn=8c99defe8828486d9fb51fec89a7c963#rd"
       }
     ]
   };
