@@ -1,0 +1,79 @@
+   {
+        "button": [
+            {
+                "name": "游乐场", 
+                "sub_button": [
+                    {
+                        "type": "click", 
+                        "name": "新·活动", 
+                        "key": "newactive", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "click", 
+                        "name": "临·现场", 
+                        "key": "oversite", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "click", 
+                        "name": "聊·话题", 
+                        "key": "topic", 
+                        "sub_button": [ ]
+                    }
+                ]
+            }, 
+            {
+                "name": "星专享", 
+                "sub_button": [
+                    {
+                        "type": "click", 
+                        "name": "绘·生活", 
+                        "key": "huishenghuo", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "click", 
+                        "name": "鉴·星品", 
+                        "key": "jianxingpin", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "click", 
+                        "name": "看·杂志", 
+                        "key": "magazine", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "click", 
+                        "name": "观·视频", 
+                        "key": "videos", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "click", 
+                        "name": "玩·游戏", 
+                        "key": "game", 
+                        "sub_button": [ ]
+                    }
+                ]
+            }, 
+            {
+                "name": "园助手", 
+                "sub_button": [
+                    {
+                        "type": "view", 
+                        "name": "解·问题", 
+                        "url": "http://samsung.4view.cn/page4", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "view", 
+                        "name": "寻·合作", 
+                        "url": "http://samsung.4view.cn/page5", 
+                        "sub_button": [ ]
+                    }
+                ]
+            }
+        ]
+    }
