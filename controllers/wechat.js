@@ -247,15 +247,15 @@ newactive = function() {
     type: "news",
     items: [
       {
-        title: "关注三星乐园微信公众账号,惊喜大礼等你拿",
-        description: '关注三星乐园微信公众账号,惊喜大礼等你拿',
-        picurl: "" + config.host + "/img/banner-1.jpg",
-        url: "" + config.host + middle +"/{openid}?url=/page1"
+        title: "看潮流【三星杂志】，抢最强YG FAMILY演唱会门票~",
+        description: '看潮流【三星杂志】，抢最强YG FAMILY演唱会门票~',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOHNXYdJk1maibPtzdfQ73a8QsNicvEwsDBJib5fapuLYE2QdKrD6Mib8AyzlzniaoWkrz7ZeRHfGtqNcQ/0",// + config.host + "/img/banner-1.jpg",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=206330598&idx=1&sn=4cc7633861162a450d4feea6584c6eb7#rd"// + config.host + middle +"/{openid}?url=/page1"
       }, {
-        title: "参与每日话题，赢取精美礼品",
-        description: '参与每日话题，赢取精美礼品',
-        picurl: "" + config.host + "/img/weixin-topic.jpg",
-        url: "" + config.host + middle +"/{openid}?url=/sign/topic"
+        title: "用【三星钱包】抢限量福利门票，看四小时狂欢音乐狂潮！还等什么快来抢票！",
+        description: '用【三星钱包】抢限量福利门票，看四小时狂欢音乐狂潮！还等什么快来抢票！',
+        picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOHNXYdJk1maibPtzdfQ73a8d1bz3gx1l2rHnheG2SuqO6xejYmJic69clkfa3dqRCj2B6C4zJWHfzQ/0",// "" + config.host + "/img/weixin-topic.jpg",
+        url:"http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=206330598&idx=3&sn=3b022cbe15c7b3b066f81f5ac05d217c#rd"// "" + config.host + middle +"/{openid}?url=/sign/topic"
       }
     ]
   };
@@ -286,25 +286,20 @@ jianxingpin = function() {
     type: "news",
     items: [
       {
-        title: "Samsung GALAXY Tab S 炫丽屏重新定义「视」界",
-        description: 'Samsung GALAXY Tab S 炫丽屏重新定义「视」界',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBH9RQ1iaJH9XK6iatFxjdE8WQ8qFqEZ2MOz89T8ZcBBLJP9gIzH9pTbpeQ/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=1&sn=65df46c2bf8f852d815d3bb887c96ee2#rd"
+        title:"用心表达，感动生活",// "Samsung GALAXY Tab S 炫丽屏重新定义「视」界",
+        description: '用心表达，感动生活',
+        picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOHNXYdJk1maibPtzdfQ73a8nicMnl6iaOUNG5hRavUS5ib9nAAERwFoKEBRVHuhnm8yNhbWyUpmYrQlw/0",// "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBH9RQ1iaJH9XK6iatFxjdE8WQ8qFqEZ2MOz89T8ZcBBLJP9gIzH9pTbpeQ/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205586303&idx=1&sn=43a8e62c8ad5680309ff7d63dff71cc7#rd"//"http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=1&sn=65df46c2bf8f852d815d3bb887c96ee2#rd"
       }, {
-        title: "Samsung GALAXY Tab S Super AMOLED 介绍",
-        description: 'Super AMOLED 介绍',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHRQObuicHPsbAsdZxcVuoqNiatI3jCoVOmiaqtYGV0ObgL4KESxVmnk6Qw/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=2&sn=e63c12ed63c62ade95295f7f04570a01#rd"
+        title: "Note4超值应用大礼，三星礼包给你尊贵礼遇！",//"Samsung GALAXY Tab S Super AMOLED 介绍",
+        description: 'Note4超值应用大礼，三星礼包给你尊贵礼遇！',//'Super AMOLED 介绍',
+        picurl:"https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOHNXYdJk1maibPtzdfQ73a8SWib6gWDX5ORlD9Pymu6RJosTSM429mHBWOiaVjv70xHIhsSa8V42uHQ/0",// "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBHRQObuicHPsbAsdZxcVuoqNiatI3jCoVOmiaqtYGV0ObgL4KESxVmnk6Qw/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=206330598&idx=2&sn=0055dc5f96d6d258f7accf4bd635367e#rd"//"http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=2&sn=e63c12ed63c62ade95295f7f04570a01#rd"
       }, {
         title: "Samsung GALAXY K zoom 让每个瞬间都精彩",
         description: 'Samsung GALAXY K zoom 让每个瞬间都精彩',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzO0MI2JicM7fHVaiaQeTniaYBH6fTuuEtLsy7fGvZsBflV9SOpY5iacHiaDd056ZA3aq8HGPxEzzpEq5aw/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=3&sn=a3cefce3da85b400072a9303de8be9e4#rd"
-      }, {
-        title: "现实和想象之间，你只差一支S Pen！",
-        description: '现实和想象之间，你只差一支S Pen！',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzOPwleqZ6YIf3gIpsbSpDAFWovUURD2hakiazSdwgiaFzO72OGvX9hGXQ7tCAGAX8A7Ih5icoDQRleYA/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=200559196&idx=4&sn=84820a9612c169b067729da25596adfe#rd"
       }
     ]
   };
