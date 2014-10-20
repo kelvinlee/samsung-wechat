@@ -357,10 +357,10 @@ magazine = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMFOibMfChYQiclHwBaGW7kfelthH4cVBruQJdPYXBHsvxia0uLhicE5ouT0o7A96yicZibPvby84gGpAPQ/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205865171&idx=4&sn=f81e661685c4d360491b640b2fed2870#rd"
       }, {
-        title: "伊周 | 精美图文，新鲜咨询，吃喝玩乐尽在指尖",
-        description: '伊周 | 精美图文，新鲜咨询，吃喝玩乐尽在指尖',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMFOibMfChYQiclHwBaGW7kfe7Mkweg0MghoHbxyTPIg1TmRy5eISGR3gSmJ7c3FdofCoDocEtLSaFg/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205865171&idx=5&sn=c787241ec3eb51c787f0eed5d51e0fa0#rd"
+        title: "时尚先生 | 时尚造就先生 先生定义时尚",
+        description: '时尚先生 | 时尚造就先生 先生定义时尚',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMBQiaRnw4BwANTl9cwE2GI8kHQnQ2fa0lmibW3ibHmibIl5c9sYicj6XORgDj13ibXK7ibSK7WUtc0NMibcQ/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=3&sn=ae8a9084e3205f8cbc9fc0ad873f77f3#rd"
       }, {
         title: "新潮电子 | 最精彩的数字时尚生活",
         description: '新潮电子 | 最精彩的数字时尚生活',
@@ -460,25 +460,25 @@ videos = function() {
     type: "news",
     items: [
       {
-        title: "【刷新IQ神剧】年度巨制《北平无战事》洗脑来袭",
-        description: '【刷新IQ神剧】年度巨制《北平无战事》洗脑来袭',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMFOibMfChYQiclHwBaGW7kfeNvyWLZicWYBkmv8GDykg4D89ZV9h8ayZlxiaia2ClkLteaPsZf29T9IcQ/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205865171&idx=1&sn=2c338b67e378feb6ed71d7d7fbe52cbb#rd"
+        title: "《亲爱的》揭神秘面纱 独家纪录赵薇秒变村妇心路历程",
+        description: '《亲爱的》揭神秘面纱 独家纪录赵薇秒变村妇心路历程',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMBQiaRnw4BwANTl9cwE2GI8x2GjcR49FoboCAOMrhdprycT4fwN5KQTkLwS4qOvZdMVWNtKM1Llnw/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=1&sn=1e5ec46885ceabc0531703b442f0cce7#rd"
       }, {
         title: "《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用",
         description: '《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGqziaptWvH56GQd7HSR6MENCo9XD8YX37qKIjQAf4CND7xaicicjBiam0xA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=2&sn=350a13b6b1aabb9a27a7911309a73111#rd"
       }, {
-        title: "【节后继续看大片】暴力美学电影伴你上班路赛过小长假",
-        description: '【节后继续看大片】暴力美学电影伴你上班路赛过小长假',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMFOibMfChYQiclHwBaGW7kfeGfShf8ZDicP4GpO6hrsHpcE01ibrkBq4BF4vRAdtQJcxKA1c1y0JrIgA/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205865171&idx=2&sn=d72746762670b3259b106ea5f7115abe#rd"
+        title: "《Running Man》死忠粉眼中的《奔跑吧 兄弟》",
+        description: '《Running Man》死忠粉眼中的《奔跑吧 兄弟》',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMBQiaRnw4BwANTl9cwE2GI80AGsXicKYLUEZ3qLwyUxgZvUNdsM7HjwGY2scqUQDyu2jMXMFQrHtnA/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=3&sn=ce36d8402e61e53e5267fe02997b2f13#rd"
       }, {
-        title: "【我们结婚了】精灵夫妇——你有没有因为他们重新看我结？",
-        description: '【我们结婚了】精灵夫妇——你有没有因为他们重新看我结？',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMFOibMfChYQiclHwBaGW7kfecthmiattUgDibFPKhJvpuJ4JnsibtkS4M74Oz5HFxQI1nLARQSmPlGsNQ/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205865171&idx=3&sn=8c99defe8828486d9fb51fec89a7c963#rd"
+        title: "《花千骨》正式版15min超长片花首曝光 霍建华虐刺赵丽颖103剑",
+        description: '《花千骨》正式版15min超长片花首曝光 霍建华虐刺赵丽颖103剑',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMBQiaRnw4BwANTl9cwE2GI84WTZVToVicvTweAdEpcPia8A6ZnaFcQJNjCko73WHFfWI8EpHIWq5HDQ/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=4&sn=2c0626281303dc2a457914ab10761355#rd"
       }
     ]
   };
