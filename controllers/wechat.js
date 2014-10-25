@@ -352,19 +352,19 @@ magazine = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzM7uFF29KWYB3HePFqWtoicwicuEZJhh9GTibeBQibCugllg2uYSKzRzbJ1WOVEeibXDxQic3CicicOEEXdXw/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=1&sn=ae32c9b9fd34996932f72d4ee173b69c#rd"
       }, {
-        title: "时尚健康 | 时尚生活，健康领跑",
-        description: '时尚健康 | 时尚生活，健康领跑',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMFOibMfChYQiclHwBaGW7kfelthH4cVBruQJdPYXBHsvxia0uLhicE5ouT0o7A96yicZibPvby84gGpAPQ/0",
-        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=205865171&idx=4&sn=f81e661685c4d360491b640b2fed2870#rd"
+        title: "新潮电子 | 三星GALAXY Note 4 & Note Edge以心之鉴",
+        description: '新潮电子 | 三星GALAXY Note 4 & Note Edge以心之鉴',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNkMF7aNLbCxvibCtqqonqyvpwO2GXM62cjubA6bOR6ZyzUyPcUz2rsicBXdUhRpy3ebdesWMEVRN1Q/0",
+        url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=2&sn=ada286e859560db1270408723163276a#rd"
       }, {
         title: "时尚先生 | 时尚造就先生 先生定义时尚",
         description: '时尚先生 | 时尚造就先生 先生定义时尚',
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMBQiaRnw4BwANTl9cwE2GI8kHQnQ2fa0lmibW3ibHmibIl5c9sYicj6XORgDj13ibXK7ibSK7WUtc0NMibcQ/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=3&sn=ae8a9084e3205f8cbc9fc0ad873f77f3#rd"
       }, {
-        title: "新潮电子 | 最精彩的数字时尚生活",
-        description: '新潮电子 | 最精彩的数字时尚生活',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzP1TyW8z4q7t6ibibZVFKQFicMwASEEz0Sw43BmeYhsibMc3LIjlh1lSCOI6MFK012l0YrKyf7licUwDTA/0",
+        title: "瑞丽时尚先锋 | 最新最IN的前沿时尚 多样化流行情报",
+        description: '瑞丽时尚先锋 | 最新最IN的前沿时尚 多样化流行情报',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNkMF7aNLbCxvibCtqqonqyvFhWcBibAicUBNhVO8RbHzkqfPXnR1MiczOtOptawOmC4vwGM7wDKeiaKdA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201614397&idx=4&sn=979f46d7f03d3affdc746e27780e44b3#rd"
       }
     ]
@@ -460,9 +460,9 @@ videos = function() {
     type: "news",
     items: [
       {
-        title: "《亲爱的》揭神秘面纱 独家纪录赵薇秒变村妇心路历程",
-        description: '《亲爱的》揭神秘面纱 独家纪录赵薇秒变村妇心路历程',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMBQiaRnw4BwANTl9cwE2GI8x2GjcR49FoboCAOMrhdprycT4fwN5KQTkLwS4qOvZdMVWNtKM1Llnw/0",
+        title: "【全网首播】《四大名捕大结局》奇幻武侠最终章",
+        description: '【全网首播】《四大名捕大结局》奇幻武侠最终章',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNkMF7aNLbCxvibCtqqonqyvDEWAZLnmnhE4AM9AXJy3GMb15ic5Nq21YB9NjibgzcF6mxu8umicDoRsQ/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=1&sn=1e5ec46885ceabc0531703b442f0cce7#rd"
       }, {
         title: "《我爱三星视频秀》54期：GALAXY Tab S 绚丽世界中的精彩应用",
@@ -470,14 +470,14 @@ videos = function() {
         picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzPCniaCMicnMqqz1SFKI2coiaGqziaptWvH56GQd7HSR6MENCo9XD8YX37qKIjQAf4CND7xaicicjBiam0xA/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=2&sn=350a13b6b1aabb9a27a7911309a73111#rd"
       }, {
-        title: "《Running Man》死忠粉眼中的《奔跑吧 兄弟》",
-        description: '《Running Man》死忠粉眼中的《奔跑吧 兄弟》',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMBQiaRnw4BwANTl9cwE2GI80AGsXicKYLUEZ3qLwyUxgZvUNdsM7HjwGY2scqUQDyu2jMXMFQrHtnA/0",
+        title: "【盗墓笔记 首曝剧照】 墓地探险 危机重重",
+        description: '【盗墓笔记 首曝剧照】 墓地探险 危机重重',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNkMF7aNLbCxvibCtqqonqyvuVuJic8JmxQ7fVEBPWLwVVZ52F1TqUcmH41IDrdxibjRU6A0vJCtiasBg/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=3&sn=ce36d8402e61e53e5267fe02997b2f13#rd"
       }, {
-        title: "《花千骨》正式版15min超长片花首曝光 霍建华虐刺赵丽颖103剑",
-        description: '《花千骨》正式版15min超长片花首曝光 霍建华虐刺赵丽颖103剑',
-        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzMBQiaRnw4BwANTl9cwE2GI84WTZVToVicvTweAdEpcPia8A6ZnaFcQJNjCko73WHFfWI8EpHIWq5HDQ/0",
+        title: "【《星星的密室》爱奇艺独家上线】 柳岩周觅联手玩死谢依霖",
+        description: '【《星星的密室》爱奇艺独家上线】 柳岩周觅联手玩死谢依霖',
+        picurl: "https://mmbiz.qlogo.cn/mmbiz/icfeQvJeAJzNkMF7aNLbCxvibCtqqonqyvzzptFwD4RWXUDnQnPLvXgDuqmdiccj5ESIVzDwwucxGtRHlicRI1FB6Q/0",
         url: "http://mp.weixin.qq.com/s?__biz=MzA5MTUwMzMyNA==&mid=201179385&idx=4&sn=2c0626281303dc2a457914ab10761355#rd"
       }
     ]
